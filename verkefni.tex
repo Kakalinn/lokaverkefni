@@ -13,6 +13,7 @@
 \usepackage{appendix}
 \usepackage{eso-pic}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage[nottoc]{tocbibind}
 \usepackage[sort&compress,authoryear]{natbib}
@@ -22,6 +23,8 @@
 \usepackage{tabularx}
 % Configurations
 \graphicspath{{figs/}}
+
+\newtheorem{theorem}{Theorem}
 
 \setlength{\parskip}{\baselineskip}
 \setlength{\parindent}{0cm}
@@ -45,9 +48,9 @@
 %\usepackage{mathptmx}
 
 %%%%%%%%%%% MODIFY THESE LINES ONLY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\thesisyear{20XX}       						% Year thesis submitted
+\def\thesisyear{2020}       						% Year thesis submitted
 \def\thesismonth{XXmonth}						% Month thesis submitted
-\def\thesisauthor{XXAuthor name}					% Thesis authoreiningaraðferðinni
+\def\thesisauthor{Bergur Snorrason}					% Thesis authoreiningaraðferðinni
 \def\thesistitle{XXTitle} 						% Title of thesis
 \def\thesisshorttitle{XXShort title (50 characters including spaces)} 	% Title of thesis
 \def\thesiscredits{XX} 							% Credits awarded for the project
@@ -205,162 +208,66 @@ Ekki birtist blaðsíðutal á þessum fyrstu síðum ritgerðarinnar en blaðs�
 \chapter*{Abbreviations}
 \addcontentsline{toc}{chapter}{Abbreviations}
 Í þessum kafla mega koma fram listar yfir skammstafanir og/eða breytuheiti. Gefið kaflanum nafn við hæfi, t.d. Skammstafanir eða Breytuheiti. Þessum kafla má sleppa ef hans er ekki þörf. \\
-
 The section could be titled: Glossary, Variable Names, etc.
 
 \chapter*{Acknowledgments}
 \addcontentsline{toc}{chapter}{Acknowledgments}
 Í þessum kafla koma fram þakkir til þeirra sem hafa styrkt rannsóknina með fjárframlögum, aðstöðu eða vinnu. T.d. styrktarsjóðir, fyrirtæki, leiðbeinendur, og aðrir aðilar sem hafa á einhvern hátt aðstoðað við gerð verkefnisins, þ.m.t. vinir og fjölskylda ef við á. Þakkir byrja á oddatölusíðu (hægri síðu).
 
-
-\chapter{General Information}
 \pagenumbering{arabic}
 \setcounter{page}{1}
-Fyrirsögn 1 er kaflaheiti. Feitletrið fyrirsögn 1 í 20 pt Verdana. Hafið 54 pt loftun yfir og byrjið nýja oddatölusíðu (hægri síðu). Hafið 12 pt loftun undir á undan texta og 24 pt loftun undir (samtals) ef beint á undan fyrirsögn 2.
+\chapter{Introduction}
 
-Í stað Verdana má velja sambærilegt steinskriftar (sans serif) letur í allar fyrirsagnir en allar fyrirsagnir skulu þó vera ritaðar með sömu leturgerð.
+\chapter{Preliminaries}
+\section{Functional analysis}
+\subsection{Hahn-Banach}
+\subsection{Riesz representation theorem}
+\chapter{Rudin-Carleson theorem}
+\chapter{F. and M. Riesz theorem}
+\chapter{A generalization of the Rudin-Carleson theorem}
+This borrows from Bishop (reference TODO).
+\begin{theorem}[General Rudin-Carleson theorem]
+Let $X$ be a compact Hausdorff space,
+	$V = (C(X), \| \cdot \|_{\infty})$,
+	$B$ be a closed subspace of $C(X)$,
+	$B^{\bot}$ be the annihilating measures for $B$,
+	$S$ be a closed subset of $X$,
+	and $f$ be a continues function on $S$.
+If $\int_S f d\mu = 0$ holds for all $\mu \in B^{\bot}$ then there exists a function $F \in B$ such that $F = f$ on $S$.
+\end{theorem}
+\begin{proof}
+Since $f$ is continuous and $S$ is a closed subset of a compact set, and therefore also compact, $f$ is bounded.
+So we can, with out loss of generality, assume that $|f| < r < 1$ on $S$.
+Let $U_r$ be the subset of $B$ defined by $U_r = \{g;\ \|g\| < r\}$ and $\phi$ be the mapping from $B$ to $C(S)$ that sends a member of $B$ to its restriction on $S$.
+It suffices to show that $f \in \phi(U_r)$.
+Let's first show that $f \in \overline{\phi(U_r)} =: V_r$, by assuming otherwise, and showing it leads to a contradiction.
 
-Meginmálstexti skal skrifaður í Times New Roman, með leturstærð 12 og einföldu línubili. Málsgreinar skulu loftaðar með 0 pt bili að ofan og 12 pt bili að neðan, þar sem fyrirsagnir stilla loftun fyrir neðan sig (og þar með fyrir ofan texta).
-
-Leita skal að XX sem hluta af orði, þar sem það merkir atriði sem höfundur þarf að breyta.
-
-Í stað Times New Roman má velja sambærilegt prentletur (serif). Allt meginmál skal þó ritað með sömu leturgerð. 
-
-Allur texti ritgerðar skal ritaður með einum lit, svörtum. Undantekningar eru leyfðar innan mynda. Ekki nota “hyperlinks” í texta, sem þá verður blár og/eða með undirlínu.
-
-Notast skal við 2,5 cm spássíu fyrir ofan og á ytri hlið (ekki kjalmegin). Við kjölin skal bæta 0,5 cm (Gutter) til að hafa samtals 3,0 cm spássíu. Neðst á blaðsíðu skulu vera 1,5 cm frá neðri brún í blaðsíðutal og spássían skal vera 3,0 cm frá neðri brún blaðsíðu að texta.
-
-Blaðsíður meginmáls byrja að númerast á 1 á fyrstu blaðsíðu fyrsta kafla með arabískum stíl. Blaðsíðutalið er still við ytri brún og neðst á blaðsíðu. Heimildir og viðaukar númerast einnig með sama hætti. Fjöldi blaðsíðna í ritgerð skráist sem blaðsíðunúmer öftustu prentuðu síðu.
-
-Byrja skal fyrirsögn 1 efst á hægri síðu. Hér má hugsa sér að setja stuttan texta sem inngang að kaflanum áður en fyrsti undirkafli byrjar. Það getur hjálpað lesanda að átta sig á inntaki kaflans.
-
-Nota má skáletur í hófi til að draga athygli að texta. Notið feitletur enn sjaldnar. Ekki nota undirstrikaðan texta í ritgerðinni.
-
-Farið sparlega í notkun footnote. Þær skulu vera númeraðar og birtast neðst á þeirri síðu sem fyrst vitnar í þær eða fljótlega þar á eftir.
-
-Númerið og vísið í formúlur eftir venjum fagsviðs.
-
-Velja má inndrátt fyrstu línu málsgreinar um 1 cm í stað 12 pt loftunar á milli málsgreina, en þá þarf að bæta 12 pt við loftun yfir fyrirsögnum sem gera ráð fyrir að 12 pt loftun komi frá lokum málsgreinar. Ekki skal nota bæði inndrátt og loftun.
-
-\section{Heading 2}
-Fyrirsögn 2 er undirfyrirsögn. Feitletrið fyrirsögn 2 í 16 pt Verdana. Hafið samtals 24 pt loftun yfir fyrirsögn 2. Notið 12 pt loftun fyrir neðan fyrirsögn 2.
-
-\subsection{Heading 3}
-Fyrirsögn 3 er síðasta númeraða undirfyrirsögnin. Feitletrið fyrirsögn 3 í 12 pt Verdana með 18 pt loftun yfir samtals þegar texti er fyrir ofan eða fyrirsögn 2. 
-\subsubsection{Heading 4}
-12 pt Verdana, engin kaflanúmer, birtist ekki í efnisyfirliti, 12 pt loftun yfir og 6 pt undir
-
-Fyrirsögn 4 skal ekki númera. Fyrirsögn 4 er rituð í venjulegu 12 pt Verdana og hefur minnst 12 pt loftun yfir ef hún er undir texta, en meiri loftun undir hærri fyrirsögnum sem stýrist af neðri loftunum þeirra fyrirsagna. Notið 6 pt loftun undir fyrirsögn 4.
-Ekki nota fyrirsagnir á lægra útlínu stigi en fyrirsögn 4.
-
-\section{Title page, spine, and back page}
-Ekki skal nota búmerki/logó fyrirtækja, samstarfsaðila eða styrktaraðila á forsíðu/baksíðu eða annars staðar í ritgerð. Ekki skal setja mynd á forsíðu ritgerðar. 
-
-Í texta er hins vegar skylt og rétt að geta samstarfsaðila og styrktaraðila, það skal gert í kaflanum Þakkir (Acknowledgments) eða í formála.
-
-Á baksíðu er heimilt að setja nafn prentsmiðju, þá miðjað hægri-vinstri á blaðsíðu og miðjað upp-niður innan litaborðans. Nafn prentsmiðju skal ritað með stærst 10 pt Verdana í venjulegu hvítu letri.
-
-Merki Háskóla Íslands á forsíðu skal hafa 4,2 cm þvermál. Það skal staðsetja merkið 4,2 cm frá efri brún. Frá neðri brún merkis skulu minnst vera 3,0 cm í titil ritgerðar.
-
-Loftun fyrir neðan nafn höfundar skal vera 1 cm niður að efstu brún litaborðans.
-
-Megin hluti litaborðans neðst á forsíðu skal spanna 7,7 cm frá neðri brún blaðsíðu í A4-formi, en þó spannar hann lengra bil þar sem táknmynd aðalbyggingar kemur fyrir.
-
-Litaborðinn skal ná yfir kjölinn og baksíðuna, og þar spanna 7,7 cm frá neðri brún blaðsíðu.
-
-Litaborði BS ritgerða er grár litur Háskóla Íslands. Litakóðar litarins eru: CMYK: 0 : 0 : 0 : 70; Pantone: Cool Gray 11 C; RGB: 90 : 91 : 94.
-
-Litaborði meistararitgerða er litur Verkfræði- og náttúruvísindasviðs Háskóla Íslands, appelsínugulur. Litakóðar litarins eru: CMYK:  0 : 75 : 100 : 0; Pantone: 158 C; RGB: 236 : 78 : 34.
-
-Litaborði doktorsritgerða er litur Háskóla Íslands, dökk blár. Litakóðar litarins eru: CMYK: 100 : 57 : 0 : 40; Pantone: 295 C; RGB: 0 : 46 : 85.
-
-Á kjöl ritgerðar skal rita nafn höfundar, stuttan titil ritgerðar (mest 50 slög með bilum) og ártal ritgerðar í einni línu með Verdana letri. Nafn höfundar og stuttur titill ritgerðar koma á hvíta flötinn, en ártalið kemur í hvítu letri á litaborðann.
-
-\section{Thesis and Dissertation Authoring}
-Gæði ritgerðar endurspegla ekki einungis gæði rannsóknarinnar (hermana, líkana, greininga, o.fl.), heldur einnig gæði ritgerðasmíðar. Í síðara samhenginu skipta margir þættir máli, t.d. uppbygging og söguflæði, framsetning á hugmyndum og niðurstöðum, málfar og heimildavinna. Því er mikilvægt að nemendur kynni sér hvernig best sé að standa að undirbúningi og skrifum ritgerðar. Nemendur verða að tileinka sér fagmannleg vinnubrögð í heimildaskráningu og tilvísunum í samráði við leiðbeinanda. Hér eru dæmi um tvær bækur sem nemendur geta stuðst við:
-\begin{itemize}
- \item Friðrík H. Jónsson og Sigurður J. Grétarsson (2007). \textit{Gagnfræðikver fyrir háskólanema}, Háskólaútgáfan, Reykjavík.
- \item Ingibjörg Axelsdóttir og Þórunn Blöndal (2006).  \textit{Handbók um ritun og frágang},  Mál og menning, Reykjavík.
-\end{itemize}
-
-\section{Doctoral Dissertation: Monograph or Paper Collection}
-Doktorsritgerð getur verið hvort sem er í formi ritgerðar eða safns greina sem hafa birst eða  er áætlað að birtist í ritrýndum ritum. 
-
-Ef doktorsritgerðin er greinasafn skal ávallt fylgja inngangur sem setur fram heildstæð markmið, ítarlegt yfirlit og samantekt á verkinu. Mælt er með að í lok ritgerðar, á undan viðaukum, fylgi samantekinn listi yfir heimildir verksins.
-
-Ef einhver greinanna í ritgerðinni hafa meðhöfunda skal framlag doktorsnemans útskýrt sérstaklega í inngangi, sér í lagi krefst það útskýringa ef doktorsneminn er ekki aðalhöfundur greinarinnar. 
-
-Ráðlagt er að greinar þær sem birtast í safninu séu settar í þeim stíl sem hér er lýst fyrir doktorsritgerðir, en séu ekki bein afrit birtra greina, þar sem setning og útlit slíkra greina getur fallið undir vernd höfundarréttar útgáfuaðila. Útgáfuaðilar leyfa almennt að texti greina birtist bæði í grein og doktorsritgerð. Það er á ábyrgð nemanda að kanna slíkt og framfylgja þeim samþykktum sem nemandi hefur fallist á við birtingu greina.
- 
-\chapter{Lists}
-Bullet list
-Hér á eftir er dæmi um upptalningarlista. Listinn má vera þéttari, þ.e. að aðeins sé 0 pt bil á milli atriða, en þó skal hafa 12 pt bil á undan fyrsta atriði listans.
-\begin{itemize}
- \item Númer 1
- \item Númer 2
- \item Númer 3
-\end{itemize}
-Ef fyrsta lína eftir upptalningu er framhald sömu málsgreinar og fyrir ofan skal ekki setja inn viðbótarloftun (eða ef inndráttur er notaður, skal ekki nota inndrátt á slíkri línu). 
-
-\chapter{Figures and tables}
-Þessi kafli sýnir dæmi um notkun mynda, taflna og vísun í þær.
-\section{Figures}
-Myndatexti skal staðsetja undir myndum og skrifast með skáletri.
-Setja skal auða aukalínu fyrir ofan myndir.
-\begin{figure}[!htb]
-\centering
-%\includegraphics[width=0.47\textwidth]{Array}
-\caption[Dæmi um myndatexta (fyrir neðan mynd).]{Dæmi um myndatexta (fyrir neðan mynd)} \label{fig:Array}
-\end{figure}
-Mikilvægt er að skilgreina myndir með ,,paragraph format”: “keep with next” til að rjúfa ekki tengsl á milli myndar og myndtexta. Mynd má vera miðjuð og skal þá einnig miðja myndartextann. Letur innan myndar skal vera í steinskrift (sans serif), t.d. Verdana, og ekki minna en 10 pt. Tryggið að letur, tákn og línur sjáist skýrt eftir útprentun.
-
-Hægt er að láta númera og merkja myndir sjálfvirkt með því að gera Insert – Reference – Caption – Mynd eða Tafla. Varist að velja hyperlink. 
-
-Vísa má í mynd með því að velja Insert – Reference – Cross-Reference – Mynd eða Tafla. Varist að velja hyperlink og veljið að eins Label og Number. T.d. sjá þessa tilvísun í Mynd 3.1 sem dæmi. 
-
-\section{Tables}
-Einnig má númera töflur sjálfkrafa svipað og myndir. Nota skal skáletur í töflutitil. Textinn skal standa fyrir ofan töflu og fylgja töflunni.  Ekki nota tvöfalt línubil eða hafa space before í töflum. Meginreglan við töflugerð er að hafa þær einfaldar og eins fá strik og mögulegt er. Tafla má vera miðjuð á blaðsíðu og skal þá láta töflutitil byrja við vinstri brún töflu.
-
-
-\begin{table}[htb]
-\centering
-\caption{Dæmi um töflutexta (fyrir ofan töflu).}
-     \sffamily \begin{tabularx}{1.0\textwidth}{ p{5cm}  p{5cm}  p{5cm} }
-    \hline
-   \textbf{Taflan} \hfill & \textbf{Er} \hfill & \textbf{Eins} \\ \hline
-    Og & Hún & gæti\\
-    Litið & Út & í ritgerð\\ \hline
-    \end{tabularx} \normalfont
-\label{table:Emissivity}
-\end{table}
-
-Almennt skal ekki nota loftun fyrir neðan texta í töflu, og stylla loftun fyrir neðan á 0 pt.
-Mikilvægt er að skilgreina töflutexta með ,,format paragraph: keep with next og keep lines together” til að rjúfa ekki tengsl á milli töflutexta og töflu. Ef tafla er mjög löng má kljúfa hana á milli blaðsíðna og þá verður að setja (\textit{Framhald}) í aukalínu beint fyrir neðan töfluna, hægri stillt við hægri brún töflu.
-
-Dæmi um sjálfvirka tilvísun í töflu, bara nota Label and Number, ekki nota hyperlink eða caption text. T.d. Tafla 3.1 sýnir dæmi um töflu.
-
-\chapter{Conclusions}
-
-\chapter{References}
+We now assume $f \not \in V_r$.
+By Hahn-Banach (TODO ref) we can define a bounded linear functional $\alpha$, such that $|\alpha(f)| > 1$ and $|\alpha(h)| < 1$, for $h \in V_r$.
+We can then define a measure $\mu_1$ by the Riesz-representation theorem (TODO ref) that fulfills
+\[
+	\alpha(g) = \int g d\mu_1
+\]
+for all $g \in C(S)$.
+We will refer to the associated functional on $B$ by $\beta(g) = \phi(\alpha(g))$.
+Since $\phi(g) \in V_r$ for all $g \in U_r$ we have that
+\[
+	\beta(g) = \alpha(\phi(g)) < 1,
+\]
+for all $g \in U_r$,
+	due to the construction of $\alpha$.
+From this we get
+\begin{align*}
+	\| \beta \|
+	&= \sup \{ |\beta(g)|;\ |g| < 1 \}\\
+	&= \sup \{ (1/r)|\beta(g)|;\ |g| < r \}\\
+	&< \sup \{ (1/r);\ |g| < r \}\\
+	&= 1/r.
+\end{align*}
+\end{proof}
 
 \appendix
 \renewcommand{\chaptername}{Appendix}
 \chapter{Annað}
-Gagnlegir punktar og ábendingar
-\begin{itemize}
- \item BS ritgerðir skulu prentaðar í A4.
- \item Meistararitgerðir skulu prentaðar í A4.
- \item Útgáfustærð doktorsritgerða er B5.
-\begin{itemize}
- \item[-] Iðulega er doktorsritgerð unnin í A4 en svo smækkuð við prentun. Mikilvægt er að tryggja að allur texti, m.a. í myndum og töflum, sjáist skýrt eftir smækkun í B5. Því verður að skoða drög af ritgerð eftir smækkun í B5 áður en ritgerðin er prentuð í fjölda eintaka.
-\end{itemize}
-
-\end{itemize}
-
-\begin{itemize}
- \item Miða skal við að ritgerð sé prentuð báðu megin á blaðsíður og byrja skal alla kafla á hægri síðu opnu.
- \item Hafa skal samband við prentsmiðju áður en handriti er skilað. Oft vilja þessir aðilar fá ritgerðina á PDF-formi. Hafa skal í huga að litprentun er mun dýrari en svart/hvít prentun. 
- \item Til eru mismunandi gæði/upplausn á PDF-skjölum. Prentsmiðjur biðja gjarnan um hágæða upplausn / prentunarupplausn sem er meiri en ,,venjuleg” PDF-upplausn sem notuð er við skjöl sem vistuð eru á netinu. Þetta er stillingaratriði áður en PDF-skjal er búið til. Almennt vilja prentsmiðjur hæstu mögulegu upplausn. Einnig vilja prentsmiðjur almennt að allt letur og myndir séu skilgreindar (“Embedded”) innan í PDF skjalinu.
-\end{itemize}
 
 \end{document}
