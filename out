@@ -94,7 +94,7 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 (/usr/share/texmf-dist/tex/latex/tools/array.sty))
 
 Package caption Warning: Ignoring optional argument [l] of \setcapwidth
-(caption)                 on input line 42.
+(caption)                 on input line 45.
 See the caption package documentation for explanation.
 
 (./verkefni.aux)
@@ -127,87 +127,21 @@ Package tocbasic Warning: `tocbibind' redefinition of `\listoftables'
 pdftex/updmap/pdftex.map} <./foot.png> <./ui_1_cmyk.png>] [2] [3]
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 154.
+(Font)              using `OMS/cmsy/m/n' instead on input line 157.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--156
+Underfull \hbox (badness 10000) in paragraph at lines 153--159
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--156
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--167
+Underfull \hbox (badness 10000) in paragraph at lines 153--159
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
+
 (/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def)
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
 
-[4] [5] [6] [5] [6] [7] [8] (./verkefni.toc) [9] [10] (./verkefni.lof) [11]
-[12] (./verkefni.lot) [13] [14] [15] [16]pdfTeX warning (ext4): destination wit
-h the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.219 \chapter
-              {Introduction} [1]pdfTeX warning (ext4): destination with the sam
-e identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.219 \chapter
-              {Introduction} [2]
-chapter 1.
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.221 \chapter
-              {Preliminaries} [3]pdfTeX warning (ext4): destination with the sa
-me identifier (name{page.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.221 \chapter
-              {Preliminaries} [4]
-chapter 2.
-pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.225 \chapter
-              {Rudin-Carleson theorem} [5]pdfTeX warning (ext4): destination wi
-th the same identifier (name{page.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.225 \chapter
-              {Rudin-Carleson theorem} [6]
-chapter 3.
-[7] [8]
-chapter 4.
-[9] [10]
-chapter 5.
-[11] [12]
-chapter A.
-[13] (./verkefni.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- )
-(see the transcript file for additional information){/usr/share/texmf-dist/font
-s/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></
-usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf
--dist/fonts/type1/public/cm-super/sfsi1200.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
-per/sfss1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1728.pf
-b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/t
-exmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts
-/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/public/c
-m-super/sfsx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti120
-0.pfb>
-Output written on verkefni.pdf (31 pages, 373287 bytes).
-Transcript written on verkefni.log.
+[4] [5] [6]

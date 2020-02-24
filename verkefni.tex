@@ -25,6 +25,9 @@
 \graphicspath{{figs/}}
 
 \newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
 
 \setlength{\parskip}{\baselineskip}
 \setlength{\parindent}{0cm}
@@ -219,6 +222,7 @@ The section could be titled: Glossary, Variable Names, etc.
 \chapter{Introduction}
 
 \chapter{Preliminaries}
+\section{Measure theory}
 \section{Functional analysis}
 \subsection{Hahn-Banach}
 \subsection{Riesz representation theorem}
@@ -243,7 +247,7 @@ It suffices to show that $f \in \phi(U_r)$.
 Let's first show that $f \in \overline{\phi(U_r)} =: V_r$, by assuming otherwise, and showing it leads to a contradiction.
 
 We now assume $f \not \in V_r$.
-By Hahn-Banach (TODO ref) we can define a bounded linear functional $\alpha$, such that $|\alpha(f)| > 1$ and $|\alpha(h)| < 1$, for $h \in V_r$.
+By Hahn-Banach (TODO ref) we can define a bounded linear functional $\alpha$, such that $\alpha(f) > 1$ and $|\alpha(h)| < 1$, for $h \in V_r$.
 We can then define a measure $\mu_1$ by the Riesz-representation theorem (TODO ref) that fulfills
 \[
 	\alpha(g) = \int g d\mu_1
@@ -261,10 +265,75 @@ From this we get
 	\| \beta \|
 	&= \sup \{ |\beta(g)|;\ |g| < 1 \}\\
 	&= \sup \{ (1/r)|\beta(g)|;\ |g| < r \}\\
-	&< \sup \{ (1/r);\ |g| < r \}\\
+	&\leq \sup \{ (1/r);\ |g| < r \}\\
 	&= 1/r.
 \end{align*}
+Let's denote the Riesz representation of $\beta$ by $\mu_2$, set $\mu = \mu_1 - \mu_2$ and see that $\mu \in B^{\bot}$.
+But
+\[
+	0 = \left | \int_S f d\mu \right | 
+		\geq \int_S f d\mu_1 - r\|\mu_2\| 
+		\geq \int_S f d\mu_1 - r\frac{1}{r}
+		> 1 - r \frac{1}{r} = 0,
+\]
+where the first equality is the assumption in the theorem.
+This is the contradiction that gives that $f \in V_r$.
+We can now take a $F_1$ in $U_r$, and therefore also in $B$ such that $|f - F_1| < \lambda/2$ on $S$, with $\lambda := 1 - r$.
+Remember that $F_1 \ in U_r$ implies that $\|F_1\| < r$.
+Now let $f_1 = f - F_1$ and use the same method as above to obtain an $F_2$ such that $\|F_2\| < \lambda/2$ and $|f - F_2| < \lambda/4$ on $S$.
+Iterating this process yields a series $(F_n)_{n \in \mathbb{N}}$ from $B$ that fulfill $\|F_n\| < 2^{1 - n}\lambda$ for $n > 1$ and
+\[
+	\left | f - \sum_{k = 1}^n F_k \right | < 2^{-n}\lambda
+\]
+on $S$ for $n > 1$.
+We finally let 
+\[
+F = \sum_{k = 1}^{\infty} F_k.
+\]
+Now $F \in B$,
+\[
+	\|F\| \leq \|F_1\| + \|F - F_1\| = r + \sum_{k = 2}^{\infty}2^{1 - n}\lambda = r + \lambda = 1,
+\]
+and $F = f$ on $S$. (TODO bæta við matinu, svo línan að ofan meiki sens)
 \end{proof}
+\begin{corollary}
+Let $X$ be a compact Hausdorff space,
+	$V = (C(X), \| \cdot \|_{\infty})$,
+	$B$ be a closed subspace of $C(X)$,
+	$B^{\bot}$ be the annihilating measures for $B$,
+	$S$ be a closed subset of $X$,
+	and $f$ be a continues function on $S$.
+If $S$ is $B^{\bot}$-null (TODO define this) then there exists a function $F \in B$ such that $F = f$ on $S$.
+\end{corollary}
+\begin{proof}
+If $S$ is $B^{\bot}$-null we have that $\int_S f d\mu = 0$ for all $\mu \in B^{\bot}$ (TODO add ref to above).
+\end{proof}
+\begin{remark}
+The corollary is the version of the theorem from Bishop (TODO add ref here).
+Note also that if we set $X = \mathbb{T}$ and $B = \mathcal{A}$ we can use F. and M. Riesz (TODO add ref here) to prove the classical Rudin-Carleson theorem (TODO add ref here).
+\end{remark}
+It is of course worth noting an applications of (TODO REF to theorem) where the corollary fails.
+\begin{example}
+Let $X = \mathbb{T}$,
+	$B = \mathcal{A}$ (TODO define this),
+	$E$ be a closed $m$-null (TODO define this, an maybe change to $m_{\sigma}$) subset of $\partial \mathbb{T}$ that is not dense in $E$,
+	$F = \{ e^{i\theta};\ a \leq \theta \leq b \}$,
+	and choose $a$ and such that $E$ and $F$ are disjoint and $a \neq b$.
+The last assumption restricts us to $E$ that are not dense in the $\mathbb{E}$.
+Since $a \neq b$ we obtain that $S := E \cup F$ does not fulfill the requirements of the Rudin-Carelson theorem (TODO add ref here) nor the above corollary (TODO add ref).
+Let's choose $f$ such that $f = 0$ on $F$, and $f$ is continues on $S$.
+We now have for all $\mu \in \mathcal{A}^{\bot}$
+\begin{align*}
+	\left | \int_S f d\mu \right |
+	&= \left |\int_E f d\mu + \int_F f d\mu \right |\\
+	&\leq \left |\int_E f d\mu \right | + \left | \int_F f d\mu \right |\\
+	&= 0 + \left | \int_F f d\mu \right |\\
+	&= 0.
+\end{align*}
+The F. and M. Riesz theorem (TODO add ref here) tells us the since $E$ is $m$-null it is also $\mu$-null, which gives the third step.
+The final step stems from the fact that $f$ vanishes on $F$.
+We now see the $X$, $B$, and $f$ are all as in theorem (TODO add ref) so there exists a $F \in B$, such that $F = f$ on S.
+\end{example}
 
 \appendix
 \renewcommand{\chaptername}{Appendix}

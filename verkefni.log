@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.17)  20 FEB 2020 18:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.17)  24 FEB 2020 11:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -704,30 +704,33 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \TX@ftn=\toks35
 )
 \c@theorem=\count286
+\c@corollary=\count287
+\c@remark=\count288
+\c@example=\count289
 
 
 Package caption Warning: Ignoring optional argument [l] of \setcapwidth
-(caption)                 on input line 42.
+(caption)                 on input line 45.
 See the caption package documentation for explanation.
 
 (./verkefni.aux)
 \openout1 = `verkefni.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-Package tocbasic Info: usage of `tocbibind' detected on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+Package tocbasic Info: usage of `tocbibind' detected on input line 96.
 
 
 Package tocbasic Warning: `tocbibind' redefinition of `\listoffigures'
@@ -741,24 +744,24 @@ Package tocbasic Warning: `tocbibind' redefinition of `\listoftables'
 (tocbasic)                Note: Loading `tocbibind' without option `notlot'
 (tocbasic)                can break several features of `tocbasic'.
 
-Package scrbase Info: activating english \contentsname on input line 93.
-Package scrbase Info: activating english \listfigurename on input line 93.
-Package scrbase Info: activating english \listtablename on input line 93.
+Package scrbase Info: activating english \contentsname on input line 96.
+Package scrbase Info: activating english \listfigurename on input line 96.
+Package scrbase Info: activating english \listtablename on input line 96.
 (/usr/share/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count287
+\scratchcounter=\count290
 \scratchdimen=\dimen173
 \scratchbox=\box52
-\nofMPsegments=\count288
-\nofMParguments=\count289
+\nofMPsegments=\count291
+\nofMParguments=\count292
 \everyMPshowfont=\toks36
-\MPscratchCnt=\count290
+\MPscratchCnt=\count293
 \MPscratchDim=\dimen174
-\MPnumerator=\count291
-\makeMPintoPDFobject=\count292
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
 \everyMPtoPDFconversion=\toks37
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -778,7 +781,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box53
-Package hyperref Info: Link coloring OFF on input line 93.
+Package hyperref Info: Link coloring OFF on input line 96.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -786,11 +789,11 @@ Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count293
+\c@section@level=\count296
 )
-LaTeX Info: Redefining \ref on input line 93.
-LaTeX Info: Redefining \pageref on input line 93.
-LaTeX Info: Redefining \nameref on input line 93.
+LaTeX Info: Redefining \ref on input line 96.
+LaTeX Info: Redefining \pageref on input line 96.
+LaTeX Info: Redefining \nameref on input line 96.
 
 (./verkefni.out) (./verkefni.out)
 \@outlinefile=\write3
@@ -803,7 +806,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 93.
+(scrbook)           before \begin{document} on input line 96.
 
 (/usr/share/texmf-dist/tex/latex/oberdiek/bookmark.sty
 Package: bookmark 2019/06/04 v1.27 PDF bookmarks (HO)
@@ -813,17 +816,17 @@ File: bkm-pdftex.def 2019/06/04 v1.27 bookmark driver for pdfTeX (HO)
 Package auxhook Info: \AddLineBeginMainAux comes a little late,
 (auxhook)             because the main .aux file is already opened on input lin
 e 164.
-\BKM@id=\count294
+\BKM@id=\count297
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 <ui_1_cmyk.png, id=4, 501.875pt x 481.8pt>
 File: ui_1_cmyk.png Graphic file (type png)
 <use ui_1_cmyk.png>
-Package pdftex.def Info: ui_1_cmyk.png  used on input line 101.
+Package pdftex.def Info: ui_1_cmyk.png  used on input line 104.
 (pdftex.def)             Requested size: 124.05403pt x 119.08963pt.
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
-03.
+06.
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -831,15 +834,15 @@ File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 <foot.png, id=6, 602.1405pt x 228.9645pt>
 File: foot.png Graphic file (type png)
 <use foot.png>
-Package pdftex.def Info: foot.png  used on input line 112.
+Package pdftex.def Info: foot.png  used on input line 115.
 (pdftex.def)             Requested size: 597.5175pt x 227.20657pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 112
+LaTeX Font Info:    Trying to load font information for U+msa on input line 115
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 112
+LaTeX Font Info:    Trying to load font information for U+msb on input line 115
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -847,7 +850,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 File: foot.png Graphic file (type png)
 <use foot.png>
-Package pdftex.def Info: foot.png  used on input line 112.
+Package pdftex.def Info: foot.png  used on input line 115.
 (pdftex.def)             Requested size: 597.5175pt x 227.20657pt.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -855,25 +858,20 @@ Package pdftex.def Info: foot.png  used on input line 112.
 
  <./foot.png> <./ui_1_cmyk.png>] [2] [3]
 LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
-154.
-LaTeX Font Info:    No file OMScmss.fd. on input line 154.
+157.
+LaTeX Font Info:    No file OMScmss.fd. on input line 157.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 154.
+(Font)              using `OMS/cmsy/m/n' instead on input line 157.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--156
+Underfull \hbox (badness 10000) in paragraph at lines 153--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--167
+Underfull \hbox (badness 10000) in paragraph at lines 153--159
 
  []
 
@@ -882,149 +880,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
-(/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)
-Underfull \hbox (badness 10000) in paragraph at lines 173--175
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
  []
 
-[4] [5] [6
-
-
-] [5] [6
-
-
-] [7] [8
-
-
-] (./verkefni.toc)
-\tf@toc=\write4
-\openout4 = `verkefni.toc'.
-
- [9] [10
-
-
-] (./verkefni.lof)
-\tf@lof=\write5
-\openout5 = `verkefni.lof'.
-
- [11]
-[12
-
-
-] (./verkefni.lot)
-\tf@lot=\write6
-\openout6 = `verkefni.lot'.
-
- [13] [14
-
-
-] [15] [16
-
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.219 \chapter
-              {Introduction} [1]pdfTeX warning (ext4): destination with the sam
-e identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.219 \chapter
-              {Introduction} [2
-
-
-]
-chapter 1.
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.221 \chapter
-              {Preliminaries} [3]pdfTeX warning (ext4): destination with the sa
-me identifier (name{page.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.221 \chapter
-              {Preliminaries} [4
-
-
-]
-chapter 2.
-pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.225 \chapter
-              {Rudin-Carleson theorem} [5]pdfTeX warning (ext4): destination wi
-th the same identifier (name{page.6}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.225 \chapter
-              {Rudin-Carleson theorem} [6
-
-
-]
-chapter 3.
-[7] [8
-
-
-]
-chapter 4.
-[9] [10
-
-
-]
-chapter 5.
-[11] [12
-
-
-]
-chapter A.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 273.
-[13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 273.
- (./verkefni.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 273.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 273.
-Package rerunfilecheck Info: File `verkefni.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 273.
- ) 
-Here is how much of TeX's memory you used:
- 23667 strings out of 492167
- 418819 string characters out of 6131558
- 627990 words of memory out of 5000000
- 27747 multiletter control sequences out of 15000+600000
- 550094 words of font info for 59 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 57i,13n,106p,10063b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/pu
-blic/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/s
-frm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsi1200.pfb></u
-sr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-
-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf-dist/fonts/type
-1/public/cm-super/sfss1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-sup
-er/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb
-></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/te
-xmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf-dist/fonts/
-type1/public/cm-super/sfti1200.pfb>
-Output written on verkefni.pdf (31 pages, 373287 bytes).
-PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 243 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+(/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+Underfull \hbox (badness 10000) i
