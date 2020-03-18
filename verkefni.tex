@@ -21,6 +21,8 @@
 \usepackage[format=plain,labelformat=simple,labelsep=colon]{caption}
 \usepackage{placeins}
 \usepackage{tabularx}
+\usepackage{mathabx}
+\usepackage{mathtools}
 % Configurations
 \graphicspath{{figs/}}
 
@@ -28,6 +30,8 @@
 \newtheorem{corollary}{Corollary}
 \newtheorem{remark}{Remark}
 \newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\renewcommand{\Re}{\text{Re }}
 
 \setlength{\parskip}{\baselineskip}
 \setlength{\parindent}{0cm}
@@ -208,10 +212,14 @@ Ekki birtist blaðsíðutal á þessum fyrstu síðum ritgerðarinnar en blaðs�
 \listoffigures
 \listoftables
 
+
+
 \chapter*{Abbreviations}
 \addcontentsline{toc}{chapter}{Abbreviations}
 Í þessum kafla mega koma fram listar yfir skammstafanir og/eða breytuheiti. Gefið kaflanum nafn við hæfi, t.d. Skammstafanir eða Breytuheiti. Þessum kafla má sleppa ef hans er ekki þörf. \\
 The section could be titled: Glossary, Variable Names, etc.
+
+
 
 \chapter*{Acknowledgments}
 \addcontentsline{toc}{chapter}{Acknowledgments}
@@ -221,13 +229,65 @@ The section could be titled: Glossary, Variable Names, etc.
 \setcounter{page}{1}
 \chapter{Introduction}
 
+
+
 \chapter{Preliminaries}
 \section{Measure theory}
 \section{Functional analysis}
 \subsection{Hahn-Banach}
 \subsection{Riesz representation theorem}
+
+
+
 \chapter{Rudin-Carleson theorem}
+\begin{theorem}
+Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$, let $f$ be a continuous function on $E$ and let $T$ be a simply connected subset of $\mathbb{C}$ such that $f(\mathbb{\overline{D}}) \subset T$.
+Then there exists an $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F(\mathbb{\overline{D}}) \subset T$. (TODO skilgreina allt)
+\end{theorem}
+We will break the proof into several (TODO how many?) lemmas.
+\begin{lemma}
+Let $E$ be a clsoed set of Lebesbue-measure $0$.
+Then there exists an integrable function $\mu > 1$ such that
+	$\mu$ is continuous on $\mathbb{T} \setminus E$,
+	$\mu = +\infty$ on $E$,
+	if $w \in E$ then $\mu(z) \xrightarrow{z \rightarrow w} +\infty$, and
+	$\mu$ has a bounded derivative on any closed subarc of $\mathbb{T} \setminus E$.
+\end{lemma}
+\begin{proof}
+The function $\mu$ is found by solving the Dirichlet problem. (TODO Thomas Ransford p. 95 4.2.6) (TODO finish this)
+\end{proof}
+\begin{lemma}
+If $f$ is a simple continuous function on $E$ such that $\Re f \geq 0$, then there exists an $F \in \mathcal{A}$ such that $F = f$ on $E$ and $\Re F \geq 0$ on $\overline{\mathbb{D}}$.
+\end{lemma}
+\begin{proof}
+We will show that this holds in the case where $E = E_0 \cup E_1$, $f = 0$ on $E_0$, $f = \alpha \neq 0$ on $E_1$ and $\Re \alpha \geq 0$.
+This suffices since simple functions are finite linear combinations of characteristic functions.
+\end{proof}
+\begin{proof}
+TODO
+\end{proof}
+\begin{corollary}[Fatou]
+Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$.
+There exists a function $f \in \mathcal{A}$ that vanishes on $E$ and nowhere else.
+\end{corollary}
+\begin{proof}
+It's clear from the theorem (TODO add ref) that there exists a function $f \in \mathcal{A}$ that vanishes on $E$.
+TODO
+\end{proof}
+
+
+
+
 \chapter{F. and M. Riesz theorem}
+\begin{theorem}
+All measures in $\mathcal{A}^{\bot}$ are absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$. (TODO define all)
+\end{theorem}
+\begin{proof}
+TODO
+\end{proof}
+
+
+
 \chapter{A generalization of the Rudin-Carleson theorem}
 This borrows from Bishop (reference TODO).
 \begin{theorem}[General Rudin-Carleson theorem]
