@@ -31,6 +31,7 @@
 \newtheorem{remark}{Remark}
 \newtheorem{example}{Example}
 \newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
 \renewcommand{\Re}{\text{Re }}
 
 \setlength{\parskip}{\baselineskip}
@@ -279,11 +280,121 @@ TODO
 
 
 \chapter{F. and M. Riesz theorem}
-\begin{theorem}
-All measures in $\mathcal{A}^{\bot}$ are absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$. (TODO define all)
+In this section we will endeavour to show that the annihilating measures of $\mathcal{A}|_{\mathbb{T}}$ are absolutely continuous with respect to the Lebesgue measure.
+We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of Rudin. %TODO add the reference to Rudin real and complex analysis.
+To attain the main result of this section we need some lemmas and definitions. %TODO rewrite these two lines
+To prove one of the lemmas we will also use the following famous theorem:
+\begin{definition}
+% TODO finish these
+Pointwise bounded and equicontinuity.
+\end{definition}
+\begin{theorem}[Arzela-Ascoli] %TODO prove this or move it to preliminaries
+Let $\mathcal{F}$ be a pointwise bounded equicontinuous collection of complex functions on a metric space $(X, d)$, and $X$ contains a countable dense subset.  %TODO change to 'X is separable'
+Then every sequence in $\mathcal{F}$ contains a subsequence that converges uniformly on every compact subsets of $X$.
 \end{theorem}
 \begin{proof}
+Let $E$ be a countable dense subset of $X$,
+	$\{f_n\}$ be a series in $\mathcal{F}$,
+	and $x_1, x_2, ...$ be an enumeration of $E$.
+\end{proof}
+\begin{definition}
+% TODO finish these
+Poisson kernel, Poisson integral, Poisson integral of a measure.
+\end{definition}
+\begin{lemma}
+\label{FMRlemma1}
+Let $\mu$ be a complex Borel measure, and $u = P[d\mu]$.
+Then
+\[
+	\|u_r\|_1 = \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})| d\theta \leq \|\mu\|.
+\]
+\end{lemma}
+\begin{proof}
 TODO
+\end{proof}
+\begin{lemma}
+\label{FMRlemma2}
+Let $f \in H^1$.
+Then there exists a $g \in L^1(\mathbb{T})$ such that $f = P[g]$.
+\end{lemma}
+\begin{proof}
+TODO
+\end{proof}
+\begin{lemma}
+%11.30(a) in Rudin
+\label{FMRlemma3}
+Let $u$ be harmonic in $\mathbb{D}$ and
+\[
+	\sup_{0 < r < 1} \|u_r\|_1 = M < \infty. %TODO define u_r
+\]
+Then there exists a unique complex Borel measure $\mu$ on $\mathbb{T}$ such that $u = P[d\mu]$.
+\end{lemma}
+We will need the following lemma in the proof of \ref{FMRlemma3}:
+\begin{lemma}
+\label{FMRlemma31}
+Let $X$ be a separable Banach space,
+	$\{ \Gamma_n\}$ be a sequence of linear functionals on $X$,
+	and $\sup_n \|\Gamma_n\| = M < \infty$.
+Then there exists a subsequence $\{\Gamma_{n_i}\}$ such that the limit 
+\[
+	\Gamma x = \lim_{i \rightarrow \infty} \Gamma_{n_i} x
+\]
+exists for every $x \in X$.
+We also have that $\Gamma$ is linear and $\|\Gamma\| \leq M$.
+\end{lemma}
+\begin{proof}
+\end{proof}
+\begin{proof}[Proof of \ref{FMRlemma3}]
+% TODO fix the Riesz rep thm ref. It's 6.19 in Rudin.
+\end{proof}
+
+\begin{theorem}[F. and M. Riesz theorem]
+If $\mu$ is a complex Borel measure on $\mathbb{T}$ and
+\[
+	\int e^{-int} d\mu = 0
+\]
+for $n = -1, -2, ...$, then $\mu \lll m$.
+\end{theorem}
+\begin{proof}
+Let $f = P[d\mu]$.
+If we set $z = re^{i\theta}$ we get that
+\[
+	P(z, e^{it})
+		= P_r(\theta - t)
+		= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in(\theta - t)}
+		= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int}.
+\]
+We can use the assumption of the theorem to write $f$ as a power series by
+\begin{align*}
+% TODO Fubini?
+	f(z) 
+		&= \int_{\mathbb{T}} P(z, e^{it}) d\mu(e^{it}) \\
+		&= \int_{\mathbb{T}} \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int} d\mu(e^{it}) \\
+		&= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta} \int_{\mathbb{T}} e^{-int} d\mu(e^{it}) \\
+		&= \sum_{n = 0}^{\infty} r^n e^{in\theta} \int_{\mathbb{T}} e^{-int} d\mu(e^{it}) \\
+		&= \sum_{n = 0}^{\infty} \hat{\mu}_n z^n,
+\end{align*}
+where $\hat{\mu}_n$ is the $n$-th Fourier coefficient of $\mu$.
+This along with \ref{FMRlemma1} gives us that $f \in H^1$. % TODO make this more clear
+We can now define a $g \in H^1$, by \ref{FMRlemma2}, such that $f = P[g]$.
+It follows from \ref{FMRlemma3} that $d\mu = f d\sigma$. %TODO define \sigma as Lebesgue on T scaled to 1.
+TODO
+\end{proof}
+\begin{corollary}
+Let $A$ be the closed subspace of $C(\mathbb{T})$ that consists of all functions that are restriction from $\mathcal{A}$ (TODO makes this def global and maybe call it something else).
+All measures in $A^{\bot}$ are absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$ (TODO define all).
+\end{corollary}
+\begin{proof}
+Let $\mu \in A^{\bot}$. By definition we have that
+\[
+	\int fd\mu = 0.
+\]
+Now since $t \mapsto e^{-int}$ is entire for $n = -1, -2, ...$ we have that their restriction to $\mathbb{T}$ are in $A$.
+Thus,
+\[
+	\int e^{-int} d\mu = 0
+\]
+for all $n = -1, -2, ...$ and $\mu \lll m$.
 \end{proof}
 
 
