@@ -283,19 +283,108 @@ TODO
 In this section we will endeavour to show that the annihilating measures of $\mathcal{A}|_{\mathbb{T}}$ are absolutely continuous with respect to the Lebesgue measure.
 We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of Rudin. %TODO add the reference to Rudin real and complex analysis.
 To attain the main result of this section we need some lemmas and definitions. %TODO rewrite these two lines
-To prove one of the lemmas we will also use the following famous theorem:
+To prove one of the lemmas we will also use the following two famous theorems:
 \begin{definition}
 % TODO finish these
 Pointwise bounded and equicontinuity.
 \end{definition}
+\begin{theorem}[Bolzano-Weierstrass] %TODO prove this or move it to preliminaries
+%                                                                                           v This has to be weak because of (M, M, M, M, M, M, ...)
+Let $(a_n)_{n \in \mathbb{N}}$ be a sequence of numbers in $\mathbb{R}^n$, such that $|a_n| < M < \infty$, for all $k \in \mathbb{N}$.
+There than exists and infinite $S \subset \mathbb{N}$ such that $(a_n)_{n \in S}$ is convergent.
+\end{theorem}
+\begin{proof}
+Let's first assume that the sequence is in $\mathbb{R}$,
+	that no element in it is repeated infinitely often (there is nothing to prove in that case),
+	and that $a_n \in ]0, 1[$ for all $n \in \mathbb{N}$.
+The last assumption can be done with out loss of generality by studying the sequence $((a_n + M)/(2M))_{n \in \mathbb{N}}$ instead.
+We will obtain the subsequence by a diagonal process.
+Let $S_0 = \mathbb{N}$, $S_0^- = \{n \in S_0;\ a_n < 1/2\}$, and $S_0^+ = \{n \in S_0;\ a_n > 1/2\}$.
+We then set $S_1 = S_0^-$ if it is infinite, but $S_1 = S_0^+$ otherwise.
+This gives us a subsequence $(a_n)_{n \in S_1}$ such that
+\[
+	\sup_{n \in S_1} a_n - \inf_{n \in S_1} a_n < 1/2.
+\]
+We can then repeat this to get a sequence of sets $(S_n)_{n \in \mathbb{N}}$ such that $S_0 \supset S_1 \supset S_2 \supset...$ and 
+\[
+	\sup_{n \in S_k} a_n - \inf_{n \in S_k} a_n < 1/2^{k - 1},
+\]
+for all $k \in \mathbb{N}$.
+Specifically, if we have $S_k$ we set
+\[
+	U = m/2^k,\ 
+	L = (m + 1)/2^k
+\]
+$S_k^- = \{n \in S_k;\ a_n < (U + L)/2\}$, and $S_k^+ = \{n \in S_k;\ a_n > (U + L)/2\}$.
+We now set $S_{k + 1} = S_k^-$ if it has infinitely many elements, otherwise we set $S_{k + 1} = S_k^+$.
+We conclude our construction by setting
+\[
+	S = \bigcup_{n \in \mathbb{N}} r_n,
+\]
+where $r_n$ is the $n$-th smallest element of $S_n$.
+This gives us the convergent sequence $(a_n)_{n \in S}$ with limit
+\[
+	\sum_{k = 0}^{\infty} \delta_k \frac{1}{2^k}
+\]
+where
+\[
+	\delta_k = \left \{
+	\begin{array}{c c}
+		0,\ & \text{if we chose } S_k^- \\
+		1,\ & \text{if we chose } S_k^+
+	\end{array}.
+	\right .
+\]
+
+To show the result for $\mathbb{R}^n$ we can start by finding a subsequence such that the first coordinate is convergent.
+We can then chose a subsequence thereof such that the second coordinate is also convergent.
+Now the first two coordinates are convergent.
+If we do this $n - 2$ more times we get a desired subsequence.
+% TODO What does (a_n)_{n \in S} mean????
+\end{proof}
+\begin{remark}
+The theorem above clearly holds for sequences in $\mathbb{C}$ as well.
+\end{remark}
 \begin{theorem}[Ascoli-Arzela] %TODO prove this or move it to preliminaries
 Let $\mathcal{F}$ be a pointwise bounded equicontinuous collection of complex functions on a metric space $(X, d)$, and $X$ contains a countable dense subset.  %TODO change to 'X is separable'
 Then every sequence in $\mathcal{F}$ contains a subsequence that converges uniformly on every compact subsets of $X$.
 \end{theorem}
 \begin{proof}
 Let $E$ be a countable dense subset of $X$,
-	$\{f_n\}$ be a series in $\mathcal{F}$,
+	$(f_n)_{n \in \mathbb{N}}$ be a series in $\mathcal{F}$,
 	and $x_1, x_2, ...$ be an enumeration of $E$.
+We will prove the theorem in two steps.
+The first step is finding a subsequence of $(f_n)_{n \in \mathbb{N}}$ that's pointwise convergent on $E$ using the point wise boundedness along with Bolzano-Weierstrass. %TODO add ref
+The second step is using the equicontinuity to show that this gives us uniform continuity on compact subsets.
+
+Let's first set $S_0 = \mathbb{N}$.
+Pointwise boundedness gives us that the sequence $(f_n(x_1))_{n \in S_0}$ has a convergent subsequence.
+Let $S_1$ index that subsequence.
+We can use this process to generate sets $S_0 \supset S_1 \supset ...$ such that $(f_n(x_k))_{n \in S_k}$ is convergent.
+We then set
+\[
+	S = \bigcup_{k \in \mathbb{N}} r_k
+\]
+where $r_n$ is the $k$-th smallest element of $S_k$.
+We now have concluded the first step of the proof.
+
+We will now assume the $(f_n)_{n \in \mathbb{N}}$ is pointwise convergent on $E$,
+	let $K$ be a compact subset of $X$, and
+	$\varepsilon > 0$.
+Equicontinuity gives us a $\delta > 0$ such that $d(x, y) < \delta$ implies that $|f_n(x) - f_n(y)| < \varepsilon /3$, for all $n$.
+Let's now cover $K$ with $m$ balls of radius $\delta /2$ and call the $k$-th ball $B_k$.
+We can now set $p_k$ as a point in $B_k$.
+This point exists because $E$ is dense in $X$.
+Pointwise convergence on $E$ let's us chose an $N$ such that $|f_{n_1}(p_k) - f_{n_2}(p_k)| < \varepsilon /3$ for $k = 1, 2, ..., m$ and all $n_1, n_2 > N$.
+Let's conclude by setting $x \in K$.
+Then there is a $k$ such that $x \in B_k$ and thus $d(x, p_k) < \delta$.
+The choice of $\delta$ and $N$ then gives us that
+\begin{align*}
+	|f_{n_1}(x) - f_{n_2}(x)|
+	& \leq |f_{n_1}(x) - f_{n_1}(p_k)| + |f_{n_1}(p_k) - f_{n_2}(p_k)| + |f_{n_2}(p_k) - f_{n_2}(x)|\\
+	& < \varepsilon /3 + \varepsilon /3 + \varepsilon /3 \\
+	& = \varepsilon.
+\end{align*}
 \end{proof}
 \begin{definition}
 % TODO finish these
@@ -333,19 +422,84 @@ We will need the following lemma in the proof of \ref{FMRlemma3}:
 \begin{lemma}
 \label{FMRlemma31}
 Let $X$ be a separable Banach space,
-	$\{ \Gamma_n\}$ be a sequence of linear functionals on $X$,
+	$(\Gamma_n)_{n \in \mathbb{N}}$ be a sequence of linear functionals on $X$,
 	and $\sup_n \|\Gamma_n\| = M < \infty$.
 Then there exists a subsequence $\{\Gamma_{n_i}\}$ such that the limit 
 \[
-	\Gamma x = \lim_{i \rightarrow \infty} \Gamma_{n_i} x
+	\Gamma x = \lim_{k \rightarrow \infty} \Gamma_{n_k}\ x
 \]
 exists for every $x \in X$.
 We also have that $\Gamma$ is linear and $\|\Gamma\| \leq M$.
 \end{lemma}
 \begin{proof}
+We have that $|\Gamma_n\ x| \leq M \|x\|$ and
+\begin{align*}
+	|\Gamma_n\ x - \Gamma_n\ y|
+	&= |\Gamma_n (x - y)|\\
+	&\leq M\|x - y\|.
+\end{align*}
+The first inequality gives us pointwise boundedness and the second gives us equicontinuity.
+Now, since singletons are compact, Ascoli-Arzela gives us a subsequence, let's index it by $S$, such that $(\Gamma_n x)_{n \in S}$ is convergent for all $x \in X$. % TODO add ref to Ascoli-Arzela
+Let's now define $\Gamma$ by
+\[
+	\Gamma(x) = \lim_{k \in S} \Gamma_k\ x,
+\]
+see the
+\begin{align*}
+	\Gamma(x) + \Gamma(y)
+	&= \lim_{k \in S} \Gamma_k\ x + \lim_{k \in S} \Gamma_k\ y\\
+	&= \lim_{k \in S} \left ( \Gamma_k\ x + \Gamma_k\ y \right )\\
+	&= \lim_{k \in S} \Gamma_k(x + y)\\
+	&= \Gamma(x + y),
+\end{align*}
+where the third equality holds because addition is continuous, and $a\Gamma(x) = \Gamma(ax)$ obviously holds.
+So $\Gamma$ is linear.
+Lastly
+\begin{align*}
+	\|\Gamma\|
+	&= \sup \{|\Gamma x|;\ \|x\| \leq 1\}\\
+	&= \sup \left \{ \left |\lim_{n \in S} \Gamma_n x \right|;\ \|x\| \leq 1 \right \}\\
+	&\leq \sup \{ M;\ \|x\| \leq 1 \}\\
+	&= M.
+\end{align*}
 \end{proof}
 \begin{proof}[Proof of \ref{FMRlemma3}]
 % TODO fix the Riesz rep thm ref. It's 6.19 in Rudin.
+Let $\Gamma_r$, for $r \in [0, 1[$,  be linear functionals on $C(\mathbb{T})$ defined by
+\[
+	\Gamma_r g = \int_{\mathbb{T}} gu_r d\sigma.
+\]
+If $\|g\| \leq 1$ is assummed we get that
+\[
+\Gamma_r\ g = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} u_r\ d\sigma = \|u_r\|_1 \leq M.
+\]
+so
+\[
+	\|\Gamma_r\| \leq M.
+\]
+By the above lemma % TODO add ref
+and the Riezs representation theorem % TODO add ref
+we get a measure $\mu$ on $\mathbb{T}$ with $\|\mu\| \leq M$, and a sequence $(r_n)_{n \in \mathbb{N}}$ on $[0, 1[$ with limit $1$, such that
+\begin{equation}
+	\label{eq:1}
+	\lim_{n \rightarrow \infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}g\ d\mu
+\end{equation}
+for all $g \in C(\mathbb{T})$.
+Let's now define functions $h_k$ on $\overline{\mathbb{B}}$ by $h_k(z) = u(r_kz)$.
+We get that, since $u$ is harmonic on $r\mathbb{B}$ for $r \in ]0, 1[$, the functions $h_k$ are harmonic on $\mathbb{B}$ and continuous on $\overline{\mathbb{B}}$.
+So each of them can be represented by the Poisson integral of their restriction to $\mathbb{T}$, according to Ramsford. % TODO add ref to Ramsford, solution of the Dirichlet problem
+Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
+% TODO not use h. instead just looking at u_{r_n} should work.
+\begin{align*}
+	u(z)
+	&= \lim_{n \rightarrow \infty} u(r_nz)\\
+	&= \lim_{n \rightarrow \infty} h_n(z)\\
+	&= \lim_{n \rightarrow \infty} \int_{\mathbb{T}}P(z, e^{it}) h_n(e^{it})\ d\sigma(e^{it})\\
+	&= \lim_{n \rightarrow \infty} \int_{\mathbb{T}}P(z, e^{it}) u_{r_n}(e^{it})\ d\sigma(e^{it})\\
+	&= \int_{\mathbb{T}}P(z, e^{it})\ d\mu(e^{it})\\
+	&= P[d\mu](z),
+\end{align*}
+where the fifth equlity is achived by putting $g = P(z, e^{it})$ into \ref{eq:1}.
 \end{proof}
 
 \begin{theorem}[F. and M. Riesz theorem]
