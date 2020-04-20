@@ -33,6 +33,7 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{definition}{Definition}
 \renewcommand{\Re}{\text{Re }}
+\renewcommand{\Im}{\text{Im }}
 
 \setlength{\parskip}{\baselineskip}
 \setlength{\parindent}{0cm}
@@ -241,28 +242,114 @@ The section could be titled: Glossary, Variable Names, etc.
 
 
 \chapter{Rudin-Carleson theorem}
-\begin{theorem}
+\begin{theorem}[Rudin-Carleson theroem]
 Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$, let $f$ be a continuous function on $E$ and let $T$ be a simply connected subset of $\mathbb{C}$ such that $f(\mathbb{\overline{D}}) \subset T$.
-Then there exists an $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F(\mathbb{\overline{D}}) \subset T$. (TODO skilgreina allt)
+Then there exists an $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F(\mathbb{\overline{D}}) \subset T$. % TODO skilgreina allt
 \end{theorem}
-We will break the proof into several (TODO how many?) lemmas.
+We will break the proof into several lemmas.  % TODO how many?
 \begin{lemma}
-Let $E$ be a clsoed set of Lebesbue-measure $0$.
+Let $H$ be a closed set of Lebesbue-measure $0$.
 Then there exists an integrable function $\mu > 1$ such that
-	$\mu$ is continuous on $\mathbb{T} \setminus E$,
-	$\mu = +\infty$ on $E$,
-	if $w \in E$ then $\mu(z) \xrightarrow{z \rightarrow w} +\infty$, and
-	$\mu$ has a bounded derivative on any closed subarc of $\mathbb{T} \setminus E$.
+	$\mu$ is continuous on $\mathbb{T} \setminus H$,
+	$\mu = +\infty$ on $H$,
+	if $w \in H$ then $\mu(z) \xrightarrow{z \rightarrow w} +\infty$, and
+	$\mu$ has a bounded derivative on any closed subarc of $\mathbb{T} \setminus H$.
 \end{lemma}
 \begin{proof}
-The function $\mu$ is found by solving the Dirichlet problem. (TODO Thomas Ransford p. 95 4.2.6) (TODO finish this)
+% Er það?????? The function $\mu$ is found by solving the Dirichlet problem. % TODO Thomas Ransford p. 95 4.2.6 and TODO finish this
+TODO
 \end{proof}
 \begin{lemma}
 If $f$ is a simple continuous function on $E$ such that $\Re f \geq 0$, then there exists an $F \in \mathcal{A}$ such that $F = f$ on $E$ and $\Re F \geq 0$ on $\overline{\mathbb{D}}$.
 \end{lemma}
 \begin{proof}
-We will show that this holds in the case where $E = E_0 \cup E_1$, $f = 0$ on $E_0$, $f = \alpha \neq 0$ on $E_1$ and $\Re \alpha \geq 0$.
-This suffices since simple functions are finite linear combinations of characteristic functions.
+It suffices to show that this holds if $f$ takes only two values on $E$, since simple functions are finite linear combinations of characteristic functions.
+Let's assume these values are $0$ and $\alpha \neq 0$, with $\Re \alpha \geq 0$, $E_0 = f^{-1}(0)$, and $E_1 = f^{-1}(\alpha)$.
+Our assumption that $f$ only takes two values then implies that $E_0 \cap E_1 = E$.
+
+Let $u_H(z)$ be the Poisson integral of the function from the above lemma with $H$ as $E$. % TODO add ref fix up this line
+This function is continuous on $\mathbb{T} \setminus H$, $u_H|_H = \infty$, and $\lim_{z \rightarrow w} u_H(z) = \infty$ for $w \in H$.
+...
+We now define
+\[
+	g_H(z) =
+	\left \{
+		\begin{array}{l l}
+		u_H(z) + iv_H(z), & z \in \mathbb{D} \setminus H\\
+		\infty, & \text{otherwise}
+		\end{array}.
+	\right .
+\]
+By our construction of $u_H$ we see the $\Re g > 1$, so it has a well defined square root. % TODO look better at this
+Let's call it $h_H$ and define
+\[
+	q = \frac{h_{E_1}}{h_{E_0} + h_{E_1}}.
+\]
+Note that $|\arg h_H(z)| < \pi/4$ since if a $w \in \mathbb{C}$ had an argument outside of this range then its square would have and argument outside of the range $[-\pi/2, \pi/2]$ meaning $\Re w^2 < 0$.
+Also, $q(z) = 0$ if and only if $h_{E_0} = \infty$, so $q$ is zero only on $E_0$, and $q(z) = 1$ if and only if $h_{E_1} = \infty$, so $q$ is one only on $E_1$.
+We now want to show that $|\Re q| \leq 1$.
+We will let $z, w \in \mathbb{C}$, with $|\arg z|, |\arg w| < \pi/4$ and $\Re z, \Re w > 1$, and show that $0 < \Re z/(w + z) < 1$.
+
+Firstly note that
+\[
+	\frac{z}{w + z}
+	=
+	\frac{1}{w/z + 1}
+\]
+so 
+\[
+	\arg \frac{z}{w + z} = -\arg \left ( \frac{w}{z} + 1 \right )
+\]
+and
+\[
+	|\arg w/z| = |\arg w - \arg z| < |\arg w| + |\arg z| < \pi/4 + \pi/4 = \pi/2.
+\]
+So $w/z$ is in the right halfplane and, since $\arctan(y/x)$ is decreasing in $x$ for positive $y$, we get
+\[
+	\arg \frac{z}{w + z} = -\arg \left ( \frac{w}{z} + 1 \right ) < -\arg  \frac{w}{z}
+\]
+and thus
+\[
+	\left |\arg \frac{z}{w + z} \right | < \left |\arg \frac{w}{z} \right | < \pi/2.
+\]
+We know $\arctan(y/x)$ is decreasing in $x$ for positive $y$ because
+\[
+	\frac{d}{dx}\arctan \left (\frac{y}{x} \right ) = -\frac{y}{x^2 + y^2} < 0.
+\]
+So $0 < \Re z/(w + z)$.
+We can also see that
+\begin{align*}
+	\left | \Re \frac{z}{z + w} \right |
+	&= \frac{1}{2} \left | \frac{z}{z + w} + \frac{\overline{z}}{\overline{z} + \overline{w}} \right |\\
+	&\leq \frac{1}{2} \left ( \frac{|z|}{|z + w|} + \frac{|\overline{z}|}{|\overline{z} + \overline{w}|} \right )\\
+	&= \frac{|z|}{|z + w|}\\
+	&= \frac{1}{1 + |w|/|z|}\\
+	&< 1.
+\end{align*}
+
+So we have constructed a function $q$ that maps $\overline{D}$ to the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$.
+We then let $\Phi$ be the conformal mapping from the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$ to $\{z;\ 0 \leq \Re z \leq \Re \alpha\}$. % TODO Rudin calls these ribbons rectangles, but couldn't the imaginary part be unbounded?
+We will also choose $\Phi$ such that $\Phi(0) = 0$ and $\Phi(1) = \alpha$.
+We can then let $f = \Phi \circ q$ and conclude the proof.
+
+\end{proof}
+\begin{lemma}
+If $f$ is a simple continuous function on $E$ that maps $E$ into a simply connected $T$, then there exists a $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F$ maps $\overline{\mathbb{D}}$ into $T$.
+\end{lemma}
+\begin{proof}
+TODO
+\end{proof}
+\begin{lemma}
+If $f$ is a continue function on $E$ which maps $E$ into $S = \{z;\ |\max(\Re z, \Im z)| \leq 1\}$, then there exists a sequence $(f_n)_{n \in \mathbb{N}}$ of simple continuous function on $E$ such that
+\[
+	f(x) = \sum_{n \in \mathbb{N}} f_n(z),
+\]
+\[
+	f_n(E) \subset 2^{-n}S.
+\]
+\end{lemma}
+\begin{proof}
+TODO
 \end{proof}
 \begin{proof}
 TODO
@@ -272,7 +359,8 @@ Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$.
 There exists a function $f \in \mathcal{A}$ that vanishes on $E$ and nowhere else.
 \end{corollary}
 \begin{proof}
-It's clear from the theorem (TODO add ref) that there exists a function $f \in \mathcal{A}$ that vanishes on $E$.
+It's clear from the theorem % TODO add ref
+that there exists a function $f \in \mathcal{A}$ that vanishes on $E$.
 TODO
 \end{proof}
 
@@ -285,10 +373,21 @@ We will show this to be a corollary of the F. and M. Riesz theorem, which we wil
 To attain the main result of this section we need some lemmas and definitions. %TODO rewrite these two lines
 To prove one of the lemmas we will also use the following two famous theorems:
 \begin{definition}
-% TODO finish these
-Pointwise bounded and equicontinuity.
+Let $\mathcal{F}$ be a family of complex functions on a metric space $(X, d)$.
+
+We say that the family is \emph{pointwise bounded} if for all $x \in X$ there exists a constant $M < \infty$ such that
+\[
+	|f(x)| < M,\text{ for all } f \in \mathcal{F}.
+\]
+Note that $M$ is dependent on $x$.
+
+We say that the family is \emph{equicontinuous} if for all $\varepsilon > 0$ there exists a $\delta > 0$ such that
+\[
+	|f(x) - f(y)| < \varepsilon,\text{ for all } f \in \mathcal{F}\text{ and } x, y \in X\text{ such that } d(x, y) < \delta.
+\]
+Note here that $\delta$ is globally defined and only dependent on $\varepsilon$.
 \end{definition}
-\begin{theorem}[Bolzano-Weierstrass] %TODO prove this or move it to preliminaries
+\begin{theorem}[Bolzano-Weierstrass]
 %                                                                                           v This has to be weak because of (M, M, M, M, M, M, ...)
 Let $(a_n)_{n \in \mathbb{N}}$ be a sequence of numbers in $\mathbb{R}^n$, such that $|a_n| < M < \infty$, for all $k \in \mathbb{N}$.
 There than exists and infinite $S \subset \mathbb{N}$ such that $(a_n)_{n \in S}$ is convergent.
@@ -307,13 +406,13 @@ This gives us a subsequence $(a_n)_{n \in S_1}$ such that
 \]
 We can then repeat this to get a sequence of sets $(S_n)_{n \in \mathbb{N}}$ such that $S_0 \supset S_1 \supset S_2 \supset...$ and 
 \[
-	\sup_{n \in S_k} a_n - \inf_{n \in S_k} a_n < 1/2^{k - 1},
+	\sup_{n \in S_k} a_n - \inf_{n \in S_k} a_n < 2^{1 - k},
 \]
 for all $k \in \mathbb{N}$.
 Specifically, if we have $S_k$ we set
 \[
-	U = m/2^k,\ 
-	L = (m + 1)/2^k
+	U = m2^{-k},\ 
+	L = (m + 1)2^{-k}
 \]
 $S_k^- = \{n \in S_k;\ a_n < (U + L)/2\}$, and $S_k^+ = \{n \in S_k;\ a_n > (U + L)/2\}$.
 We now set $S_{k + 1} = S_k^-$ if it has infinitely many elements, otherwise we set $S_{k + 1} = S_k^+$.
@@ -324,7 +423,7 @@ We conclude our construction by setting
 where $r_n$ is the $n$-th smallest element of $S_n$.
 This gives us the convergent sequence $(a_n)_{n \in S}$ with limit
 \[
-	\sum_{k = 0}^{\infty} \delta_k \frac{1}{2^k}
+	\sum_{k = 0}^{\infty} \delta_k 2^{-k}
 \]
 where
 \[
@@ -345,7 +444,7 @@ If we do this $n - 2$ more times we get a desired subsequence.
 \begin{remark}
 The theorem above clearly holds for sequences in $\mathbb{C}$ as well.
 \end{remark}
-\begin{theorem}[Ascoli-Arzela] %TODO prove this or move it to preliminaries
+\begin{theorem}[Ascoli-Arzela]
 Let $\mathcal{F}$ be a pointwise bounded equicontinuous collection of complex functions on a metric space $(X, d)$, and $X$ contains a countable dense subset.  %TODO change to 'X is separable'
 Then every sequence in $\mathcal{F}$ contains a subsequence that converges uniformly on every compact subsets of $X$.
 \end{theorem}
@@ -395,11 +494,38 @@ Poisson kernel, Poisson integral, Poisson integral of a measure.
 Let $\mu$ be a complex Borel measure, and $u = P[d\mu]$.
 Then
 \[
-	\|u_r\|_1 = \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})| d\theta \leq \|\mu\|.
+	\|u_r\|_1 \leq \|\mu\|.
 \]
 \end{lemma}
 \begin{proof}
-TODO
+% TODO reword this part
+First, we need to see that, if $n \neq 0$
+\[
+	in\int_{-\pi}^{\pi} e^{int}\ dt
+	= (e^{in\pi} - e^{-in\pi})
+	= (e^{in\pi} - e^{-i(2n\pi - n\pi)})
+	= (e^{in\pi} - e^{in\pi})
+	= 0,
+\]
+so
+\begin{align*}
+	\int_{-\pi}^{\pi} P_r(t)\ dt
+	&= \int_{-\pi}^{\pi} \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}\ dt\\
+	&= \sum_{n \in \mathbb{Z}} \int_{-\pi}^{\pi} r^{|n|}e^{int}\ dt\\
+	&= \int_{-\pi}^{\pi} \ dt\\
+	&= 2\pi.
+\end{align*}
+Fubini let's us
+\begin{align*}
+	\|u\|_1
+	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})| d\theta\\
+	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} \left | \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d\mu(e^{it}) \right | d\theta\\
+	&\leq \frac{1}{2\pi} \int_{-\pi}^{\pi} \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d|\mu(e^{it})| d\theta\\
+	&= \int_{\mathbb{T}} \frac{1}{2\pi} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it})\ d\theta d|\mu(e^{it})|\\
+	&= \int_{\mathbb{T}}\ d|\mu(e^{it})|\\
+	&= |\mu|(\mathbb{T})\\
+	&= \|\mu\|.
+\end{align*}
 \end{proof}
 \begin{lemma}
 \label{FMRlemma2}
@@ -407,7 +533,7 @@ Let $f \in H^1$.
 Then there exists a $g \in L^1(\mathbb{T})$ such that $f = P[g]$.
 \end{lemma}
 \begin{proof}
-TODO
+% TODO
 \end{proof}
 \begin{lemma}
 %11.30(a) in Rudin
@@ -500,6 +626,46 @@ Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
 	&= P[d\mu](z),
 \end{align*}
 where the fifth equlity is achived by putting $g = P(z, e^{it})$ into \ref{eq:1}.
+This concludes the proof of excistence.
+% TODO show uniqueness
+
+Let's assume that $P[d\mu] = 0$, and let $f \in C(\mathbb{T})$, $u = P[f]$ and $v = P[d\mu]$.
+We firstly have the symmetry
+\[
+	P(re^{i\theta}, e^{it})
+	=
+	P(re^{it}, e^{i\theta}).
+\]
+This symmetry is due to
+\[
+	|e^{it} - re^{i\theta}|
+	=
+	|1 - re^{i(\theta - t)}|
+	=
+	|1 - re^{i(t - \theta)}|
+	=
+	|e^{i\theta} - re^{it}|,
+\]
+which is geometrically intuitive.
+The first and last equalities hold because the euclidian metric is rotationally invariant, and the second euality holds becuase the distance from $z$ to a real number $a$ is the same distance from $\overline{z}$ to $a$.
+We now obtain
+\begin{align*}
+\int_{\mathbb{T}} u_r d\mu
+&= \int_{\mathbb{T}} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it}) f(e^{i\theta})\ d\theta d\mu(e^{it})\\
+&= \int_{-\pi}^{\pi} f(e^{i\theta}) \int_{\mathbb{T}} P(re^{it}, e^{i\theta})\ d\mu(e^{it}) d\theta\\
+&= \int_{-\pi}^{\pi} f(e^{i\theta}) v_r\ d\theta\\
+&= \int_{\mathbb{T}} fv_r\ d\sigma.
+\end{align*}
+If we let $r \rightarrow 1$ we get
+\[
+	\int_{\mathbb{T}}f\ d\mu = 0.
+\]
+This holds for all $f \in C(\mathbb{T})$, so the measure $\mu$ represents zero in the dual of $C(\mathbb{T})$.
+The Riesz representation theorem then tells us that $|\mu|(\mathbb{T}) = 0$, so $\mu = 0$.
+
+Now let $\lambda$ and $\nu$ be measures on $\mathbb{T}$ such that $P[d\lambda] = P[d\nu]$.
+We have that $P[d(\lambda - \nu)] = 0$, so, as shown above $\lambda - \nu = 0$.
+Moreover $\lambda = \nu$, which concludes the proof of uniquness.
 \end{proof}
 
 \begin{theorem}[F. and M. Riesz theorem]
@@ -535,8 +701,8 @@ It follows from \ref{FMRlemma3} that $d\mu = f d\sigma$. %TODO define \sigma as 
 TODO
 \end{proof}
 \begin{corollary}
-Let $A$ be the closed subspace of $C(\mathbb{T})$ that consists of all functions that are restriction from $\mathcal{A}$ (TODO makes this def global and maybe call it something else).
-All measures in $A^{\bot}$ are absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$ (TODO define all).
+Let $A$ be the closed subspace of $C(\mathbb{T})$ that consists of all functions that are restriction from $\mathcal{A}$. % TODO makes this def global and maybe call it something else
+All measures in $A^{\bot}$ are absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$. % TODO define all
 \end{corollary}
 \begin{proof}
 Let $\mu \in A^{\bot}$. By definition we have that
@@ -554,7 +720,7 @@ for all $n = -1, -2, ...$ and $\mu \lll m$.
 
 
 \chapter{A generalization of the Rudin-Carleson theorem}
-This borrows from Bishop (reference TODO).
+This borrows from Bishop. % TODO add reference
 \begin{theorem}[General Rudin-Carleson theorem]
 Let $X$ be a compact Hausdorff space,
 	$V = (C(X), \| \cdot \|_{\infty})$,
@@ -572,8 +738,10 @@ It suffices to show that $f \in \phi(U_r)$.
 Let's first show that $f \in \overline{\phi(U_r)} =: V_r$, by assuming otherwise, and showing it leads to a contradiction.
 
 We now assume $f \not \in V_r$.
-By Hahn-Banach (TODO ref) we can define a bounded linear functional $\alpha$, such that $\alpha(f) > 1$ and $|\alpha(h)| < 1$, for $h \in V_r$.
-We can then define a measure $\mu_1$ by the Riesz-representation theorem (TODO ref) that fulfills
+By Hahn-Banach % TODO ref
+we can define a bounded linear functional $\alpha$, such that $\alpha(f) > 1$ and $|\alpha(h)| < 1$, for $h \in V_r$.
+We can then define a measure $\mu_1$ by the Riesz-representation theorem % TODO ref
+that fulfills
 \[
 	\alpha(g) = \int g d\mu_1
 \]
@@ -619,7 +787,7 @@ Now $F \in B$,
 \[
 	\|F\| \leq \|F_1\| + \|F - F_1\| = r + \sum_{k = 2}^{\infty}2^{1 - n}\lambda = r + \lambda = 1,
 \]
-and $F = f$ on $S$. (TODO bæta við matinu, svo línan að ofan meiki sens)
+and $F = f$ on $S$. % TODO bæta við matinu, svo línan að ofan meiki sens
 \end{proof}
 \begin{corollary}
 Let $X$ be a compact Hausdorff space,
@@ -628,24 +796,27 @@ Let $X$ be a compact Hausdorff space,
 	$B^{\bot}$ be the annihilating measures for $B$,
 	$S$ be a closed subset of $X$,
 	and $f$ be a continues function on $S$.
-If $S$ is $B^{\bot}$-null (TODO define this) then there exists a function $F \in B$ such that $F = f$ on $S$.
+If $S$ is $B^{\bot}$-null % TODO define this
+then there exists a function $F \in B$ such that $F = f$ on $S$.
 \end{corollary}
 \begin{proof}
-If $S$ is $B^{\bot}$-null we have that $\int_S f d\mu = 0$ for all $\mu \in B^{\bot}$ (TODO add ref to above).
+If $S$ is $B^{\bot}$-null we have that $\int_S f d\mu = 0$ for all $\mu \in B^{\bot}$. % TODO add ref to above
 \end{proof}
 \begin{remark}
-The corollary is the version of the theorem from Bishop (TODO add ref here).
-Note also that if we set $X = \mathbb{T}$ and $B = \mathcal{A}$ we can use F. and M. Riesz (TODO add ref here) to prove the classical Rudin-Carleson theorem (TODO add ref here).
+The corollary is the version of the theorem from Bishop. % TODO add ref here
+Note also that if we set $X = \mathbb{T}$ and $B = \mathcal{A}$ we can use F. and M. Riesz % TODO add ref here
+to prove the classical Rudin-Carleson theorem. % TODO add ref here
 \end{remark}
-It is of course worth noting an applications of (TODO REF to theorem) where the corollary fails.
+It is of course worth noting an applications of where the corollary fails.  % TODO REF to theorem)
 \begin{example}
 Let $X = \mathbb{T}$,
-	$B = \mathcal{A}$ (TODO define this),
-	$E$ be a closed $m$-null (TODO define this, an maybe change to $m_{\sigma}$) subset of $\partial \mathbb{T}$ that is not dense in $E$,
+	$B = \mathcal{A}$, % TODO define this
+	$E$ be a closed $m$-null % TODO define this, an maybe change to $m_{\sigma}$
+	subset of $\partial \mathbb{T}$ that is not dense in $E$,
 	$F = \{ e^{i\theta};\ a \leq \theta \leq b \}$,
 	and choose $a$ and such that $E$ and $F$ are disjoint and $a \neq b$.
 The last assumption restricts us to $E$ that are not dense in the $\mathbb{E}$.
-Since $a \neq b$ we obtain that $S := E \cup F$ does not fulfill the requirements of the Rudin-Carelson theorem (TODO add ref here) nor the above corollary (TODO add ref).
+Since $a \neq b$ we obtain that $S := E \cup F$ does not fulfill the requirements of the Rudin-Carelson theorem nor the above corollary. % TODO add refs
 Let's choose $f$ such that $f = 0$ on $F$, and $f$ is continues on $S$.
 We now have for all $\mu \in \mathcal{A}^{\bot}$
 \begin{align*}
@@ -655,9 +826,11 @@ We now have for all $\mu \in \mathcal{A}^{\bot}$
 	&= 0 + \left | \int_F f d\mu \right |\\
 	&= 0.
 \end{align*}
-The F. and M. Riesz theorem (TODO add ref here) tells us the since $E$ is $m$-null it is also $\mu$-null, which gives the third step.
+The F. and M. Riesz theorem %TODO add ref here
+tells us the since $E$ is $m$-null it is also $\mu$-null, which gives the third step.
 The final step stems from the fact that $f$ vanishes on $F$.
-We now see the $X$, $B$, and $f$ are all as in theorem (TODO add ref) so there exists a $F \in B$, such that $F = f$ on S.
+We now see the $X$, $B$, and $f$ are all as in theorem % TODO add ref
+so there exists a $F \in B$, such that $F = f$ on S.
 \end{example}
 
 \appendix

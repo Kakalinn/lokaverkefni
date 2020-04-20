@@ -10,6 +10,6 @@
 \contentsline {subsection}{\numberline {2.2.1}Hahn-Banach}{5}{subsection.2.2.1}% 
 \contentsline {subsection}{\numberline {2.2.2}Riesz representation theorem}{5}{subsection.2.2.2}% 
 \contentsline {chapter}{\numberline {3}Rudin-Carleson theorem}{7}{chapter.3}% 
-\contentsline {chapter}{\numberline {4}F. and M. Riesz theorem}{9}{chapter.4}% 
-\contentsline {chapter}{\numberline {5}A generalization of the Rudin-Carleson theorem}{15}{chapter.5}% 
-\contentsline {chapter}{\numberline {A}Anna\IeC {\dh }}{19}{appendix.A}% 
+\contentsline {chapter}{\numberline {4}F. and M. Riesz theorem}{11}{chapter.4}% 
+\contentsline {chapter}{\numberline {5}A generalization of the Rudin-Carleson theorem}{19}{chapter.5}% 
+\contentsline {chapter}{\numberline {A}Anna\IeC {\dh }}{23}{appendix.A}% 
