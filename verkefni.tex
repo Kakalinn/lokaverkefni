@@ -239,6 +239,7 @@ The section could be titled: Glossary, Variable Names, etc.
 \chapter{Preliminaries}
 \section{Measure theory}
 \section{Complex analysis in one variable}
+\subsection{Caratheodory} % TODO Spell checka nafnið
 \subsection{The Riemann Mapping Theorem}
 We will start of with a definition. % TODO reword
 \begin{definition}
@@ -249,12 +250,33 @@ The fact that the inverse is homomorphic is actually redundant.
 It can be shown \cite{green and krantz bls. 165} that if $h$ is holomorphic and $h'$ vanishes to order $k$ at $z_0$ then $h$ is $(k + 1)$-to-one in a neighbourhood of $z_0$.
 So if $h$ is bijective then $h'$ vanishes nowhere.
 \end{remark}
-\theorem{
+\begin{theorem}[Riemann mapping theorem]
+If $U \subset \mathbb{C}$, $U \neq \mathbb{C}$ is homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $\mathbb{D}$ to $U$.
+\end{theorem}
+\begin{proof}
+A proof of this is rather involved and can be found in \cite{proof of Riemann mapping theorem}. % TODO add citation
+\end{proof}
+\begin{corollary}
+If $U$ and $V$ are both homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $U$ to $V$.
+\end{corollary}
+\begin{proof}
+The Riemann mapping theorem gives us $\Phi_1$, a conformal mapping from $\mathbb{D}$ to $U$, and $\Phi_2$, a conformal mapping from $\mathbb{D}$ to $V$.
+The desired conformal mapping from $U$ to $V$ is then $\Phi_1^{-1} \circ \Phi_2$.
+\end{proof}
+\begin{corollary}
+If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a homeomorphism $\Phi:\ \overline{\mathbb{D}} \rightarrow K$ such that its restriction to $\mathbb{D}$ is a conformal mapping.
+\end{corollary}
+\begin{proof}
+% Nota Caratheodory. Samskeyting stikunar á jaðri D og grannmótunar á milli D og K ætti að vera Jordan stikun á jaðri K, vonandi.
+TODO
+\end{proof}
 \subsection{Weierstrass M-test}
 \section{Functional analysis}
 \subsection{Hahn-Banach}
 \subsection{Riesz representation theorem}
 \section{Miscellaneous}
+% TODO Ef summa fágaðra falla er samleitini í j.m. þá er hún fáguð
+% TODO Ef summa samfelldra falla er samleitini í j.m. þá er hún samfelld
 
 
 
