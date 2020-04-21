@@ -1,3 +1,6 @@
+% TODO decide if 0 is in \mathbb{N} and make sure it's consistent
+% TODO read and mention Globevnik
+% in F. and M. Riesz chapter ralk about why the function spaces are seperable
 \documentclass[a4paper,12pt,twoside,BCOR=10mm]{scrbook}
 
 % Packages
@@ -235,9 +238,23 @@ The section could be titled: Glossary, Variable Names, etc.
 
 \chapter{Preliminaries}
 \section{Measure theory}
+\section{Complex analysis in one variable}
+\subsection{The Riemann Mapping Theorem}
+We will start of with a definition. % TODO reword
+\begin{definition}
+A map $f:\ U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \emph{conformal} if it is holomorphic, bijective, and its inverse is holomorphic.
+\end{definition}
+\begin{remark}
+The fact that the inverse is homomorphic is actually redundant.
+It can be shown \cite{green and krantz bls. 165} that if $h$ is holomorphic and $h'$ vanishes to order $k$ at $z_0$ then $h$ is $(k + 1)$-to-one in a neighbourhood of $z_0$.
+So if $h$ is bijective then $h'$ vanishes nowhere.
+\end{remark}
+\theorem{
+\subsection{Weierstrass M-test}
 \section{Functional analysis}
 \subsection{Hahn-Banach}
 \subsection{Riesz representation theorem}
+\section{Miscellaneous}
 
 
 
@@ -349,10 +366,59 @@ If $f$ is a continue function on $E$ which maps $E$ into $S = \{z;\ |\max(\Re z,
 \]
 \end{lemma}
 \begin{proof}
-TODO
+We will set $f_0 = 0$ and construct $f_n$ iteratively.
+Assuming $f_0, f_1, ..., f_{n - 1}$ have been constructed such that
+\[
+	\lambda_{n - 1}(E) \subset 2^{1 - n}S
+\]
+with $\lambda_{n - 1} = f - \sum_{k = 0}^{n - 1}f_k$.
+According to \ref{somelemma} we have can write $E$ as the union of disjoint closed sets $E_1, E_2, ..., E_p$ such that the oscillation of $\lambda_{n - 1}$ is less than $2^{-n}$ on each $E_k$. % TODO make this lemma and maybe rewrite in accordance
+So we can define $Q_k \subset 2^{1 - n}S$ for $k = 1, 2, ..., p$ such that $Q_k = 2^{-n}S + a_k$ for some $a_k \in S$.
+We can choose $c_k \in Q_k \cap 2^{-n}$ since $Q_k$ has side length $2^{-n}$ and is a subset of $2^{-n + 1}$ and both are closed.
+We can now define
+\[
+	f_n(z) = c_k, \tag{$z \in E_k,\ k = 1, 2, ..., p$.}
+\]
+If we then look at $\lambda_n = f - \sum_{k = 0}^nf_k = \lambda_{n - 1} - f_n$ we see that $\lambda_n(E) \subset 2^{-n}S$ due to the way we decomposed $E$ into $E_1, E_2, ..., E_p$ using the oscialltions of $\lambda_{n - 1}$.
+This means we can continue the process.
 \end{proof}
-\begin{proof}
-TODO
+\begin{proof}[Proof of \ref{actually ref to Rudin-Carleson}] % TODO fix the ref
+Let's first show the result for $T = S$.
+
+Let $f_n$ be the functions from Lemma \ref{lemma-3-from-Rudin}. % TODO fix the ref
+According to Lemma \ref{lemma-2-from-Rudin} we have functions $g_n \in \mathcal{A}$ which extend $f_n$ and map $\overline{\mathbb{D}}$ into $2^{-n}S$.
+We then define
+\[
+	F = \sum_{n \in \mathbb{N}} g_n
+\]
+on $\overline{\mathbb{D}}$.
+To show that $F$ is in $\mathcal{A}$ we have to show it is holomorphic on $\mathbb{D}$ and continuous on $\overline{\mathbb{D}}$.
+Both of these things can be shown by demonstarting that the series converges uniformly.
+Let $M_n = 2^{-n + 1}$ and note that $|g_n(z)| \leq \sqrt{2}\cdot 2^{-n} < 2^{-n + 1} = M_n$ and
+\[
+	\sum_{n \in \mathbb{N}} M_n
+	=
+	\sqrt{2}\sum_{n \in \mathbb{N}} 2^{-n} =
+	\sqrt{2} < \infty
+\]
+so the Weierstrass M-test tells us that $F$ converges uniformly. % TODO proof this and add a ref
+This in turn tells that $F$ is both holomorphic on $\mathbb{D}$ and continuous on $\overline{mathbb{D}}$ so it is in $\mathcal{A}$.
+We also have that
+\[
+	\Re F = \sum_{n \in \mathbb{N}} \Re g_n \leq \sum_{n \in \mathbb{N}} 2^{-n} = 1.
+\]
+It can be shown in the same manner that $\Im F \leq 1$, so $F$ maps into $S$.
+Lastly, for $z \in E$ we have that
+\[
+	F(z) = \sum_{n \in \mathbb{N}} g_n(z) = \sum_{n \in \mathbb{N}} f_n(z) = f(z)
+\]
+so $F$ is an extension of $f$.
+
+To proof the result for a general $T$ we first let $\Phi$ a the conformal mapping from $S$ to $T$, its existence provided by the Riemann mapping theorem. % TODO add ref to RMT and add the theorem itself
+We will also let $g = f \circ \Phi^{-1}$.
+Note that it maps $E$ into $S$, so we can use what we showed above to find $G \mathcal{A}$ that extends $g$ and maps into $S$.
+We finally set $F = G \circ \Phi$.
+% TODO finish this. All the is left is to show that F is holomorphic (easy, it's the composition of two holomorphic functions) and continuous (a bit of a different tale)
 \end{proof}
 \begin{corollary}[Fatou]
 Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$.

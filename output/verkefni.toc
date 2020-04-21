@@ -6,9 +6,13 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}% 
 \contentsline {chapter}{\numberline {2}Preliminaries}{5}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Measure theory}{5}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Functional analysis}{5}{section.2.2}% 
-\contentsline {subsection}{\numberline {2.2.1}Hahn-Banach}{5}{subsection.2.2.1}% 
-\contentsline {subsection}{\numberline {2.2.2}Riesz representation theorem}{5}{subsection.2.2.2}% 
+\contentsline {section}{\numberline {2.2}Complex analysis in one variable}{5}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}The Riemann Mapping Theorem}{5}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Weierstrass M-test}{5}{subsection.2.2.2}% 
+\contentsline {section}{\numberline {2.3}Functional analysis}{5}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Hahn-Banach}{5}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Riesz representation theorem}{5}{subsection.2.3.2}% 
+\contentsline {section}{\numberline {2.4}Miscellaneous}{5}{section.2.4}% 
 \contentsline {chapter}{\numberline {3}Rudin-Carleson theorem}{7}{chapter.3}% 
 \contentsline {chapter}{\numberline {4}F. and M. Riesz theorem}{11}{chapter.4}% 
 \contentsline {chapter}{\numberline {5}A generalization of the Rudin-Carleson theorem}{19}{chapter.5}% 
