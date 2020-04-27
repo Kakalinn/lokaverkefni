@@ -1,0 +1,23 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bishop(1962)]{bishop}
+Errett Bishop.
+\newblock A general {R}udin-{C}arleson theorem.
+\newblock \emph{Proc. Amer. Math. Soc.}, 13:\penalty0 140--143, 1962.
+
+\bibitem[Greene and Krantz(2006)]{greenkrantz}
+Robert~Everist Greene and Steven~George Krantz.
+\newblock \emph{Function Theory of One Complex Variable}.
+\newblock Princeton University Press, 3rd edition, 2006.
+
+\bibitem[Whyburn(1958)]{whyburn}
+Gordon~Thomas Whyburn.
+\newblock \emph{Topological Analysis}.
+\newblock Princeton University Press, 1958.
+
+\end{thebibliography}

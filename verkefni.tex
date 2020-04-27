@@ -1,9 +1,10 @@
+% TODO laga kápu
 % TODO make sure at the end that 'Caratheodory' is nowhere
 % TODO fix open intervals. they look ugly
 % TODO skrifað Weierstrass rétt
 % TODO decide if 0 is in \mathbb{N} and make sure it's consistent
 % TODO read and mention Globevnik
-% in F. and M. Riesz chapter ralk about why the function spaces are seperable
+% TODO in F. and M. Riesz chapter talk about why the function spaces are seperable
 \documentclass[a4paper,12pt,twoside,BCOR=10mm]{scrbook}
 
 % Packages
@@ -23,6 +24,7 @@
 \usepackage{amssymb}
 \usepackage[nottoc]{tocbibind}
 \usepackage[sort&compress,authoryear]{natbib}
+\bibliographystyle{plainnat}
 \usepackage[sf,normalsize]{subfigure}
 \usepackage[format=plain,labelformat=simple,labelsep=colon]{caption}
 \usepackage{placeins}
@@ -237,13 +239,30 @@ The section could be titled: Glossary, Variable Names, etc.
 \setcounter{page}{1}
 \chapter{Introduction}
 % TODO define 'extends'
-
+$\mathcal{O}(U)$ for open $U \subset \mathbb{C}$ is the family of functions holomorphic on $U$.
+$C(X)$ for open topological space $X$ is the family of continuous functions from $X$ to $\mathbb{C}$.
+We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C};\ |z| < 1\}$.
+The closed unit disk will get no special notation, but will be referred to by $\overline{\mathbb{D}}$.
+We will use $\mathbb{T}$ to refer to the open unit circle $\{z \in \mathbb{C};\ |z| = 1\}$.
 
 \chapter{Preliminaries}
 \section{Measure theory}
-\section{The disk algebra}
 \section{Complex analysis in one variable}
-\subsection{Carathéodory}
+\subsection{The disk algebra}
+\begin{definition}
+A function is said to be in the \emph{disk algebra} if it is holomorphic on $\mathbb{D}$ and continuous on $\mathbb{\overline{D}}$.
+We will refer to this family of function $\mathcal{A}$.
+\end{definition}
+When studying a family of function it is helpful to know when the limit of a sequence in the family is also in the family.
+\begin{lemma}
+Let $K$ be a compact subset of $\mathbb{C}$ and $(f_n)_{n \in \mathbb{N}}$ be a sequence of continuous functions on $K$ with limit $f$.
+Then $f$ is the uniform limit of $(f_n)_{n \in \mathbb{N}}$.
+\end{lemma}
+\begin{lemma}
+Let $U$ be a subset of $\mathbb{C}$ and $(f_n)_{n \in \mathbb{N}}$ be a sequence of continuous functions on $K$ with uniform limit $f$.
+Then $f$ is the continuous.
+\end{lemma}
+\subsection{Carathéodory} % TODO maybe combine this subsection with the RMP subsection
 \begin{definition}
 A continuous function $\gamma: [0, 1] \rightarrow \mathbb{C}$ is said to be a \emph{Jordan curve} if $\gamma(0) = \gamma(1)$ and
 \[
@@ -254,14 +273,14 @@ The definition above can be restated as: A Jordan curve is a closed simple curve
 The term `simple' here means that the curve is not self-intersecting.
 The name stems from a famous result by Camille Jordan stating that $\mathbb{C} \setminus \gamma([0, 1])$ has two connected component, one of which is simply connected.
 The simply connected component will be called \emph{the domain bounded by $\gamma$}.
-The proof of this result is rather technical and outside the scope of this thesis \cite{fdsa}\cite{fdas}. % TODO add citation to whyburn chapter 3 and green-krantz p. 393
+The proof of this result is rather technical and outside the scope of this thesis \citep{whyburn, greenkrantz}. % TODO add citation to whyburn chapter 3 and green-krantz p. 393
 The result is however necessary to make statement such as `let $U$ be the domain bounded by $\gamma$'.
 An example of this is the following theorem:
 \begin{theorem}[Carathéodory]
 Let $\Omega_1$ and $\Omega_2$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $\Phi: \Omega_1 \rightarrow \Omega_2$ be a conformal mapping.
 There exists a continuous injection $\hat{\Phi}: \overline{\Omega_1} \rightarrow \overline{\Omega_2}$ that extends $\Phi$.
 \end{theorem}
-A proof of this can be found in section $13.2$ of \cite{green and krantz}. % TODO motivate the theorem a bit
+A proof of this can be found in section $13.2$ of \citep{greenkrantz}. % TODO motivate the theorem a bit
 \subsection{The Riemann Mapping Theorem} 
 We will start of with a definition. % TODO reword
 \begin{definition}
@@ -269,14 +288,14 @@ A map $f: U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \e
 \end{definition}
 \begin{remark}
 The fact that the inverse is homomorphic is actually redundant.
-It can be shown \cite{green and krantz bls. 165} that if $h$ is holomorphic and $h'$ vanishes to order $k$ at $z_0$ then $h$ is $(k + 1)$-to-one in a neighbourhood of $z_0$.
+It can be shown \citep{greenkrantz} that if $h$ is holomorphic and $h'$ vanishes to order $k$ at $z_0$ then $h$ is $(k + 1)$-to-one in a neighbourhood of $z_0$. % TODO its on p. 165 in G&K
 So if $h$ is bijective then $h'$ vanishes nowhere.
 \end{remark}
 \begin{theorem}[Riemann mapping theorem]
 If $U \subset \mathbb{C}$, $U \neq \mathbb{C}$ is homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $\mathbb{D}$ to $U$.
 \end{theorem}
 \begin{proof}
-A proof of this is rather involved and can be found in \cite{proof of Riemann mapping theorem}. % TODO add citation
+A proof of this is rather involved and can be found in \citep{greenkrantz}. % TODO add where in citation
 \end{proof}
 \begin{corollary}
 If $U$ and $V$ are both homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $U$ to $V$.
@@ -337,6 +356,9 @@ We can often solve things for the unit disk (or unit square as in \ref{Rudin-Car
 
 
 \chapter{Rudin-Carleson theorem}
+\section{Rudin-Carleson theorem}
+% TODO laga þýðinguna á two-cell
+% TODO 'the theorem will be proved as Rudin did it in his ortiginal paper \citep{...}'
 \begin{theorem}[Rudin-Carleson theroem]
 Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$, let $f$ be a continuous function on $E$ and let $T$ be a simply connected subset of $\mathbb{C}$ such that $f(\mathbb{\overline{D}}) \subset T$.
 Then there exists an $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F(\mathbb{\overline{D}}) \subset T$. % TODO skilgreina allt
@@ -429,7 +451,7 @@ So we have shown that
 So we have constructed a function $q$ that maps $\overline{D}$ to the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$.
 We then let $\Phi$ be the conformal mapping from the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$ to $\{z;\ 0 \leq \Re z \leq \Re \alpha\}$. % TODO Rudin calls these ribbons rectangles, but couldn't the imaginary part be unbounded?
 We will also choose $\Phi$ such that $\Phi(0) = 0$ and $\Phi(1) = \alpha$.
-We can then let $f = \Phi \circ q$ and conclude the proof.
+We can then let $F = \Phi \circ q$ and conclude the proof.
 
 \end{proof}
 \begin{lemma}
@@ -439,7 +461,11 @@ If $f$ is a simple continuous function on $E$ that maps $E$ into a simply connec
 TODO
 \end{proof}
 \begin{lemma}
-If $f$ is a continue function on $E$ which maps $E$ into $S = \{z;\ |\max(\Re z, \Im z)| \leq 1\}$, then there exists a sequence $(f_n)_{n \in \mathbb{N}}$ of simple continuous function on $E$ such that
+If $f$ is a continue function on $E$ which maps $E$ into
+\[
+	S = \{z;\ |\max(\Re z, \Im z)| \leq 1\}, % TODO make this definition global (to the section)?
+\]
+then there exists a sequence $(f_n)_{n \in \mathbb{N}}$ of simple continuous function on $E$ such that
 \[
 	f(x) = \sum_{n \in \mathbb{N}} f_n(z),
 \]
@@ -515,7 +541,7 @@ TODO
 
 
 
-\chapter{F. and M. Riesz theorem}
+\section{F. and M. Riesz theorem}
 In this section we will endeavour to show that the annihilating measures of $\mathcal{A}|_{\mathbb{T}}$ are absolutely continuous with respect to the Lebesgue measure.
 We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of Rudin. %TODO add the reference to Rudin real and complex analysis.
 To attain the main result of this section we need some lemmas and definitions. %TODO rewrite these two lines
@@ -867,8 +893,8 @@ for all $n = -1, -2, ...$ and $\mu \lll m$.
 
 
 
-\chapter{A generalization of the Rudin-Carleson theorem}
-This borrows from Bishop. % TODO add reference
+\section{A generalization of the Rudin-Carleson theorem}
+This borrows from \citep{bishop}. % TODO add citation
 \begin{theorem}[General Rudin-Carleson theorem]
 Let $X$ be a compact Hausdorff space,
 	$V = (C(X), \| \cdot \|_{\infty})$,
@@ -984,5 +1010,7 @@ so there exists a $F \in B$, such that $F = f$ on S.
 \appendix
 \renewcommand{\chaptername}{Appendix}
 \chapter{Annað}
+
+\bibliography{refs}
 
 \end{document}

@@ -1,1 +1,1 @@
-~/programming/c/bns/bns files "pdflatex -output-directory output verkefni &> out" -b
+~/programming/c/bns/bns files ./build.sh -b
