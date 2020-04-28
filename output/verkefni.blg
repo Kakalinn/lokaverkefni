@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: verkefni.aux
 The style file: plainnat.bst
 Database file #1: refs.bib
-You've used 3 entries,
+You've used 5 entries,
             2773 wiz_defined-function locations,
-            609 strings with 5104 characters,
-and the built_in function-call counts, 1076 in all, are:
-= -- 90
-> -- 41
-< -- 3
-+ -- 15
-- -- 12
-* -- 68
-:= -- 175
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 12
-chr.to.int$ -- 3
-cite$ -- 6
-duplicate$ -- 60
-empty$ -- 104
-format.name$ -- 17
-if$ -- 220
+            619 strings with 5233 characters,
+and the built_in function-call counts, 1668 in all, are:
+= -- 136
+> -- 61
+< -- 5
++ -- 23
+- -- 18
+* -- 100
+:= -- 272
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 19
+chr.to.int$ -- 5
+cite$ -- 10
+duplicate$ -- 100
+empty$ -- 168
+format.name$ -- 25
+if$ -- 344
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 5
-newline$ -- 23
-num.names$ -- 12
-pop$ -- 31
+missing$ -- 9
+newline$ -- 33
+num.names$ -- 20
+pop$ -- 54
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 16
 quote$ -- 0
-skip$ -- 41
+skip$ -- 65
 stack$ -- 0
-substring$ -- 31
-swap$ -- 3
+substring$ -- 35
+swap$ -- 5
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 23
+type$ -- 35
 warning$ -- 0
-while$ -- 11
+while$ -- 17
 width$ -- 0
-write$ -- 45
+write$ -- 70

@@ -1,3 +1,5 @@
+% TODO make everythin Hausdorff???
+% TODO add carleson cite
 % TODO laga kápu
 % TODO make sure at the end that 'Caratheodory' is nowhere
 % TODO fix open intervals. they look ugly
@@ -34,12 +36,13 @@
 % Configurations
 \graphicspath{{figs/}}
 
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}{Corollary}
-\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}{Example}
-\newtheorem{lemma}{Lemma}
-\newtheorem{definition}{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
 \renewcommand{\Re}{\text{Re }}
 \renewcommand{\Im}{\text{Im }}
 
@@ -250,7 +253,7 @@ We will use $\mathbb{T}$ to refer to the open unit circle $\{z \in \mathbb{C};\ 
 \section{Complex analysis in one variable}
 \subsection{The disk algebra}
 \begin{definition}
-A function is said to be in the \emph{disk algebra} if it is holomorphic on $\mathbb{D}$ and continuous on $\mathbb{\overline{D}}$.
+A function is said to be in the \emph{disk algebra} if it is holomorphic on $\mathbb{D}$ and continuous on $\mathbb{\overline{\mathbb{D}}}$.
 We will refer to this family of function $\mathcal{A}$.
 \end{definition}
 When studying a family of function it is helpful to know when the limit of a sequence in the family is also in the family.
@@ -308,6 +311,7 @@ In this thesis the disk algebra $\mathcal{A}$ is of special interest so a versio
 We can combine the Riemann mapping theorem and Carathéodory's theorem to achieve the desired theorem.
 The only thing to prove is that a homeomorphism $f$ maps the boundary of a bounded set $U$ to the boundary of $f(U)$ and that a Jordan curve under a homeomorphism is still a Jordan curve.
 \begin{corollary}
+\label{contrmt}
 If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a continuous, injective $\Phi: \overline{\mathbb{D}} \rightarrow K$ such that its restriction to $\mathbb{D}$ is a conformal mapping.
 \end{corollary}
 \begin{proof}
@@ -343,25 +347,86 @@ So $\Phi$ is a conformal map between two domains bounded, each bounded by a Jord
 This allows us to use Carathéodory's theorem to extend $\Phi$ continuously and injectively to $\overline{\mathbb{D}}$, concluding the proof.
 \end{proof}
 The Riemann mapping theorem is a strong tool when analyzing holomorphic functions on simply connected domains.
-We can often solve things for the unit disk (or unit square as in \ref{Rudin-Carleson reference here}) and then map that solution to a general simply connected domain. % TODO add ref
-\subsection{Weierstrass M-test}
+We can often solve things for the unit disk (or unit square as in \ref{rudincarleson}) and then map that solution to a general simply connected domain. % TODO add ref
 \section{Functional analysis}
+\begin{definition}
+Let $X$ be a topological space.
+We say that $X$ is \emph{locally compact} if for each $x \in X$ there exists a open set $U_x$ such that $x \in U_x$ and $\overline{U_x}$ is compact.
+\end{definition}
+\begin{definition}
+\label{locallycompactdef}
+Let $X$ be a locally compact space.
+We say a complex function $f$ \emph{vanishes at infinity} if for all $\varepsilon > 0$ there exists a compact set $K$ such that $|f(x)| < \varepsilon$ for all $x \in X \setminus K$.
+The family of all such functions is referred as $C_0(X)$.
+\end{definition}
+Let $X$ be compact.
+Then if $f \in C(X)$ and $\varepsilon > 0$ we set $K = X$ and see that $|f(x)| < \varepsilon$ vacuously holds for all $x \in X \setminus K = \emptyset$.
+So $C(X)$ and $C_0(X)$ are identical in this case.
+\begin{definition}
+Let $\alpha$ be a linear map from a normed vector space $X$ into a normed vector space $Y$.
+We define a its \emph{norm} by
+\[
+	\|\alpha\| = \sup\{\|\alpha(x)\|;\ \|x\| < 1\}
+\]
+and say it is \emph{bounded} if said norm is finite.
+\end{definition}
+\begin{theorem}
+If $\alpha$ is a linear map from a normed vector space $X$ into a normed vector space $Y$ then the following properties are equivalent:
+\begin{enumerate}
+\item[\emph{(i)}] $\alpha$ is bounded.
+\item[\emph{(ii)}] $\alpha$ is continuous.
+\item[\emph{(iii)}] $\alpha$ is continuous at $x \in X$.
+\end{enumerate}
+\end{theorem}
+We will use the terms `bounded' and `continuous' interchangeably when talking about linear mappings between normed vector spaces, due to this theorem.
+A proof of this theorem can be found in \citep{rudin2}.
 \subsection{Hahn-Banach}
-\subsection{Riesz representation theorem}
+% TODO sjpall
+There are many related theorems going by the name `Hahn-Banach Theorem'.
+These are sometime split in two groups, `separation theorems' and `extension theorems'.
+When proving \ref{bishopstheorem} we need the following Hahn-Banach separation theorem:
+\begin{theorem}
+Let
+	$X$ be a normed vector space,
+	$A \neq \emptyset$ be a closed convex subset of $X$,
+	and $p \in X \setminus A$.
+Then there exists a continuous linear functional $f$ such that $\sup \{f(x);\ x \in A\} < 1$ and $f(p) = 1$.
+\end{theorem}
+Corollary $8.15$ in \citep{pryce} is very similar.
+It states that, for same $X$, $A$, and $p$, there exists a continuous linear functional $f$ such that $f(p) < \inf \{f(x);\ x \in A\}$.
+With such a functional given, ... TODOTODOTODO %% TODO
+\subsection{The Riesz representation theorem}
+\begin{theorem}[The Riesz reprentation theorem for bounded linear functionals on $C_0(X)$ with locally compact $X$]
+Let $X$ be a locally compact Hausdorff space and $\alpha$ be a bounded linear functional on $C_0(X)$.
+There then exists a measure $\mu$ such that
+\begin{enumerate}
+\item[\emph{(i)}]
+\[
+	\alpha(f) = \int_X f\ d\mu
+\]
+for all $f \in C_0(X)$ and
+\item[\emph{(ii)}]
+\[
+	\|\alpha\| = |\mu|(X).
+\]
+\end{enumerate}
+\end{theorem}
+
 \section{Miscellaneous}
 % TODO Ef summa fágaðra falla er samleitini í j.m. þá er hún fáguð
 % TODO Ef summa samfelldra falla er samleitini í j.m. þá er hún samfelld
-% TODO Neðra mat þríhyrningsójöfnunnar, ||x| - |y|| <= |x - y|
 
 
 
 \chapter{Rudin-Carleson theorem}
 \section{Rudin-Carleson theorem}
-% TODO laga þýðinguna á two-cell
 % TODO 'the theorem will be proved as Rudin did it in his ortiginal paper \citep{...}'
 \begin{theorem}[Rudin-Carleson theroem]
-Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$, let $f$ be a continuous function on $E$ and let $T$ be a simply connected subset of $\mathbb{C}$ such that $f(\mathbb{\overline{D}}) \subset T$.
-Then there exists an $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F(\mathbb{\overline{D}}) \subset T$. % TODO skilgreina allt
+\label{rudincarleson}
+Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$,
+	let $f$ be a continuous function on $E$,
+	and let $T$ be a subset of $\mathbb{C}$ homeomorphic to $\overline{\mathbb{D}}$ such that $f(\overline{\mathbb{D}}) \subset T$.
+Then there exists an $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F(\overline{\mathbb{D}}) \subset T$. % TODO skilgreina allt
 \end{theorem}
 We will break the proof into several lemmas.  % TODO how many?
 \begin{lemma}
@@ -376,6 +441,7 @@ Then there exists an integrable function $\mu > 1$ such that
 TODO
 \end{proof}
 \begin{lemma}
+\label{rudinlemma1}
 If $f$ is a simple continuous function on $E$ such that $\Re f \geq 0$, then there exists an $F \in \mathcal{A}$ such that $F = f$ on $E$ and $\Re F \geq 0$ on $\overline{\mathbb{D}}$.
 \end{lemma}
 \begin{proof}
@@ -448,28 +514,31 @@ So we have shown that
 	0 < \Re \frac{z}{z + w} < 1.
 \]
 
-So we have constructed a function $q$ that maps $\overline{D}$ to the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$.
+We have now constructed a function $q$ that maps $\overline{\mathbb{D}}$ to the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$.
 We then let $\Phi$ be the conformal mapping from the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$ to $\{z;\ 0 \leq \Re z \leq \Re \alpha\}$. % TODO Rudin calls these ribbons rectangles, but couldn't the imaginary part be unbounded?
 We will also choose $\Phi$ such that $\Phi(0) = 0$ and $\Phi(1) = \alpha$.
 We can then let $F = \Phi \circ q$ and conclude the proof.
 
 \end{proof}
 \begin{lemma}
-If $f$ is a simple continuous function on $E$ that maps $E$ into a simply connected $T$, then there exists a $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F$ maps $\overline{\mathbb{D}}$ into $T$.
+\label{rudinlemma2}
+If $f$ is a simple continuous function on $E$ that maps $E$ into $T \subset \mathbb{C}$ homeomorphic to $\overline{\mathbb{D}}$, then there exists a $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F$ maps $\overline{\mathbb{D}}$ into $T$.
 \end{lemma}
 \begin{proof}
-TODO
+Let $z_0 \in T \setminus f(E)$ and $\Phi$ be a conformal mapping from the right halfplane to the interior of $T$ such that $\Phi(\infty) = z_0$.
+There exists a $g \in \mathcal{A}$ that extends $\Phi^{-1} \circ f$, according to Lemma \ref{rudinlemma1}.
+The desired function in then obtained with $F = \Phi \circ g$.
 \end{proof}
 \begin{lemma}
+\label{rudinlemma3}
 If $f$ is a continue function on $E$ which maps $E$ into
 \[
 	S = \{z;\ |\max(\Re z, \Im z)| \leq 1\}, % TODO make this definition global (to the section)?
 \]
 then there exists a sequence $(f_n)_{n \in \mathbb{N}}$ of simple continuous function on $E$ such that
 \[
-	f(x) = \sum_{n \in \mathbb{N}} f_n(z),
-\]
-\[
+	f(x) = \sum_{n \in \mathbb{N}} f_n(z)
+	\text{ and }
 	f_n(E) \subset 2^{-n}S.
 \]
 \end{lemma}
@@ -487,21 +556,21 @@ We can now define
 \[
 	f_n(z) = c_k, \tag*{$z \in E_k,\ k = 1, 2, ..., p$.}
 \]
-If we then look at $\lambda_n = f - \sum_{k = 0}^nf_k = \lambda_{n - 1} - f_n$ we see that $\lambda_n(E) \subset 2^{-n}S$ due to the way we decomposed $E$ into $E_1, E_2, ..., E_p$ using the oscialltions of $\lambda_{n - 1}$.
+If we then look at $\lambda_n = f - \sum_{k = 0}^nf_k = \lambda_{n - 1} - f_n$ we see that $\lambda_n(E) \subset 2^{-n}S$ due to the way we decomposed $E$ into $E_1, E_2, ..., E_p$ using the oscillations of $\lambda_{n - 1}$.
 This means we can continue the process.
 \end{proof}
-\begin{proof}[Proof of \ref{actually ref to Rudin-Carleson}] % TODO fix the ref
+\begin{proof}[Proof of \ref{rudincarleson}]
 Let's first show the result for $T = S$.
 
-Let $f_n$ be the functions from Lemma \ref{lemma-3-from-Rudin}. % TODO fix the ref
-According to Lemma \ref{lemma-2-from-Rudin} we have functions $g_n \in \mathcal{A}$ which extend $f_n$ and map $\overline{\mathbb{D}}$ into $2^{-n}S$.
+Let $f_n$ be the functions from Lemma \ref{rudinlemma3}. % TODO fix the ref
+According to Lemma \ref{rudinlemma2} we have functions $g_n \in \mathcal{A}$ which extend $f_n$ and map $\overline{\mathbb{D}}$ into $2^{-n}S$.
 We then define
 \[
 	F = \sum_{n \in \mathbb{N}} g_n
 \]
 on $\overline{\mathbb{D}}$.
 To show that $F$ is in $\mathcal{A}$ we have to show it is holomorphic on $\mathbb{D}$ and continuous on $\overline{\mathbb{D}}$.
-Both of these things can be shown by demonstarting that the series converges uniformly.
+Both of these things can be shown by demonstrating that the series converges uniformly.
 Let $M_n = 2^{-n + 1}$ and note that $|g_n(z)| \leq \sqrt{2}\cdot 2^{-n} < 2^{-n + 1} = M_n$ and
 \[
 	\sum_{n \in \mathbb{N}} M_n
@@ -510,7 +579,7 @@ Let $M_n = 2^{-n + 1}$ and note that $|g_n(z)| \leq \sqrt{2}\cdot 2^{-n} < 2^{-n
 	\sqrt{2} < \infty
 \]
 so the Weierstrass M-test tells us that $F$ converges uniformly. % TODO proof this and add a ref
-This in turn tells that $F$ is both holomorphic on $\mathbb{D}$ and continuous on $\overline{mathbb{D}}$ so it is in $\mathcal{A}$.
+This in turn tells that $F$ is both holomorphic on $\mathbb{D}$ and continuous on $\overline{\mathbb{D}}$ so it is in $\mathcal{A}$.
 We also have that
 \[
 	\Re F = \sum_{n \in \mathbb{N}} \Re g_n \leq \sum_{n \in \mathbb{N}} 2^{-n} = 1.
@@ -522,18 +591,23 @@ Lastly, for $z \in E$ we have that
 \]
 so $F$ is an extension of $f$.
 
-To proof the result for a general $T$ we first let $\Phi$ a the conformal mapping from $S$ to $T$, its existence provided by the Riemann mapping theorem. % TODO add ref to RMT and add the theorem itself
-We will also let $g = f \circ \Phi^{-1}$.
+To prove the result for a general $T$ we first let $\Phi: T \rightarrow S$ be the map provided to us by \label{contrmp}.
+We will also let $g = f \circ \Phi$.
 Note that it maps $E$ into $S$, so we can use what we showed above to find $G \mathcal{A}$ that extends $g$ and maps into $S$.
-We finally set $F = G \circ \Phi$.
-% TODO finish this. All the is left is to show that F is holomorphic (easy, it's the composition of two holomorphic functions) and continuous (a bit of a different tale)
+We finally set $F = G \circ \Phi^{-1}$.
+On $E$ we have that
+\[
+	F = G \circ \Phi^{-1} = g \circ \Phi^{-1} = f \circ \Phi \circ \Phi^{-1} = f,
+\]
+so $F$ extends $f$.
+It is also a composition of functions in $\mathcal{A}$ so it is also in $\mathcal{A}$.
 \end{proof}
 \begin{corollary}[Fatou]
 Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$.
 There exists a function $f \in \mathcal{A}$ that vanishes on $E$ and nowhere else.
 \end{corollary}
 \begin{proof}
-It's clear from the theorem % TODO add ref
+It's clear from the Theorem % TODO add ref
 that there exists a function $f \in \mathcal{A}$ that vanishes on $E$.
 TODO
 \end{proof}
@@ -542,8 +616,12 @@ TODO
 
 
 \section{F. and M. Riesz theorem}
-In this section we will endeavour to show that the annihilating measures of $\mathcal{A}|_{\mathbb{T}}$ are absolutely continuous with respect to the Lebesgue measure.
-We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of Rudin. %TODO add the reference to Rudin real and complex analysis.
+The main result of this section is that the annihilating measures of 
+\[
+	\mathcal{A}|_{\mathbb{T}} = \{f|_{\mathbb{T}};\ f \in \mathcal{A}\}
+\]
+are absolutely continuous with respect to the Lebesgue measure.
+We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of \citep{rudin2}.
 To attain the main result of this section we need some lemmas and definitions. %TODO rewrite these two lines
 To prove one of the lemmas we will also use the following two famous theorems:
 \begin{definition}
@@ -553,7 +631,7 @@ We say that the family is \emph{pointwise bounded} if for all $x \in X$ there ex
 \[
 	|f(x)| < M,\text{ for all } f \in \mathcal{F}.
 \]
-Note that $M$ is dependent on $x$.
+Note that $M$ may depend on $x$.
 
 We say that the family is \emph{equicontinuous} if for all $\varepsilon > 0$ there exists a $\delta > 0$ such that
 \[
@@ -777,8 +855,7 @@ so
 \[
 	\|\Gamma_r\| \leq M.
 \]
-By the above lemma % TODO add ref
-and the Riezs representation theorem % TODO add ref
+By Lemma \ref{FMRlemma31} and the Riezs representation theorem % TODO add ref
 we get a measure $\mu$ on $\mathbb{T}$ with $\|\mu\| \leq M$, and a sequence $(r_n)_{n \in \mathbb{N}}$ on $[0, 1[$ with limit $1$, such that
 \begin{equation}
 	\label{eq:1}
@@ -787,7 +864,7 @@ we get a measure $\mu$ on $\mathbb{T}$ with $\|\mu\| \leq M$, and a sequence $(r
 for all $g \in C(\mathbb{T})$.
 Let's now define functions $h_k$ on $\overline{\mathbb{B}}$ by $h_k(z) = u(r_kz)$.
 We get that, since $u$ is harmonic on $r\mathbb{B}$ for $r \in ]0, 1[$, the functions $h_k$ are harmonic on $\mathbb{B}$ and continuous on $\overline{\mathbb{B}}$.
-So each of them can be represented by the Poisson integral of their restriction to $\mathbb{T}$, according to Ramsford. % TODO add ref to Ramsford, solution of the Dirichlet problem
+So each of them can be represented by the Poisson integral of their restriction to $\mathbb{T}$. % TODO add ref to Ramsford, solution of the Dirichlet problem, no maybe rather find it in rudin2
 Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
 % TODO not use h. instead just looking at u_{r_n} should work.
 \begin{align*}
@@ -801,7 +878,6 @@ Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
 \end{align*}
 where the fifth equlity is achived by putting $g = P(z, e^{it})$ into \ref{eq:1}.
 This concludes the proof of excistence.
-% TODO show uniqueness
 
 Let's assume that $P[d\mu] = 0$, and let $f \in C(\mathbb{T})$, $u = P[f]$ and $v = P[d\mu]$.
 We firstly have the symmetry
@@ -821,7 +897,7 @@ This symmetry is due to
 	|e^{i\theta} - re^{it}|,
 \]
 which is geometrically intuitive.
-The first and last equalities hold because the euclidian metric is rotationally invariant, and the second euality holds becuase the distance from $z$ to a real number $a$ is the same distance from $\overline{z}$ to $a$.
+The first and last equalities hold because the euclidean metric is rotationally invariant, and the second equality holds because the distance from $z$ to a real number $a$ is the same distance from $\overline{z}$ to $a$.
 We now obtain
 \begin{align*}
 \int_{\mathbb{T}} u_r d\mu
@@ -835,11 +911,11 @@ If we let $r \rightarrow 1$ we get
 	\int_{\mathbb{T}}f\ d\mu = 0.
 \]
 This holds for all $f \in C(\mathbb{T})$, so the measure $\mu$ represents zero in the dual of $C(\mathbb{T})$.
-The Riesz representation theorem then tells us that $|\mu|(\mathbb{T}) = 0$, so $\mu = 0$.
+The Riesz representation theorem then tells us that $|\mu|(\mathbb{T}) = 0$, so $\mu = 0$. % TODO def |\mu|(T) in the prelim. chapter on measure theory.
 
 Now let $\lambda$ and $\nu$ be measures on $\mathbb{T}$ such that $P[d\lambda] = P[d\nu]$.
 We have that $P[d(\lambda - \nu)] = 0$, so, as shown above $\lambda - \nu = 0$.
-Moreover $\lambda = \nu$, which concludes the proof of uniquness.
+Moreover $\lambda = \nu$, which concludes the proof of uniqueness.
 \end{proof}
 
 \begin{theorem}[F. and M. Riesz theorem]
@@ -875,15 +951,16 @@ It follows from \ref{FMRlemma3} that $d\mu = f d\sigma$. %TODO define \sigma as 
 TODO
 \end{proof}
 \begin{corollary}
-Let $A$ be the closed subspace of $C(\mathbb{T})$ that consists of all functions that are restriction from $\mathcal{A}$. % TODO makes this def global and maybe call it something else
-All measures in $A^{\bot}$ are absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$. % TODO define all
+\label{fmrieszcor}
+%Let $A$ be the closed subspace of $C(\mathbb{T})$ that consists of all functions that are restriction from $\mathcal{A}$. % TODO makes this def global and maybe call it something else
+Every annihilating measures of $\mathcal{A}|_{\mathbb{T}}$ is absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$. % TODO define all
 \end{corollary}
 \begin{proof}
 Let $\mu \in A^{\bot}$. By definition we have that
 \[
 	\int fd\mu = 0.
 \]
-Now since $t \mapsto e^{-int}$ is entire for $n = -1, -2, ...$ we have that their restriction to $\mathbb{T}$ are in $A$.
+Now since $t \mapsto e^{-int}$ is entire for $n = -1, -2, ...$ we have that their restriction to $\mathbb{T}$ are in $\mathcal{A}|_{\mathbb{T}}$.
 Thus,
 \[
 	\int e^{-int} d\mu = 0
@@ -894,27 +971,33 @@ for all $n = -1, -2, ...$ and $\mu \lll m$.
 
 
 \section{A generalization of the Rudin-Carleson theorem}
-This borrows from \citep{bishop}. % TODO add citation
+This borrows from \citep{bishop}. % TODO actually write something here
 \begin{theorem}[General Rudin-Carleson theorem]
+\label{bishopstheorem}
 Let $X$ be a compact Hausdorff space,
 	$V = (C(X), \| \cdot \|_{\infty})$,
 	$B$ be a closed subspace of $C(X)$,
-	$B^{\bot}$ be the annihilating measures for $B$,
-	$S$ be a closed subset of $X$,
-	and $f$ be a continues function on $S$.
-If $\int_S f d\mu = 0$ holds for all $\mu \in B^{\bot}$ then there exists a function $F \in B$ such that $F = f$ on $S$.
+	$B^{\bot}$ be the annihilating measures of $B$, % TODO this needs to be defined
+	$S$ be a closed subset of $X$ that is $\mu$-null for all $\mu \in B^{\bot}$,
+	$f$ be a continues function on $S$,
+	and $\Xi > 0$ be a function on $X$ such that $|f| < \Xi$ on $S$.
+Then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
+Let's start with the following lemma:
+\begin{lemma}
+\label{bishoplemma}
+Assume $|f| < r < 1$ on $S$.
+Then there exists a $F \in B$ such that $F = f$ on $S$ and $\|F\| < 1$.
+\end{lemma}
 \begin{proof}
-Since $f$ is continuous and $S$ is a closed subset of a compact set, and therefore also compact, $f$ is bounded.
-So we can, with out loss of generality, assume that $|f| < r < 1$ on $S$.
 Let $U_r$ be the subset of $B$ defined by $U_r = \{g;\ \|g\| < r\}$ and $\phi$ be the mapping from $B$ to $C(S)$ that sends a member of $B$ to its restriction on $S$.
 It suffices to show that $f \in \phi(U_r)$.
 Let's first show that $f \in \overline{\phi(U_r)} =: V_r$, by assuming otherwise, and showing it leads to a contradiction.
 
 We now assume $f \not \in V_r$.
-By Hahn-Banach % TODO ref
+By Hahn-Banach % TODO ref (convex!!!)
 we can define a bounded linear functional $\alpha$, such that $\alpha(f) > 1$ and $|\alpha(h)| < 1$, for $h \in V_r$.
-We can then define a measure $\mu_1$ by the Riesz-representation theorem % TODO ref
+We can then define a measure $\mu_1$ by the Riesz representation theorem % TODO ref
 that fulfills
 \[
 	\alpha(g) = \int g d\mu_1
@@ -930,23 +1013,24 @@ for all $g \in U_r$,
 From this we get
 \begin{align*}
 	\| \beta \|
-	&= \sup \{ |\beta(g)|;\ |g| < 1 \}\\
-	&= \sup \{ (1/r)|\beta(g)|;\ |g| < r \}\\
-	&\leq \sup \{ (1/r);\ |g| < r \}\\
-	&= 1/r.
+	&= \sup \{ |\beta(g)|;\ \|g\| < 1 \}\\
+	&= \sup \{ (1/r)|\beta(g)|;\ \|g\| < r \}\\
+	&\leq 1/r.
 \end{align*}
-Let's denote the Riesz representation of $\beta$ by $\mu_2$, set $\mu = \mu_1 - \mu_2$ and see that $\mu \in B^{\bot}$.
+Let's
+	denote the Riesz representation of $\beta$ by $\mu_2$,
+	set $\mu = \mu_1 - \mu_2$,
+	and note that $\mu \in B^{\bot}$.
 But
 \[
 	0 = \left | \int_S f d\mu \right | 
 		\geq \int_S f d\mu_1 - r\|\mu_2\| 
 		\geq \int_S f d\mu_1 - r\frac{1}{r}
-		> 1 - r \frac{1}{r} = 0,
+		> 1 - r \frac{1}{r} = 0.
 \]
-where the first equality is the assumption in the theorem.
 This is the contradiction that gives that $f \in V_r$.
 We can now take a $F_1$ in $U_r$, and therefore also in $B$ such that $|f - F_1| < \lambda/2$ on $S$, with $\lambda := 1 - r$.
-Remember that $F_1 \ in U_r$ implies that $\|F_1\| < r$.
+Remember that $F_1 \in U_r$ implies that $\|F_1\| < r$.
 Now let $f_1 = f - F_1$ and use the same method as above to obtain an $F_2$ such that $\|F_2\| < \lambda/2$ and $|f - F_2| < \lambda/4$ on $S$.
 Iterating this process yields a series $(F_n)_{n \in \mathbb{N}}$ from $B$ that fulfill $\|F_n\| < 2^{1 - n}\lambda$ for $n > 1$ and
 \[
@@ -959,53 +1043,73 @@ F = \sum_{k = 1}^{\infty} F_k.
 \]
 Now $F \in B$,
 \[
-	\|F\| \leq \|F_1\| + \|F - F_1\| = r + \sum_{k = 2}^{\infty}2^{1 - n}\lambda = r + \lambda = 1,
+	\|F\| \leq \|F_1\| + \|F - F_1\| \leq r + \sum_{k = 2}^{\infty}2^{1 - n}\lambda = r + \lambda = 1,
 \]
-and $F = f$ on $S$. % TODO bæta við matinu, svo línan að ofan meiki sens
+and $F = f$ on $S$.
 \end{proof}
-\begin{corollary}
-Let $X$ be a compact Hausdorff space,
-	$V = (C(X), \| \cdot \|_{\infty})$,
-	$B$ be a closed subspace of $C(X)$,
-	$B^{\bot}$ be the annihilating measures for $B$,
-	$S$ be a closed subset of $X$,
-	and $f$ be a continues function on $S$.
-If $S$ is $B^{\bot}$-null % TODO define this
-then there exists a function $F \in B$ such that $F = f$ on $S$.
-\end{corollary}
-\begin{proof}
-If $S$ is $B^{\bot}$-null we have that $\int_S f d\mu = 0$ for all $\mu \in B^{\bot}$. % TODO add ref to above
+\begin{proof}[Proof of \ref{bishopstheorem}]
+Let $B_0$ be the closed subspace of $C(X)$ consisting of function $g$ such that $\Xi \cdot g \in B$.
+We have that $B_0^{\bot} = B^{\bot}$, since $\Xi > 0$.
+So we can use Lemma \ref{bishoplemma} for $B_0$ instead of $B$ and $f/\Xi$ instead of $f$.
+This gives us a $F_0 \in B_0$ such that $\Xi \cdot F_0 = f$ on $S$ and $\|F_0\| < 1$.
+We set $F = \Xi \cdot F_0$ which is in $B$ by the construction of $B_0$.
+Also note that $\|F\| < \Xi$ on $X$ and 
+\[
+	F = \Xi \cdot F_0 = \Xi \cdot f/\Xi = f
+\]
+on $S$.
 \end{proof}
-\begin{remark}
-The corollary is the version of the theorem from Bishop. % TODO add ref here
-Note also that if we set $X = \mathbb{T}$ and $B = \mathcal{A}$ we can use F. and M. Riesz % TODO add ref here
-to prove the classical Rudin-Carleson theorem. % TODO add ref here
-\end{remark}
-It is of course worth noting an applications of where the corollary fails.  % TODO REF to theorem)
-\begin{example}
-Let $X = \mathbb{T}$,
-	$B = \mathcal{A}$, % TODO define this
-	$E$ be a closed $m$-null % TODO define this, an maybe change to $m_{\sigma}$
-	subset of $\partial \mathbb{T}$ that is not dense in $E$,
-	$F = \{ e^{i\theta};\ a \leq \theta \leq b \}$,
-	and choose $a$ and such that $E$ and $F$ are disjoint and $a \neq b$.
-The last assumption restricts us to $E$ that are not dense in the $\mathbb{E}$.
-Since $a \neq b$ we obtain that $S := E \cup F$ does not fulfill the requirements of the Rudin-Carelson theorem nor the above corollary. % TODO add refs
-Let's choose $f$ such that $f = 0$ on $F$, and $f$ is continues on $S$.
-We now have for all $\mu \in \mathcal{A}^{\bot}$
-\begin{align*}
-	\left | \int_S f d\mu \right |
-	&= \left |\int_E f d\mu + \int_F f d\mu \right |\\
-	&\leq \left |\int_E f d\mu \right | + \left | \int_F f d\mu \right |\\
-	&= 0 + \left | \int_F f d\mu \right |\\
-	&= 0.
-\end{align*}
-The F. and M. Riesz theorem %TODO add ref here
-tells us the since $E$ is $m$-null it is also $\mu$-null, which gives the third step.
-The final step stems from the fact that $f$ vanishes on $F$.
-We now see the $X$, $B$, and $f$ are all as in theorem % TODO add ref
-so there exists a $F \in B$, such that $F = f$ on S.
-\end{example}
+\begin{proof}[Alternate proof of \ref{rudincarleson}]
+Let
+	$X = \mathbb{T}$,
+	$B = \mathcal{A}|_{\mathbb{T}}$,
+	and $S$ be a closed set of Lebesgue-measure zero. 
+Then, according to \ref{fmrieszcor}, $S$ is also a $B^{\bot}$-null.
+So all requirements of \ref{bishopstheorem} are met
+\end{proof}
+%\begin{corollary}
+%Let $X$ be a compact Hausdorff space,
+	%$V = (C(X), \| \cdot \|_{\infty})$,
+	%$B$ be a closed subspace of $C(X)$,
+	%$B^{\bot}$ be the annihilating measures for $B$,
+	%$S$ be a closed subset of $X$,
+	%and $f$ be a continues function on $S$.
+%If $S$ is $B^{\bot}$-null % TODO define this
+%then there exists a function $F \in B$ such that $F = f$ on $S$.
+%\end{corollary}
+%\begin{proof}
+%If $S$ is $B^{\bot}$-null we have that $\int_S f d\mu = 0$ for all $\mu \in B^{\bot}$. % TODO add ref to above
+%\end{proof}
+%\begin{remark}
+%The corollary is the version of the theorem from Bishop. % TODO add ref here
+%Note also that if we set $X = \mathbb{T}$ and $B = \mathcal{A}$ we can use F. and M. Riesz % TODO add ref here
+%to prove the classical Rudin-Carleson theorem. % TODO add ref here
+%\end{remark}
+%It is of course worth noting an applications of where the corollary fails.  % TODO REF to theorem)
+%\begin{example}
+%Let $X = \mathbb{T}$,
+	%$B = \mathcal{A}$, % TODO define this
+	%$E$ be a closed $m$-null % TODO define this, an maybe change to $m_{\sigma}$
+	%subset of $\partial \mathbb{T}$ that is not dense in $E$,
+	%$F = \{ e^{i\theta};\ a \leq \theta \leq b \}$,
+	%and choose $a$ and such that $E$ and $F$ are disjoint and $a \neq b$.
+%The last assumption restricts us to $E$ that are not dense in the $\mathbb{E}$.
+%Since $a \neq b$ we obtain that $S := E \cup F$ does not fulfill the requirements of the Rudin-Carelson theorem nor the above corollary. % TODO add refs
+%Let's choose $f$ such that $f = 0$ on $F$, and $f$ is continues on $S$.
+%We now have for all $\mu \in \mathcal{A}^{\bot}$
+%\begin{align*}
+	%\left | \int_S f d\mu \right |
+	%&= \left |\int_E f d\mu + \int_F f d\mu \right |\\
+	%&\leq \left |\int_E f d\mu \right | + \left | \int_F f d\mu \right |\\
+	%&= 0 + \left | \int_F f d\mu \right |\\
+	%&= 0.
+%\end{align*}
+%The F. and M. Riesz theorem %TODO add ref here
+%tells us the since $E$ is $m$-null it is also $\mu$-null, which gives the third step.
+%The final step stems from the fact that $f$ vanishes on $F$.
+%We now see the $X$, $B$, and $f$ are all as in theorem % TODO add ref
+%so there exists a $F \in B$, such that $F = f$ on S.
+%\end{example}
 
 \appendix
 \renewcommand{\chaptername}{Appendix}
