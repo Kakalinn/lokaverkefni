@@ -419,6 +419,23 @@ If $\alpha$ is a linear map from a normed vector space $X$ into a normed vector 
 \end{theorem}
 This theorem allows us to use the terms `bounded' and `continuous' interchangeably when talking about linear mappings between normed vector spaces.
 A proof of this theorem can be found on page $96$ in \citep{rudin2}.
+
+Let's recall what the $L^p$ spaces are.
+Let $X$ be a space with $\sigma$-algebra $\mathcal{F}$, and $\mu$ be a measure on that $\sigma$-algebra.
+We say a function is in $\mathcal{L}^1(X, \mu)$ if
+\[
+	\int |f|\ d\mu < \infty
+\]
+and we say it is $\mathcal{L}^p(X, \mu)$ if $|f|^p$ is in $\mathcal{L}^1$, for $0 < p < \infty$.
+We then define an equivalence relation $\sim$ such that $f \sim g$ if and only if $\mu(\{x \in X;\ f(x) \neq g(x)\}) = 0$.
+We define $L^p(X, \mu)$ to be the quotient space $\mathcal{L}(X, \mu)/\sim$.
+The space $L^p(X, \mu)$ has one major benefit over $\mathcal{L}^p(X, \mu)$,
+\[
+	\|f\|_p = 
+	\left ( \int |f|^p\ d\mu \right )^{1/p}
+\]
+is a norm on $L^p(X, \mu)$.
+We sometimes write $L^p(\mu)$ if the space in question is obvious from context and $L^p(X)$ if the measure is obvious from context.
 \subsection{Hahn-Banach}
 % TODO sjpall
 There are many related theorems going by the name `Hahn-Banach Theorem'.
@@ -435,7 +452,29 @@ Corollary $8.15$ in \citep{pryce} is very similar.
 It states that, for same $X$, $A$, and $p$, there exists a continuous linear functional $f$ such that $f(p) < \inf \{f(x);\ x \in A\}$.
 With such a functional given, ... TODOTODOTODO %% TODO
 \subsection{The Riesz representation theorem}
-\begin{theorem}[The Riesz reprentation theorem for bounded linear functionals on $C_0(X)$ with locally compact $X$ \citep{rudin2}]
+Let $X$ be a space with $\sigma$-algebra and measure $\mu$, choose $p$ and $q$ such that $1 < p, q < \infty$ and $1/p + 1/q = 1$, and $g \in L^q(\mu)$.
+We can then define a linear transform
+\[
+	\alpha(f) = \int fg\ d\mu.
+\]
+The Hölder inequality tells us it is bounded.
+\begin{theorem}[The Riesz representation theorem for bounded linear functionals on $L(X, \mu)$ with $\sigma$-finite $X$ \citep{rudin2}]
+Let $1 < p < \infty$,
+	$q$ be such that $1/p + 1/q = 1$,
+	$\mu$ be a $\sigma$-finite positive measure on $X$,
+	and $\alpha$ be a bounded linear functional on $L^p(\mu)$.
+There then exists a unique $g \in L^q(\mu)$ such that
+\[
+	\alpha(f) = \int fg\ d\mu
+\]
+for all $f \in L^p(\mu)$ and
+\[
+	\|\alpha\| = \|g\|_q.
+\]
+\end{theorem}
+Note that the theorem above also hold for $p = 1$ and $q = \infty$, but we will not need that result.
+
+\begin{theorem}[The Riesz representation theorem for bounded linear functionals on $C_0(X)$ with locally compact $X$ \citep{rudin2}]
 \label{riesz}
 Let $X$ be a locally compact Hausdorff space and $\alpha$ be a bounded linear functional on $C_0(X)$.
 There then exists a measure $\mu$ such that
@@ -761,21 +800,43 @@ The choice of $\delta$ and $N$ then gives us that
 	& = \varepsilon.
 \end{align*}
 \end{proof}
+% TODO spjall
 \begin{definition}
-% TODO finish these
-Poisson kernel, Poisson integral, Poisson integral of a measure.
-\end{definition}
-\begin{lemma}
-\label{FMRlemma1}
-Let $\mu$ be a complex Borel measure, and $u = P[d\mu]$.
-Then
+% Poisson kernel, Poisson integral, Poisson integral of a measure.
+The function
 \[
-	\|u_r\|_1 \leq \|\mu\|.
+	P_r(t) = \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}
 \]
-\end{lemma}
-\begin{proof}
-% TODO reword this part
-First, we need to see that, if $n \neq 0$
+for $0 \leq r < 1$, $t \in \mathbb{R}$, is referred to as \emph{the Poisson kernel on $\mathbb{D}$}, or sometimes simply \emph{the Poisson kernel}.
+We also rewrite $P_r(\theta - t)$ by setting $z = re^{it}$ as
+\[
+	P(z, e^{it}) = \frac{1 - |z|^2}{|e^{it} - z|^2}.
+\]
+This stems from the fact that
+\[
+	P_r(\theta - t) = \Re \left ( \frac{e^{it} + z}{e^{it} - z}\right ) = \frac{1 - r^2}{1 - 2r\cos(\theta - r) + r^2}.
+\]
+
+% TODO reword to include the domain
+For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} by % TODO define L^1
+\[
+	P[f](z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(e^{it})P(z, e^{it})\ dt
+\]
+
+For complex measure $\mu$ we define \emph{the Poisson integral of $\mu$} by
+\[
+	P[d\mu](z) = \int_T P(z, e^{it})\ d\mu(e^{it})
+\]
+
+Let's take a look at some of the properties of the Poisson kernel and Poisson integral.
+Note that both $P[f]$ and $P[d\mu]$ are defined on $\mathbb{D}$ because of the way we defined the Poisson kernel.
+\end{definition}
+We see that, since
+\[
+	P_r(t) = \frac{1 - r^2}{1 - 2r\cos(t) + r^2},
+\]
+both $P_r(t) > 0$ and $P_r(t) = P_r(-t)$.
+It will also come of use to know that for $n \neq 0$
 \[
 	in\int_{-\pi}^{\pi} e^{int}\ dt
 	= (e^{in\pi} - e^{-in\pi})
@@ -788,13 +849,24 @@ so
 	\int_{-\pi}^{\pi} P_r(t)\ dt
 	&= \int_{-\pi}^{\pi} \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}\ dt\\
 	&= \sum_{n \in \mathbb{Z}} \int_{-\pi}^{\pi} r^{|n|}e^{int}\ dt\\
-	&= \int_{-\pi}^{\pi} \ dt\\
+	&= \int_{-\pi}^{\pi}\ dt\\
 	&= 2\pi.
 \end{align*}
-This lets us
+This naturally leads us to the following lemma:
+\begin{lemma}
+\label{FMRlemma1}
+Let $\mu$ be a complex Borel measure, and $u = P[d\mu]$.
+Then
+\[
+	\|u_r\|_1 \leq \|\mu\|.
+\]
+\end{lemma}
+\begin{proof}
+% TODO reword this part
+We have that
 \begin{align*}
 	\|u\|_1
-	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})| d\theta\\
+	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})|\ d\theta\\
 	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} \left | \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d\mu(e^{it}) \right | d\theta\\
 	&\leq \frac{1}{2\pi} \int_{-\pi}^{\pi} \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d|\mu(e^{it})| d\theta\\ % TODO add this to prelim
 	&= \int_{\mathbb{T}} \frac{1}{2\pi} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it})\ d\theta d|\mu(e^{it})|\\ 
@@ -803,14 +875,11 @@ This lets us
 	&= \|\mu\|. % TODO add this to prelim?
 \end{align*}
 \end{proof}
-\begin{lemma}
-\label{FMRlemma2}
-Let $f \in H^1$.
-Then there exists a $g \in L^1(\mathbb{T})$ such that $f = P[g]$.
-\end{lemma}
-\begin{proof}
-TODO
-\end{proof}
+The main reason we are developing these tools is to prove the F. and M. Riesz theorem.
+The theorem gives us a sufficient condition for when a measure $\mu$ (on $\mathbb{T}$) is absolutely continuous with regards to the Lebesgue-measure (on $\mathbb{T}$).
+The proof is rather simple, we let $f$ be the Poisson integral of $\mu$ and $h$ be a function such that its Poisson integral is $f$.
+We then show that $d\mu = h\ dm$. % TODO hvað á eiginlega Lebesgue-málið að heita?!
+The following lemmas show that all this is in fact possible.
 \begin{lemma}
 %11.30(a) in Rudin
 \label{FMRlemma3}
@@ -820,7 +889,16 @@ Let $u$ be harmonic in $\mathbb{D}$ and
 \]
 Then there exists a unique complex Borel measure $\mu$ on $\mathbb{T}$ such that $u = P[d\mu]$.
 \end{lemma}
-We will need the following lemma in the proof of \ref{FMRlemma3}:
+\begin{lemma}
+%11.30(b) in Rudin
+\label{FMRlemma3b}
+Let $u$ be harmonic in $\mathbb{D}$ and
+\[
+	\sup_{0 < r < 1} \|u_r\|_2 = M < \infty. %TODO define u_r
+\]
+Then there exists a unique function $f$ in $L^2(\mathbb{T})$ such that $u = P[f]$.
+\end{lemma}
+We will need the following lemma in the proofs of \ref{FMRlemma3} and \ref{FMRlemma3b}:
 \begin{lemma}
 \label{FMRlemma31}
 Let $X$ be a separable Banach space,
@@ -869,9 +947,9 @@ Lastly
 % TODO fix the Riesz rep thm ref. It's 6.19 in Rudin.
 Let $\Gamma_r$, for $r \in [0, 1[$,  be linear functionals on $C(\mathbb{T})$ defined by
 \[
-	\Gamma_r g = \int_{\mathbb{T}} gu_r d\sigma.
+	\Gamma_r g = \int_{\mathbb{T}} gu_r\ d\sigma.
 \]
-If $\|g\| \leq 1$ is assummed we get that
+If $\|g\| \leq 1$ is assumed we get that
 \[
 \Gamma_r\ g = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} u_r\ d\sigma = \|u_r\|_1 \leq M.
 \]
@@ -924,7 +1002,7 @@ which is geometrically intuitive.
 The first and last equalities hold because the distance between two points doesn't change under rotation and the second equality holds because the distance from $z$ to a real number $a$ is the same distance from $\overline{z}$ to $a$.
 We now obtain
 \begin{align*}
-\int_{\mathbb{T}} u_r d\mu
+\int_{\mathbb{T}} u_r\ d\mu
 &= \int_{\mathbb{T}} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it}) f(e^{i\theta})\ d\theta d\mu(e^{it})\\
 &= \int_{-\pi}^{\pi} f(e^{i\theta}) \int_{\mathbb{T}} P(re^{it}, e^{i\theta})\ d\mu(e^{it}) d\theta\\
 &= \int_{-\pi}^{\pi} f(e^{i\theta}) v_r\ d\theta\\
@@ -941,11 +1019,49 @@ Now let $\lambda$ and $\nu$ be measures on $\mathbb{T}$ such that $P[d\lambda] =
 We have that $P[d(\lambda - \nu)] = 0$, so, as shown above $\lambda - \nu = 0$.
 Moreover $\lambda = \nu$, which concludes the proof of uniqueness.
 \end{proof}
+\begin{proof}[Proof of \ref{FMRlemma3b}]
+The proof of existence is almost identical to that proof of existence in \ref{FMRlemma3} and the uniqueness is shown in the same manner.
+The differences in the existence proofs are in the beginning when we are choosing what function spaces we use and which theorems to references.
+Now we define $\Gamma_r$ in the same way, except we define it on $L^2(\mathbb{T})$.
+We again use \ref{FMRlemma31} and the Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
+\[
+	\lim_{n \rightarrow \infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}gf\ d\sigma
+\]
+for all $g$ in $L^2(\mathbb{T})$.
+The remaining calculations remain the same.
+% TODO kannski skrifað þetta upp af því bara.
+\end{proof}
+We see by this proof that \ref{FMRlemma3b} could be generalized trivially to find a function $f$ in $L^p(\mathbb{T})$ such that $P[f] = u$ for harmonic $u$ with
+\[
+	\sup_{0 < r < 1} \|u_r\|_p = M < \infty
+\]
+and $p > 1$.
+We can't use this method fir $p = 1$ since we will need to use the Riesz representation theorem for the exponent conjugate of $p$, and the theorem only holds if it is in $[1, \infty[$.
 
+We have not yet shown any condition for a function $f$ that implies there exists a $h \in L^1(\mathbb{T})$ such that $P[h] = f$.
+For that we need the following definition:
+\begin{definition}
+For a function $f$ holomorphic on $\mathbb{D}$ we define
+\[
+	\|f\|_{H^p} = 
+	\sup_{0 < r < 1} \left ( \frac{1}{2\pi}\int_{-\pi}^{\pi} |f(re^{i\theta}|^p\ d\theta \right )^{1/p}
+\]
+and we say that $f$ is in $H^p$ if $\|f\|_{H^p} < \infty$.
+These spaces are referred to as the \emph{Hardy spaces}.
+\end{definition}
+A useful result from the theory of Hardy spaces is if $f \in H^1$ then there exist $g, h \in H^2$ such that $f = g \cdot h$ \citep[Theorem $17.10$]{rudin2}.
+\begin{lemma}
+\label{FMRlemma2}
+Let $f \in H^1$.
+Then there exists a $h \in L^1(\mathbb{T})$ such that $f = P[h]$.
+\end{lemma}
+\begin{proof}
+TODO
+\end{proof}
 \begin{theorem}[F. and M. Riesz theorem]
 If $\mu$ is a complex Borel measure on $\mathbb{T}$ and
 \[
-	\int e^{-int} d\mu = 0
+	\int e^{-int}\ d\mu = 0
 \]
 for $n = -1, -2, ...$, then $\mu \lll m$.
 \end{theorem}
@@ -962,16 +1078,16 @@ We can use the assumption of the theorem to write $f$ as a power series by
 \begin{align*}
 % TODO Fubini?
 	f(z) 
-		&= \int_{\mathbb{T}} P(z, e^{it}) d\mu(e^{it}) \\
-		&= \int_{\mathbb{T}} \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int} d\mu(e^{it}) \\
-		&= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta} \int_{\mathbb{T}} e^{-int} d\mu(e^{it}) \\
-		&= \sum_{n = 0}^{\infty} r^n e^{in\theta} \int_{\mathbb{T}} e^{-int} d\mu(e^{it}) \\
+		&= \int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it}) \\
+		&= \int_{\mathbb{T}} \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int}\ d\mu(e^{it}) \\
+		&= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
+		&= \sum_{n = 0}^{\infty} r^n e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
 		&= \sum_{n = 0}^{\infty} \hat{\mu}_n z^n,
 \end{align*}
 where $\hat{\mu}_n$ is the $n$-th Fourier coefficient of $\mu$.
 This along with \ref{FMRlemma1} gives us that $f \in H^1$. % TODO make this more clear
-We can now define a $g \in H^1$, by \ref{FMRlemma2}, such that $f = P[g]$.
-It follows from \ref{FMRlemma3} that $d\mu = f d\sigma$. %TODO define \sigma as Lebesgue on T scaled to 1.
+We can now define a $h \in L^1(\mathbb{T})$, by \ref{FMRlemma2}, such that $f = P[h]$.
+It follows from \ref{FMRlemma3} that $d\mu = h d\sigma$. %TODO define \sigma as Lebesgue on T scaled to 1.
 TODO
 \end{proof}
 \begin{corollary}
@@ -983,13 +1099,13 @@ Every annihilating measures of $\mathcal{A}|_{\mathbb{T}}$ is absolutely continu
 Let $\mu$ be an annihilating measure of $\mathcal{A}|_{\mathbb{T}}$.
 By definition we have that
 \[
-	\int fd\mu = 0
+	\int f\ d\mu = 0
 \]
 for all $f \in \mathcal{A}|_{\mathbb{T}}$.
 Now since $t \mapsto e^{-int}$ is entire for $n = -1, -2, ...$ we have that their restriction to $\mathbb{T}$ are in $\mathcal{A}|_{\mathbb{T}}$.
 Thus,
 \[
-	\int e^{-int} d\mu = 0
+	\int e^{-int}\ d\mu = 0
 \]
 for all $n = -1, -2, ...$ and $\mu \lll m$.
 \end{proof}
@@ -1006,7 +1122,7 @@ Let $X$ be a compact Hausdorff space,
 	$B^{\bot}$ be the annihilating measures of $B$, % TODO this needs to be defined
 	$S$ be a closed subset of $X$ that is $\mu$-null for all $\mu \in B^{\bot}$,
 	$f$ be a continuous function on $S$,
-	and $\Xi > 0$ be a function on $X$ such that $|f| < \Xi$ on $S$.
+	and $\Xi > 0$ be a continuous function on $X$ such that $|f| < \Xi$ on $S$.
 Then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
 Let's start with the following lemma:
@@ -1031,7 +1147,7 @@ we can define a bounded linear functional $\alpha$, such that $\alpha(f) > 1$ an
 We can then define a measure $\mu_1$ by the Riesz representation theorem % TODO ref
 that fulfills
 \[
-	\alpha(g) = \int g d\mu_1
+	\alpha(g) = \int g\ d\mu_1
 \]
 for all $g \in C(S)$.
 We will refer to the associated functional on $B$ by $\beta(g) = \alpha(\phi(g))$.
@@ -1054,9 +1170,9 @@ Let's
 	and note that $\mu \in B^{\bot}$.
 But
 \[
-	0 = \left | \int_S f d\mu \right | 
-		\geq \int_S f d\mu_1 - r\|\mu_2\| 
-		\geq \int_S f d\mu_1 - r\frac{1}{r}
+	0 = \left | \int_S f\ d\mu \right | 
+		\geq \int_S f\ d\mu_1 - r\|\mu_2\| 
+		\geq \int_S f\ d\mu_1 - r\frac{1}{r}
 		> 1 - r \frac{1}{r} = 0.
 \]
 This is the contradiction that gives that $f \in V_r$.
