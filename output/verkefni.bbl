@@ -1,9 +1,14 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{7}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Axelsson(2014)]{reynir}
+Reynir Axelsson.
+\newblock Tvinnfallagreining {I}.
+\newblock Course material for an introductory course in complex analysis, 2014.
 
 \bibitem[Bishop(1962)]{bishop}
 Errett Bishop.
@@ -13,7 +18,7 @@ Errett Bishop.
 \bibitem[Greene and Krantz(2006)]{greenkrantz}
 Robert~Everist Greene and Steven~George Krantz.
 \newblock \emph{Function Theory of One Complex Variable}.
-\newblock Princeton University Press, 3rd edition, 2006.
+\newblock American Mathematical Society, 3rd edition, 2006.
 
 \bibitem[Pryce(1973)]{pryce}
 John~D. Pryce.
@@ -24,6 +29,11 @@ John~D. Pryce.
 Walter Rudin.
 \newblock \emph{Real and Complex Analysis}.
 \newblock McGraw-Hill Book Company, 3rd edition, 1987.
+
+\bibitem[Tao(2014)]{tao}
+Terence Tao.
+\newblock \emph{An Introduction to Measure Theory}.
+\newblock American Mathematical Society, 2014.
 
 \bibitem[Whyburn(1958)]{whyburn}
 Gordon~Thomas Whyburn.
