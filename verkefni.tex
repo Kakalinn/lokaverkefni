@@ -387,6 +387,9 @@ This allows us to use Carathéodory's theorem to extend $\Phi$ continuously and 
 \end{proof}
 The Riemann mapping theorem is a strong tool when analyzing holomorphic functions on simply connected domains.
 We can often solve things for the unit disk (or unit square as in \ref{rudincarleson}) and then map that solution to a general simply connected domain. % TODO add ref
+
+We will briefly touch on multivariate complex analysis so we will need a definition of a holomorphic function in $\mathbb{C}^n$.
+If $U \subset \mathbb{C}^n$ is open and $f: U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U$}.
 \section{Functional analysis}
 \begin{definition}
 Let $X$ be a topological space.
@@ -506,14 +509,46 @@ Then there exists an $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F(\overl
 \end{theorem}
 We will break the proof into several lemmas.  % TODO how many?
 \begin{lemma}
-Let $H$ be a closed set of Lebesbue-measure $0$.
+\label{mylemma}
+Let $H$ be a closed set of Lebesgue-measure $0$.
 Then there exists an integrable function $\mu > 1$ such that
 	$\mu$ is continuous on $\mathbb{T} \setminus H$,
 	$\mu = +\infty$ on $H$,
 	if $w \in H$ then $\mu(z) \xrightarrow{z \rightarrow w} +\infty$, and
 	$\mu$ has a bounded derivative on any closed subarc of $\mathbb{T} \setminus H$.
 \end{lemma}
-\begin{proof}
+Recall from set theory that if $(X, d)$ is a metric space, $A$ is a subset of $X$ and $x$ is a point of $X$ then the distance between $x$ and $A$ is
+\[
+	d(x, A) = \inf_{a \in A} d(x, a).
+\]
+Furthermore, if $A$ is closed then the infimum is obtained at some of $A$, namely, there exists a point $y \in A$ such $d(x, y) = d(x, A)$. % TODO cite this
+Let $X = [0, 1]$ and $H$ be some closed set of Lebesgue-measure zero.
+We will, for reasons that will be made clear later, assume that $0, 1 \subset H$.
+We can now define function $V_H: [0, 1] \rightarrow [0, 1]$ and $H_H: [0, 1] \rightarrow [0, 1]$ such that
+\[
+	d(x, H \cap [0, x]) = d(x, V_H(x))
+	\quad \text{and} \quad
+	d(x, H \cap [x, 1]) = d(x, H_H(x)).
+\]
+Intuitively, $H_H(x)$ is the point in $H$ that's to the right of $x$ and is closest to $x$ and $V_H(x)$ is the point in $H$ that's to the left of $x$ and is closest to $x$.
+So all points $x$ in $[0, 1] \setminus H$ are on the open interval $]V_H(x), H_H(x)[$.
+We will define functions $f: [0, 1] \setminus H \rightarrow [0, \infty[$ and $F: [0, 1] \setminus H \rightarrow \mathbb{R}$ by
+\begin{align*}
+	f_H(x) &= \frac{H_H(x) - V_H(x)}{\sqrt{(x - V_H(x))(H_H(x) - x)}}, \text{ and}, \\
+	F_H(x) &= -\tan^{-1}\left ( \frac{1}{2} \sqrt{\frac{V_H(x) - x}{x - H_H(x)}} - \frac{1}{2}\sqrt{\frac{x - H_H(x)}{V_H(x) - x}} \right ).
+\end{align*}
+One rather useful property of this pair of functions is that $F_H' = f_H$.
+
+To see where these functions come from and what they look like let's first consider the case of what $f$ looks like when $H = \{0, 1\}$.
+Then 
+\[
+	f_H(x) = \frac{1}{\sqrt{x(1 - x)}}.
+\]
+this is a scaled version of the probability density function of an arcsine distribution... % TODO add maybe a citation to the BM book and a nice little picture.
+
+
+% TODO is f_H measurable? L^1?
+\begin{proof}[Proof of \ref{mylemma}]
 TODO
 \end{proof}
 \begin{lemma}
@@ -1217,7 +1252,30 @@ So all requirements of \ref{bishopstheorem} are met.
 
 \appendix
 \renewcommand{\chaptername}{Appendix}
-\chapter{Annað}
+\chapter{Further applications of the general Rudin-Carleson theorem}
+% TODO cite
+\begin{definition}
+\label{bigdef}
+Let $K$ be a closed subset of $S = \{z \in \mathbb{C}^n;\ |z| = 1\}$.
+We then say $K$ is a
+\begin{enumerate}
+	\item \emph{zero set} if there exists a function in $f \in \mathcal{A}^n$ such that $K = f^{-1}(0)$.
+	\item \emph{peak set} if there exists a function in $f \in \mathcal{A}^n$ such that $K = f^{-1}(1)$ and $|f(z)| < 1$ for $z \in \overline{\mathbb{B}}^n \setminus K$.
+	\item \emph{interpolation set} if every continuous function on $K$ extends via $\mathcal{A}^n$. 
+	\item \emph{peak-interpolation set} if every non-zero continuous function $f$ on $K$ extends to $F \in \mathcal{A}^n$ such that $|f(z)| < \|F\|$ for $z \in \overline{\mathbb{B}}^n \setminus K$.
+	\item \emph{null set} if $K$ has measure zero with regards to all annihilating measures of $\mathcal{A}^n$.
+	\item \emph{totally null} if $K$ has measure zero with regards to all measure $\mu$ such that
+			\[
+				f(0) = \int_{\mathbb{B}} f\ d\mu
+			\]
+			for all $f \in \mathcal{A}^n$.
+\end{enumerate}
+\end{definition}
+\begin{theorem}
+	The six classes of sets described in \ref{bigdef} are equivalent.
+\end{theorem}
+The first few sections of chapter $10$ in \citep{rudin3} are dedicated to prove this large theorem.
+One implication, namely that all null sets are peak-interpolation sets, follows directly from \ref{bishopstheorem}.
 
 \bibliography{refs}
 

@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,6 +24,11 @@ Robert~Everist Greene and Steven~George Krantz.
 John~D. Pryce.
 \newblock \emph{Functional Analysis}.
 \newblock Hutchinson and Co, 1973.
+
+\bibitem[Rudin(1980)]{rudin3}
+Walter Rudin.
+\newblock \emph{Function Theory in the Unit Ball of $\mathbb{C}^n$}.
+\newblock Springer-Verlag, 1980.
 
 \bibitem[Rudin(1987)]{rudin2}
 Walter Rudin.
