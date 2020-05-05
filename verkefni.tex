@@ -532,24 +532,109 @@ We can now define function $V_H: [0, 1] \rightarrow [0, 1]$ and $H_H: [0, 1] \ri
 \]
 Intuitively, $H_H(x)$ is the point in $H$ that's to the right of $x$ and is closest to $x$ and $V_H(x)$ is the point in $H$ that's to the left of $x$ and is closest to $x$.
 So all points $x$ in $[0, 1] \setminus H$ are on the open interval $]V_H(x), H_H(x)[$.
-We will define functions $f: [0, 1] \setminus H \rightarrow [0, \infty[$ and $F: [0, 1] \setminus H \rightarrow \mathbb{R}$ by
-\begin{align*}
-	f_H(x) &= \frac{H_H(x) - V_H(x)}{\sqrt{(x - V_H(x))(H_H(x) - x)}}, \text{ and}, \\
-	F_H(x) &= -\tan^{-1}\left ( \frac{1}{2} \sqrt{\frac{V_H(x) - x}{x - H_H(x)}} - \frac{1}{2}\sqrt{\frac{x - H_H(x)}{V_H(x) - x}} \right ).
-\end{align*}
-One rather useful property of this pair of functions is that $F_H' = f_H$.
-
-To see where these functions come from and what they look like let's first consider the case of what $f$ looks like when $H = \{0, 1\}$.
-Then 
+We will define function $f: [0, 1] \rightarrow [0, \infty]$ by
 \[
-	f_H(x) = \frac{1}{\sqrt{x(1 - x)}}.
+	f_H(x) = 2\log \left ( \frac{H_H(x) - V_H(x)}{2} \right ) - \log((x - V_H(x))(H_H(x) - x))
 \]
-this is a scaled version of the probability density function of an arcsine distribution... % TODO add maybe a citation to the BM book and a nice little picture.
+and show that this is the desired function.
 
+Let's first define a family of functions indexed with $a, b \in \mathbb{R}$ by
+\[
+	f_{a, b}: [a, b] \rightarrow [0, \infty],
+	x \mapsto 2\log \left ( \frac{b - a}{2} \right ) - \log((x - a)(b - x))
+\]
+and show they fulfill the following properties:
+\begin{enumerate}
+\item
+$f_{a, b}(a + (b - a)2^{-n}) \leq n$, % TODO shift n left or right maybe
+\item
+$f_{a, b}(x) = f_{a, b}(b + a - x)$.
+\end{enumerate}
+The first point gives us a handy estimate and the second tells us $f_{a, b}$ is symmetric around $(a + b)/2$.
+Note that for the first point it suffices to consider when $a = 0$, since $a$ denotes a simple translation.
+We then have that
+\begin{align*}
+	f_{0, b}(b2^{-n})
+	&= 2\log b - 2\log 2 - \log (b2^{-n}(b - b2^{-n}))\\
+	&= 2\log b - 2\log 2 - \log b + n\log 2 - \log b - \log (1 - 2^{-n})\\
+	&= n - (2 + \log (1 - 2^{-n}))\\
+	&\leq n.
+\end{align*}
+To show the second property we consider the case where $a = -b$, that is we translate so that the midpoint between them is $0$.
+Then
+\begin{align*}
+f_{-b, b}(-x)
+&= 2 - \log ((-x + b)(b + x))\\
+&= 2 - \log ((b - x)(x - (-b)))\\
+&= f_{-b, b}(x).
+\end{align*}
+These two points together tell us that we can bound $f_{a, b}$ above by
+\[
+	g_{a, b}(x) =
+	\left \{
+	\begin{array}{l l}
+	n, & \text{ if } 2^{-n} \leq \frac{x - a}{b} < 2^{-n + 1}\\
+	g(a + b - x) , & \text{ if } \frac{x - a}{b} > \frac{1}{2}
+	\end{array},
+	\right .
+\]
+namely a function taking integer values.
+It is more convenient to look at $g_{a, b}$ instead of $f_{a, b}$ because the former can trivially be shown to be the limit of a monotone sequence of simple functions.
+Let's look at the case where $a = 0$ and $b = 1$.
+Let $g = g_{0, 1}$ and
+\[
+	g_n(x) = \left \{
+	\begin{array}{l l}
+	g(x), & \text{ if } g(x) \leq n \\
+	0, & \text{ else}.
+	\end{array}
+	\right .
+\]
+We can now integrate $g$ by % TODO is g measureable???????
+\begin{align*}
+	\int g\ d\sigma
+	&= \int \lim_{n \rightarrow \infty} g_n\ d\sigma\\
+	&= \lim_{n \rightarrow \infty} \int g_n\ d\sigma\\
+	&= \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
+	&= \sum_{k \in \mathbb{N}} k2^{-k}\\
+	&< \infty
+\end{align*}
+where the second equality is by monotone convergence and the last is by some test. % TODO what test???????
+This rationale also holds for general $a$ and $b$, since $a$ does not effect the value of the integral and $b$ scales it.
 
-% TODO is f_H measurable? L^1?
+Let's now go back to $f_H$.
+We can define a function
+\[
+	g_H(x) = g_{V_H(x), H_H(x)}(x)
+\]
+and a sequence of functions
+\[
+	g_n(x) = \left \{
+	\begin{array}{l l}
+	g_H(x), & \text{ if } g(x) \leq n \\
+	0, & \text{ else}.
+	\end{array}
+	\right .
+\]
+We have that $(g_n)_{n \in \mathbb{N}}$ is monotone with limit $g$, similar to before, and $f \leq g$.
+Note that, independent of $H$, we have
+\[
+	\sigma(f^{-1}(k)) = 2^{-k}
+\]
+so
+\begin{align*}
+\int f_H\ d\sigma
+&\leq \int g_H\ d\sigma\\
+&= \int \lim_{n \rightarrow \infty} g_n\ d\sigma\\
+&= \lim_{n \rightarrow \infty} g_n\ d\sigma\\
+&= \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
+&= \sum_{k \in \mathbb{N}} k2^{-k}\\
+&< \infty
+\end{align*}
+by the same reasoning as before.
+
 \begin{proof}[Proof of \ref{mylemma}]
-TODO
+% TODO is f_H measurable? L^1?
 \end{proof}
 \begin{lemma}
 \label{rudinlemma1}
