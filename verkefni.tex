@@ -1019,12 +1019,12 @@ This stems from the fact that
 % TODO reword to include the domain
 For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} by % TODO define L^1
 \[
-	P[f](z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(e^{it})P(z, e^{it})\ dt
+	P[f](z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(e^{it})P(z, e^{it})\ dt.
 \]
 
 For complex measure $\mu$ we define \emph{the Poisson integral of $\mu$} by
 \[
-	P[d\mu](z) = \int_T P(z, e^{it})\ d\mu(e^{it})
+	P[d\mu](z) = \int_T P(z, e^{it})\ d\mu(e^{it}).
 \]
 
 Let's take a look at some of the properties of the Poisson kernel and Poisson integral.
@@ -1222,7 +1222,7 @@ Moreover $\lambda = \nu$, which concludes the proof of uniqueness.
 The proof of existence is almost identical to that proof of existence in \ref{FMRlemma3} and the uniqueness is shown in the same manner.
 The differences in the existence proofs are in the beginning when we are choosing what function spaces we use and which theorems to references.
 Now we define $\Gamma_r$ in the same way, except we define it on $L^2(\mathbb{T})$.
-We again use \ref{FMRlemma31} and the Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
+We again use \ref{FMRlemma31} and the (other) Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
 \[
 	\lim_{n \rightarrow \infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}gf\ d\sigma
 \]
@@ -1238,7 +1238,7 @@ and $p > 1$.
 We can't use this method fir $p = 1$ since we will need to use the Riesz representation theorem for the exponent conjugate of $p$, and the theorem only holds if it is in $[1, \infty[$.
 
 We have not yet shown any condition for a function $f$ that implies there exists a $h \in L^1(\mathbb{T})$ such that $P[h] = f$.
-For that we need the following definition:
+For that we need the following definitions:
 \begin{definition}
 For a function $f$ holomorphic on $\mathbb{D}$ we define
 \[
@@ -1249,13 +1249,61 @@ and we say that $f$ is in $H^p$ if $\|f\|_{H^p} < \infty$.
 These spaces are referred to as the \emph{Hardy spaces}.
 \end{definition}
 A useful result from the theory of Hardy spaces is if $f \in H^1$ then there exist $g, h \in H^2$ such that $f = g \cdot h$ \citep[Theorem $17.10$]{rudin2}.
+\begin{definition}
+Let $0 < \alpha < 1$.
+We refer to the open convex hull of
+\[
+	\{z \in \mathbb{C};\ |z| < \alpha\} \cup \{1\},
+\]
+that also includes $1$, as \emph{the nontangential approach region of $1$}, denoted by $\Omega_{\alpha}$.
+We will also use the rotated version, $e^{i\theta}\Omega_{\alpha}$.
+Let $u: \mathbb{D} \rightarrow \mathbb{C}$.
+Its \emph{nontangential maximal function} is defined on $\mathbb{T}$ by
+\[
+	(N_{\alpha}u)(e^{it}) = \sup \{|u(z)|;\ z \in e^{it}\Omega_{\alpha}\}.
+\]
+We say that $u$ has \emph{nontangential limit $\lambda$ at $e^{it}$} if, for all $0 < \alpha < 1$,
+\[
+	\lim_{k \rightarrow \infty} u(z_k) = \lambda
+\]
+for all sequences $(z_k)_{k \in \mathbb{N}}$ in $e^{it}\Omega_{\alpha}$ that converge to $e^{it}$.
+\end{definition}
+
 \begin{lemma}
 \label{FMRlemma2}
 Let $f \in H^1$.
-Then there exists a $h \in L^1(\mathbb{T})$ such that $f = P[h]$.
+% Then there exists a $h \in L^1(\mathbb{T})$ such that $f = P[h]$.
+Then
+\begin{enumerate}
+\item \label{p1}
+its nontangential limits, $F$, exist almost everywhere on $\mathbb{T}$,
+\item \label{p2}
+$F$ is in $L^1(\mathbb{T})$, and
+\item \label{p3}
+$f = P[F]$.
+\end{enumerate}
 \end{lemma}
 \begin{proof}
-TODO
+% TODO finish
+\ref{p1}:\\
+Let $g$ and $h$ be functions in $L^2(\mathbb{T})$ such that $f = g \cdot h$, as described above.
+We have by Lemma \ref{FMRlemma3b} functions $G$ and $H$ in $L^2(\mathbb{T})$ such that $g = P[G]$ and $h = P[H]$.
+Theorem $11.23$ in \ref{rudin2} (along with discussion on the prior page) states that if $f$ is in $L^1(\mathbb{T})$ then $P[f]$ has nontangential limit $f(e^{it})$ at almost every $e^{it}$.
+We also have by the Hölder inequality that on a finite measure space (such as $\mathbb{T}$ with the Lebesgue measure) $\|f\|_1 \leq \|f\|_2$.
+So $g$ and $h$ have nontangential limits almost everywere on $\mathbb{T}$.
+This tells us that $f$ also has nontangential limits almost everywhere on $\mathbb{T}$, since $f = g \cdot h$.\\
+\ref{p2}:\\
+By $f \leq h^2$ we have that $N_{\alpha}f \leq (N_{\alpha}h)^2$, and therefore $N_{\alpha}f \in L^1(\mathbb{T})$.
+Let $F$ be the tangential limit of $f$.
+We have that $|F| \leq N_{\alpha}f$ where $F$ is defined, so $F$ is also in $L^1(\mathbb{T})$.\\
+\ref{p3}:\\
+Note that
+\[
+	\lim_{r \rightarrow 1} \|F - f_r\|_1 = \lim_{r \rightarrow 1} \int |F - f_r|\ d\sigma = 0
+\]
+since $f_r \rightarrow F$ holds almost everywhere and $|f_r| < N_{\alpha}f$ let's us use dominated convergence.
+
+
 \end{proof}
 \begin{theorem}[F. and M. Riesz theorem]
 If $\mu$ is a complex Borel measure on $\mathbb{T}$ and
@@ -1286,7 +1334,7 @@ We can use the assumption of the theorem to write $f$ as a power series by
 where $\hat{\mu}_n$ is the $n$-th Fourier coefficient of $\mu$.
 This along with \ref{FMRlemma1} gives us that $f \in H^1$. % TODO make this more clear
 We can now define a $h \in L^1(\mathbb{T})$, by \ref{FMRlemma2}, such that $f = P[h]$.
-It follows from \ref{FMRlemma3} that $d\mu = h d\sigma$. %TODO define \sigma as Lebesgue on T scaled to 1.
+It follows from \ref{FMRlemma3} that $d\mu = h\ d\sigma$. %TODO define \sigma as Lebesgue on T scaled to 1.
 TODO
 \end{proof}
 \begin{corollary}
