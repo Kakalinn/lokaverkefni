@@ -454,16 +454,13 @@ We sometimes write $L^p(\mu)$ if the space in question is obvious from context a
 There are many related theorems going by the name `Hahn-Banach Theorem'.
 These are sometimes split in two groups, `separation theorems' and `extension theorems'.
 When proving \ref{bishopstheorem} we need the following Hahn-Banach separation theorem:
-\begin{theorem}
+\begin{theorem}[\citep{pryce}]
 Let
-	$X$ be a normed vector space,
+	$X$ be a locally convex normed vector space,
 	$A \neq \emptyset$ be a closed convex subset of $X$,
 	and $p \in X \setminus A$.
-Then there exists a continuous linear functional $f$ such that $\sup \{f(x);\ x \in A\} < 1$ and $f(p) = 1$.
+Then there exists a continuous linear functional $f$ such that $\sup \{f(x);\ x \in A\} < 1$ and $f(p) > 1$.
 \end{theorem}
-Corollary $8.15$ in \citep{pryce} is very similar.
-It states that, for same $X$, $A$, and $p$, there exists a continuous linear functional $f$ such that $f(p) < \inf \{f(x);\ x \in A\}$.
-With such a functional given, ... TODOTODOTODO %% TODO
 \subsection{The Riesz representation theorem}
 Let $X$ be a space with $\sigma$-algebra and measure $\mu$, choose $p$ and $q$ such that $1 < p, q < \infty$ and $1/p + 1/q = 1$, and $g \in L^q(\mu)$.
 We can then define a linear transform
