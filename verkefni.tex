@@ -508,6 +508,495 @@ for all $f \in C_0(X)$ and
 
 
 \chapter{Rudin-Carleson theorem}
+\section{F. and M. Riesz theorem}
+The main result of this section is that the annihilating measures of 
+\[
+	\mathcal{A}|_{\mathbb{T}} = \{f|_{\mathbb{T}};\ f \in \mathcal{A}\}
+\]
+are absolutely continuous with respect to the Lebesgue measure.
+We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of \citep{rudin2}.
+To attain the main result of this section we need some lemmas and definitions. %TODO rewrite these two lines
+To prove one of the lemmas we will also use the following two famous theorems:
+\begin{definition}
+Let $\mathcal{F}$ be a family of complex functions on a metric space $(X, d)$.
+
+We say that the family is \emph{pointwise bounded} if for all $x \in X$ there exists a constant $M < \infty$ such that
+\[
+	|f(x)| < M,\text{ for all } f \in \mathcal{F}.
+\]
+Note that $M$ may depend on $x$.
+
+We say that the family is \emph{equicontinuous} if for all $\varepsilon > 0$ there exists a $\delta > 0$ such that
+\[
+	|f(x) - f(y)| < \varepsilon,\text{ for all } f \in \mathcal{F}\text{ and } x, y \in X\text{ such that } d(x, y) < \delta.
+\]
+Note here that $\delta$ is globally defined and only dependent on $\varepsilon$.
+\end{definition}
+\begin{theorem}[Bolzano-Weierstrass]
+%                                                                                           v This has to be weak because of (M, M, M, M, M, M, ...)
+Let $(a_n)_{n \in \mathbb{N}}$ be a sequence of numbers in $\mathbb{R}^n$, such that $|a_n| < M < \infty$, for all $k \in \mathbb{N}$.
+There than exists and infinite $S \subset \mathbb{N}$ such that $(a_n)_{n \in S}$ is convergent.
+\end{theorem}
+\begin{proof}
+Let's first assume that the sequence is in $\mathbb{R}$,
+	that no element in it is repeated infinitely often (there is nothing to prove in that case),
+	and that $a_n \in ]0, 1[$ for all $n \in \mathbb{N}$.
+The last assumption can be done with out loss of generality by studying the sequence $((a_n + M)/(2M))_{n \in \mathbb{N}}$ instead.
+We will obtain the subsequence by a diagonal process.
+Let $S_0 = \mathbb{N}$, $S_0^- = \{n \in S_0;\ a_n < 1/2\}$, and $S_0^+ = \{n \in S_0;\ a_n > 1/2\}$.
+We then set $S_1 = S_0^-$ if it is infinite, but $S_1 = S_0^+$ otherwise.
+This gives us a subsequence $(a_n)_{n \in S_1}$ such that
+\[
+	\sup_{n \in S_1} a_n - \inf_{n \in S_1} a_n < 1/2.
+\]
+We can then repeat this to get a sequence of sets $(S_n)_{n \in \mathbb{N}}$ such that $S_0 \supset S_1 \supset S_2 \supset...$ and 
+\[
+	\sup_{n \in S_k} a_n - \inf_{n \in S_k} a_n < 2^{1 - k},
+\]
+for all $k \in \mathbb{N}$.
+Specifically, if we have $S_k$ we set
+\[
+	U = m2^{-k},\ 
+	L = (m + 1)2^{-k}
+\]
+$S_k^- = \{n \in S_k;\ a_n < (U + L)/2\}$, and $S_k^+ = \{n \in S_k;\ a_n > (U + L)/2\}$.
+We now set $S_{k + 1} = S_k^-$ if it has infinitely many elements, otherwise we set $S_{k + 1} = S_k^+$.
+We conclude our construction by setting
+\[
+	S = \bigcup_{n \in \mathbb{N}} r_n,
+\]
+where $r_n$ is the $n$-th smallest element of $S_n$.
+This gives us the convergent sequence $(a_n)_{n \in S}$ with limit
+\[
+	\sum_{k = 0}^{\infty} \delta_k 2^{-k}
+\]
+where
+\[
+	\delta_k = \left \{
+	\begin{array}{c c}
+		0,\ & \text{if we chose } S_k^- \\
+		1,\ & \text{if we chose } S_k^+
+	\end{array}.
+	\right .
+\]
+
+To show the result for $\mathbb{R}^n$ we can start by finding a subsequence such that the first coordinate is convergent.
+We can then choose a subsequence thereof such that the second coordinate is also convergent.
+Now the first two coordinates are convergent.
+If we do this $n - 2$ more times we get a desired subsequence.
+% TODO What does (a_n)_{n \in S} mean????
+\end{proof}
+\begin{remark}
+The theorem above clearly holds for sequences in $\mathbb{C}$ as well.
+\end{remark}
+\begin{theorem}[Ascoli-Arzela]
+Let $\mathcal{F}$ be a pointwise bounded equicontinuous collection of complex functions on a metric space $(X, d)$, and $X$ contains a countable dense subset.  %TODO change to 'X is separable'
+Then every sequence in $\mathcal{F}$ contains a subsequence that converges uniformly on every compact subsets of $X$.
+\end{theorem}
+\begin{proof}
+Let $E$ be a countable dense subset of $X$,
+	$(f_n)_{n \in \mathbb{N}}$ be a series in $\mathcal{F}$,
+	and $x_1, x_2, ...$ be an enumeration of $E$.
+We will prove the theorem in two steps.
+The first step is finding a subsequence of $(f_n)_{n \in \mathbb{N}}$ that's pointwise convergent on $E$ using the pointwise boundedness along with Bolzano-Weierstrass. %TODO add ref
+The second step is using the equicontinuity to show that this gives us uniform continuity on compact subsets.
+
+Let's first set $S_0 = \mathbb{N}$.
+Pointwise boundedness gives us that the sequence $(f_n(x_1))_{n \in S_0}$ has a convergent subsequence.
+Let $S_1$ index that subsequence.
+We can use this process to generate sets $S_0 \supset S_1 \supset ...$ such that $(f_n(x_k))_{n \in S_k}$ is convergent.
+We then set
+\[
+	S = \bigcup_{k \in \mathbb{N}} r_k
+\]
+where $r_n$ is the $k$-th smallest element of $S_k$.
+We now have concluded the first step of the proof.
+
+We will now assume the $(f_n)_{n \in \mathbb{N}}$ is pointwise convergent on $E$,
+	let $K$ be a compact subset of $X$, and
+	$\varepsilon > 0$.
+Equicontinuity gives us a $\delta > 0$ such that $d(x, y) < \delta$ implies that $|f_n(x) - f_n(y)| < \varepsilon /3$, for all $n$.
+Let's now cover $K$ with $m$ balls of radius $\delta /2$ and call the $k$-th ball $B_k$.
+We can now set $p_k$ as a point in $B_k \cap E$.
+This point exists because $E$ is dense in $X$.
+Pointwise convergence on $E$ let's us chose an $N$ such that $|f_{n_1}(p_k) - f_{n_2}(p_k)| < \varepsilon /3$ for $k = 1, 2, ..., m$ and all $n_1, n_2 > N$.
+Let's conclude by setting $x \in K$.
+Then there is a $k$ such that $x \in B_k$ and thus $d(x, p_k) < \delta$.
+The choice of $\delta$ and $N$ then gives us that
+\begin{align*}
+	|f_{n_1}(x) - f_{n_2}(x)|
+	& \leq |f_{n_1}(x) - f_{n_1}(p_k)| + |f_{n_1}(p_k) - f_{n_2}(p_k)| + |f_{n_2}(p_k) - f_{n_2}(x)|\\
+	& < \varepsilon /3 + \varepsilon /3 + \varepsilon /3 \\
+	& = \varepsilon.
+\end{align*}
+\end{proof}
+% TODO spjall
+\begin{definition}
+% Poisson kernel, Poisson integral, Poisson integral of a measure.
+The function
+\[
+	P_r(t) = \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}
+\]
+for $0 \leq r < 1$, $t \in \mathbb{R}$, is referred to as \emph{the Poisson kernel on $\mathbb{D}$}, or sometimes simply \emph{the Poisson kernel}.
+We also rewrite $P_r(\theta - t)$ by setting $z = re^{it}$ as
+\[
+	P(z, e^{it}) = \frac{1 - |z|^2}{|e^{it} - z|^2}.
+\]
+This stems from the fact that
+\[
+	P_r(\theta - t) = \Re \left ( \frac{e^{it} + z}{e^{it} - z}\right ) = \frac{1 - r^2}{1 - 2r\cos(\theta - r) + r^2}.
+\]
+
+% TODO reword to include the domain
+For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} by % TODO define L^1
+\[
+	P[f](z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(e^{it})P(z, e^{it})\ dt.
+\]
+
+For complex measure $\mu$ we define \emph{the Poisson integral of $\mu$} by
+\[
+	P[d\mu](z) = \int_T P(z, e^{it})\ d\mu(e^{it}).
+\]
+
+Let's take a look at some of the properties of the Poisson kernel and Poisson integral.
+Note that both $P[f]$ and $P[d\mu]$ are defined on $\mathbb{D}$ because of the way we defined the Poisson kernel.
+\end{definition}
+We see that, since
+\[
+	P_r(t) = \frac{1 - r^2}{1 - 2r\cos(t) + r^2},
+\]
+both $P_r(t) > 0$ and $P_r(t) = P_r(-t)$.
+It will also come of use to know that for $n \neq 0$
+\[
+	in\int_{-\pi}^{\pi} e^{int}\ dt
+	= (e^{in\pi} - e^{-in\pi})
+	= (e^{in\pi} - e^{-i(2n\pi - n\pi)})
+	= (e^{in\pi} - e^{in\pi})
+	= 0,
+\]
+so
+\begin{align*}
+	\int_{-\pi}^{\pi} P_r(t)\ dt
+	&= \int_{-\pi}^{\pi} \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}\ dt\\
+	&= \sum_{n \in \mathbb{Z}} \int_{-\pi}^{\pi} r^{|n|}e^{int}\ dt\\
+	&= \int_{-\pi}^{\pi}\ dt\\
+	&= 2\pi.
+\end{align*}
+This naturally leads us to the following lemma:
+\begin{lemma}
+\label{FMRlemma1}
+Let $\mu$ be a complex Borel measure, and $u = P[d\mu]$.
+Then
+\[
+	\|u_r\|_1 \leq \|\mu\|.
+\]
+\end{lemma}
+\begin{proof}
+% TODO reword this part
+We have that
+\begin{align*}
+	\|u\|_1
+	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})|\ d\theta\\
+	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} \left | \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d\mu(e^{it}) \right | d\theta\\
+	&\leq \frac{1}{2\pi} \int_{-\pi}^{\pi} \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d|\mu(e^{it})| d\theta\\ % TODO add this to prelim
+	&= \int_{\mathbb{T}} \frac{1}{2\pi} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it})\ d\theta d|\mu(e^{it})|\\ 
+	&= \int_{\mathbb{T}}\ d|\mu(e^{it})|\\
+	&= |\mu|(\mathbb{T})\\
+	&= \|\mu\|. % TODO add this to prelim?
+\end{align*}
+\end{proof}
+The main reason we are developing these tools is to prove the F. and M. Riesz theorem.
+The theorem gives us a sufficient condition for when a measure $\mu$ (on $\mathbb{T}$) is absolutely continuous with regards to the Lebesgue-measure (on $\mathbb{T}$).
+The proof is rather simple, we let $f$ be the Poisson integral of $\mu$ and $h$ be a function such that its Poisson integral is $f$.
+We then show that $d\mu = h\ dm$. % TODO hvað á eiginlega Lebesgue-málið að heita?!
+The following lemmas show that all this is in fact possible.
+\begin{lemma}
+%11.30(a) in Rudin
+\label{FMRlemma3}
+Let $u$ be harmonic in $\mathbb{D}$ and
+\[
+	\sup_{0 < r < 1} \|u_r\|_1 = M < \infty. %TODO define u_r
+\]
+Then there exists a unique complex Borel measure $\mu$ on $\mathbb{T}$ such that $u = P[d\mu]$.
+\end{lemma}
+\begin{lemma}
+%11.30(b) in Rudin
+\label{FMRlemma3b}
+Let $u$ be harmonic in $\mathbb{D}$ and
+\[
+	\sup_{0 < r < 1} \|u_r\|_2 = M < \infty. %TODO define u_r
+\]
+Then there exists a unique function $f$ in $L^2(\mathbb{T})$ such that $u = P[f]$.
+\end{lemma}
+We will need the following lemma in the proofs of \ref{FMRlemma3} and \ref{FMRlemma3b}:
+\begin{lemma}
+\label{FMRlemma31}
+Let $X$ be a separable Banach space,
+	$(\Gamma_n)_{n \in \mathbb{N}}$ be a sequence of linear functionals on $X$,
+	and $\sup_n \|\Gamma_n\| = M < \infty$.
+Then there exists a subsequence $(\Gamma_{n_i})_{i \in \mathbb{N}}$ such that the limit 
+\[
+	\Gamma x = \lim_{k \rightarrow \infty} \Gamma_{n_k}\ x
+\]
+exists for every $x \in X$.
+Furthermore, $\Gamma$ is linear and $\|\Gamma\| \leq M$.
+\end{lemma}
+\begin{proof}
+We have that $|\Gamma_n\ x| \leq M \|x\|$ and % TODO why do we have that???
+\begin{align*}
+	|\Gamma_n\ x - \Gamma_n\ y|
+	&= |\Gamma_n (x - y)|\\
+	&\leq M\|x - y\|.
+\end{align*}
+The first inequality gives us pointwise boundedness and the second gives us equicontinuity.
+Now, since singletons are compact, Ascoli-Arzela gives us a subsequence, let's index it by $S$, such that $(\Gamma_n x)_{n \in S}$ is convergent for all $x \in X$. % TODO add ref to Ascoli-Arzela
+Let's now define $\Gamma$ by
+\[
+	\Gamma(x) = \lim_{k \in S} \Gamma_k\ x,
+\]
+see the
+\begin{align*}
+	\Gamma(x) + \Gamma(y)
+	&= \lim_{k \in S} \Gamma_k\ x + \lim_{k \in S} \Gamma_k\ y\\
+	&= \lim_{k \in S} \left ( \Gamma_k\ x + \Gamma_k\ y \right )\\
+	&= \lim_{k \in S} \Gamma_k(x + y)\\
+	&= \Gamma(x + y),
+\end{align*}
+where the second equality holds because addition is continuous, and $a\Gamma(x) = \Gamma(ax)$ obviously holds.
+So $\Gamma$ is linear.
+Lastly
+\begin{align*}
+	\|\Gamma\|
+	&= \sup \{|\Gamma x|;\ \|x\| \leq 1\}\\
+	&= \sup \left \{ \left |\lim_{n \in S} \Gamma_n x \right|;\ \|x\| \leq 1 \right \}\\
+	&\leq \sup \{ M;\ \|x\| \leq 1 \}\\
+	&= M.
+\end{align*}
+\end{proof}
+\begin{proof}[Proof of \ref{FMRlemma3}]
+% TODO fix the Riesz rep thm ref. It's 6.19 in Rudin.
+Let $\Gamma_r$, for $r \in [0, 1[$,  be linear functionals on $C(\mathbb{T})$ defined by
+\[
+	\Gamma_r g = \int_{\mathbb{T}} gu_r\ d\sigma.
+\]
+If $\|g\| \leq 1$ is assumed we get that
+\[
+\Gamma_r\ g = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} u_r\ d\sigma = \|u_r\|_1 \leq M.
+\]
+so
+\[
+	\|\Gamma_r\| \leq M.
+\]
+By Lemma \ref{FMRlemma31} and the Riezs representation theorem % TODO add ref
+we get a measure $\mu$ on $\mathbb{T}$ with $\|\mu\| \leq M$, and a sequence $(r_n)_{n \in \mathbb{N}}$ on $[0, 1[$ with limit $1$, such that
+\begin{equation}
+	\label{eq:1}
+	\lim_{n \rightarrow \infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}g\ d\mu
+\end{equation}
+for all $g \in C(\mathbb{T})$.
+Let's now define functions $h_k$ on $\overline{\mathbb{D}}$ by $h_k(z) = u(r_kz)$.
+We get that, since $u$ is harmonic on $r\mathbb{D}$ for $r \in ]0, 1[$, the functions $h_k$ are harmonic on $\mathbb{D}$ and continuous on $\overline{\mathbb{D}}$.
+So each of them can be represented by the Poisson integral of their restriction to $\mathbb{T}$. % TODO add ref to Ramsford, solution of the Dirichlet problem, no maybe rather find it in rudin2
+Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
+% TODO not use h. instead just looking at u_{r_n} should work.
+\begin{align*}
+	u(z)
+	&= \lim_{n \rightarrow \infty} u(r_nz)\\
+	&= \lim_{n \rightarrow \infty} h_n(z)\\
+	&= \lim_{n \rightarrow \infty} \int_{\mathbb{T}}P(z, e^{it}) h_n(e^{it})\ d\sigma(e^{it})\\
+	&= \lim_{n \rightarrow \infty} \int_{\mathbb{T}}P(z, e^{it}) u_{r_n}(e^{it})\ d\sigma(e^{it})\\
+	&= \int_{\mathbb{T}}P(z, e^{it})\ d\mu(e^{it})\\
+	&= P[d\mu](z),
+\end{align*}
+where the fifth equality is achieved by putting $g = P(z, e^{it})$ into \ref{eq:1}.
+This concludes the proof of existence.
+
+Let's assume that $P[d\mu] = 0$, and let $f \in C(\mathbb{T})$, $u = P[f]$ and $v = P[d\mu]$.
+We firstly have the symmetry
+\[
+	P(re^{i\theta}, e^{it})
+	=
+	P(re^{it}, e^{i\theta}).
+\]
+This symmetry is due to
+\[
+	|e^{it} - re^{i\theta}|
+	=
+	|1 - re^{i(\theta - t)}|
+	=
+	|1 - re^{i(t - \theta)}|
+	=
+	|e^{i\theta} - re^{it}|,
+\]
+which is geometrically intuitive.
+The first and last equalities hold because the distance between two points doesn't change under rotation and the second equality holds because the distance from $z$ to a real number $a$ is the same distance from $\overline{z}$ to $a$.
+We now obtain
+\begin{align*}
+\int_{\mathbb{T}} u_r\ d\mu
+&= \int_{\mathbb{T}} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it}) f(e^{i\theta})\ d\theta d\mu(e^{it})\\
+&= \int_{-\pi}^{\pi} f(e^{i\theta}) \int_{\mathbb{T}} P(re^{it}, e^{i\theta})\ d\mu(e^{it}) d\theta\\
+&= \int_{-\pi}^{\pi} f(e^{i\theta}) v_r\ d\theta\\
+&= \int_{\mathbb{T}} fv_r\ d\sigma.
+\end{align*}
+If we let $r \rightarrow 1$ we get
+\[
+	\int_{\mathbb{T}}f\ d\mu = 0.
+\]
+This holds for all $f \in C(\mathbb{T})$, so the measure $\mu$ represents zero in the dual of $C(\mathbb{T})$.
+The Riesz representation theorem then tells us that $|\mu|(\mathbb{T}) = 0$, so $\mu = 0$. % TODO def |\mu|(T) in the prelim. chapter on measure theory.
+
+Now let $\lambda$ and $\nu$ be measures on $\mathbb{T}$ such that $P[d\lambda] = P[d\nu]$.
+We have that $P[d(\lambda - \nu)] = 0$, so, as shown above $\lambda - \nu = 0$.
+Moreover $\lambda = \nu$, which concludes the proof of uniqueness.
+\end{proof}
+\begin{proof}[Proof of \ref{FMRlemma3b}]
+The proof of existence is almost identical to that proof of existence in \ref{FMRlemma3} and the uniqueness is shown in the same manner.
+The differences in the existence proofs are in the beginning when we are choosing what function spaces we use and which theorems to references.
+Now we define $\Gamma_r$ in the same way, except we define it on $L^2(\mathbb{T})$.
+We again use \ref{FMRlemma31} and the (other) Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
+\[
+	\lim_{n \rightarrow \infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}gf\ d\sigma
+\]
+for all $g$ in $L^2(\mathbb{T})$.
+The remaining calculations are unchanged.
+% TODO kannski skrifað þetta upp af því bara.
+\end{proof}
+We see by this proof that \ref{FMRlemma3b} could be generalized trivially to find a function $f$ in $L^p(\mathbb{T})$ such that $P[f] = u$ for harmonic $u$ with
+\[
+	\sup_{0 < r < 1} \|u_r\|_p = M < \infty
+\]
+and $p > 1$.
+We can't use this method fir $p = 1$ since we will need to use the Riesz representation theorem for the exponent conjugate of $p$, and the theorem only holds if it is in $[1, \infty[$.
+
+We have not yet shown any condition for a function $f$ that implies there exists a $h \in L^1(\mathbb{T})$ such that $P[h] = f$.
+For that we need the following definitions:
+\begin{definition}
+For a function $f$ holomorphic on $\mathbb{D}$ we define
+\[
+	\|f\|_{H^p} = 
+	\sup_{0 < r < 1} \left ( \frac{1}{2\pi}\int_{-\pi}^{\pi} |f(re^{i\theta})|^p\ d\theta \right )^{1/p}
+\]
+and we say that $f$ is in $H^p$ if $\|f\|_{H^p} < \infty$.
+These spaces are referred to as the \emph{Hardy spaces}.
+\end{definition}
+A useful result from the theory of Hardy spaces is if $f \in H^1$ then there exist $g, h \in H^2$ such that $f = g \cdot h$ and $|f| < |g|$ \citep[Theorem $17.10$]{rudin2}.
+\begin{definition}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{approach-region-7}
+\caption{A visualization of $\Omega_{\alpha}$, for a moderately large $\alpha$. }
+\end{figure}
+Let $0 < \alpha < 1$.
+We refer to the open convex hull of
+\[
+	\{z \in \mathbb{C};\ |z| < \alpha\} \cup \{1\},
+\]
+that also includes $1$, as \emph{the nontangential approach region of $1$}, denoted by $\Omega_{\alpha}$.
+We will also use the rotated version, $e^{i\theta}\Omega_{\alpha}$.
+Let $u: \mathbb{D} \rightarrow \mathbb{C}$.
+Its \emph{nontangential maximal function} is defined on $\mathbb{T}$ by
+\[
+	(N_{\alpha}u)(e^{it}) = \sup \{|u(z)|;\ z \in e^{it}\Omega_{\alpha}\}.
+\]
+We say that $u$ has \emph{nontangential limit $\lambda$ at $e^{it}$} if, for all $0 < \alpha < 1$,
+\[
+	\lim_{k \rightarrow \infty} u(z_k) = \lambda
+\]
+for all sequences $(z_k)_{k \in \mathbb{N}}$ in $e^{it}\Omega_{\alpha}$ that converge to $e^{it}$.
+\end{definition}
+\begin{lemma}
+\label{FMRlemma2}
+Let $f \in H^1$.
+% Then there exists a $h \in L^1(\mathbb{T})$ such that $f = P[h]$.
+Then
+\begin{enumerate}
+\item \label{p1}
+its nontangential limits, $F$, exist almost everywhere on $\mathbb{T}$,
+\item \label{p2}
+$F$ is in $L^1(\mathbb{T})$, and
+\item \label{p3}
+$f = P[F]$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+Let $g$ and $h$ be functions in $L^2(\mathbb{T})$ such that $f = g \cdot h$, as described above.
+We have by Lemma \ref{FMRlemma3b} functions $G$ and $H$ in $L^2(\mathbb{T})$ such that $g = P[G]$ and $h = P[H]$.
+Theorem $11.23$ in \ref{rudin2} (along with discussion on the prior page) states that if $f$ is in $L^1(\mathbb{T})$ then $P[f]$ has nontangential limit $f(e^{it})$ at almost every $e^{it}$.
+We also have by the Hölder inequality that on a finite measure space (such as $\mathbb{T}$ with the Lebesgue measure) $\|h\|_1 \leq \|h\|_2$.
+So $g$ and $h$ have nontangential limits almost everywere on $\mathbb{T}$.
+This tells us that $f$ also has nontangential limits almost everywhere on $\mathbb{T}$, since $f = g \cdot h$.
+By $f \leq h^2$ we have that $N_{\alpha}f \leq (N_{\alpha}h)^2$, and therefore $N_{\alpha}f \in L^1(\mathbb{T})$.
+Let $F$ be the tangential limit of $f$.
+We have that $|F| \leq N_{\alpha}f$ where $F$ is defined, so $F$ is also in $L^1(\mathbb{T})$.
+Note that
+\[
+	\lim_{r \rightarrow 1} \|F - f_r\|_1 = \lim_{r \rightarrow 1} \int |F - f_r|\ d\sigma = 0
+\]
+since $f_r \rightarrow F$ holds almost everywhere and $|f_r| < N_{\alpha}f$ let's us use dominated convergence.
+We can also represent $f_r$ by its Poisson integral, for $r < 1$, that is
+\[
+	f_r(z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} P(z, e^{it})f_r(e^{it})\ dt.
+\]
+Letting $r$ go to $1$ gives us
+\[
+	f(z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} P(z, e^{it})F(e^{it})\ dt,
+\]
+namely, $f$ is the Poisson integral of $F$.
+\end{proof}
+\begin{theorem}[F. and M. Riesz theorem]
+If $\mu$ is a complex Borel measure on $\mathbb{T}$ and
+\[
+	\int e^{-int}\ d\mu = 0
+\]
+for $n = -1, -2, ...$, then $\mu \lll m$.
+\end{theorem}
+\begin{proof}
+Let $f = P[d\mu]$.
+If we set $z = re^{i\theta}$ we get that
+\[
+	P(z, e^{it})
+		= P_r(\theta - t)
+		= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in(\theta - t)}
+		= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int}.
+\]
+We can use the assumption of the theorem to write $f$ as a power series by
+\begin{align*}
+% TODO Fubini?
+	f(z) 
+		&= \int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it}) \\
+		&= \int_{\mathbb{T}} \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int}\ d\mu(e^{it}) \\
+		&= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
+		&= \sum_{n = 0}^{\infty} r^n e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
+		&= \sum_{n = 0}^{\infty} \hat{\mu}_n z^n,
+\end{align*}
+where $\hat{\mu}_n$ is the $n$-th Fourier coefficient of $\mu$.
+This along with \ref{FMRlemma1} gives us that $f \in H^1$. % TODO make this more clear
+We can now define a $h \in L^1(\mathbb{T})$, by \ref{FMRlemma2}, such that $f = P[h]$.
+It follows from \ref{FMRlemma3} that $d\mu = h\ d\sigma$. %TODO define \sigma as Lebesgue on T scaled to 1.
+TODO
+\end{proof}
+\begin{corollary}
+\label{fmrieszcor}
+%Let $A$ be the closed subspace of $C(\mathbb{T})$ that consists of all functions that are restriction from $\mathcal{A}$. % TODO makes this def global and maybe call it something else
+Every annihilating measures of $\mathcal{A}|_{\mathbb{T}}$ is absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$. % TODO define all
+\end{corollary}
+\begin{proof}
+Let $\mu$ be an annihilating measure of $\mathcal{A}|_{\mathbb{T}}$.
+By definition we have that
+\[
+	\int f\ d\mu = 0
+\]
+for all $f \in \mathcal{A}|_{\mathbb{T}}$.
+Now since $t \mapsto e^{-int}$ is entire for $n = -1, -2, ...$ we have that their restriction to $\mathbb{T}$ are in $\mathcal{A}|_{\mathbb{T}}$.
+Thus,
+\[
+	\int e^{-int}\ d\mu = 0
+\]
+for all $n = -1, -2, ...$ and $\mu \lll m$.
+\end{proof}
+
+
+
 \section{Rudin-Carleson theorem}
 We will refer to the \emph{closed unit square} in $\mathbb{C}$ by
 \[
@@ -878,499 +1367,6 @@ It is also a composition of functions in $\mathcal{A}$ so it is also in $\mathca
 
 
 
-\section{F. and M. Riesz theorem}
-The main result of this section is that the annihilating measures of 
-\[
-	\mathcal{A}|_{\mathbb{T}} = \{f|_{\mathbb{T}};\ f \in \mathcal{A}\}
-\]
-are absolutely continuous with respect to the Lebesgue measure.
-We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of \citep{rudin2}.
-To attain the main result of this section we need some lemmas and definitions. %TODO rewrite these two lines
-To prove one of the lemmas we will also use the following two famous theorems:
-\begin{definition}
-Let $\mathcal{F}$ be a family of complex functions on a metric space $(X, d)$.
-
-We say that the family is \emph{pointwise bounded} if for all $x \in X$ there exists a constant $M < \infty$ such that
-\[
-	|f(x)| < M,\text{ for all } f \in \mathcal{F}.
-\]
-Note that $M$ may depend on $x$.
-
-We say that the family is \emph{equicontinuous} if for all $\varepsilon > 0$ there exists a $\delta > 0$ such that
-\[
-	|f(x) - f(y)| < \varepsilon,\text{ for all } f \in \mathcal{F}\text{ and } x, y \in X\text{ such that } d(x, y) < \delta.
-\]
-Note here that $\delta$ is globally defined and only dependent on $\varepsilon$.
-\end{definition}
-\begin{theorem}[Bolzano-Weierstrass]
-%                                                                                           v This has to be weak because of (M, M, M, M, M, M, ...)
-Let $(a_n)_{n \in \mathbb{N}}$ be a sequence of numbers in $\mathbb{R}^n$, such that $|a_n| < M < \infty$, for all $k \in \mathbb{N}$.
-There than exists and infinite $S \subset \mathbb{N}$ such that $(a_n)_{n \in S}$ is convergent.
-\end{theorem}
-\begin{proof}
-Let's first assume that the sequence is in $\mathbb{R}$,
-	that no element in it is repeated infinitely often (there is nothing to prove in that case),
-	and that $a_n \in ]0, 1[$ for all $n \in \mathbb{N}$.
-The last assumption can be done with out loss of generality by studying the sequence $((a_n + M)/(2M))_{n \in \mathbb{N}}$ instead.
-We will obtain the subsequence by a diagonal process.
-Let $S_0 = \mathbb{N}$, $S_0^- = \{n \in S_0;\ a_n < 1/2\}$, and $S_0^+ = \{n \in S_0;\ a_n > 1/2\}$.
-We then set $S_1 = S_0^-$ if it is infinite, but $S_1 = S_0^+$ otherwise.
-This gives us a subsequence $(a_n)_{n \in S_1}$ such that
-\[
-	\sup_{n \in S_1} a_n - \inf_{n \in S_1} a_n < 1/2.
-\]
-We can then repeat this to get a sequence of sets $(S_n)_{n \in \mathbb{N}}$ such that $S_0 \supset S_1 \supset S_2 \supset...$ and 
-\[
-	\sup_{n \in S_k} a_n - \inf_{n \in S_k} a_n < 2^{1 - k},
-\]
-for all $k \in \mathbb{N}$.
-Specifically, if we have $S_k$ we set
-\[
-	U = m2^{-k},\ 
-	L = (m + 1)2^{-k}
-\]
-$S_k^- = \{n \in S_k;\ a_n < (U + L)/2\}$, and $S_k^+ = \{n \in S_k;\ a_n > (U + L)/2\}$.
-We now set $S_{k + 1} = S_k^-$ if it has infinitely many elements, otherwise we set $S_{k + 1} = S_k^+$.
-We conclude our construction by setting
-\[
-	S = \bigcup_{n \in \mathbb{N}} r_n,
-\]
-where $r_n$ is the $n$-th smallest element of $S_n$.
-This gives us the convergent sequence $(a_n)_{n \in S}$ with limit
-\[
-	\sum_{k = 0}^{\infty} \delta_k 2^{-k}
-\]
-where
-\[
-	\delta_k = \left \{
-	\begin{array}{c c}
-		0,\ & \text{if we chose } S_k^- \\
-		1,\ & \text{if we chose } S_k^+
-	\end{array}.
-	\right .
-\]
-
-To show the result for $\mathbb{R}^n$ we can start by finding a subsequence such that the first coordinate is convergent.
-We can then choose a subsequence thereof such that the second coordinate is also convergent.
-Now the first two coordinates are convergent.
-If we do this $n - 2$ more times we get a desired subsequence.
-% TODO What does (a_n)_{n \in S} mean????
-\end{proof}
-\begin{remark}
-The theorem above clearly holds for sequences in $\mathbb{C}$ as well.
-\end{remark}
-\begin{theorem}[Ascoli-Arzela]
-Let $\mathcal{F}$ be a pointwise bounded equicontinuous collection of complex functions on a metric space $(X, d)$, and $X$ contains a countable dense subset.  %TODO change to 'X is separable'
-Then every sequence in $\mathcal{F}$ contains a subsequence that converges uniformly on every compact subsets of $X$.
-\end{theorem}
-\begin{proof}
-Let $E$ be a countable dense subset of $X$,
-	$(f_n)_{n \in \mathbb{N}}$ be a series in $\mathcal{F}$,
-	and $x_1, x_2, ...$ be an enumeration of $E$.
-We will prove the theorem in two steps.
-The first step is finding a subsequence of $(f_n)_{n \in \mathbb{N}}$ that's pointwise convergent on $E$ using the pointwise boundedness along with Bolzano-Weierstrass. %TODO add ref
-The second step is using the equicontinuity to show that this gives us uniform continuity on compact subsets.
-
-Let's first set $S_0 = \mathbb{N}$.
-Pointwise boundedness gives us that the sequence $(f_n(x_1))_{n \in S_0}$ has a convergent subsequence.
-Let $S_1$ index that subsequence.
-We can use this process to generate sets $S_0 \supset S_1 \supset ...$ such that $(f_n(x_k))_{n \in S_k}$ is convergent.
-We then set
-\[
-	S = \bigcup_{k \in \mathbb{N}} r_k
-\]
-where $r_n$ is the $k$-th smallest element of $S_k$.
-We now have concluded the first step of the proof.
-
-We will now assume the $(f_n)_{n \in \mathbb{N}}$ is pointwise convergent on $E$,
-	let $K$ be a compact subset of $X$, and
-	$\varepsilon > 0$.
-Equicontinuity gives us a $\delta > 0$ such that $d(x, y) < \delta$ implies that $|f_n(x) - f_n(y)| < \varepsilon /3$, for all $n$.
-Let's now cover $K$ with $m$ balls of radius $\delta /2$ and call the $k$-th ball $B_k$.
-We can now set $p_k$ as a point in $B_k \cap E$.
-This point exists because $E$ is dense in $X$.
-Pointwise convergence on $E$ let's us chose an $N$ such that $|f_{n_1}(p_k) - f_{n_2}(p_k)| < \varepsilon /3$ for $k = 1, 2, ..., m$ and all $n_1, n_2 > N$.
-Let's conclude by setting $x \in K$.
-Then there is a $k$ such that $x \in B_k$ and thus $d(x, p_k) < \delta$.
-The choice of $\delta$ and $N$ then gives us that
-\begin{align*}
-	|f_{n_1}(x) - f_{n_2}(x)|
-	& \leq |f_{n_1}(x) - f_{n_1}(p_k)| + |f_{n_1}(p_k) - f_{n_2}(p_k)| + |f_{n_2}(p_k) - f_{n_2}(x)|\\
-	& < \varepsilon /3 + \varepsilon /3 + \varepsilon /3 \\
-	& = \varepsilon.
-\end{align*}
-\end{proof}
-% TODO spjall
-\begin{definition}
-% Poisson kernel, Poisson integral, Poisson integral of a measure.
-The function
-\[
-	P_r(t) = \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}
-\]
-for $0 \leq r < 1$, $t \in \mathbb{R}$, is referred to as \emph{the Poisson kernel on $\mathbb{D}$}, or sometimes simply \emph{the Poisson kernel}.
-We also rewrite $P_r(\theta - t)$ by setting $z = re^{it}$ as
-\[
-	P(z, e^{it}) = \frac{1 - |z|^2}{|e^{it} - z|^2}.
-\]
-This stems from the fact that
-\[
-	P_r(\theta - t) = \Re \left ( \frac{e^{it} + z}{e^{it} - z}\right ) = \frac{1 - r^2}{1 - 2r\cos(\theta - r) + r^2}.
-\]
-
-% TODO reword to include the domain
-For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} by % TODO define L^1
-\[
-	P[f](z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(e^{it})P(z, e^{it})\ dt.
-\]
-
-For complex measure $\mu$ we define \emph{the Poisson integral of $\mu$} by
-\[
-	P[d\mu](z) = \int_T P(z, e^{it})\ d\mu(e^{it}).
-\]
-
-Let's take a look at some of the properties of the Poisson kernel and Poisson integral.
-Note that both $P[f]$ and $P[d\mu]$ are defined on $\mathbb{D}$ because of the way we defined the Poisson kernel.
-\end{definition}
-We see that, since
-\[
-	P_r(t) = \frac{1 - r^2}{1 - 2r\cos(t) + r^2},
-\]
-both $P_r(t) > 0$ and $P_r(t) = P_r(-t)$.
-It will also come of use to know that for $n \neq 0$
-\[
-	in\int_{-\pi}^{\pi} e^{int}\ dt
-	= (e^{in\pi} - e^{-in\pi})
-	= (e^{in\pi} - e^{-i(2n\pi - n\pi)})
-	= (e^{in\pi} - e^{in\pi})
-	= 0,
-\]
-so
-\begin{align*}
-	\int_{-\pi}^{\pi} P_r(t)\ dt
-	&= \int_{-\pi}^{\pi} \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}\ dt\\
-	&= \sum_{n \in \mathbb{Z}} \int_{-\pi}^{\pi} r^{|n|}e^{int}\ dt\\
-	&= \int_{-\pi}^{\pi}\ dt\\
-	&= 2\pi.
-\end{align*}
-This naturally leads us to the following lemma:
-\begin{lemma}
-\label{FMRlemma1}
-Let $\mu$ be a complex Borel measure, and $u = P[d\mu]$.
-Then
-\[
-	\|u_r\|_1 \leq \|\mu\|.
-\]
-\end{lemma}
-\begin{proof}
-% TODO reword this part
-We have that
-\begin{align*}
-	\|u\|_1
-	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})|\ d\theta\\
-	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} \left | \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d\mu(e^{it}) \right | d\theta\\
-	&\leq \frac{1}{2\pi} \int_{-\pi}^{\pi} \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d|\mu(e^{it})| d\theta\\ % TODO add this to prelim
-	&= \int_{\mathbb{T}} \frac{1}{2\pi} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it})\ d\theta d|\mu(e^{it})|\\ 
-	&= \int_{\mathbb{T}}\ d|\mu(e^{it})|\\
-	&= |\mu|(\mathbb{T})\\
-	&= \|\mu\|. % TODO add this to prelim?
-\end{align*}
-\end{proof}
-The main reason we are developing these tools is to prove the F. and M. Riesz theorem.
-The theorem gives us a sufficient condition for when a measure $\mu$ (on $\mathbb{T}$) is absolutely continuous with regards to the Lebesgue-measure (on $\mathbb{T}$).
-The proof is rather simple, we let $f$ be the Poisson integral of $\mu$ and $h$ be a function such that its Poisson integral is $f$.
-We then show that $d\mu = h\ dm$. % TODO hvað á eiginlega Lebesgue-málið að heita?!
-The following lemmas show that all this is in fact possible.
-\begin{lemma}
-%11.30(a) in Rudin
-\label{FMRlemma3}
-Let $u$ be harmonic in $\mathbb{D}$ and
-\[
-	\sup_{0 < r < 1} \|u_r\|_1 = M < \infty. %TODO define u_r
-\]
-Then there exists a unique complex Borel measure $\mu$ on $\mathbb{T}$ such that $u = P[d\mu]$.
-\end{lemma}
-\begin{lemma}
-%11.30(b) in Rudin
-\label{FMRlemma3b}
-Let $u$ be harmonic in $\mathbb{D}$ and
-\[
-	\sup_{0 < r < 1} \|u_r\|_2 = M < \infty. %TODO define u_r
-\]
-Then there exists a unique function $f$ in $L^2(\mathbb{T})$ such that $u = P[f]$.
-\end{lemma}
-We will need the following lemma in the proofs of \ref{FMRlemma3} and \ref{FMRlemma3b}:
-\begin{lemma}
-\label{FMRlemma31}
-Let $X$ be a separable Banach space,
-	$(\Gamma_n)_{n \in \mathbb{N}}$ be a sequence of linear functionals on $X$,
-	and $\sup_n \|\Gamma_n\| = M < \infty$.
-Then there exists a subsequence $(\Gamma_{n_i})_{i \in \mathbb{N}}$ such that the limit 
-\[
-	\Gamma x = \lim_{k \rightarrow \infty} \Gamma_{n_k}\ x
-\]
-exists for every $x \in X$.
-Furthermore, $\Gamma$ is linear and $\|\Gamma\| \leq M$.
-\end{lemma}
-\begin{proof}
-We have that $|\Gamma_n\ x| \leq M \|x\|$ and % TODO why do we have that???
-\begin{align*}
-	|\Gamma_n\ x - \Gamma_n\ y|
-	&= |\Gamma_n (x - y)|\\
-	&\leq M\|x - y\|.
-\end{align*}
-The first inequality gives us pointwise boundedness and the second gives us equicontinuity.
-Now, since singletons are compact, Ascoli-Arzela gives us a subsequence, let's index it by $S$, such that $(\Gamma_n x)_{n \in S}$ is convergent for all $x \in X$. % TODO add ref to Ascoli-Arzela
-Let's now define $\Gamma$ by
-\[
-	\Gamma(x) = \lim_{k \in S} \Gamma_k\ x,
-\]
-see the
-\begin{align*}
-	\Gamma(x) + \Gamma(y)
-	&= \lim_{k \in S} \Gamma_k\ x + \lim_{k \in S} \Gamma_k\ y\\
-	&= \lim_{k \in S} \left ( \Gamma_k\ x + \Gamma_k\ y \right )\\
-	&= \lim_{k \in S} \Gamma_k(x + y)\\
-	&= \Gamma(x + y),
-\end{align*}
-where the second equality holds because addition is continuous, and $a\Gamma(x) = \Gamma(ax)$ obviously holds.
-So $\Gamma$ is linear.
-Lastly
-\begin{align*}
-	\|\Gamma\|
-	&= \sup \{|\Gamma x|;\ \|x\| \leq 1\}\\
-	&= \sup \left \{ \left |\lim_{n \in S} \Gamma_n x \right|;\ \|x\| \leq 1 \right \}\\
-	&\leq \sup \{ M;\ \|x\| \leq 1 \}\\
-	&= M.
-\end{align*}
-\end{proof}
-\begin{proof}[Proof of \ref{FMRlemma3}]
-% TODO fix the Riesz rep thm ref. It's 6.19 in Rudin.
-Let $\Gamma_r$, for $r \in [0, 1[$,  be linear functionals on $C(\mathbb{T})$ defined by
-\[
-	\Gamma_r g = \int_{\mathbb{T}} gu_r\ d\sigma.
-\]
-If $\|g\| \leq 1$ is assumed we get that
-\[
-\Gamma_r\ g = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} u_r\ d\sigma = \|u_r\|_1 \leq M.
-\]
-so
-\[
-	\|\Gamma_r\| \leq M.
-\]
-By Lemma \ref{FMRlemma31} and the Riezs representation theorem % TODO add ref
-we get a measure $\mu$ on $\mathbb{T}$ with $\|\mu\| \leq M$, and a sequence $(r_n)_{n \in \mathbb{N}}$ on $[0, 1[$ with limit $1$, such that
-\begin{equation}
-	\label{eq:1}
-	\lim_{n \rightarrow \infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}g\ d\mu
-\end{equation}
-for all $g \in C(\mathbb{T})$.
-Let's now define functions $h_k$ on $\overline{\mathbb{D}}$ by $h_k(z) = u(r_kz)$.
-We get that, since $u$ is harmonic on $r\mathbb{D}$ for $r \in ]0, 1[$, the functions $h_k$ are harmonic on $\mathbb{D}$ and continuous on $\overline{\mathbb{D}}$.
-So each of them can be represented by the Poisson integral of their restriction to $\mathbb{T}$. % TODO add ref to Ramsford, solution of the Dirichlet problem, no maybe rather find it in rudin2
-Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
-% TODO not use h. instead just looking at u_{r_n} should work.
-\begin{align*}
-	u(z)
-	&= \lim_{n \rightarrow \infty} u(r_nz)\\
-	&= \lim_{n \rightarrow \infty} h_n(z)\\
-	&= \lim_{n \rightarrow \infty} \int_{\mathbb{T}}P(z, e^{it}) h_n(e^{it})\ d\sigma(e^{it})\\
-	&= \lim_{n \rightarrow \infty} \int_{\mathbb{T}}P(z, e^{it}) u_{r_n}(e^{it})\ d\sigma(e^{it})\\
-	&= \int_{\mathbb{T}}P(z, e^{it})\ d\mu(e^{it})\\
-	&= P[d\mu](z),
-\end{align*}
-where the fifth equality is achieved by putting $g = P(z, e^{it})$ into \ref{eq:1}.
-This concludes the proof of existence.
-
-Let's assume that $P[d\mu] = 0$, and let $f \in C(\mathbb{T})$, $u = P[f]$ and $v = P[d\mu]$.
-We firstly have the symmetry
-\[
-	P(re^{i\theta}, e^{it})
-	=
-	P(re^{it}, e^{i\theta}).
-\]
-This symmetry is due to
-\[
-	|e^{it} - re^{i\theta}|
-	=
-	|1 - re^{i(\theta - t)}|
-	=
-	|1 - re^{i(t - \theta)}|
-	=
-	|e^{i\theta} - re^{it}|,
-\]
-which is geometrically intuitive.
-The first and last equalities hold because the distance between two points doesn't change under rotation and the second equality holds because the distance from $z$ to a real number $a$ is the same distance from $\overline{z}$ to $a$.
-We now obtain
-\begin{align*}
-\int_{\mathbb{T}} u_r\ d\mu
-&= \int_{\mathbb{T}} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it}) f(e^{i\theta})\ d\theta d\mu(e^{it})\\
-&= \int_{-\pi}^{\pi} f(e^{i\theta}) \int_{\mathbb{T}} P(re^{it}, e^{i\theta})\ d\mu(e^{it}) d\theta\\
-&= \int_{-\pi}^{\pi} f(e^{i\theta}) v_r\ d\theta\\
-&= \int_{\mathbb{T}} fv_r\ d\sigma.
-\end{align*}
-If we let $r \rightarrow 1$ we get
-\[
-	\int_{\mathbb{T}}f\ d\mu = 0.
-\]
-This holds for all $f \in C(\mathbb{T})$, so the measure $\mu$ represents zero in the dual of $C(\mathbb{T})$.
-The Riesz representation theorem then tells us that $|\mu|(\mathbb{T}) = 0$, so $\mu = 0$. % TODO def |\mu|(T) in the prelim. chapter on measure theory.
-
-Now let $\lambda$ and $\nu$ be measures on $\mathbb{T}$ such that $P[d\lambda] = P[d\nu]$.
-We have that $P[d(\lambda - \nu)] = 0$, so, as shown above $\lambda - \nu = 0$.
-Moreover $\lambda = \nu$, which concludes the proof of uniqueness.
-\end{proof}
-\begin{proof}[Proof of \ref{FMRlemma3b}]
-The proof of existence is almost identical to that proof of existence in \ref{FMRlemma3} and the uniqueness is shown in the same manner.
-The differences in the existence proofs are in the beginning when we are choosing what function spaces we use and which theorems to references.
-Now we define $\Gamma_r$ in the same way, except we define it on $L^2(\mathbb{T})$.
-We again use \ref{FMRlemma31} and the (other) Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
-\[
-	\lim_{n \rightarrow \infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}gf\ d\sigma
-\]
-for all $g$ in $L^2(\mathbb{T})$.
-The remaining calculations remain the same.
-% TODO kannski skrifað þetta upp af því bara.
-\end{proof}
-We see by this proof that \ref{FMRlemma3b} could be generalized trivially to find a function $f$ in $L^p(\mathbb{T})$ such that $P[f] = u$ for harmonic $u$ with
-\[
-	\sup_{0 < r < 1} \|u_r\|_p = M < \infty
-\]
-and $p > 1$.
-We can't use this method fir $p = 1$ since we will need to use the Riesz representation theorem for the exponent conjugate of $p$, and the theorem only holds if it is in $[1, \infty[$.
-
-We have not yet shown any condition for a function $f$ that implies there exists a $h \in L^1(\mathbb{T})$ such that $P[h] = f$.
-For that we need the following definitions:
-\begin{definition}
-For a function $f$ holomorphic on $\mathbb{D}$ we define
-\[
-	\|f\|_{H^p} = 
-	\sup_{0 < r < 1} \left ( \frac{1}{2\pi}\int_{-\pi}^{\pi} |f(re^{i\theta}|^p\ d\theta \right )^{1/p}
-\]
-and we say that $f$ is in $H^p$ if $\|f\|_{H^p} < \infty$.
-These spaces are referred to as the \emph{Hardy spaces}.
-\end{definition}
-A useful result from the theory of Hardy spaces is if $f \in H^1$ then there exist $g, h \in H^2$ such that $f = g \cdot h$ \citep[Theorem $17.10$]{rudin2}.
-\begin{definition}
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.5\textwidth]{approach-region-7}
-\caption{An example of $f_H$ where $H$ includes nine points. The points of $H$ are represented by circles. }
-\end{figure}
-Let $0 < \alpha < 1$.
-We refer to the open convex hull of
-\[
-	\{z \in \mathbb{C};\ |z| < \alpha\} \cup \{1\},
-\]
-that also includes $1$, as \emph{the nontangential approach region of $1$}, denoted by $\Omega_{\alpha}$.
-We will also use the rotated version, $e^{i\theta}\Omega_{\alpha}$.
-Let $u: \mathbb{D} \rightarrow \mathbb{C}$.
-Its \emph{nontangential maximal function} is defined on $\mathbb{T}$ by
-\[
-	(N_{\alpha}u)(e^{it}) = \sup \{|u(z)|;\ z \in e^{it}\Omega_{\alpha}\}.
-\]
-We say that $u$ has \emph{nontangential limit $\lambda$ at $e^{it}$} if, for all $0 < \alpha < 1$,
-\[
-	\lim_{k \rightarrow \infty} u(z_k) = \lambda
-\]
-for all sequences $(z_k)_{k \in \mathbb{N}}$ in $e^{it}\Omega_{\alpha}$ that converge to $e^{it}$.
-\end{definition}
-\begin{lemma}
-\label{FMRlemma2}
-Let $f \in H^1$.
-% Then there exists a $h \in L^1(\mathbb{T})$ such that $f = P[h]$.
-Then
-\begin{enumerate}
-\item \label{p1}
-its nontangential limits, $F$, exist almost everywhere on $\mathbb{T}$,
-\item \label{p2}
-$F$ is in $L^1(\mathbb{T})$, and
-\item \label{p3}
-$f = P[F]$.
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-% TODO finish
-\ref{p1}:\\
-Let $g$ and $h$ be functions in $L^2(\mathbb{T})$ such that $f = g \cdot h$, as described above.
-We have by Lemma \ref{FMRlemma3b} functions $G$ and $H$ in $L^2(\mathbb{T})$ such that $g = P[G]$ and $h = P[H]$.
-Theorem $11.23$ in \ref{rudin2} (along with discussion on the prior page) states that if $f$ is in $L^1(\mathbb{T})$ then $P[f]$ has nontangential limit $f(e^{it})$ at almost every $e^{it}$.
-We also have by the Hölder inequality that on a finite measure space (such as $\mathbb{T}$ with the Lebesgue measure) $\|h\|_1 \leq \|h\|_2$.
-So $g$ and $h$ have nontangential limits almost everywere on $\mathbb{T}$.
-This tells us that $f$ also has nontangential limits almost everywhere on $\mathbb{T}$, since $f = g \cdot h$.\\
-\ref{p2}:\\
-By $f \leq h^2$ we have that $N_{\alpha}f \leq (N_{\alpha}h)^2$, and therefore $N_{\alpha}f \in L^1(\mathbb{T})$.
-Let $F$ be the tangential limit of $f$.
-We have that $|F| \leq N_{\alpha}f$ where $F$ is defined, so $F$ is also in $L^1(\mathbb{T})$.\\
-\ref{p3}:\\
-Note that
-\[
-	\lim_{r \rightarrow 1} \|F - f_r\|_1 = \lim_{r \rightarrow 1} \int |F - f_r|\ d\sigma = 0
-\]
-since $f_r \rightarrow F$ holds almost everywhere and $|f_r| < N_{\alpha}f$ let's us use dominated convergence.
-We can also represent $f_r$ by its Poisson integral, for $r < 1$, that is
-\[
-	f_r(z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} P(z, e^{it})f_r(e^{it})\ dt.
-\]
-Letting $r$ go to $1$ gives us
-\[
-	f(z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} P(z, e^{it})F(e^{it})\ dt,
-\]
-namely, $f$ is the Poisson integral of $F$.
-\end{proof}
-\begin{theorem}[F. and M. Riesz theorem]
-If $\mu$ is a complex Borel measure on $\mathbb{T}$ and
-\[
-	\int e^{-int}\ d\mu = 0
-\]
-for $n = -1, -2, ...$, then $\mu \lll m$.
-\end{theorem}
-\begin{proof}
-Let $f = P[d\mu]$.
-If we set $z = re^{i\theta}$ we get that
-\[
-	P(z, e^{it})
-		= P_r(\theta - t)
-		= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in(\theta - t)}
-		= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int}.
-\]
-We can use the assumption of the theorem to write $f$ as a power series by
-\begin{align*}
-% TODO Fubini?
-	f(z) 
-		&= \int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it}) \\
-		&= \int_{\mathbb{T}} \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int}\ d\mu(e^{it}) \\
-		&= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
-		&= \sum_{n = 0}^{\infty} r^n e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
-		&= \sum_{n = 0}^{\infty} \hat{\mu}_n z^n,
-\end{align*}
-where $\hat{\mu}_n$ is the $n$-th Fourier coefficient of $\mu$.
-This along with \ref{FMRlemma1} gives us that $f \in H^1$. % TODO make this more clear
-We can now define a $h \in L^1(\mathbb{T})$, by \ref{FMRlemma2}, such that $f = P[h]$.
-It follows from \ref{FMRlemma3} that $d\mu = h\ d\sigma$. %TODO define \sigma as Lebesgue on T scaled to 1.
-TODO
-\end{proof}
-\begin{corollary}
-\label{fmrieszcor}
-%Let $A$ be the closed subspace of $C(\mathbb{T})$ that consists of all functions that are restriction from $\mathcal{A}$. % TODO makes this def global and maybe call it something else
-Every annihilating measures of $\mathcal{A}|_{\mathbb{T}}$ is absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$. % TODO define all
-\end{corollary}
-\begin{proof}
-Let $\mu$ be an annihilating measure of $\mathcal{A}|_{\mathbb{T}}$.
-By definition we have that
-\[
-	\int f\ d\mu = 0
-\]
-for all $f \in \mathcal{A}|_{\mathbb{T}}$.
-Now since $t \mapsto e^{-int}$ is entire for $n = -1, -2, ...$ we have that their restriction to $\mathbb{T}$ are in $\mathcal{A}|_{\mathbb{T}}$.
-Thus,
-\[
-	\int e^{-int}\ d\mu = 0
-\]
-for all $n = -1, -2, ...$ and $\mu \lll m$.
-\end{proof}
-
-
-
 \section{A generalization of the Rudin-Carleson theorem}
 This borrows from \citep{bishop}. % TODO actually write something here
 \begin{theorem}[General Rudin-Carleson theorem]
@@ -1476,7 +1472,7 @@ So all requirements of \ref{bishopstheorem} are met.
 
 \appendix
 \renewcommand{\chaptername}{Appendix}
-\chapter{Further applications of the general Rudin-Carleson theorem}
+\chapter{A further application of the general Rudin-Carleson theorem}
 % TODO cite
 \begin{definition}
 \label{bigdef}
