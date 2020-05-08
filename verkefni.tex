@@ -881,7 +881,7 @@ A useful result from the theory of Hardy spaces is if $f \in H^1$ then there exi
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{approach-region-7}
-\caption{A visualization of $\Omega_{\alpha}$, for a moderately large $\alpha$. }
+\caption{A visualization of $\Omega_{\alpha}$, for a moderately large $\alpha$. Note that the only boundary point included in $\Omega_{\alpha}$ is $1$. }
 \end{figure}
 Let $0 < \alpha < 1$.
 We refer to the open convex hull of
@@ -903,9 +903,7 @@ for all sequences $(z_k)_{k \in \mathbb{N}}$ in $e^{it}\Omega_{\alpha}$ that con
 \end{definition}
 \begin{lemma}
 \label{FMRlemma2}
-Let $f \in H^1$.
-% Then there exists a $h \in L^1(\mathbb{T})$ such that $f = P[h]$.
-Then
+If $f$ is in $H^1$ then
 \begin{enumerate}
 \item \label{p1}
 its nontangential limits, $F$, exist almost everywhere on $\mathbb{T}$,
@@ -918,7 +916,7 @@ $f = P[F]$.
 \begin{proof}
 Let $g$ and $h$ be functions in $L^2(\mathbb{T})$ such that $f = g \cdot h$, as described above.
 We have by Lemma \ref{FMRlemma3b} functions $G$ and $H$ in $L^2(\mathbb{T})$ such that $g = P[G]$ and $h = P[H]$.
-Theorem $11.23$ in \ref{rudin2} (along with discussion on the prior page) states that if $f$ is in $L^1(\mathbb{T})$ then $P[f]$ has nontangential limit $f(e^{it})$ at almost every $e^{it}$.
+Theorem $11.23$ in \citep{rudin2} (along with discussion on the prior page) states that if $h$ is in $L^1(\mathbb{T})$ then $P[h]$ has nontangential limit $h(e^{it})$ at almost every $e^{it}$.
 We also have by the Hölder inequality that on a finite measure space (such as $\mathbb{T}$ with the Lebesgue measure) $\|h\|_1 \leq \|h\|_2$.
 So $g$ and $h$ have nontangential limits almost everywere on $\mathbb{T}$.
 This tells us that $f$ also has nontangential limits almost everywhere on $\mathbb{T}$, since $f = g \cdot h$.
@@ -947,6 +945,8 @@ If $\mu$ is a complex Borel measure on $\mathbb{T}$ and
 \]
 for $n = -1, -2, ...$, then $\mu \lll m$.
 \end{theorem}
+If we take a second look at the outline of proof given earlier we see that most of the work has been done.
+All that's left is to show that the condition given in the theorem implies that $P[d\mu]$ is in $H^1$.
 \begin{proof}
 Let $f = P[d\mu]$.
 If we set $z = re^{i\theta}$ we get that
@@ -960,11 +960,11 @@ We can use the assumption of the theorem to write $f$ as a power series by
 \begin{align*}
 % TODO Fubini?
 	f(z) 
-		&= \int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it}) \\
-		&= \int_{\mathbb{T}} \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int}\ d\mu(e^{it}) \\
-		&= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
-		&= \sum_{n = 0}^{\infty} r^n e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
-		&= \sum_{n = 0}^{\infty} \hat{\mu}_n z^n,
+	&= \int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it}) \\
+	&= \int_{\mathbb{T}} \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int}\ d\mu(e^{it}) \\
+	&= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
+	&= \sum_{n = 0}^{\infty} r^n e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
+	&= \sum_{n = 0}^{\infty} \hat{\mu}_n z^n,
 \end{align*}
 where $\hat{\mu}_n$ is the $n$-th Fourier coefficient of $\mu$.
 This along with \ref{FMRlemma1} gives us that $f \in H^1$. % TODO make this more clear
@@ -1028,7 +1028,7 @@ and
 \begin{proof}
 % This follows directly from the standard analytic definition of continuity along with the fact that an intersection of $K$ and a closed square is closed.
 We know that $f(K)$ is compact, so we can choose $w$ and $a$ such that $f(K) \subset w + As$.
-
+TODO
 \end{proof}
 
 In the discussion before the proof of \ref{mylemma} a logarithm is used.
