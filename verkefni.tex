@@ -456,22 +456,26 @@ These are sometimes split in two groups, `separation theorems' and `extension th
 When proving \ref{bishopstheorem} we need the following Hahn-Banach separation theorem:
 \begin{theorem}[\citep{pryce}]
 Let
-	$X$ be a locally convex normed vector space,
-	$A \neq \emptyset$ be a closed convex subset of $X$,
-	and $p \in X \setminus A$.
-Then there exists a continuous linear functional $f$ such that $\sup \{f(x);\ x \in A\} < 1$ and $f(p) > 1$.
+	$X$ be a compact space,
+	$B$ be a closed convex subset of $C(X)$,
+	and $f$ be a function in $C(X)$.
+Then there exists a continuous linear functional $\alpha$ such that $|\alpha| < 1$ on $B$ and $\alpha(f) > 1$.
 \end{theorem}
 \subsection{The Riesz representation theorem}
-Let $X$ be a space with $\sigma$-algebra and measure $\mu$, choose $p$ and $q$ such that $1 < p, q < \infty$ and $1/p + 1/q = 1$, and $g \in L^q(\mu)$.
+Let $X$ be a $\sigma$-finite measurable space with measure $\mu$, choose $p$ and $q$ such that $1 < p, q < \infty$ and $1/p + 1/q = 1$, and $g \in L^q(\mu)$.
 We can then define a linear transform
 \[
 	\alpha(f) = \int fg\ d\mu.
 \]
 The Hölder inequality tells us it is bounded.
+Recall that the Hölder inequality states that if $f$ and $g$ are measurable function with $p$ and $q$ as above then
+\[
+	\|fg\|_1 \leq \|f\|_p\|g\|_q.
+\]
 \begin{theorem}[The Riesz representation theorem for bounded linear functionals on $L(X, \mu)$ with $\sigma$-finite $X$ \citep{rudin2}]
 Let $1 < p < \infty$,
 	$q$ be such that $1/p + 1/q = 1$,
-	$\mu$ be a $\sigma$-finite positive measure on $X$,
+	$\mu$ be a positive measure on $\sigma$-finite space $X$,
 	and $\alpha$ be a bounded linear functional on $L^p(\mu)$.
 There then exists a unique $g \in L^q(\mu)$ such that
 \[
@@ -595,7 +599,7 @@ Let $E$ be a countable dense subset of $X$,
 	$(f_n)_{n \in \mathbb{N}}$ be a series in $\mathcal{F}$,
 	and $x_1, x_2, ...$ be an enumeration of $E$.
 We will prove the theorem in two steps.
-The first step is finding a subsequence of $(f_n)_{n \in \mathbb{N}}$ that's pointwise convergent on $E$ using the pointwise boundedness along with Bolzano-Weierstrass. %TODO add ref
+The first step is finding a subsequence of $(f_n)_{n \in \mathbb{N}}$ that's pointwise convergent on $E$ using the pointwise boundedness along with Bolzano-Weierstrass.
 The second step is using the equicontinuity to show that this gives us uniform continuity on compact subsets.
 
 Let's first set $S_0 = \mathbb{N}$.
@@ -746,7 +750,7 @@ We have that $|\Gamma_n\ x| \leq M \|x\|$ and % TODO why do we have that???
 	&\leq M\|x - y\|.
 \end{align*}
 The first inequality gives us pointwise boundedness and the second gives us equicontinuity.
-Now, since singletons are compact, Ascoli-Arzela gives us a subsequence, let's index it by $S$, such that $(\Gamma_n x)_{n \in S}$ is convergent for all $x \in X$. % TODO add ref to Ascoli-Arzela
+Now, since singletons are compact, Ascoli-Arzela gives us a subsequence, let's index it by $S$, such that $(\Gamma_n x)_{n \in S}$ is convergent for all $x \in X$.
 Let's now define $\Gamma$ by
 \[
 	\Gamma(x) = \lim_{k \in S} \Gamma_k\ x,
@@ -784,7 +788,7 @@ so
 \[
 	\|\Gamma_r\| \leq M.
 \]
-By Lemma \ref{FMRlemma31} and the Riezs representation theorem % TODO add ref
+By Lemma \ref{FMRlemma31} and the Riesz representation theorem % TODO add ref
 we get a measure $\mu$ on $\mathbb{T}$ with $\|\mu\| \leq M$, and a sequence $(r_n)_{n \in \mathbb{N}}$ on $[0, 1[$ with limit $1$, such that
 \begin{equation}
 	\label{eq:1}
@@ -1014,7 +1018,7 @@ We will also make use of the following lemma:
 \label{somelemma}
 Let
 	$\varepsilon > 0$,
-	$K$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure zero,
+	$K$ be a closed subset of $]0, 1]$ of Lebesgue-measure zero,
 	and $f: K \rightarrow \mathbb{C}$.
 Then there exist pairwise disjoint $E_1, E_2, ..., E_n$ and $w_1, w_2, ..., w_n$ such that 
 \[
@@ -1026,10 +1030,19 @@ and
 \]
 \end{lemma}
 \begin{proof}
-% This follows directly from the standard analytic definition of continuity along with the fact that an intersection of $K$ and a closed square is closed.
-We know that $f(K)$ is compact, so we can choose $w$ and $a$ such that $f(K) \subset w + As$.
-TODO
+Recall that a point $x$ in a set $A$ is a \emph{limit point of $A$} if it is in the closure of $A \setminus \{x\}$.
+We have that $K$ is compact so $f$ is uniformly continuous.
+This means we can set $\delta > 0$ such that $|f(x) - f(y)| < \varepsilon$ if $|x - y| < \delta$.
+Let $a_1, a_2, ..., a_{p + 1}$ be a strictly increasing sequence in $]0, 1]$ such that $a_{k + 1} - a_k < \delta/2$, for $k = 1, 2, ..., p$ and $E_k = E \cap ]a_k, a_{k + 1}]$, for $k = 1, 2, ..., p$.
+The only problem with this decomposition is that the sets may not be closed.
+More concretely, if $a_k$ is a limit point of $E$ then $E_k$ may not be closed, for $k = 1, 2, ..., p$.
+If we could replace $a_k$ by a point in $I = ]a_k, a_{k + 1}[$ that was not a limit point of $E$ then this problem will be solved.
+Let's assume no such point exists and show it leads to a contradiction.
+This implies that $E \cap I$ is dense in $I$, but this would imply that $E$ contains $I$, since $E$ is closed and therefore $E \cap I$ closed in $I$.
+But $E$ can't contain an open set since $E$ is of Lebesgue-measure zero.
 \end{proof}
+Note that \ref{somelemma} still holds if we replace $]0, 1]$ by $\mathbb{T}$ by a simple homeomorphism.
+This is the context we will later use it in.
 
 In the discussion before the proof of \ref{mylemma} a logarithm is used.
 This is the base $2$ logarithm, specifically it satisfies $\log 2^x = x$.
@@ -1287,7 +1300,7 @@ The desired function in then obtained with $F = \Phi \circ g$.
 \end{proof}
 \begin{lemma}
 \label{rudinlemma3}
-If $f$ is a continue function on $E$ which maps $E$ into $S$ then there exists a sequence $(f_n)_{n \in \mathbb{N}}$ of simple continuous function on $E$ such that
+If $f$ is a continuous function on $E$ which maps $E$ into $S$ then there exists a sequence $(f_n)_{n \in \mathbb{N}}$ of simple continuous function on $E$ such that
 \[
 	f(x) = \sum_{n \in \mathbb{N}} f_n(z)
 	\text{ and }
