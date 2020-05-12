@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,6 +14,11 @@ Reynir Axelsson.
 Errett Bishop.
 \newblock A general {R}udin-{C}arleson theorem.
 \newblock \emph{Proc. Amer. Math. Soc.}, 13:\penalty0 140--143, 1962.
+
+\bibitem[Carleson(1957)]{carleson}
+Lennart Carleson.
+\newblock Representation of continuous functions.
+\newblock \emph{Math. Z.}, 66:\penalty0 447--451, 1957.
 
 \bibitem[Greene and Krantz(2006)]{greenkrantz}
 Robert~Everist Greene and Steven~George Krantz.

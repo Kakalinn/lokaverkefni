@@ -1,11 +1,10 @@
-% TODO remove all '/in'
 % TODO specify all measures as complex
 % TODO make everythin Hausdorff???
 % TODO add carleson cite
 % TODO laga kápu
 % TODO make sure at the end that 'Caratheodory' is nowhere
 % TODO fix open intervals. they look ugly
-% TODO skrifað Weierstrass rétt
+% TODO skrifað Weierstrass rétt?
 % TODO decide if 0 is in \mathbb{N} and make sure it's consistent
 % TODO read and mention Globevnik
 % TODO in F. and M. Riesz chapter talk about why the function spaces are seperable
@@ -245,7 +244,6 @@ The section could be titled: Glossary, Variable Names, etc.
 Sandra
 Benni
 Ragnar
-Jón
 Atli
 Hjörtur
 Eyleifur
@@ -254,13 +252,32 @@ Tóti
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{Introduction}
+Lennart Carleson and Walter Rudin gave independently, in $1957$ and $1956$ respectively, sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that each continuous function thereon could be extended holomorphically (and still continuously) into $\mathbb{D}$ \citep{rudin, carleson}.
+This can be seen as a strengthened result of Fatou's interpolation theorem \citep{fatou} (this interplay is discussed briefly and more generally in section \ref{section4}).
+Errett Bishop then generalized the Rudin-Carleson theorem in $1962$ by giving sufficient condition for set such that a continuous function thereon can always be extended by in a similar sense \citep{bishop}.
+Here the condition on the set is given in term of the annihilating measures (\ref{annilatingmeasure}) of the family of functions we want to extend into.
+The result of Bishop doesn't just generalize the Rudin-Carleson theorem (allowing, for example, similar studies in higher dimensions) but also shows the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem. % TODO cite?
+
+We start of by proving the F. and M. Riesz theorem in section \ref{section1}.
+To achieve this some study of the Poisson kernel is needed.
+The Poisson kernel is classically used to find harmonic function on the unit disk given continuous boundary values.
+It is used to this end in the proof of the Rudin-Carleson theorem present in this thesis, but its place in the proof of the F. and M. Riesz theorem is less standard.
+
+The Rudin-Carleson theorem is then proved in section \ref{section2}.
+It is done in the same way Rudin did in his original paper.
+Some effort is put into showing the existence of a continuous integrable function on $\mathbb{T}$ that takes value $\infty$ at exactly a closed set of Lebesgue-measure zero.
+\section{Notation}
 % TODO define 'extends'
-$\mathcal{O}(U)$ for open $U \subset \mathbb{C}$ is the family of functions holomorphic on $U$.
-$C(X)$ for open topological space $X$ is the family of continuous functions from $X$ to $\mathbb{C}$.
+We denote by $\mathcal{O}(U)$ the family of holomorphic functions on $U$ for open set $U$.
+We denote by $C(X)$ the family of continuous functions from $X$ to $\mathbb{C}$ for some topological space $X$.
 We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C};\ |z| < 1\}$.
 The closed unit disk will get no special notation, but will be referred to by $\overline{\mathbb{D}}$.
 We will use $\mathbb{T}$ to refer to the open unit circle $\{z \in \mathbb{C};\ |z| = 1\}$.
-
+We say that \emph{$g$ extends $f$} if
+	$f$ is defined on $A$,
+	$g$ defined on $B$,
+	$A \subset B$,
+	and $f = g|_A$.
 \chapter{Preliminaries}
 \section{Measure theory}
 During introductory courses in measure theory the focus is often solely on positive measures \citep{tao}, which are then simply referred to as `measures'.
@@ -285,7 +302,7 @@ Allowing $Y = \overline{\mathbb{R}}$ in (ii) would lead to trouble, for example 
 For those not familiar with complex measures, some care must be taken.
 A prime example is the notion of null sets.
 They still play a great role, but their definition is different.
-We can motivate this difference by letting $X = \{x, y\}$, $\mathcal{F}$ be the powerset of $X$, and define $\mu$ by $\mu(\{x\}) = -1$ and $\mu(\{y\}) = 1$.
+We can motivate this difference by letting $X = \{x, y\}$, $\mathcal{F}$ be the power set of $X$, and define $\mu$ by $\mu(\{x\}) = -1$ and $\mu(\{y\}) = 1$.
 For $\mu$ to be a measure we need $\mu(X) = 0$ to hold.
 Blindly applying our definitions from positive measures would label $X$ as a $\mu$-null set.
 This would of course technically be a valid definition, but leads to problems further down the road, for example
@@ -310,6 +327,17 @@ It so happens that defining $\lambda$ by
 yields a measure.
 This measure is referred to as \emph{the total variation of $\mu$} and denoted by $|\mu|$ (for example, $|\mu|(E)$).
 A proof that $|\mu|$ is a measure and more detail on complex measures can be found in chapter $6$ of \citep{rudin2}. 
+
+% TODO spjall
+\begin{definition}
+\label{annilatingmeasure}
+Let $\mu$ be a measure and $B$ be a family of measurable function defined on a measurable space $X$.
+We say the $\mu$ is an \emph{annihilating measure} of $B$ if
+\[
+	\int_X f\ d\mu = 0
+\]
+for all $f$ in $B$. We denote the family of all annihilating measure of $B$ by $B^{\bot}$.
+\end{definition}
 \section{Complex analysis in one variable}
 \subsection{The disk algebra}
 \begin{definition}
@@ -510,6 +538,7 @@ for all $f \in C_0(X)$ and
 
 \chapter{Rudin-Carleson theorem}
 \section{F. and M. Riesz theorem}
+\label{section1}
 The main result of this section is that the annihilating measures of 
 \[
 	\mathcal{A}|_{\mathbb{T}} = \{f|_{\mathbb{T}};\ f \in \mathcal{A}\}
@@ -999,6 +1028,7 @@ for all $n = -1, -2, ...$ and $\mu \lll m$.
 
 
 \section{Rudin-Carleson theorem}
+\label{section2}
 We will refer to the \emph{closed unit square} in $\mathbb{C}$ by
 \[
 	S = \{z;\ |\max(\Re z, \Im z)| \leq 1\}.
@@ -1379,6 +1409,7 @@ It is also a composition of functions in $\mathcal{A}$ so it is also in $\mathca
 
 
 \section{A generalization of the Rudin-Carleson theorem}
+\label{section3}
 This borrows from \citep{bishop}. % TODO actually write something here
 \begin{theorem}[General Rudin-Carleson theorem]
 \label{bishopstheorem}
@@ -1484,6 +1515,7 @@ So all requirements of \ref{bishopstheorem} are met.
 \appendix
 \renewcommand{\chaptername}{Appendix}
 \chapter{A further application of the general Rudin-Carleson theorem}
+\label{section4}
 % TODO cite
 \begin{definition}
 \label{bigdef}
