@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -20,10 +20,20 @@ Lennart Carleson.
 \newblock Representation of continuous functions.
 \newblock \emph{Math. Z.}, 66:\penalty0 447--451, 1957.
 
+\bibitem[Fatou(1906)]{fatou}
+Peirre Fatou.
+\newblock Séries trigonométriques et séries de taylor.
+\newblock \emph{Acta Math.}, 39:\penalty0 335--400, 1906.
+
 \bibitem[Greene and Krantz(2006)]{greenkrantz}
 Robert~Everist Greene and Steven~George Krantz.
 \newblock \emph{Function Theory of One Complex Variable}.
 \newblock American Mathematical Society, 3rd edition, 2006.
+
+\bibitem[Munkres(1980)]{munkres}
+James~Raymond Munkres.
+\newblock \emph{Topology}.
+\newblock Prentice Hall, Inc, 2nd edition, 1980.
 
 \bibitem[Pryce(1973)]{pryce}
 John~D. Pryce.
@@ -49,10 +59,5 @@ Walter Rudin.
 Terence Tao.
 \newblock \emph{An Introduction to Measure Theory}.
 \newblock American Mathematical Society, 2014.
-
-\bibitem[Whyburn(1958)]{whyburn}
-Gordon~Thomas Whyburn.
-\newblock \emph{Topological Analysis}.
-\newblock Princeton University Press, 1958.
 
 \end{thebibliography}
