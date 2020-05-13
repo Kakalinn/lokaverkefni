@@ -250,9 +250,6 @@ Tóti
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{Introduction}
-% COMMENT(gardar): Mér finnst vanta aðeins meiri yfirsýn yfir hvað þú ert að fara tala um
-%  í ritgerðinni hér og mín vegna mætti færa þessar skilgreiningar í Preliminaries t.d. með
-%  því að bæta við  kafla '2.0 notation and conventions'.
 Lennart Carleson and Walter Rudin gave, independently in $1957$ and $1956$ respectively, sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that each continuous function thereon could be extended holomorphically (and still continuously) into $\mathbb{D}$ \citep{rudin, carleson}.
 This can be seen as a strengthened result of Fatou's interpolation theorem \citep{fatou} (this interplay is discussed briefly and more generally in section \ref{section4}).
 Errett Bishop then generalized the Rudin-Carleson theorem in $1962$ by giving sufficient condition for a set such that a continuous function thereon can always be extended in a similar sense \citep{bishop}.
@@ -1120,6 +1117,7 @@ and
 \begin{proof}
 It suffices to show that the image of each partition is contained in a circle with radius $\varepsilon$ since each square includes a circle.
 Recall that a point $x$ in a set $A$ is a \emph{limit point of $A$} if it is in the closure of $A \setminus \{x\}$.
+% COMMENT(gardar): Since K is compact, f is uniformally continuous
 We have that $K$ is compact so $f$ is uniformly continuous.
 This means we can set $\delta > 0$ such that $|f(x) - f(y)| < \varepsilon$ if $|x - y| < \delta$.
 Let $a_1, a_2, ..., a_{p + 1}$ be a strictly increasing sequence in $]0, 1]$ such that $a_{k + 1} - a_k < \delta/2$, for $k = 1, 2, ..., p$ and $E_k = E \cap ]a_k, a_{k + 1}]$, for $k = 1, 2, ..., p$.
@@ -1130,6 +1128,7 @@ Let's assume no such point exists and show it leads to a contradiction.
 This implies that $E \cap I$ is dense in $I$, but this would imply that $E$ contains $I$, since $E$ is closed and therefore $E \cap I$ closed in $I$.
 But $E$ can't contain an open set since $E$ is of Lebesgue-measure zero.
 \end{proof}
+% COMMENT(gardar): Eru ]0,1] og T grannmóta? Ég skil f(t) = e^it2pi virkar í aðra áttina, en er til samfelld andhverfa?
 Note that \ref{somelemma} still holds if we replace $]0, 1]$ by $\mathbb{T}$ by a simple homeomorphism.
 This is the context we will later use it in.
 
@@ -1143,6 +1142,7 @@ Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$,
 	and let $T$ be a subset of $\mathbb{C}$ homeomorphic to $\overline{\mathbb{D}}$ such that $f(\overline{\mathbb{D}}) \subset T$.
 Then there exists an $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F(\overline{\mathbb{D}}) \subset T$.
 \end{theorem}
+% COMMENT(gardar): s/it //
 This will be proved as Rudin did it in his original paper \citep{rudin}.
 We will split up the proof into several lemmas.
 The first few lemmas are dedicated to showing the result holds for continuous simple functions, and the last lemma bridges the gap.
@@ -1152,6 +1152,7 @@ Let $H$ be a closed set of Lebesgue-measure zero.
 Then there exists a function $h: \mathbb{T} \rightarrow [1, \infty]$ such that 
 \begin{enumerate}
 \item
+% COMMENT(gardar): er sigma Lebesgue málið?
 $h$ is in $L^1(\mathbb{T}, \sigma)$
 \item
 $h|_{\mathbb{T} \setminus H}$ is in $C^{\infty}$.
@@ -1210,6 +1211,7 @@ We have that
 	f_{a, b}(a + (b - a)2^{-n})
 	&= 2\log (b - a) - 2\log 2 - \log (((b - a)2^{-n})(b - a - (b - a)2^{-n}))\\
 	&= 2\log (b - a) - 2 - \log ((b - a)^2(1 - 2^{-n})2^{-n})\\
+    % COMMENT(gardar): vantar opna sviga í seinasta log.
 	&= 2\log (b - a) - 2 - 2\log (b - a) - \log (1 - 2^{-n}) - \log 2^{-n})\\
 	&= n - (2 + \log (1 - 2^{-n}))\\
 	&\leq n.
@@ -1485,6 +1487,7 @@ That is, we have that
 so $g_1$ is not continuous.
 
 There is however a theorem of Bishop that gives a sufficient condition on $E$ \citep{bishop}.
+% COMMENT(gardar): banger alert
 \begin{theorem}[The general Rudin-Carleson theorem]
 \label{bishopstheorem}
 Let $X$ be a compact Hausdorff space,
@@ -1493,6 +1496,7 @@ Let $X$ be a compact Hausdorff space,
 	$B^{\bot}$ be the annihilating measures of $B$,
 	$S$ be a closed subset of $X$ that is $\mu$-null for all $\mu \in B^{\bot}$, % TODO kannski breyta í E
 	$f$ be a continuous function on $S$,
+    % COMMENT(gardar): $\Xi: X \to \mathbb{R}, \Xi > 0$ ...
 	and $\Xi > 0$ be a continuous function on $X$ such that $|f| < \Xi$ on $S$.
 Then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
