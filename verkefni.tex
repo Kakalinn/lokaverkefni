@@ -710,7 +710,7 @@ For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} as the 
 	P[f](z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(e^{it})P(z, e^{it})\ dt.
 \]
 
-For complex measure $\mu$ we define \emph{the Poisson integral of $\mu$} as the function defined on $\mathbb{D}$ by
+For a measure $\mu$ we define \emph{the Poisson integral of $\mu$} as the function defined on $\mathbb{D}$ by
 \[
 	P[d\mu](z) = \int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it}).
 \]
@@ -748,7 +748,7 @@ Then
 \]
 \end{lemma}
 \begin{proof}
-This can be obtained by simple computations
+This can be obtained by simple computations,
 \begin{align*}
 	\|u\|_1
 	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})|\ d\theta\\
@@ -760,9 +760,9 @@ This can be obtained by simple computations
 	&= \|\mu\|.
 \end{align*}
 \end{proof}
-The main reason we are developing these tools is to prove the F. and M. Riesz theorem.
+The main reason we are developing these tools, as stated before, is to prove the F. and M. Riesz theorem.
 The theorem gives us a sufficient condition for when a measure $\mu$ (on $\mathbb{T}$) is absolutely continuous with regards to the Lebesgue-measure (on $\mathbb{T}$).
-The proof is rather simple, we let $f$ be the Poisson integral of $\mu$ and $h$ be a function such that its Poisson integral is $f$.
+The proof is conceptually simple, we let $f$ be the Poisson integral of $\mu$ and $h$ be a function such that its Poisson integral is $f$.
 We then show that $d\mu = h\ dm$. % TODO hvað á eiginlega Lebesgue-málið að heita?!
 The following lemmas show that all this is in fact possible.
 \begin{lemma}
@@ -797,14 +797,21 @@ exists for every $x \in X$.
 Furthermore, $\Gamma$ is linear and $\|\Gamma\| \leq M$.
 \end{lemma}
 \begin{proof}
-We have that $|\Gamma_n\ x| = \|x\| |\Gamma_n (x/\|x\|)| \leq \|x\| M$ and
+We have that
+\begin{align*}
+	|\Gamma_n\ x|
+	&= \|x\| |\Gamma_n (x/\|x\|)|\\
+	&\leq \|x\| \|\Gamma_n \|\\
+	&\leq \|x\| M
+\end{align*}
+and
 \begin{align*}
 	|\Gamma_n\ x - \Gamma_n\ y|
 	&= |\Gamma_n (x - y)|\\
 	&\leq M\|x - y\|.
 \end{align*}
 The first inequality gives us pointwise boundedness and the second gives us equicontinuity.
-Now, since singletons are compact, Ascoli-Arzela gives us a subsequence, let's index it by $S$, such that $(\Gamma_n x)_{n \in S}$ is convergent for all $x \in X$.
+Now, since singletons are compact, Ascoli-Arzela gives us a subsequence, indexed by some $S$, such that $(\Gamma_n x)_{n \in S}$ is convergent for all $x \in X$.
 Let's now define $\Gamma$ by
 \[
 	\Gamma(x) = \lim_{k \in S} \Gamma_k\ x,
@@ -860,7 +867,7 @@ Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
 	&= \int_{\mathbb{T}}P(z, e^{it})\ d\mu(e^{it})\\
 	&= P[d\mu](z),
 \end{align*}
-where the fifth equality is achieved by putting $g = P(z, e^{it})$ into \ref{eq:1}.
+where the fifth equality is achieved by putting $g = P(z, e^{it})$ into (\ref{eq:1}).
 This concludes the proof of existence.
 
 Let's assume that $P[d\mu] = 0$, and let $f \in C(\mathbb{T})$, $u = P[f]$ and $v = P[d\mu]$.
@@ -902,8 +909,8 @@ We have that $P[d(\lambda - \nu)] = 0$, so, as shown above $\lambda - \nu = 0$.
 Moreover $\lambda = \nu$, which concludes the proof of uniqueness.
 \end{proof}
 \begin{proof}[Proof of \ref{FMRlemma3b}]
-The proof of existence is almost identical to that proof of existence in \ref{FMRlemma3} and the uniqueness is shown in the same manner.
-The differences in the existence proofs are in the beginning when we are choosing what function spaces we use and which theorems to references.
+The proof of existence is almost identical to the proof of existence in \ref{FMRlemma3} and the uniqueness is shown in the same manner.
+The differences between the existence proofs are in the beginning when we are choosing what function spaces we use and which theorems to references.
 Now we define $\Gamma_r$ in the same way, except we define it on $L^2(\mathbb{T})$.
 We again use \ref{FMRlemma31} and the (other) Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
 \[
@@ -917,7 +924,7 @@ We see by this proof that \ref{FMRlemma3b} could be generalized trivially to fin
 	\sup_{0 < r < 1} \|u_r\|_p = M < \infty
 \]
 and $p > 1$.
-We can't use this method fir $p = 1$ since we will need to use the Riesz representation theorem for the exponent conjugate of $p$, and the theorem only holds if it is in $[1, \infty[$.
+We can't use this method for $p = 1$ since we will need to use the Riesz representation theorem for the exponent conjugate of $p$, and the theorem only holds if it is in $[1, \infty[$.
 
 We have not yet shown any condition for a function $f$ that implies there exists a $h \in L^1(\mathbb{T})$ such that $P[h] = f$.
 For that we need the following definitions:
@@ -930,7 +937,7 @@ For a function $f$ holomorphic on $\mathbb{D}$ we define
 and we say that $f$ is in $H^p$ if $\|f\|_{H^p} < \infty$.
 These spaces are referred to as the \emph{Hardy spaces}.
 \end{definition}
-A useful result from the theory of Hardy spaces is if $f \in H^1$ then there exist $g, h \in H^2$ such that $f = g \cdot h$ and $|f| < |g|$ \citep[Theorem $17.10$]{rudin2}.
+A useful result from the theory of Hardy spaces is that if $f \in H^1$ then there exist $g, h \in H^2$ such that $f = g \cdot h$ and $|f| < |g|$ \citep[Theorem $17.10$]{rudin2}.
 \begin{definition}
 \begin{figure}[h]
 \centering
@@ -968,7 +975,7 @@ $f = P[F]$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-Let $g$ and $h$ be functions in $L^2(\mathbb{T})$ such that $f = g \cdot h$, as described above.
+Let $g$ and $h$ be functions in $H^2$ such that $f = g \cdot h$, as described above.
 We have by Lemma \ref{FMRlemma3b} functions $G$ and $H$ in $L^2(\mathbb{T})$ such that $g = P[G]$ and $h = P[H]$.
 Theorem $11.23$ in \citep{rudin2} (along with discussion on the prior page) states that if $h$ is in $L^1(\mathbb{T})$ then $P[h]$ has nontangential limit $h(e^{it})$ at almost every $e^{it}$.
 We also have by the Hölder inequality that on a finite measure space (such as $\mathbb{T}$ with the Lebesgue measure) $\|h\|_1 \leq \|h\|_2$.
@@ -981,7 +988,7 @@ Note that
 \[
 	\lim_{r \rightarrow 1} \|F - f_r\|_1 = \lim_{r \rightarrow 1} \int |F - f_r|\ d\sigma = 0
 \]
-since $f_r \rightarrow F$ holds almost everywhere and $|f_r| < N_{\alpha}f$ let's us use dominated convergence.
+since $f_r \rightarrow F$ holds almost everywhere and $|f_r| < N_{\alpha}f$ allows us to use dominated convergence.
 We can also represent $f_r$ by its Poisson integral, for $r < 1$, that is
 \[
 	f_r(z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} P(z, e^{it})f_r(e^{it})\ dt.
@@ -1021,8 +1028,14 @@ We can use the assumption of the theorem to write $f$ as a power series by
 \end{align*}
 where $\hat{\mu}_n$ is the $n$-th Fourier coefficient of $\mu$.
 This along with \ref{FMRlemma1} gives us that $f \in H^1$.
-We can now define a $F \in L^1(\mathbb{T})$, by \ref{FMRlemma2}, such that $f = P[F]$.
-It follows from \ref{FMRlemma3} that $d\mu = F\ d\sigma$, namely $\mu \lll m$.
+We can now define a $F \in L^1(\mathbb{T})$, by \ref{FMRlemma2} such that $f = P[F]$.
+We have that
+\[
+	\int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it})
+	=
+	\int_{-\pi}^{\pi} P(z, e^{it}) F(e^{it})\ d\sigma
+\]
+so it follows from \ref{FMRlemma3} that $d\mu = F\ d\sigma$, namely $\mu \lll \sigma$.
 \end{proof}
 \begin{corollary}
 \label{fmrieszcor}
@@ -1121,13 +1134,13 @@ $h(z) = \infty$ if and only if $z$ is in $H$.
 $\lim_{w \rightarrow z} h(w) = \infty$ for all $z$ in $H$.
 \end{enumerate}
 \end{lemma}
-Recall from set theory that if $(X, d)$ is a metric space, $A$ is a subset of $X$ and $x$ is a point of $X$ then the distance between $x$ and $A$ is
+Recall from set theory that if $(X, d)$ is a metric space, $A$ is a subset of $X$ and $x$ is a point of $X$ then the distance between $x$ and $A$ is defined by
 \[
 	d(x, A) = \inf_{a \in A} d(x, a).
 \]
-Furthermore, if $A$ is closed then the infimum is obtained at some of $A$, namely, there exists a point $y \in A$ such $d(x, y) = d(x, A)$.
+Furthermore, if $A$ is closed then the infimum is obtained at some point in $A$, namely, there exists a point $y \in A$ such $d(x, y) = d(x, A)$.
 Let $X = [0, 1]$ and $H$ be some closed set of Lebesgue-measure zero.
-We will, for reasons that will be made clear later, assume that $0, 1 \subset H$.
+We will, for reasons that will be made clear later, assume that $\{0, 1\} \subset H$.
 We can now define function $V_H: [0, 1] \rightarrow [0, 1]$ and $H_H: [0, 1] \rightarrow [0, 1]$ such that
 \[
 	d(x, H \cap [0, x]) = d(x, V_H(x))
@@ -1165,12 +1178,12 @@ $f_{a, b}(x) = f_{a, b}(b + a - x)$.
 \caption{The graph of $f_{0, 1}$ and $g_{0, 1}$.}
 \end{figure}
 The first point gives us a handy estimate and the second tells us $f_{a, b}$ is symmetric around $(a + b)/2$.
-Note that for the first point it suffices to consider when $a = 0$, since $a$ denotes a simple translation.
-We then have that
+We have that
 \begin{align*}
-	f_{0, b}(b2^{-n})
-	&= 2\log b - 2\log 2 - \log (b2^{-n}(b - b2^{-n}))\\
-	&= 2\log b - 2\log 2 - \log b + n\log 2 - \log b - \log (1 - 2^{-n})\\
+	f_{a, b}(a + (b - a)2^{-n})
+	&= 2\log (b - a) - 2\log 2 - \log (((b - a)2^{-n})(b - a - (b - a)2^{-n}))\\
+	&= 2\log (b - a) - 2 - \log ((b - a)^2(1 - 2^{-n})2^{-n})\\
+	&= 2\log (b - a) - 2 - 2\log (b - a) - \log (1 - 2^{-n}) - \log 2^{-n})\\
 	&= n - (2 + \log (1 - 2^{-n}))\\
 	&\leq n.
 \end{align*}
@@ -1188,7 +1201,7 @@ These two points together tell us that we can bound $f_{a, b}$ above by
 	\left \{
 	\begin{array}{l l}
 	n, & \text{ if } 2^{-n} \leq \frac{x - a}{b} < 2^{-n + 1}\\
-	g(a + b - x) , & \text{ if } \frac{x - a}{b} > \frac{1}{2}
+	g_{a, b}(a + b - x) , & \text{ if } \frac{x - a}{b} > \frac{1}{2}
 	\end{array},
 	\right .
 \]
@@ -1215,7 +1228,7 @@ We can now integrate $g$ by
 \end{align*}
 where the second equality is by monotone convergence and the last inequality is by the ratio test.
 This rationale also holds for general $a$ and $b$, since $a$ does not effect the value of the integral and $b$ scales it.
-We can, as a side note, compute the limit of this series by setting
+We can, as a side note, compute the limit of this series by setting, for $x > 1$,
 \[
 	f(x) = \frac{2}{1 - x} = -2\sum_{n \in \mathbb{N}} x^{-k}
 \]
@@ -1272,14 +1285,14 @@ by the same reasoning as before.
 Note that we left some fundamentals unmentioned.
 Specifically the fact that $f_H$ and $g_H$ are measurable.
 To show that $g$ is measurable it suffices to show that $(g_n)_{n \in \mathbb{N}}$ are measurable.
-We, therefore, can show that the preimage under $g_n$ of each point is measurable, since $g_n$ is simple, for each $n$.
+We, therefore, can show that the preimage under $g_n$ of each point is measurable, since $g_n$ is simple for each $n$.
 But the preimage is a (possibly uncountable) union of half-open intervals so it is the union of a closed set and an open set.
 So $g$ is measurable.
 To show that $f$ is measurable it suffices to show that $P_{\lambda} = \{x \in [0, 1];\ f(x) < \lambda\}$ is measurable for all $\lambda$ in $[0, \infty]$ \citep[lemma $1.3.9$]{tao}.
 This trivially holds, since $P_{\lambda}$ is open.
 \begin{proof}[Proof of \ref{mylemma}]
 We may assume that $H$ is not empty, since the statement holds vacuously if that were the case.
-Let $f$ be as described above,
+Let $f$ be as $f_H$ is described above,
 	$g: \mathbb{T} \rightarrow [0, 1]$ such that $g|_{[0, 1[}$ is a diffeomorphism, $g(0) = g(1)$, and $g^{-1}(0)$ is in $H$,
 	and let $h = 2 + f \circ g$.
 \end{proof}
@@ -1329,9 +1342,8 @@ and
 	|\arg w/z| = |\arg w - \arg z| \leq |\arg w| + |\arg z| < \pi/4 + \pi/4 = \pi/2.
 \]
 So $w/z$ is in the right halfplane and, therefore $w/z + 1$ is as well.
-So $0 < \Re z/(w + z)$.
-Note that $0 < \Re z/(w + z) \implies 0 > \Re -w/(w + z)$ due to $z$ and $w$ being constrained in the same manner.
-So
+We have now shown that $0 < \Re z/(w + z)$.
+Note that $0 < \Re z/(w + z) \implies 0 > \Re -w/(w + z)$ due to $z$ and $w$ being constrained in the same manner, and
 \begin{align*}
 	0
 	&> \Re \frac{-w}{w + z}\\
@@ -1353,7 +1365,7 @@ We can then let $F = \Phi \circ q$ and conclude the proof.
 \end{proof}
 \begin{lemma}
 \label{rudinlemma2}
-If $f$ is a simple continuous function on $E$ that maps $E$ into $T \subset \mathbb{C}$ homeomorphic to $\overline{\mathbb{D}}$, then there exists a $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F$ maps $\overline{\mathbb{D}}$ into $T$.
+If $f$ is a simple continuous function on $E$ that maps $E$ into $T \subset \mathbb{C}$ homeomorphic to $\overline{\mathbb{D}}$, then there exists a function $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F$ maps $\overline{\mathbb{D}}$ into $T$.
 \end{lemma}
 \begin{proof}
 Let $z_0 \in T \setminus f(E)$ and $\Phi$ be a conformal mapping from the right halfplane to the interior of $T$ such that $\Phi(\infty) = z_0$.
@@ -1457,8 +1469,8 @@ Let $X$ be a compact Hausdorff space,
 	and $\Xi > 0$ be a continuous function on $X$ such that $|f| < \Xi$ on $S$.
 Then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
-The following lemma makes that proof simple.
-The proof of the lemma is split in two.
+The following lemma makes the proof simple.
+The proof of the lemma is sort of split in two.
 The earlier part is to show that $f$ is in the closure of the image of the restriction mapping and the latter part shows that leads the existence of $F$.
 \begin{lemma}
 \label{bishoplemma}
@@ -1468,7 +1480,7 @@ Then there exists a $F \in B$ such that $F = f$ on $S$ and $\|F\| < 1$.
 \begin{proof}
 Let $U_r$ be the subset of $B$ defined by $U_r = \{g;\ \|g\| < r\}$ and $\phi$ be the mapping from $B$ to $C(S)$ that sends a member of $B$ to its restriction on $S$.
 It suffices to show that $f \in \phi(U_r)$.
-Let's first show that $f \in \overline{\phi(U_r)} =: V_r$, by assuming otherwise, and showing it leads to a contradiction.
+Let's first show that $f$ is in $V_r = \overline{\phi(U_r)}$, by assuming otherwise, and showing it leads to a contradiction.
 Note that if $f, g \in U_r$ and $t \in [0, 1]$ then
 \[
 	\|tf + (1 - t)g\| \leq t\|f\| + (1 - t)\|g\| \leq tr + (1 - t)r = r
@@ -1476,7 +1488,7 @@ Note that if $f, g \in U_r$ and $t \in [0, 1]$ then
 so $tf + (1 - t)g$ is also in $U_r$, showing it is convex.
 Its closure, $V_r$, is then convex as well.
 
-By Hahn-Banach we can define a bounded linear functional $\alpha$, such that $\alpha(f) > 1$ and $|\alpha| < 1$, on $V_r$.
+We can, by Hahn-Banach, define a bounded linear functional $\alpha$, such that $\alpha(f) > 1$ and $|\alpha| < 1$, on $V_r$.
 We can then define a measure $\mu_1$ by the Riesz representation theorem that satisfies
 \[
 	\alpha(g) = \int g\ d\mu_1
@@ -1507,11 +1519,11 @@ But
 		\geq \int_S f\ d\mu_1 - r\frac{1}{r}
 		> 1 - r \frac{1}{r} = 0.
 \]
-This is the contradiction that gives that $f \in V_r$.
+This contradiction gives that $f \in V_r$.
 We can now take a $F_1$ in $U_r$, and therefore also in $B$ such that $|f - F_1| < \lambda/2$ on $S$, with $\lambda := 1 - r$.
 Remember that $F_1 \in U_r$ implies that $\|F_1\| < r$.
 Now let $f_1 = f - F_1$ and use the same method as above to obtain an $F_2$ such that $\|F_2\| < \lambda/2$ and $|f - F_2| < \lambda/4$ on $S$.
-Iterating this process yields a sequence $(F_n)_{n \in \mathbb{N}}$ from $B$ that such that $\|F_n\| < 2^{1 - n}\lambda$ for $n > 1$ and
+Iterating this process yields a sequence $(F_n)_{n \in \mathbb{N}}$ from $B$ such that $\|F_n\| < 2^{1 - n}\lambda$ for $n > 1$ and
 \[
 	\left | f - \sum_{k = 1}^n F_k \right | < 2^{-n}\lambda
 \]
@@ -1530,7 +1542,7 @@ and $F = f$ on $S$.
 Let $B_0$ be the closed subspace of $C(X)$ consisting of function $g$ such that $\Xi \cdot g \in B$.
 We have that $B_0^{\bot} = B^{\bot}$, since $\Xi > 0$.
 So we can use Lemma \ref{bishoplemma} for $B_0$ instead of $B$ and $f/\Xi$ instead of $f$.
-This gives us a $F_0 \in B_0$ such that $\Xi \cdot F_0 = f$ on $S$ and $\|F_0\| < 1$.
+This gives us a function $F_0 \in B_0$ such that $\Xi \cdot F_0 = f$ on $S$ and $\|F_0\| < 1$.
 We set $F = \Xi \cdot F_0$ which is in $B$ by the construction of $B_0$.
 Also note that $|F| < \Xi$ on $X$ and 
 \[
@@ -1561,7 +1573,7 @@ We then say $K$ is a
 	\item \emph{zero set} if there exists a function in $f \in \mathcal{A}^n$ such that $K = f^{-1}(0)$.
 	\item \emph{peak set} if there exists a function in $f \in \mathcal{A}^n$ such that $K = f^{-1}(1)$ and $|f(z)| < 1$ for $z \in \overline{\mathbb{D}}^n \setminus K$.
 	\item \emph{interpolation set} if every continuous function on $K$ extends via $\mathcal{A}^n$. 
-	\item \emph{peak-interpolation set} if every non-zero continuous function $f$ on $K$ extends to $F \in \mathcal{A}^n$ such that $|f(z)| < \|F\|$ for $z \in \overline{\mathbb{D}}^n \setminus K$.
+	\item \emph{peak-interpolation set} if every non-zero continuous function $f$ on $K$ extends to $F \in \mathcal{A}^n$ such that $|F(z)| < \|f\|$ for $z \in \overline{\mathbb{D}}^n \setminus K$.
 	\item \emph{null set} if $K$ has measure zero with regards to all annihilating measures of $\mathcal{A}^n$.
 	\item \emph{totally null} if $K$ has measure zero with regards to all measure $\mu$ such that
 			\[

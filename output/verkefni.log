@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.17)  13 MAY 2020 10:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.17)  13 MAY 2020 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1317,23 +1317,21 @@ chapter 3.
 <approach-region-7.png, id=342, 690.9012pt x 708.246pt>
 File: approach-region-7.png Graphic file (type png)
 <use approach-region-7.png>
-Package pdftex.def Info: approach-region-7.png  used on input line 937.
+Package pdftex.def Info: approach-region-7.png  used on input line 944.
 (pdftex.def)             Requested size: 213.39569pt x 218.75427pt.
  [21 <./approach-region-7.png>] [22]
-[23]
-Overfull \hbox (5.97328pt too wide) in paragraph at lines 1101--1105
+[23] [24]
+Overfull \hbox (5.97328pt too wide) in paragraph at lines 1114--1118
 [][]\T1/cmr/bx/n/12 Theorem 3.2.2 \T1/cmr/m/n/12 (Rud-in--Car-leson theroem)\T1
 /cmr/bx/n/12 . []\T1/cmr/m/it/12 Let $\OML/cmm/m/it/12 E$ \T1/cmr/m/it/12 be a 
 closed sub-set of $\U/msb/m/n/12 T$ \T1/cmr/m/it/12 of Lebesgue-
  []
 
-[24]
 <graph8.png, id=381, 1387.584pt x 736.4313pt>
 File: graph8.png Graphic file (type png)
 <use graph8.png>
-Package pdftex.def Info: graph8.png  used on input line 1146.
+Package pdftex.def Info: graph8.png  used on input line 1159.
 (pdftex.def)             Requested size: 426.7914pt x 226.50465pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1341,37 +1339,34 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <graph2.png, id=391, 1387.584pt x 736.4313pt>
 File: graph2.png Graphic file (type png)
 <use graph2.png>
-Package pdftex.def Info: graph2.png  used on input line 1164.
+Package pdftex.def Info: graph2.png  used on input line 1177.
 (pdftex.def)             Requested size: 426.7914pt x 226.50465pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[26 <./graph8.png>] [27 <./graph2.png>]
-<graph101.png, id=404, 1387.584pt x 736.4313pt>
+[26 <./graph8.png>] [27 <./graph2.png>] [28]
+<graph101.png, id=409, 1387.584pt x 736.4313pt>
 File: graph101.png Graphic file (type png)
 <use graph101.png>
-Package pdftex.def Info: graph101.png  used on input line 1269.
+Package pdftex.def Info: graph101.png  used on input line 1282.
 (pdftex.def)             Requested size: 426.7914pt x 226.50465pt.
+ [29 <./graph101.png>] [30]
+[31] [32] [33] [34] [35] [36
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[28] [29 <./graph101.png>] [30] [31] [32] [33] [34]
+]
 chapter A.
-(output/verkefni.bbl [35
-
-
-] [36
+(output/verkefni.bbl [37] [38
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1581.
- [37]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1581.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1593.
+ [39]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1593.
  (output/verkefni.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1581.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1581.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1593.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1593.
 
 Package rerunfilecheck Info: File `verkefni.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
@@ -1379,12 +1374,12 @@ Package rerunfilecheck Info: File `verkefni.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1581.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1593.
  ) 
 Here is how much of TeX's memory you used:
- 25140 strings out of 492167
- 438773 string characters out of 6131558
- 646897 words of memory out of 5000000
+ 25142 strings out of 492167
+ 438787 string characters out of 6131558
+ 647897 words of memory out of 5000000
  29084 multiletter control sequences out of 15000+600000
  554765 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1409,10 +1404,10 @@ type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm
 -super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728
 .pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on output/verkefni.pdf (55 pages, 913454 bytes).
+Output written on output/verkefni.pdf (57 pages, 914396 bytes).
 PDF statistics:
- 660 PDF objects out of 1000 (max. 8388607)
- 563 compressed objects within 6 object streams
- 152 named destinations out of 1000 (max. 500000)
+ 668 PDF objects out of 1000 (max. 8388607)
+ 569 compressed objects within 6 object streams
+ 154 named destinations out of 1000 (max. 500000)
  199 words of extra memory for PDF output out of 10000 (max. 10000000)
 
