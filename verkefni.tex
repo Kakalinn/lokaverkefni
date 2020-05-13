@@ -254,6 +254,9 @@ Tóti
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{Introduction}
+% COMMENT(gardar): Mér finnst vanta aðeins meiri yfirsýn yfir hvað þú ert að fara tala um
+%  í ritgerðinni hér og mín vegna mætti færa þessar skilgreiningar í Preliminaries t.d. með
+%  því að bæta við  kafla '2.0 notation and conventions'.
 % TODO define 'extends'
 $\mathcal{O}(U)$ for open $U \subset \mathbb{C}$ is the family of functions holomorphic on $U$.
 $C(X)$ for open topological space $X$ is the family of continuous functions from $X$ to $\mathbb{C}$.
@@ -267,6 +270,7 @@ During introductory courses in measure theory the focus is often solely on posit
 This restriction is immediately felt when studying functional analysis (see for example \ref{riesz}).
 We, therefore, need the following definitions:
 \begin{definition}
+% COMMENT(gardar): Er R yfirstrik alveg vel þekkt?
 Let $\mathcal{F}$ be a $\sigma$-algebra and $\mu: \mathcal{F} \rightarrow Y$, where $Y$ is a subset of $\mathbb{C}$ or $\overline{\mathbb{R}}$.
 We say that $\mu$ is \emph{countably additive} if
 \[
@@ -284,9 +288,11 @@ Allowing $Y = \overline{\mathbb{R}}$ in (ii) would lead to trouble, for example 
 
 For those not familiar with complex measures, some care must be taken.
 A prime example is the notion of null sets.
+% COMMENT(gardar): s/great/significant
 They still play a great role, but their definition is different.
 We can motivate this difference by letting $X = \{x, y\}$, $\mathcal{F}$ be the powerset of $X$, and define $\mu$ by $\mu(\{x\}) = -1$ and $\mu(\{y\}) = 1$.
 For $\mu$ to be a measure we need $\mu(X) = 0$ to hold.
+% COMMENT(gardar): The usual definition of null sets would label $X$ as a $\mu$-null set.
 Blindly applying our definitions from positive measures would label $X$ as a $\mu$-null set.
 This would of course technically be a valid definition, but leads to problems further down the road, for example
 \[
@@ -328,17 +334,21 @@ A continuous function $\gamma: [0, 1] \rightarrow \mathbb{C}$ is said to be a \e
 \end{definition}
 The definition above can be restated as: A Jordan curve is a closed simple curve.
 The term `simple' here means that the curve is not self-intersecting.
+% COMMENT(gardar): s/component/components
 The name stems from a famous result by Camille Jordan stating that $\mathbb{C} \setminus \gamma([0, 1])$ has two connected component, one of which is simply connected.
+% COMMENT(gardar): s/will be called/is called
 The simply connected component will be called \emph{the domain bounded by $\gamma$}.
 The proof of this result is rather technical and outside the scope of this thesis \citep{whyburn, greenkrantz}. % TODO add citation to whyburn chapter 3 and green-krantz p. 393
 The result is however necessary to make statement such as `let $U$ be the domain bounded by $\gamma$'.
 An example of this is the following theorem:
 \begin{theorem}[Carathéodory]
+% COMMENT(gardar): optional: conformal hefur ekki verið skilgreint þegar hér kemur við sögu, mætti kannski nefna hvað það þýðir. Ahh sé að þetta er skilgreint neðar, þannig þetta er kannski alveg OK.
 Let $\Omega_1$ and $\Omega_2$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $\Phi: \Omega_1 \rightarrow \Omega_2$ be a conformal mapping.
 There exists a continuous injection $\hat{\Phi}: \overline{\Omega_1} \rightarrow \overline{\Omega_2}$ that extends $\Phi$.
 \end{theorem}
 A proof of this can be found in section $13.2$ of \citep{greenkrantz}. % TODO motivate the theorem a bit
 \subsection{The Riemann Mapping Theorem} 
+% COMMENT(gardar): maybe?: Before proving the Riemann Mapping Theorem we need to define conformality.
 We will start of with a definition. % TODO reword
 \begin{definition}
 A map $f: U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \emph{conformal} if it is holomorphic, bijective, and its inverse is holomorphic.
@@ -347,6 +357,7 @@ The fact that the inverse is homomorphic is actually redundant.
 It can be shown that a holomorphic bijection has a holomorphic inverse.
 \citep{greenkrantz}
 \begin{theorem}[Riemann mapping theorem \citep{greenkrantz}]
+% COMMENT(gardar): s/If U ..., .../If U ... and ....
 If $U \subset \mathbb{C}$, $U \neq \mathbb{C}$ is homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $\mathbb{D}$ to $U$.
 \end{theorem}
 \begin{corollary}
@@ -354,9 +365,12 @@ If $U$ and $V$ are both homeomorphic to $\mathbb{D}$ then there exists a conform
 \end{corollary}
 \begin{proof}
 The Riemann mapping theorem gives us $\Phi_1$, a conformal mapping from $\mathbb{D}$ to $U$, and $\Phi_2$, a conformal mapping from $\mathbb{D}$ to $V$.
+% COMMENT(gardar): Since $\Phi_2$ is conformal $\Phi_2^{-1}$ is also bijective, holomorphic with an holomorphic inverse, meaning $\Phi_2^{-1}$ is also conformal.
+% COMMENT(gardar): s/then/therefore
 The desired conformal mapping from $U$ to $V$ is then $\Phi_2 \circ \Phi_1^{-1}$.
 \end{proof}
 In this thesis the disk algebra $\mathcal{A}$ is of special interest so a version of the Riemann mapping theorem that considers continuity at the boundary is desirable.
+% COMMENT(gardar): s/achieve the desired theorem/prove the desired result
 We can combine the Riemann mapping theorem and Carathéodory's theorem to achieve the desired theorem.
 The only thing to prove is that a homeomorphism $f$ maps the boundary of a bounded set $U$ to the boundary of $f(U)$ and that a Jordan curve under a homeomorphism is still a Jordan curve.
 \begin{corollary}
@@ -367,18 +381,22 @@ If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a continuous
 First, let $U$ be a bounded, open set in $\mathbb{C}$,
 	$f: \overline{U} \rightarrow \mathbb{C}$ be an injective continuous map,
 	and let's show that $\partial f(U) = f(\partial U)$.
+% COMMENT(gardar): Gætir fært skilgrininguna á B_r(z) í 'notations' undirkafla í byrjun.
 Let $p \in \partial U$ and $B_r(z) = \{z \in \mathbb{C};\ |r - z| < r\}$. % TODO maybe move the ball definition into intro.
 Let's also assume that $f(p)$ is in the interior of $f(U)$ and show that it leads to a contradiction.
 There exists an $r > 0$ such that $B_r(p) \subset f(U)$, because the interior of a set is always open.
 This gives us as an open neighbourhood $f^{-1}(B_r(p)) \subset U$ of $p$, but $p \in \partial U$ implies that no such neighbourhood exists.
 So $f(p) \in \partial f(U)$, implying $\partial f(U) \supset f(\partial U)$.
+% COMMENT(gardar): Þarf f^{-1} ekki líka að vera samfelld til að sömu rök virki?
 We can use the same argument to show that $\partial f(U) \subset f(\partial U)$, since $f$ is bijective if we consider it as a map from $\overline{U}$ into $f(\overline{U})$.
 So $f(\partial U) = \partial f(U)$. % TODO skoða þennan hluta mun betur!!
 
+% COMMENT(gardar): Mér finnst það mætti bæta við setningu hérna sem útskýrir aðeins pointið með þessari efnisgrein.
 Second, let
 	$U$ and $V$ be open sets in $\mathbb{C}$,
 	$\gamma: [0, 1] \rightarrow \partial \mathbb{D}$ a Jordan curve,
 	$f: U \rightarrow V$ be homeomorphism,
+% COMMENT(gardar): Þarf ekki að grf að \partial D \subset U til að \lambda sé velskilgreint?
 Let $\lambda = f \circ \gamma$ and $s, t \in ]0, 1[$ such that $\lambda(s) = \lambda(t)$.
 It suffices to show that $s = t$, since $\lambda(0) = \lambda(1)$ obviously holds.
 We have that $f(z) = f(w)$ implies $z = w$, since $f$ is bijective, and therefore injective.
@@ -391,6 +409,7 @@ Let $f$ be a homeomorphism from $\overline{\mathbb{D}}$ to $K$.
 The Riemann mapping theorem also gives us a conformal map $\Phi: \mathbb{D} \rightarrow f(\mathbb{D})$.
 We know that $\overline{\mathbb{D}}$ is compact, so $K = f(\overline{\mathbb{D}})$ is also compact, since the image of a compact set under a continuous mapping is also compact.
 Moreover, $K$ is bounded.
+% COMMENT(gardar): nit: since $\partial \mathbb{D}$ is the Jordan curve $\alpha(t) = e^{2\pi i t}, t \in [0,1]$
 So $f(\partial \mathbb{D}) = \partial f(\mathbb{D}) = \partial K$ according to our first step and $\partial K$ is a Jordan curve according to the second step, since $\partial \mathbb{D}$ is a Jordan curve.
 So $\Phi$ is a conformal map between two domains, each bounded by a Jordan curve.
 This allows us to use Carathéodory's theorem to extend $\Phi$ continuously and injectively to $\overline{\mathbb{D}}$, concluding the proof.
@@ -399,6 +418,7 @@ The Riemann mapping theorem is a strong tool when analyzing holomorphic function
 We can often solve things for the unit disk (or unit square as in \ref{rudincarleson}) and then map that solution to a general simply connected domain. % TODO add ref
 
 We will briefly touch on multivariate complex analysis so we will need a definition of a holomorphic function in $\mathbb{C}^n$.
+% COMMENT(gardar): nit: Etv setja þessa skilgreiningu í \begin{definition} etc.
 If $U \subset \mathbb{C}^n$ is open and $f: U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U$}.
 \section{Functional analysis}
 \begin{definition}
@@ -408,11 +428,13 @@ We say that $X$ is \emph{locally compact} if for each $x \in X$ there exists a o
 \begin{definition}
 \label{locallycompactdef}
 Let $X$ be a locally compact space.
+% COMMENT(gardar): continuos function $f: X \to X$?
 We say a complex function $f$ \emph{vanishes at infinity} if for all $\varepsilon > 0$ there exists a compact set $K$ such that $|f(x)| < \varepsilon$ for all $x \in X \setminus K$.
 The family of all such functions is referred as $C_0(X)$.
 \end{definition}
 Let $X$ be compact.
 Then if $f \in C(X)$ and $\varepsilon > 0$ we set $K = X$ and see that $|f(x)| < \varepsilon$ vacuously holds for all $x \in X \setminus K = \emptyset$.
+% COMMENT(gardar): Vantar þá ekki skilyrði í skilgreininguna um að föllin í C_0(X) séu samfelld?
 So $C(X)$ and $C_0(X)$ are identical in this case.
 \begin{definition}
 Let $\alpha$ be a linear map from a normed vector space $X$ into a normed vector space $Y$.
@@ -456,14 +478,17 @@ These are sometimes split in two groups, `separation theorems' and `extension th
 When proving \ref{bishopstheorem} we need the following Hahn-Banach separation theorem:
 \begin{theorem}[\citep{pryce}]
 Let
+% COMMENT(gardar): etv á locally convex að vera locally compact?
 	$X$ be a locally convex normed vector space,
 	$A \neq \emptyset$ be a closed convex subset of $X$,
 	and $p \in X \setminus A$.
 Then there exists a continuous linear functional $f$ such that $\sup \{f(x);\ x \in A\} < 1$ and $f(p) > 1$.
 \end{theorem}
 \subsection{The Riesz representation theorem}
+% COMMENT(gardar): ... measure $\mu$, choose ... -> measure $\mu$. Choose
 Let $X$ be a space with $\sigma$-algebra and measure $\mu$, choose $p$ and $q$ such that $1 < p, q < \infty$ and $1/p + 1/q = 1$, and $g \in L^q(\mu)$.
 We can then define a linear transform
+% COMMENT(gardar): on L^{p}(\mu)
 \[
 	\alpha(f) = \int fg\ d\mu.
 \]
@@ -487,6 +512,7 @@ Note that the theorem above also hold for $p = 1$ and $q = \infty$, but we will 
 \begin{theorem}[The Riesz representation theorem for bounded linear functionals on $C_0(X)$ with locally compact $X$ \citep{rudin2}]
 \label{riesz}
 Let $X$ be a locally compact Hausdorff space and $\alpha$ be a bounded linear functional on $C_0(X)$.
+% COMMENT(gardar): Í 2.1.1 er positive, real valued og complex measure skilgreind. Ætti eitt af þeim að vera notað hér í staðinn fyrir 'measure'?
 There then exists a measure $\mu$ such that
 \begin{enumerate}
 \item[\emph{(i)}]
@@ -513,6 +539,7 @@ The main result of this section is that the annihilating measures of
 are absolutely continuous with respect to the Lebesgue measure.
 We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of \citep{rudin2}.
 To attain the main result of this section we need some lemmas and definitions. %TODO rewrite these two lines
+% COMMENT(gardar): Það kemur skilgreining beint á eftir þessari setningu, kannski færa hana neðar?
 To prove one of the lemmas we will also use the following two famous theorems:
 \begin{definition}
 Let $\mathcal{F}$ be a family of complex functions on a metric space $(X, d)$.
@@ -676,6 +703,7 @@ so
 	\int_{-\pi}^{\pi} P_r(t)\ dt
 	&= \int_{-\pi}^{\pi} \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}\ dt\\
 	&= \sum_{n \in \mathbb{Z}} \int_{-\pi}^{\pi} r^{|n|}e^{int}\ dt\\
+% COMMENT(gardar): Persónulega mundi ég skrifa næstu línu sem: \int_{-\pi}^{\pi} r^0 e^{0}
 	&= \int_{-\pi}^{\pi}\ dt\\
 	&= 2\pi.
 \end{align*}
@@ -692,6 +720,7 @@ Then
 % TODO reword this part
 We have that
 \begin{align*}
+% COMMENT(gardar): Hér er u en ekki u_r eins og í setningunni. Á það að vera svoleiðis?
 	\|u\|_1
 	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})|\ d\theta\\
 	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} \left | \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d\mu(e^{it}) \right | d\theta\\
@@ -738,6 +767,7 @@ Then there exists a subsequence $(\Gamma_{n_i})_{i \in \mathbb{N}}$ such that th
 exists for every $x \in X$.
 Furthermore, $\Gamma$ is linear and $\|\Gamma\| \leq M$.
 \end{lemma}
+% COMMENT(gardar): Mér þætti betra ef uppsetningin væri lemma->sönnun->lemma->sönnun osfrv í staðinn fyrir lemma lemma lemma sönnun sönnun sönnun.
 \begin{proof}
 We have that $|\Gamma_n\ x| \leq M \|x\|$ and % TODO why do we have that???
 \begin{align*}
@@ -997,6 +1027,7 @@ for all $n = -1, -2, ...$ and $\mu \lll m$.
 \section{Rudin-Carleson theorem}
 We will refer to the \emph{closed unit square} in $\mathbb{C}$ by
 \[
+% COMMENT(gardar): Á tölugildið ekki að vera inn í max-inu?
 	S = \{z;\ |\max(\Re z, \Im z)| \leq 1\}.
 \]
 The square with side-lengths $a$ and bottom-left corner at $w$ is then denoted by $w + aS$.
