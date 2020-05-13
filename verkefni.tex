@@ -1,10 +1,8 @@
 % TODO specify all measures as complex
 % TODO make everythin Hausdorff???
-% TODO add carleson cite
 % TODO laga kápu
 % TODO make sure at the end that 'Caratheodory' is nowhere
 % TODO fix open intervals. they look ugly
-% TODO skrifað Weierstrass rétt?
 % TODO decide if 0 is in \mathbb{N} and make sure it's consistent
 % TODO read and mention Globevnik
 % TODO in F. and M. Riesz chapter talk about why the function spaces are seperable
@@ -252,10 +250,10 @@ Tóti
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{Introduction}
-Lennart Carleson and Walter Rudin gave independently, in $1957$ and $1956$ respectively, sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that each continuous function thereon could be extended holomorphically (and still continuously) into $\mathbb{D}$ \citep{rudin, carleson}.
+Lennart Carleson and Walter Rudin gave, independently in $1957$ and $1956$ respectively, sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that each continuous function thereon could be extended holomorphically (and still continuously) into $\mathbb{D}$ \citep{rudin, carleson}.
 This can be seen as a strengthened result of Fatou's interpolation theorem \citep{fatou} (this interplay is discussed briefly and more generally in section \ref{section4}).
-Errett Bishop then generalized the Rudin-Carleson theorem in $1962$ by giving sufficient condition for set such that a continuous function thereon can always be extended by in a similar sense \citep{bishop}.
-Here the condition on the set is given in term of the annihilating measures (\ref{annilatingmeasure}) of the family of functions we want to extend into.
+Errett Bishop then generalized the Rudin-Carleson theorem in $1962$ by giving sufficient condition for a set such that a continuous function thereon can always be extended in a similar sense \citep{bishop}.
+Here the condition on the set is given in terms of the annihilating measures (\ref{annilatingmeasure}) of the family of functions we want to extend into.
 The result of Bishop doesn't just generalize the Rudin-Carleson theorem (allowing, for example, similar studies in higher dimensions) but also shows the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem. % TODO cite?
 
 We start of by proving the F. and M. Riesz theorem in section \ref{section1}.
@@ -358,7 +356,7 @@ We will later use the following definition to characterize sets if a family of f
 \begin{definition}
 \label{annilatingmeasure}
 Let $\mu$ be a measure and $B$ be a family of measurable function defined on a measurable space $X$.
-We say the $\mu$ is an \emph{annihilating measure} of $B$ if
+We say that $\mu$ is an \emph{annihilating measure} of $B$ if
 \[
 	\int_X f\ d\mu = 0
 \]
@@ -369,7 +367,7 @@ That is, sets that have measure zero with regards to all annihilating measures o
 \section{Complex analysis}
 \subsection{The disk algebra}
 \begin{definition}
-A function is said to be in the \emph{disk algebra} if it is holomorphic on $\mathbb{D}$ and continuous on $\mathbb{\overline{\mathbb{D}}}$.
+A function defined on $\overline{\mathbb{D}}$ is said to be in the \emph{disk algebra} if it is continuous and holomorphic on $\mathbb{D}$.
 We will refer to this family of function $\mathcal{A}$.
 \end{definition}
 It can be shown using Morera's theorem that a sequence of holomorphic function that converges uniformly has a holomorphic limit \citep{reynir}.
@@ -393,7 +391,7 @@ The result is however necessary to make statement such as `let $U$ be the domain
 An example of this is the following theorem:
 \begin{theorem}[Carathéodory]
 Let $\Omega_1$ and $\Omega_2$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $\Phi: \Omega_1 \rightarrow \Omega_2$ be a conformal mapping.
-There exists a continuous injection $\hat{\Phi}: \overline{\Omega_1} \rightarrow \overline{\Omega_2}$ that extends $\Phi$.
+Then there exists a continuous injection $\hat{\Phi}: \overline{\Omega_1} \rightarrow \overline{\Omega_2}$ that extends $\Phi$.
 \end{theorem}
 A proof of this can be found in section $13.2$ of \citep{greenkrantz}.
 
@@ -439,7 +437,7 @@ Let $f$ be a homeomorphism from $\overline{\mathbb{D}}$ to $K$.
 The Riemann mapping theorem also gives us a conformal map $\Phi: \mathbb{D} \rightarrow f(\mathbb{D})$.
 We know that $\overline{\mathbb{D}}$ is compact, so $K = f(\overline{\mathbb{D}})$ is also compact, since the image of a compact set under a continuous mapping is also compact.
 Moreover, $K$ is bounded.
-So $f(\partial \mathbb{D}) = \partial f(\mathbb{D}) = \partial K$ according to our first step and $\partial K$ is a Jordan curve according to the second step, since $\partial \mathbb{D}$ is a Jordan curve.
+So $f(\partial \mathbb{D}) = \partial f(\mathbb{D}) = \partial K$ and $\partial K$ is a Jordan curve, since $\partial \mathbb{D}$ is a Jordan curve.
 So $\Phi$ is a conformal map between two domains, each bounded by a Jordan curve.
 This allows us to use Carathéodory's theorem to extend $\Phi$ continuously and injectively to $\overline{\mathbb{D}}$, concluding the proof.
 \end{proof}
@@ -449,8 +447,8 @@ We can often solve things for the unit disk (or unit square as in \ref{rudincarl
 \subsection{Complex analysis in several variables}
 We will briefly touch on multivariate complex analysis so we will need a definition of a holomorphic function in $\mathbb{C}^n$.
 If $U \subset \mathbb{C}^n$ is open and $f: U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U$}.
-We will also denote common sets by there counterpart single variate complex analysis with an added `$n$' in the superscript.
-This does not denote an $n$-fold Cartesian product.
+We will also denote common sets by there counterpart in single variate complex analysis with an added `$n$' in the superscript.
+This does not, however, denote an $n$-fold Cartesian product.
 For example $\mathbb{T}^2$ is not the same as $\mathbb{T} \times \mathbb{T}$.
 \section{Functional analysis}
 \begin{definition}
@@ -601,7 +599,7 @@ There than exists and infinite $S \subset \mathbb{N}$ such that $(a_n)_{n \in S}
 Let's first assume that the sequence is in $\mathbb{R}$,
 	that no element in it is repeated infinitely often (there is nothing to prove in that case),
 	and that $a_n \in ]0, 1[$ for all $n \in \mathbb{N}$.
-The last assumption can be done with out loss of generality by studying the sequence $((a_n + M)/(2M))_{n \in \mathbb{N}}$ instead.
+The last assumption can be done without loss of generality by studying the sequence $((a_n + M)/(2M))_{n \in \mathbb{N}}$ instead.
 We will obtain the subsequence by a diagonal process.
 Let $S_0 = \mathbb{N}$, $S_0^- = \{n \in S_0;\ a_n < 1/2\}$, and $S_0^+ = \{n \in S_0;\ a_n > 1/2\}$.
 We then set $S_1 = S_0^-$ if it is infinite, but $S_1 = S_0^+$ otherwise.
@@ -616,10 +614,10 @@ We can then repeat this to get a sequence of sets $(S_n)_{n \in \mathbb{N}}$ suc
 for all $k \in \mathbb{N}$.
 Specifically, if we have $S_k$ we set
 \[
-	U = m2^{-k},\ 
-	L = (m + 1)2^{-k}
+	L = m2^{-k},\ 
+	U = (m + 1)2^{-k},
 \]
-$S_k^- = \{n \in S_k;\ a_n < (U + L)/2\}$, and $S_k^+ = \{n \in S_k;\ a_n > (U + L)/2\}$.
+$S_k^- = \{n \in S_k;\ a_n < (U + L)/2\}$, and $S_k^+ = \{n \in S_k;\ a_n > (U + L)/2\}$, where $m$ is chose such that $S_k$ is in $]L, U[$.
 We now set $S_{k + 1} = S_k^-$ if it has infinitely many elements, otherwise we set $S_{k + 1} = S_k^+$.
 We conclude our construction by setting
 \[
@@ -675,8 +673,7 @@ We will now assume the $(f_n)_{n \in \mathbb{N}}$ is pointwise convergent on $E$
 	$\varepsilon > 0$.
 Equicontinuity gives us a $\delta > 0$ such that $d(x, y) < \delta$ implies that $|f_n(x) - f_n(y)| < \varepsilon /3$, for all $n$.
 Let's now cover $K$ with $m$ balls of radius $\delta /2$ and call the $k$-th ball $B_k$.
-We can now set $p_k$ as a point in $B_k \cap E$.
-This point exists because $E$ is dense in $X$.
+We can set $p_k$ as a point in $B_k \cap E$, because $E$ is dense in $X$.
 Pointwise convergence on $E$ lets us chose an $N$ such that $|f_{n_1}(p_k) - f_{n_2}(p_k)| < \varepsilon /3$ for $k = 1, 2, ..., m$ and all $n_1, n_2 > N$.
 Let's conclude by setting $x \in K$.
 Then there is a $k$ such that $x \in B_k$ and thus $d(x, p_k) < \delta$.
