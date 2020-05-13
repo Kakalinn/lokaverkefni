@@ -417,24 +417,13 @@ The desired conformal mapping from $U$ to $V$ is then $\Phi_2 \circ \Phi_1^{-1}$
 \end{proof}
 In this thesis the disk algebra $\mathcal{A}$ is of special interest so a version of the Riemann mapping theorem that considers continuity at the boundary is desirable.
 We can combine the Riemann mapping theorem and Carathéodory's theorem to achieve the desired result.
-The only thing to prove is that a homeomorphism $f$ maps the boundary of a bounded set $U$ to the boundary of $f(U)$ and that a Jordan curve under a homeomorphism is still a Jordan curve.
+The only thing to prove is that a Jordan curve under a homeomorphism is still a Jordan curve, since boundaries map to boundaries under homeomorphisms..
 \begin{corollary}
 \label{contrmt}
 If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a continuous, injective $\Phi: \overline{\mathbb{D}} \rightarrow K$ such that its restriction to $\mathbb{D}$ is a conformal mapping.
 \end{corollary}
 \begin{proof}
-First, let $U$ be a bounded, open set in $\mathbb{C}$,
-	$f: \overline{U} \rightarrow \mathbb{C}$ be an injective continuous map,
-	and let's show that $\partial f(U) = f(\partial U)$.
-Let $p \in \partial U$ and $B_r(z) = \{z \in \mathbb{C};\ |r - z| < r\}$.
-Let's also assume that $f(p)$ is in the interior of $f(U)$ and show that it leads to a contradiction.
-There exists an $r > 0$ such that $B_r(p) \subset f(U)$, because the interior of a set is always open.
-This gives us as an open neighbourhood $f^{-1}(B_r(p)) \subset U$ of $p$, but $p \in \partial U$ implies that no such neighbourhood exists.
-So $f(p) \in \partial f(U)$, implying $\partial f(U) \supset f(\partial U)$.
-We can use the same argument to show that $\partial f(U) \subset f(\partial U)$, since $f$ is bijective if we consider it as a map from $\overline{U}$ into $f(\overline{U})$.
-So $f(\partial U) = \partial f(U)$. % TODO skoða þennan hluta mun betur!!
-
-Second, let
+Firstly, let
 	$U$ and $V$ be open sets in $\mathbb{C}$,
 	$\gamma: [0, 1] \rightarrow \partial \mathbb{D}$ a Jordan curve,
 	$f: U \rightarrow V$ be homeomorphism,
@@ -443,9 +432,9 @@ It suffices to show that $s = t$, since $\lambda(0) = \lambda(1)$ obviously hold
 We have that $f(z) = f(w)$ implies $z = w$, since $f$ is bijective, and therefore injective.
 So $\lambda(s) = (f \circ \gamma)(s) = (f \circ \gamma)(t) = \lambda(t)$ implies that $\gamma(s) = \gamma(t)$.
 But $\gamma$ is a Jordan curve, so $\gamma(s) = \gamma(t)$ implies $s = t$.
-So $\lambda$ is also a Jordan curve. % TODO reread and make sure this still makes sense
+So $\lambda$ is also a Jordan curve. 
 
-Finally, we can prove the corollary.
+We can now prove the corollary.
 Let $f$ be a homeomorphism from $\overline{\mathbb{D}}$ to $K$.
 The Riemann mapping theorem also gives us a conformal map $\Phi: \mathbb{D} \rightarrow f(\mathbb{D})$.
 We know that $\overline{\mathbb{D}}$ is compact, so $K = f(\overline{\mathbb{D}})$ is also compact, since the image of a compact set under a continuous mapping is also compact.
