@@ -75,7 +75,7 @@ Class scrbook Warning: Usage of package `tocbibind' together
 (scrbook)              the list of figures, list of tables, bibliography,
 (scrbook)              index and the running head.
 (scrbook)              Nevertheless, using requested
-(scrbook)              package `tocbibind' on input line 30.
+(scrbook)              package `tocbibind' on input line 27.
 
 (/usr/share/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 
@@ -100,7 +100,7 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 (/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
 
 Package caption Warning: Ignoring optional argument [l] of \setcapwidth
-(caption)                 on input line 67.
+(caption)                 on input line 64.
 See the caption package documentation for explanation.
 
 (output/verkefni.aux)
@@ -133,22 +133,22 @@ Package tocbasic Warning: `tocbibind' redefinition of `\listoftables'
 pdftex/updmap/pdftex.map} <./foot.png> <./ui_1_cmyk.png>] [2] [3]
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 179.
+(Font)              using `OMS/cmsy/m/n' instead on input line 176.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--181
+Underfull \hbox (badness 10000) in paragraph at lines 172--178
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 175--181
+Underfull \hbox (badness 10000) in paragraph at lines 172--178
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 190--192
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--195
-
 (/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def)
-Underfull \hbox (badness 10000) in paragraph at lines 198--200
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
 
 [4] [5] [6] [5] [6] [7] [8] (output/verkefni.toc) [9] [10] (output/verkefni.lof
 ) [11] [12] (output/verkefni.lot) [13] [14] [15] [16]pdfTeX warning (ext4): des
@@ -156,51 +156,55 @@ tination with the same identifier (name{page.1}) has been already used, duplica
 te ignored
 <to be read again> 
                    \relax 
-l.256 \chapter
+l.252 \chapter
               {Introduction} [1]pdfTeX warning (ext4): destination with the sam
 e identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.256 \chapter
+l.252 \chapter
               {Introduction} [2]
 chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.264 \chapter
+l.284 \chapter
               {Preliminaries} [3]pdfTeX warning (ext4): destination with the sa
 me identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.264 \chapter
+l.284 \chapter
               {Preliminaries} [4]
 chapter 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.298 
+l.318 
        [5]pdfTeX warning (ext4): destination with the same identifier (name{pag
 e.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.336 \begin{theorem}
-                     [Carathéodory] [6] [7] [8] [9] [10] [11] [12]
+l.362 \]
+         [6] [7] [8] [9] [10] [11] [12]
 chapter 3.
-[13] [14] [15] [16] [17] [18] [19]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[20] [21 <./approach-region-7.png>] [22] [23]
-Overfull \hbox (5.97328pt too wide) in paragraph at lines 1039--1043
+[13] [14] [15] [16] [17] [18] [19] [20] [21 <./approach-region-7.png>] [22]
+[23] [24]
+Overfull \hbox (5.97328pt too wide) in paragraph at lines 1114--1118
 [][]\T1/cmr/bx/n/12 Theorem 3.2.2 \T1/cmr/m/n/12 (Rud-in--Car-leson theroem)\T1
 /cmr/bx/n/12 . []\T1/cmr/m/it/12 Let $\OML/cmm/m/it/12 E$ \T1/cmr/m/it/12 be a 
 closed sub-set of $\U/msb/m/n/12 T$ \T1/cmr/m/it/12 of Lebesgue-
-[24] [25 <./graph8.png>] [26 <./graph2.png>] [27] [28 <./graph101.png>]
-[29] [30] [31] [32] [33] [34]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26 <./graph8.png>] [27 <./graph2.png>] [28] [29 <./graph101.png>] [30]
+[31] [32] [33] [34] [35] [36]
 chapter A.
-(output/verkefni.bbl [35] [36]) [37] (output/verkefni.aux)
+(output/verkefni.bbl [37] [38]) [39] (output/verkefni.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -225,4 +229,6 @@ m-super/sfss1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx120
 0.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf-dist/f
 onts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/cm-super/sfti1200.pfb
+ic/cm-super/sfti1200.pfb>
+Output written on output/verkefni.pdf (57 pages, 914396 bytes).
+Transcript written on output/verkefni.log.
