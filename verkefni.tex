@@ -287,8 +287,8 @@ During introductory courses in measure theory the focus is often solely on posit
 This restriction is immediately felt when studying functional analysis (see for example \ref{riesz}).
 We, therefore, need the following definitions:
 \begin{definition}
-% COMMENT(gardar): Er R yfirstrik alveg vel þekkt?
 Let $\mathcal{F}$ be a $\sigma$-algebra and $\mu: \mathcal{F} \rightarrow Y$, where $Y$ is a subset of $\mathbb{C}$ or $\overline{\mathbb{R}}$.
+Recall that $\overline{\mathbb{R}} = \mathbb{R} \cup \{-\infty, +\infty\}$.
 We say that $\mu$ is \emph{countably additive} if
 \[
 	\mu\left( \bigcup_{n \in \mathbb{N}} E_n \right ) = \sum_{n \in \mathbb{N}} \mu(E_n)
@@ -305,12 +305,10 @@ Allowing $Y = \overline{\mathbb{R}}$ in (ii) would lead to trouble, for example 
 
 For those not familiar with complex measures, some care must be taken.
 A prime example is the notion of null sets.
-% COMMENT(gardar): s/great/significant
-They still play a great role, but their definition is different.
+They still play a significant role, but their definition is different.
 We can motivate this difference by letting $X = \{x, y\}$, $\mathcal{F}$ be the power set of $X$, and define $\mu$ by $\mu(\{x\}) = -1$ and $\mu(\{y\}) = 1$.
 For $\mu$ to be a measure we need $\mu(X) = 0$ to hold.
-% COMMENT(gardar): The usual definition of null sets would label $X$ as a $\mu$-null set.
-Blindly applying our definitions from positive measures would label $X$ as a $\mu$-null set.
+The usual definition of null sets would label $X$ as a $\mu$-null set.
 This would of course technically be a valid definition, but leads to problems further down the road, for example
 \[
 	\int_X f\ d\mu = 0
@@ -334,6 +332,17 @@ yields a measure.
 This measure is referred to as \emph{the total variation of $\mu$} and denoted by $|\mu|$ (for example, $|\mu|(E)$).
 A proof that $|\mu|$ is a measure and more detail on complex measures can be found in chapter $6$ of \citep{rudin2}. 
 A useful property of the total variation of $\mu$ is that $\mu \lll |\mu|$, that is a $|\mu|$-null set is also a $\mu$-null set.
+
+Recall that a positive measure $\mu$ is said to be regular if
+\[
+	\mu(E) = \inf\{\mu(F);\ E \subset F \text{ and $F$ is open}\}
+\]
+holds for all measurable $E$ and
+\[
+	\mu(E) = \sup\{\mu(K);\ K \subset E \text{ and $K$ is compact}\}
+\]
+holds for all open $E$ and measurable $E$ of finite measure.
+We similarly refer to a complex measure $\mu$ as \emph{regular} if $|\mu|$ is regular.
 
 Let $\mu$ and $\lambda$ be measures on a common $\sigma$-algebra.
 We define
@@ -379,6 +388,17 @@ So, naturally, we conclude that a sequence of functions in $\mathcal{A}$ that co
 \subsection{The Riemann Mapping Theorem} 
 The Riemann Mapping Theorem is a powerful tool that often allows us to move results on the open unit disk to more general simply connected domains.
 We can use a famous theorem of Carathéodory to achieve similar results for the closed unit disk.
+
+To `move results on the open unit disk to more general simply connected domains' we first have to nail down what properties we are interested in.
+In complex analysis that is usually holomorphicity.
+The bijections that preserve holomorphicity are therefore of interest, but since the composition of holomorphic functions is holomorphic we only need the following:
+\begin{definition}
+A map $f: U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \emph{conformal} if it is holomorphic, bijective, and its inverse is holomorphic.
+\end{definition}
+The fact that the inverse is holomorphic is actually redundant.
+It can be shown that a holomorphic bijection has a holomorphic inverse \citep{greenkrantz}.
+
+It is important to state Carathéodory's theorem before looking at the Riemann mapping theorem.
 \begin{definition}
 A continuous function $\gamma: [0, 1] \rightarrow \mathbb{C}$ is said to be a \emph{Jordan curve} if $\gamma(0) = \gamma(1)$ and
 \[
@@ -387,45 +407,30 @@ A continuous function $\gamma: [0, 1] \rightarrow \mathbb{C}$ is said to be a \e
 \end{definition}
 The definition above can be restated as: A Jordan curve is a closed simple curve.
 The term `simple' here means that the curve is not self-intersecting.
-% COMMENT(gardar): s/component/components
-The name stems from a famous result by Camille Jordan stating that $\mathbb{C} \setminus \gamma([0, 1])$ has two connected component, one of which is simply connected.
-% COMMENT(gardar): s/will be called/is called
-The simply connected component will be called \emph{the domain bounded by $\gamma$}.
+The name stems from a famous result by Camille Jordan stating that $\mathbb{C} \setminus \gamma([0, 1])$ has two connected components, one of which is simply connected.
+The simply connected component is called \emph{the domain bounded by $\gamma$}.
 The proof of this result is rather technical and outside the scope of this thesis \citep{munkres, greenkrantz}.
 The result is however necessary to make statement such as `let $U$ be the domain bounded by $\gamma$'.
 An example of this is the following theorem:
 \begin{theorem}[Carathéodory]
-% COMMENT(gardar): optional: conformal hefur ekki verið skilgreint þegar hér kemur við sögu, mætti kannski nefna hvað það þýðir. Ahh sé að þetta er skilgreint neðar, þannig þetta er kannski alveg OK.
 Let $\Omega_1$ and $\Omega_2$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $\Phi: \Omega_1 \rightarrow \Omega_2$ be a conformal mapping.
 Then there exists a continuous injection $\hat{\Phi}: \overline{\Omega_1} \rightarrow \overline{\Omega_2}$ that extends $\Phi$.
 \end{theorem}
-% COMMENT(gardar): maybe?: Before proving the Riemann Mapping Theorem we need to define conformality.
 A proof of this can be found in section $13.2$ of \citep{greenkrantz}.
 
-To `move results on the open unit disk to more general simply connected domains' as described earlier we first have to nail down what properties we have an interest in.
-In complex analysis that is usually holomorphicity.
-The bijections that preserve holomorphicity are therefore of interest, but since the composition of holomorphic functions is holomorphic we only need the following:
-\begin{definition}
-A map $f: U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \emph{conformal} if it is holomorphic, bijective, and its inverse is holomorphic.
-\end{definition}
-The fact that the inverse is holomorphic is actually redundant.
-It can be shown that a holomorphic bijection has a holomorphic inverse \citep{greenkrantz}.
 \begin{theorem}[Riemann mapping theorem \citep{greenkrantz}]
-% COMMENT(gardar): s/If U ..., .../If U ... and ....
-If $U \subset \mathbb{C}$, $U \neq \mathbb{C}$ is homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $\mathbb{D}$ to $U$.
+If $U$ is a subset of $\mathbb{C}$, homeomorphic to $\mathbb{D}$, and $U \neq \mathbb{C}$ then there exists a conformal mapping from $\mathbb{D}$ to $U$.
 \end{theorem}
 \begin{corollary}
 If $U$ and $V$ are both homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $U$ to $V$.
 \end{corollary}
 \begin{proof}
 The Riemann mapping theorem gives us $\Phi_1$, a conformal mapping from $\mathbb{D}$ to $U$, and $\Phi_2$, a conformal mapping from $\mathbb{D}$ to $V$.
-% COMMENT(gardar): Since $\Phi_2$ is conformal $\Phi_2^{-1}$ is also bijective, holomorphic with an holomorphic inverse, meaning $\Phi_2^{-1}$ is also conformal.
-% COMMENT(gardar): s/then/therefore
-The desired conformal mapping from $U$ to $V$ is then $\Phi_2 \circ \Phi_1^{-1}$.
+Since $\Phi_2$ is conformal $\Phi_2^{-1}$ is also bijective, holomorphic with an holomorphic inverse, meaning $\Phi_2^{-1}$ is also conformal.
+The desired conformal mapping from $U$ to $V$ is therefore $\Phi_2 \circ \Phi_1^{-1}$.
 \end{proof}
 In this thesis the disk algebra $\mathcal{A}$ is of special interest so a version of the Riemann mapping theorem that considers continuity at the boundary is desirable.
-% COMMENT(gardar): s/achieve the desired theorem/prove the desired result
-We can combine the Riemann mapping theorem and Carathéodory's theorem to achieve the desired result.
+We can combine the Riemann mapping theorem and Carathéodory's theorem to prove the desired result.
 The only thing to prove is that a Jordan curve under a homeomorphism is still a Jordan curve, since boundaries map to boundaries under homeomorphisms..
 \begin{corollary}
 \label{contrmt}
@@ -435,9 +440,9 @@ If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a continuous
 
 Firstly, let
 	$U$ and $V$ be open sets in $\mathbb{C}$,
-	$\gamma: [0, 1] \rightarrow \partial \mathbb{D}$ a Jordan curve,
+	such that $U$ is bounded a Jordan curve,
+	$\gamma: [0, 1] \rightarrow \partial \mathbb{D}$ be that Jordan curve,
 	$f: U \rightarrow V$ be homeomorphism,
-% COMMENT(gardar): Þarf ekki að grf að \partial D \subset U til að \lambda sé velskilgreint?
 Let $\lambda = f \circ \gamma$ and $s, t \in ]0, 1[$ such that $\lambda(s) = \lambda(t)$.
 It suffices to show that $s = t$, since $\lambda(0) = \lambda(1)$ obviously holds.
 We have that $f(z) = f(w)$ implies $z = w$, since $f$ is bijective, and therefore injective.
@@ -460,7 +465,6 @@ We can often solve things for the unit disk (or unit square as in \ref{rudincarl
 
 \subsection{Complex analysis in several variables}
 We will briefly touch on multivariate complex analysis so we will need a definition of a holomorphic function in $\mathbb{C}^n$.
-% COMMENT(gardar): nit: Etv setja þessa skilgreiningu í \begin{definition} etc.
 If $U \subset \mathbb{C}^n$ is open and $f: U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U$}.
 We will also denote common sets by there counterpart in single variate complex analysis with an added `$n$' in the superscript.
 This does not, however, denote an $n$-fold Cartesian product.
@@ -473,13 +477,11 @@ We say that $X$ is \emph{locally compact} if for each $x \in X$ there exists a o
 \begin{definition}
 \label{locallycompactdef}
 Let $X$ be a locally compact space.
-% COMMENT(gardar): continuos function $f: X \to X$?
-We say a complex function $f$ \emph{vanishes at infinity} if for all $\varepsilon > 0$ there exists a compact set $K$ such that $|f(x)| < \varepsilon$ for all $x \in X \setminus K$.
+We say a function $f$ in $C(X)$ \emph{vanishes at infinity} if for all $\varepsilon > 0$ there exists a compact set $K$ such that $|f(x)| < \varepsilon$ for all $x \in X \setminus K$.
 The family of all such functions is referred as $C_0(X)$.
 \end{definition}
 Let $X$ be compact.
 Then if $f \in C(X)$ and $\varepsilon > 0$ we set $K = X$ and see that $|f(x)| < \varepsilon$ vacuously holds for all $x \in X \setminus K = \emptyset$.
-% COMMENT(gardar): Vantar þá ekki skilyrði í skilgreininguna um að föllin í C_0(X) séu samfelld?
 So $C(X)$ and $C_0(X)$ are identical in this case.
 \begin{definition}
 Let $\alpha$ be a linear map from a normed vector space $X$ into a normed vector space $Y$.
@@ -528,9 +530,11 @@ Let
 Then there exists a continuous linear functional $\alpha$ such that $|\alpha| < 1$ on $B$ and $\alpha(f) > 1$.
 \end{theorem}
 \subsection{The Riesz representation theorem}
-Let $X$ be a $\sigma$-finite measurable space with measure $\mu$, choose $p$ and $q$ such that $1 < p, q < \infty$ and $1/p + 1/q = 1$, and $g \in L^q(\mu)$.
-We can then define a linear transform
-% COMMENT(gardar): on L^{p}(\mu)
+Let
+	$X$ be a $\sigma$-finite measurable space with measure $\mu$,
+	choose $p$ and $q$ such that $1 < p, q < \infty$ and $1/p + 1/q = 1$,
+	and $g \in L^q(\mu)$.
+We can then define a linear functional on $L^p(X, \mu)$ by
 \[
 	\alpha(f) = \int fg\ d\mu.
 \]
@@ -539,6 +543,8 @@ Recall that the Hölder inequality states that if $f$ and $g$ are measurable fun
 \[
 	\|fg\|_1 \leq \|f\|_p\|g\|_q.
 \]
+So each function in $L^p(X, \mu)$ gives us a bounded linear functional.
+The following theorem states the inverse, that is, each bounded linear functional on $L^p(X, \mu)$ can be represented by a function in $L^q(X, \mu$).
 \begin{theorem}[The Riesz representation theorem for bounded linear functionals on $L(X, \mu)$ with $\sigma$-finite $X$ \citep{rudin2}]
 Let $1 < p < \infty$,
 	$q$ be such that $1/p + 1/q = 1$,
@@ -555,11 +561,13 @@ for all $f \in L^p(\mu)$ and
 \end{theorem}
 Note that the theorem above also hold for $p = 1$ and $q = \infty$, but we will not need that result.
 
+A similar result can obtained for bounded linear functionals on $C_0(X)$ for locally compact $X$.
+There the functionals can be represented by regular measures.
 \begin{theorem}[The Riesz representation theorem for bounded linear functionals on $C_0(X)$ with locally compact $X$ \citep{rudin2}]
 \label{riesz}
 Let $X$ be a locally compact Hausdorff space and $\alpha$ be a bounded linear functional on $C_0(X)$.
 % COMMENT(gardar): Í 2.1.1 er positive, real valued og complex measure skilgreind. Ætti eitt af þeim að vera notað hér í staðinn fyrir 'measure'?
-There then exists a measure $\mu$ such that
+There then exists a regular measure $\mu$ such that
 \begin{enumerate}
 \item[\emph{(i)}]
 \[
@@ -585,8 +593,8 @@ The main result of this section is that the annihilating measures of
 \]
 are absolutely continuous with respect to the Lebesgue measure.
 We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of \citep{rudin2}.
-% COMMENT(gardar): Það kemur skilgreining beint á eftir þessari setningu, kannski færa hana neðar?
 We will start off with two famous theorems from analysis. 
+We will need the following definition for one of those theorems.
 \begin{definition}
 Let $\mathcal{F}$ be a family of complex functions on a metric space $(X, d)$.
 
@@ -755,14 +763,14 @@ so
 	\int_{-\pi}^{\pi} P_r(t)\ dt
 	&= \int_{-\pi}^{\pi} \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}\ dt\\
 	&= \sum_{n \in \mathbb{Z}} \int_{-\pi}^{\pi} r^{|n|}e^{int}\ dt\\
-% COMMENT(gardar): Persónulega mundi ég skrifa næstu línu sem: \int_{-\pi}^{\pi} r^0 e^{0}
+	&= \int_{-\pi}^{\pi} r^{|0|}e^{0}\ dt\\
 	&= \int_{-\pi}^{\pi}\ dt\\
 	&= 2\pi.
 \end{align*}
 This naturally leads us to the following lemma:
 \begin{lemma}
 \label{FMRlemma1}
-Let $\mu$ be a complex measure, and $u = P[d\mu]$.
+Let $\mu$ be a complex measure, $r \in ]0, 1[$, and $u = P[d\mu]$.
 Then
 \[
 	\|u_r\|_1 \leq \|\mu\|.
@@ -771,8 +779,7 @@ Then
 \begin{proof}
 This can be obtained by simple computations,
 \begin{align*}
-% COMMENT(gardar): Hér er u en ekki u_r eins og í setningunni. Á það að vera svoleiðis?
-	\|u\|_1
+	\|u_r\|_1
 	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})|\ d\theta\\
 	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} \left | \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d\mu(e^{it}) \right | d\theta\\
 	&\leq \frac{1}{2\pi} \int_{-\pi}^{\pi} \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d|\mu(e^{it})| d\theta\\
@@ -1085,8 +1092,7 @@ for all $n = -1, -2, ...$ and $\mu \lll m$.
 \label{section2}
 We will refer to the \emph{closed unit square} in $\mathbb{C}$ by
 \[
-% COMMENT(gardar): Á tölugildið ekki að vera inn í max-inu?
-	S = \{z;\ |\max(\Re z, \Im z)| \leq 1\}.
+	S = \{z;\ \max(|\Re z|, |\Im z|) \leq 1\}.
 \]
 The square with side-lengths $a$ and bottom-left corner at $w$ is then denoted by $w + aS$.
 
@@ -1117,8 +1123,7 @@ and
 \begin{proof}
 It suffices to show that the image of each partition is contained in a circle with radius $\varepsilon$ since each square includes a circle.
 Recall that a point $x$ in a set $A$ is a \emph{limit point of $A$} if it is in the closure of $A \setminus \{x\}$.
-% COMMENT(gardar): Since K is compact, f is uniformally continuous
-We have that $K$ is compact so $f$ is uniformly continuous.
+Since K is compact, f is uniformly continuous
 This means we can set $\delta > 0$ such that $|f(x) - f(y)| < \varepsilon$ if $|x - y| < \delta$.
 Let $a_1, a_2, ..., a_{p + 1}$ be a strictly increasing sequence in $]0, 1]$ such that $a_{k + 1} - a_k < \delta/2$, for $k = 1, 2, ..., p$ and $E_k = E \cap ]a_k, a_{k + 1}]$, for $k = 1, 2, ..., p$.
 The only problem with this decomposition is that the sets may not be closed.
@@ -1128,8 +1133,7 @@ Let's assume no such point exists and show it leads to a contradiction.
 This implies that $E \cap I$ is dense in $I$, but this would imply that $E$ contains $I$, since $E$ is closed and therefore $E \cap I$ closed in $I$.
 But $E$ can't contain an open set since $E$ is of Lebesgue-measure zero.
 \end{proof}
-% COMMENT(gardar): Eru ]0,1] og T grannmóta? Ég skil f(t) = e^it2pi virkar í aðra áttina, en er til samfelld andhverfa?
-Note that \ref{somelemma} still holds if we replace $]0, 1]$ by $\mathbb{T}$ by a simple homeomorphism.
+We can show that \ref{somelemma} still holds if we replace $]0, 1]$ by $\mathbb{T}$ in the same way.
 This is the context we will later use it in.
 
 In the discussion before the proof of \ref{mylemma} a logarithm is used.
@@ -1142,8 +1146,7 @@ Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$,
 	and let $T$ be a subset of $\mathbb{C}$ homeomorphic to $\overline{\mathbb{D}}$ such that $f(\overline{\mathbb{D}}) \subset T$.
 Then there exists an $F \in \mathcal{A}$, such that $F = f$ on $E$ and $F(\overline{\mathbb{D}}) \subset T$.
 \end{theorem}
-% COMMENT(gardar): s/it //
-This will be proved as Rudin did it in his original paper \citep{rudin}.
+This will be proved as Rudin did in his original paper \citep{rudin}.
 We will split up the proof into several lemmas.
 The first few lemmas are dedicated to showing the result holds for continuous simple functions, and the last lemma bridges the gap.
 \begin{lemma}
@@ -1211,8 +1214,7 @@ We have that
 	f_{a, b}(a + (b - a)2^{-n})
 	&= 2\log (b - a) - 2\log 2 - \log (((b - a)2^{-n})(b - a - (b - a)2^{-n}))\\
 	&= 2\log (b - a) - 2 - \log ((b - a)^2(1 - 2^{-n})2^{-n})\\
-    % COMMENT(gardar): vantar opna sviga í seinasta log.
-	&= 2\log (b - a) - 2 - 2\log (b - a) - \log (1 - 2^{-n}) - \log 2^{-n})\\
+	&= 2\log (b - a) - 2 - 2\log (b - a) - \log (1 - 2^{-n}) - \log 2^{-n}\\
 	&= n - (2 + \log (1 - 2^{-n}))\\
 	&\leq n.
 \end{align*}
@@ -1496,8 +1498,7 @@ Let $X$ be a compact Hausdorff space,
 	$B^{\bot}$ be the annihilating measures of $B$,
 	$S$ be a closed subset of $X$ that is $\mu$-null for all $\mu \in B^{\bot}$, % TODO kannski breyta í E
 	$f$ be a continuous function on $S$,
-    % COMMENT(gardar): $\Xi: X \to \mathbb{R}, \Xi > 0$ ...
-	and $\Xi > 0$ be a continuous function on $X$ such that $|f| < \Xi$ on $S$.
+	and continuous $\Xi: X \rightarrow [0, \infty[$ such that $|f| < \Xi$ on $S$.
 Then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
 The following lemma makes the proof simple.

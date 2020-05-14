@@ -10,8 +10,8 @@
 \contentsline {section}{\numberline {2.2}Complex analysis}{7}{section.2.2}% 
 \contentsline {subsection}{\numberline {2.2.1}The disk algebra}{7}{subsection.2.2.1}% 
 \contentsline {subsection}{\numberline {2.2.2}The Riemann Mapping Theorem}{7}{subsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.2.3}Complex analysis in several variables}{9}{subsection.2.2.3}% 
-\contentsline {section}{\numberline {2.3}Functional analysis}{9}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.2.3}Complex analysis in several variables}{10}{subsection.2.2.3}% 
+\contentsline {section}{\numberline {2.3}Functional analysis}{10}{section.2.3}% 
 \contentsline {subsection}{\numberline {2.3.1}Hahn-Banach}{11}{subsection.2.3.1}% 
 \contentsline {subsection}{\numberline {2.3.2}The Riesz representation theorem}{11}{subsection.2.3.2}% 
 \contentsline {chapter}{\numberline {3}Rudin-Carleson theorem}{13}{chapter.3}% 
