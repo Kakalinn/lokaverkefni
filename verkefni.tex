@@ -1486,7 +1486,7 @@ so $g_1$ is not continuous.
 
 There is however a theorem of Bishop that gives a sufficient condition on $E$ \citep{bishop}.
 % COMMENT(gardar): banger alert
-\begin{theorem}[The general Rudin-Carleson theorem]
+\begin{theorem}[Bishop's general Rudin-Carleson theorem]
 \label{bishopstheorem}
 Let $X$ be a compact Hausdorff space,
 	$V = (C(X), \| \cdot \|_{\infty})$,
@@ -1589,8 +1589,9 @@ So all requirements of \ref{bishopstheorem} are met.
 
 \appendix
 \renewcommand{\chaptername}{Appendix}
-\chapter{A further application of the general Rudin-Carleson theorem}
+\chapter{Applications of the general Rudin-Carleson theorem}
 \label{section4}
+\section{Classification of compact subsets of $\mathbb{C}$} 
 Bishop's theorem can be seen as a classification of sets.
 With this in mind, and looking at the case where $X = \mathbb{T}^n$ and $B = \mathcal{A}^n|_{\mathbb{T}}$, we have the following definition.
 \begin{definition}
@@ -1611,10 +1612,71 @@ We then say $K$ is a
 \end{enumerate}
 \end{definition}
 \begin{theorem}
+	\label{bigtheorem}
 	The six classes of sets described in \ref{bigdef} are equivalent.
 \end{theorem}
 The first few sections of chapter $10$ in \citep{rudin3} are dedicated to proving this large theorem.
 One implication, namely that all null sets are peak-interpolation sets, follows directly from \ref{bishopstheorem}.
+
+\section{A variation of Bishop's theorem}
+Theorem \ref{bigtheorem} implies that the condition on $S$ in Bishop's theorem can't, generally, be relaxed.
+If we fix a continuous $f: S \rightarrow \mathbb{C}$ we might, however, be a able to chose a different classification on $S$.
+It seems at first, when looking at the proof of Bishop's theorem, that $S$ being $B^{\bot}$-null is only used to show that
+\[
+	\int_S f\ d\mu = 0.
+\]
+If this were the case, we restate the theorem for a continuous function $f: S \rightarrow \mathbb{C}$ and set $S$ such that the above equation holds.
+This, however, leads to problems.
+
+Let
+	$S = E \cup F$ where $F$ is a closed subarc of $\mathbb{T}$ of non-zero Lebesgue-measure and $E$ is a singleton in $\mathbb{T} \setminus F$
+	and let $f: S \rightarrow \mathbb{C}$ such that $f = 0$ on $F$ and $f \neq 0$ on $E$.
+Then we have by \ref{fmrieszcor} that $E$ is $B^{\bot}$-null, so
+\[
+	\int_S f\ d\mu = \int_F f\ d\mu = 0.
+\]
+So let's assume $f$ can be extended to $F$ via $\mathcal{A}$.
+We also know that $F$ is in $H^1$ because it's a continuous function on a compact set and we know that $f = 0$ must hold on $\mathbb{D}$
+\citep[Theorem $13.4.11$]{greenkrantz}.
+So $F$ is $0$ Lebesgue-almost everywhere and continuous, and therefore $0$ everywhere.
+This is a contradiction, because $F = f$ on $\mathbb{T}$ and $f$ is not zero on $E$.
+
+Looking further at the proof shows that the iteration in the second half doesn't work with $f$, since 
+\[
+	\int_S (f - F)\ d\mu = 0
+\]
+doesn't have to hold for every $F$ in $\mathcal{A}|_{\mathbb{T}}$.
+
+So $S$ would have to both satisfy
+\[
+	\int_S f\ d\mu = 0
+\]
+for all $\mu$ in $B^{\bot}$ and
+\[
+	\int_S (f - F)\ d\mu = 0
+\]
+for all $F$ in $B$ and $\mu$ in $B^{\bot}$.
+This justifies the following alteration of Bishop's theorem.
+\begin{theorem}[An alteration of the Bishop's general Rudin-Carleson theorem]
+\label{bishopstheorem}
+Let $X$ be a compact Hausdorff space,
+	$V = (C(X), \| \cdot \|_{\infty})$,
+	$B$ be a closed subspace of $C(X)$,
+	$B^{\bot}$ be the annihilating measures of $B$,
+	$S$ be a closed subset of $X$,
+	$f$ be a continuous function on $S$,
+	and continuous $\Xi: X \rightarrow [0, \infty[$ such that $|f| < \Xi$ on $S$.
+If
+\[
+	\int_S f\ d\mu = 0
+\]
+for all $\mu$ in $B^{\bot}$ and
+\[
+	\int_S (f - F)\ d\mu = 0
+\]
+holds for all $F$ in $B$ and $\mu$ in $B^{\bot}$ then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
+\end{theorem}
+
 
 \bibliography{refs}
 

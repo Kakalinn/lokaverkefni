@@ -16,5 +16,7 @@
 \contentsline {section}{\numberline {3.1}F. and M. Riesz theorem}{13}{section.3.1}% 
 \contentsline {section}{\numberline {3.2}Rudin-Carleson theorem}{24}{section.3.2}% 
 \contentsline {section}{\numberline {3.3}A generalization of the Rudin-Carleson theorem}{33}{section.3.3}% 
-\contentsline {chapter}{\numberline {A}A further application of the general Rudin-Carleson theorem}{37}{appendix.A}% 
-\contentsline {chapter}{Bibliography}{39}{chapter*.16}% 
+\contentsline {chapter}{\numberline {A}Applications of the general Rudin-Carleson theorem}{37}{appendix.A}% 
+\contentsline {section}{\numberline {A.1}Classification of compact subsets of $\mathbb {C}$}{37}{section.A.1}% 
+\contentsline {section}{\numberline {A.2}A variation of Bishop's theorem}{38}{section.A.2}% 
+\contentsline {chapter}{Bibliography}{41}{chapter*.16}% 
