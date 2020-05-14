@@ -1318,9 +1318,10 @@ To show that $f$ is measurable it suffices to show that $P_{\lambda} = \{x \in [
 This trivially holds, since $P_{\lambda}$ is open.
 \begin{proof}[Proof of \ref{mylemma}]
 We may assume that $H$ is not empty, since the statement holds vacuously if that were the case.
-Let $f$ be as $f_H$ is described above,
-	$g: \mathbb{T} \rightarrow [0, 1]$ such that $g|_{[0, 1[}$ is a diffeomorphism, $g(0) = g(1)$, and $g^{-1}(0)$ is in $H$,
-	and let $h = 2 + f \circ g$.
+We can also assume without loss of generality that $1$ is in $H$.
+We can now use the injection $e^{it} \mapsto t/(2\pi)$, for $t \in [0, 2\pi[$,  to map $H$ to $H'$ a subset of $[0, 1]$ of measure zero.
+We will add $1$ into $H$ to make sure it is closed.
+The desired function is then $f_{H'}$ as desctibed above composed with the inverse of the prior injection with some constant added to make it strictly larger than $1$.
 \end{proof}
 \begin{lemma}
 \label{rudinlemma1}
