@@ -225,14 +225,6 @@ Ekki birtist blaðsíðutal á þessum fyrstu síðum ritgerðarinnar en blaðs�
 
 \tableofcontents
 \listoffigures
-\listoftables
-
-
-
-\chapter*{Abbreviations}
-\addcontentsline{toc}{chapter}{Abbreviations}
-Í þessum kafla mega koma fram listar yfir skammstafanir og/eða breytuheiti. Gefið kaflanum nafn við hæfi, t.d. Skammstafanir eða Breytuheiti. Þessum kafla má sleppa ef hans er ekki þörf. \\
-The section could be titled: Glossary, Variable Names, etc.
 
 
 
@@ -246,6 +238,7 @@ Atli
 Hjörtur
 Eyleifur
 Tóti
+Garðar
 
 \pagenumbering{arabic}
 \setcounter{page}{1}
@@ -302,6 +295,8 @@ We also say that
 \end{enumerate}
 \end{definition}
 Allowing $Y = \overline{\mathbb{R}}$ in (ii) would lead to trouble, for example if $\mu(\{x\}) = \infty$ and $\mu(\{y\}) = -\infty$ what is $\mu(\{x, y\})$?
+Measures should be assumed to complex, unless stated otherwise.
+We will denote by $m$ the Lebesgue-measure on either $[0, 1]$ or $\mathbb{T}$ (which one will be clear from context) and $\sigma$ will be $m$ scaled to be a probability measure.
 
 For those not familiar with complex measures, some care must be taken.
 A prime example is the notion of null sets.
@@ -1034,7 +1029,7 @@ If $\mu$ is a complex Borel measure on $\mathbb{T}$ and
 \[
 	\int e^{-int}\ d\mu = 0
 \]
-for $n = -1, -2, ...$, then $\mu \lll m$.
+for $n = -1, -2, ...$, then $\mu \lll \sigma$.
 \end{theorem}
 If we take a second look at the outline of proof given earlier we see that most of the work has been done.
 All that's left is to show that the condition given in the theorem implies that $P[d\mu]$ is in $H^1$.
@@ -1156,7 +1151,7 @@ Then there exists a function $h: \mathbb{T} \rightarrow [1, \infty]$ such that
 \begin{enumerate}
 \item
 % COMMENT(gardar): er sigma Lebesgue málið?
-$h$ is in $L^1(\mathbb{T}, \sigma)$
+$h$ is in $L^1(\mathbb{T}, m)$
 \item
 $h|_{\mathbb{T} \setminus H}$ is in $C^{\infty}$.
 \item
@@ -1250,9 +1245,9 @@ Let $g = g_{0, 1}$ and
 \]
 We can now integrate $g$ by
 \begin{align*}
-	\int g\ d\sigma
-	&= \int \lim_{n \rightarrow \infty} g_n\ d\sigma\\
-	&= \lim_{n \rightarrow \infty} \int g_n\ d\sigma\\
+	\int g\ dm
+	&= \int \lim_{n \rightarrow \infty} g_n\ dm\\
+	&= \lim_{n \rightarrow \infty} \int g_n\ dm\\
 	&= \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
 	&= \sum_{k \in \mathbb{N}} k2^{-k}\\
 	&< \infty
@@ -1292,14 +1287,14 @@ and a sequence of functions
 We have that $(g_n)_{n \in \mathbb{N}}$ is monotone with limit $g$, similar to before, and $f \leq g$.
 Note that, independent of $H$, we have
 \[
-	\sigma(f_H^{-1}(k)) = 2^{-k}
+	m(f_H^{-1}(k)) = 2^{-k}
 \]
 so
 \begin{align*}
-\int f_H\ d\sigma
-&\leq \int g_H\ d\sigma\\
-&= \int \lim_{n \rightarrow \infty} g_n\ d\sigma\\
-&= \lim_{n \rightarrow \infty} \int g_n\ d\sigma\\
+\int f_H\ dm
+&\leq \int g_H\ dm\\
+&= \int \lim_{n \rightarrow \infty} g_n\ dm\\
+&= \lim_{n \rightarrow \infty} \int g_n\ dm\\
 &= \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
 &= \sum_{k \in \mathbb{N}} k2^{-k}\\
 &< \infty
