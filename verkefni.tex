@@ -1643,7 +1643,7 @@ This is a contradiction, because $F = f$ on $\mathbb{T}$ and $f$ is not zero on 
 
 Looking further at the proof shows that the iteration in the second half doesn't work with $f$, since 
 \[
-	\int_S (f - F)\ d\mu = 0
+	\int_S (f - F)\ d\mu = -\int_S F\ d\mu = 0
 \]
 doesn't have to hold for every $F$ in $\mathcal{A}|_{\mathbb{T}}$.
 
@@ -1653,7 +1653,7 @@ So $S$ would have to both satisfy
 \]
 for all $\mu$ in $B^{\bot}$ and
 \[
-	\int_S (f - F)\ d\mu = 0
+	\int_S F\ d\mu = 0
 \]
 for all $F$ in $B$ and $\mu$ in $B^{\bot}$.
 This justifies the following alteration of Bishop's theorem.
@@ -1672,7 +1672,7 @@ If
 \]
 for all $\mu$ in $B^{\bot}$ and
 \[
-	\int_S (f - F)\ d\mu = 0
+	\int_S F\ d\mu = 0
 \]
 holds for all $F$ in $B$ and $\mu$ in $B^{\bot}$ then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
