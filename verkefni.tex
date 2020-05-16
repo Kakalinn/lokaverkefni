@@ -243,11 +243,11 @@ Garðar
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{Introduction}
-Lennart Carleson and Walter Rudin gave, independently in $1957$ and $1956$ respectively, sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that each continuous function thereon could be extended holomorphically (and still continuously) into $\mathbb{D}$ \citep{rudin, carleson}.
+Lennart Carleson and Walter Rudin gave, independently in $1957$ and $1956$ respectively, a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that each continuous function thereon could be extended holomorphically (and still continuously) into $\mathbb{D}$ \citep{rudin, carleson}.
 This can be seen as a strengthened result of Fatou's interpolation theorem \citep{fatou} (this interplay is discussed briefly and more generally in section \ref{section4}).
 Errett Bishop then generalized the Rudin-Carleson theorem in $1962$ by giving sufficient condition for a set such that a continuous function thereon can always be extended in a similar sense \citep{bishop}.
-Here the condition on the set is given in terms of the annihilating measures (\ref{annilatingmeasure}) of the family of functions we want to extend into.
-The result of Bishop doesn't just generalize the Rudin-Carleson theorem (allowing, for example, similar studies in higher dimensions) but also shows the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem. % TODO cite?
+Here the condition on the set is given in terms of the annihilating measures (see definition \ref{annilatingmeasure}) of the family of functions we want to extend into.
+The result of Bishop doesn't just generalize the Rudin-Carleson theorem (allowing, for example, similar studies in higher dimensions) but also shows the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem \citep{fandmriesz}.
 
 We start of by proving the F. and M. Riesz theorem in section \ref{section1}.
 To achieve this some study of the Poisson kernel is needed.
@@ -259,13 +259,13 @@ It is done in the same way Rudin did in his original paper.
 Some effort is put into showing the existence of a continuous integrable function on $\mathbb{T}$ that takes value $\infty$ at exactly a closed set of Lebesgue-measure zero.
 
 In section \ref{section3} Bishop's generalization of the Rudin-Carleson theorem is stated and proved.
-This is also done in the same way Bishop did it in his paper.
+This is also done in the same way Bishop did in his paper.
 The original Rudin-Carleson theorem is then shown to be a corollary of Bishop's theorem and the F. and M. Riesz theorem.
 
-The final section, section \ref{section4}, looks at how Bishop's theorem fits into complex analysis in several variables.
+The final two sections, section \ref{section4} and section \ref{section5}, look at how Bishop's theorem fits into complex analysis in several variables and states an alternative version of Bishop's theorem.
 \section{Notation}
 We denote by $\mathcal{O}(U)$ the family of holomorphic functions on $U$ for open set $U$.
-We denote by $C(X)$ the family of continuous functions from $X$ to $\mathbb{C}$ for some topological space $X$.
+% We denote by $C(X)$ the family of continuous functions from $X$ to $\mathbb{C}$ for some topological space $X$.
 We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C};\ |z| < 1\}$.
 The closed unit disk will get no special notation, but will be referred to by $\overline{\mathbb{D}}$.
 We will use $\mathbb{T}$ to refer to the open unit circle $\{z \in \mathbb{C};\ |z| = 1\}$.
@@ -280,7 +280,7 @@ During introductory courses in measure theory the focus is often solely on posit
 This restriction is immediately felt when studying functional analysis (see for example \ref{riesz}).
 We, therefore, need the following definitions:
 \begin{definition}
-Let $\mathcal{F}$ be a $\sigma$-algebra and $\mu: \mathcal{F} \rightarrow Y$, where $Y$ is a subset of $\mathbb{C}$ or $\overline{\mathbb{R}}$.
+Let $\mathcal{F}$ be a $\sigma$-algebra and $\mu: \mathcal{F} \rightarrow Y$, where $Y$ is a subset of either $\mathbb{C}$ or $\overline{\mathbb{R}}$.
 Recall that $\overline{\mathbb{R}} = \mathbb{R} \cup \{-\infty, +\infty\}$.
 We say that $\mu$ is \emph{countably additive} if
 \[
@@ -295,7 +295,7 @@ We also say that
 \end{enumerate}
 \end{definition}
 Allowing $Y = \overline{\mathbb{R}}$ in (ii) would lead to trouble, for example if $\mu(\{x\}) = \infty$ and $\mu(\{y\}) = -\infty$ what is $\mu(\{x, y\})$?
-Measures should be assumed to complex, unless stated otherwise.
+Measures in this thesis should be assumed to be complex, unless stated otherwise, and Borel.
 We will denote by $m$ the Lebesgue-measure on either $[0, 1]$ or $\mathbb{T}$ (which one will be clear from context) and $\sigma$ will be $m$ scaled to be a probability measure.
 
 For those not familiar with complex measures, some care must be taken.
@@ -304,13 +304,14 @@ They still play a significant role, but their definition is different.
 We can motivate this difference by letting $X = \{x, y\}$, $\mathcal{F}$ be the power set of $X$, and define $\mu$ by $\mu(\{x\}) = -1$ and $\mu(\{y\}) = 1$.
 For $\mu$ to be a measure we need $\mu(X) = 0$ to hold.
 The usual definition of null sets would label $X$ as a $\mu$-null set.
-This would of course technically be a valid definition, but leads to problems further down the road, for example
+This would of course technically be a valid definition, but leads to problems further down the road.
+For example,
 \[
 	\int_X f\ d\mu = 0
 \]
-does not hold generally (once we define integration by complex measure, of course).
+would not hold generally (once we define integration by complex measure, of course).
 To avoid this specific pitfall we define a measurable set $E$ to be \emph{$\mu$-null} if $\mu(F) = 0$ holds for all measurable $F$ such that $F \subset E$.
-The above example also shows us another pitfall, $E \subset F \implies \mu(E) \leq \mu(F)$ doesn't hold generally.
+The above example also shows us another pitfall, $E \subset F \implies \mu(E) \leq \mu(F)$ doesn't generally hold.
 
 If we have a complex measure $\mu: \mathcal{F} \rightarrow \mathbb{C}$ we may want a positive measure $\lambda$ that dominates it, in the sense that $|\mu(E)| \leq \lambda(E)$.
 We would also want $\lambda$ to be `small' in some sense.
@@ -370,18 +371,18 @@ We say that $\mu$ is an \emph{annihilating measure} of $B$ if
 for all $f$ in $B$. We denote the family of all annihilating measure of $B$ by $B^{\bot}$.
 \end{definition}
 We will specifically be interested in sets that are \emph{$B^{\bot}$-null}.
-That is, sets that have measure zero with regards to all annihilating measures of $B$.
+That is, sets that are $\mu$-null for all $\mu$ in $B^{\bot}$. 
 \section{Complex analysis}
 \subsection{The disk algebra}
 \begin{definition}
-A function defined on $\overline{\mathbb{D}}$ is said to be in the \emph{disk algebra} if it is continuous and holomorphic on $\mathbb{D}$.
+A continuous function on $\overline{\mathbb{D}}$ is said to be in the \emph{disk algebra} if it is holomorphic on $\mathbb{D}$.
 We will refer to this family of function $\mathcal{A}$.
 \end{definition}
 It can be shown using Morera's theorem that a sequence of holomorphic function that converges uniformly has a holomorphic limit \citep{reynir}.
 The same holds for continuous functions.
 So, naturally, we conclude that a sequence of functions in $\mathcal{A}$ that converges uniformly has a limit in $\mathcal{A}$.
 \subsection{The Riemann Mapping Theorem} 
-The Riemann Mapping Theorem is a powerful tool that often allows us to move results on the open unit disk to more general simply connected domains.
+The Riemann mapping theorem is a powerful tool that often allows us to move results on the open unit disk to more general simply connected domains.
 We can use a famous theorem of Carathéodory to achieve similar results for the closed unit disk.
 
 To `move results on the open unit disk to more general simply connected domains' we first have to nail down what properties we are interested in.
@@ -435,9 +436,10 @@ If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a continuous
 
 Firstly, let
 	$U$ and $V$ be open sets in $\mathbb{C}$,
-	such that $U$ is bounded a Jordan curve,
+	such that $U$ is bounded by a Jordan curve,
+	$V$ is bounded,
 	$\gamma: [0, 1] \rightarrow \partial \mathbb{D}$ be that Jordan curve,
-	$f: U \rightarrow V$ be homeomorphism,
+	and $f: U \rightarrow V$ be homeomorphism.
 Let $\lambda = f \circ \gamma$ and $s, t \in ]0, 1[$ such that $\lambda(s) = \lambda(t)$.
 It suffices to show that $s = t$, since $\lambda(0) = \lambda(1)$ obviously holds.
 We have that $f(z) = f(w)$ implies $z = w$, since $f$ is bijective, and therefore injective.
@@ -455,20 +457,28 @@ So $f(\partial \mathbb{D}) = \partial f(\mathbb{D}) = \partial K$ and $\partial 
 So $\Phi$ is a conformal map between two domains, each bounded by a Jordan curve.
 This allows us to use Carathéodory's theorem to extend $\Phi$ continuously and injectively to $\overline{\mathbb{D}}$, concluding the proof.
 \end{proof}
-The Riemann mapping theorem is a strong tool when analyzing holomorphic functions on simply connected domains.
-We can often solve things for the unit disk (or unit square as in \ref{rudincarleson}) and then map that solution to a general simply connected domain.
+% The Riemann mapping theorem is a strong tool when analyzing holomorphic functions on simply connected domains.
+% We can often solve things for the unit disk (or unit square as in \ref{rudincarleson}) and then map that solution to a general simply connected domain.
 
 \subsection{Complex analysis in several variables}
 We will briefly touch on multivariate complex analysis so we will need a definition of a holomorphic function in $\mathbb{C}^n$.
 If $U \subset \mathbb{C}^n$ is open and $f: U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U$}.
 We will also denote common sets by there counterpart in single variate complex analysis with an added `$n$' in the superscript.
 This does not, however, denote an $n$-fold Cartesian product.
-For example $\mathbb{T}^2$ is not the same as $\mathbb{T} \times \mathbb{T}$.
+For example
+\[
+	\mathbb{T}^2 = \{(z, w) \in \mathbb{C}^2;\ |z|^2 + |w|^2 = 1\}
+\]
+is not the same as 
+\[
+	\mathbb{T} \times \mathbb{T} = \{(z, w) \in \mathbb{C}^2;\ |z| < 1 \text{ and } |w| < 1\}.
+\]
 \section{Functional analysis}
 \begin{definition}
 Let $X$ be a topological space.
 We say that $X$ is \emph{locally compact} if for each $x \in X$ there exists a open set $U_x$ such that $x \in U_x$ and $\overline{U_x}$ is compact.
 \end{definition}
+We will denote by $C(X)$ the continuous functions on $X$.
 \begin{definition}
 \label{locallycompactdef}
 Let $X$ be a locally compact space.
@@ -494,16 +504,16 @@ If $\alpha$ is a linear map from a normed vector space $X$ into a normed vector 
 \item[\emph{(iii)}] $\alpha$ is continuous at $x \in X$.
 \end{enumerate}
 \end{theorem}
-This theorem allows us to use the terms `bounded' and `continuous' interchangeably when talking about linear mappings between normed vector spaces.
+This theorem allows us to use the terms `bounded' and `continuous' interchangeably when talking about linear maps between normed vector spaces.
 A proof of this theorem can be found on page $96$ in \citep{rudin2}.
 
 Let's recall what the $L^p$ spaces are.
 Let $X$ be a space with $\sigma$-algebra $\mathcal{F}$, and $\mu$ be a measure on that $\sigma$-algebra.
-We say a function is in $\mathcal{L}^1(X, \mu)$ if
+We say a measurable function is in $\mathcal{L}^1(X, \mu)$ if
 \[
 	\int |f|\ d\mu < \infty
 \]
-and we say it is $\mathcal{L}^p(X, \mu)$ if $|f|^p$ is in $\mathcal{L}^1$, for $0 < p < \infty$.
+and we say it is $\mathcal{L}^p(X, \mu)$ if $|f|^p$ is in $\mathcal{L}^1(X, \mu)$, for $0 < p < \infty$.
 We then define an equivalence relation $\sim$ such that $f \sim g$ if and only if $\mu(\{x \in X;\ f(x) \neq g(x)\}) = 0$.
 We define $L^p(X, \mu)$ to be the quotient space $\mathcal{L}(X, \mu)/\sim$.
 The space $L^p(X, \mu)$ has one major benefit over $\mathcal{L}^p(X, \mu)$,
@@ -556,7 +566,7 @@ for all $f \in L^p(\mu)$ and
 \end{theorem}
 Note that the theorem above also hold for $p = 1$ and $q = \infty$, but we will not need that result.
 
-A similar result can obtained for bounded linear functionals on $C_0(X)$ for locally compact $X$.
+A similar result can be obtained for bounded linear functionals on $C_0(X)$ for locally compact $X$.
 There the functionals can be represented by regular measures.
 \begin{theorem}[The Riesz representation theorem for bounded linear functionals on $C_0(X)$ with locally compact $X$ \citep{rudin2}]
 \label{riesz}
@@ -579,7 +589,7 @@ for all $f \in C_0(X)$ and
 
 
 
-\chapter{Rudin-Carleson theorem}
+\chapter{The Rudin-Carleson theorem}
 \section{F. and M. Riesz theorem}
 \label{section1}
 The main result of this section is that the annihilating measures of 
@@ -612,7 +622,7 @@ We will therefore, for some $S \subset \mathbb{N}$, define
 	\lim_{n \in S} a_n = \lim_{n \in \mathbb{N}} a_{s_n}
 \]
 where $s_k$ is the $k$-th smallest element of $S$.
-In a similar manner we define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \mathbb{N}}$ with $s_k$ defined in the same manner as earlier.
+We similarly define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \mathbb{N}}$ with $s_k$ defined in the same manner as earlier.
 \begin{theorem}[Bolzano-Weierstrass]
 %                                                                                           v This has to be weak because of (M, M, M, M, M, M, ...)
 Let $(a_n)_{n \in \mathbb{N}}$ be a sequence of numbers in $\mathbb{R}^n$, such that $|a_n| < M < \infty$, for all $k \in \mathbb{N}$.
@@ -632,7 +642,7 @@ This gives us a subsequence $(a_n)_{n \in S_1}$ such that
 \]
 We can then repeat this to get a sequence of sets $(S_n)_{n \in \mathbb{N}}$ such that $S_0 \supset S_1 \supset S_2 \supset...$ and 
 \[
-	\sup_{n \in S_k} a_n - \inf_{n \in S_k} a_n < 2^{1 - k},
+	\sup_{n \in S_k} a_n - \inf_{n \in S_k} a_n < 2^{-k},
 \]
 for all $k \in \mathbb{N}$.
 Specifically, if we have $S_k$ we set
@@ -666,12 +676,12 @@ We can then choose a subsequence thereof such that the second coordinate is also
 Now the first two coordinates are convergent.
 If we do this $n - 2$ more times we get a desired subsequence.
 \end{proof}
-We are mostly concerned with the case $n = 2$ since our concern is with $\mathbb{C}$.
+We are mostly concerned with the case $n = 2$ since our interest is in $\mathbb{C}$.
 \begin{theorem}[Ascoli-Arzela]
-Let $\mathcal{F}$ be a pointwise bounded equicontinuous collection of complex functions on a metric space $(X, d)$, and $X$ is seperable.
-Recall that $X$ is seperable if it contains a countable dense subset.
+Let $\mathcal{F}$ be a pointwise bounded equicontinuous collection of complex functions on a metric space $(X, d)$, and $X$ is separable.
 Then every sequence in $\mathcal{F}$ contains a subsequence that converges uniformly on every compact subsets of $X$.
 \end{theorem}
+Recall that $X$ is separable if it contains a countable dense subset.
 \begin{proof}
 Let $E$ be a countable dense subset of $X$,
 	$(f_n)_{n \in \mathbb{N}}$ be a series in $\mathcal{F}$,
@@ -688,14 +698,14 @@ We then set
 \[
 	S = \bigcup_{k \in \mathbb{N}} r_k
 \]
-where $r_n$ is the $k$-th smallest element of $S_k$.
+where $r_k$ is the $k$-th smallest element of $S_k$.
 We now have concluded the first step of the proof.
 
 We will now assume the $(f_n)_{n \in \mathbb{N}}$ is pointwise convergent on $E$,
 	let $K$ be a compact subset of $X$, and
 	$\varepsilon > 0$.
 Equicontinuity gives us a $\delta > 0$ such that $d(x, y) < \delta$ implies that $|f_n(x) - f_n(y)| < \varepsilon /3$, for all $n$.
-Let's now cover $K$ with $m$ balls of radius $\delta /2$ and call the $k$-th ball $B_k$.
+Let's now cover $K$ with $m$ open balls of radius $\delta /2$ and call the $k$-th ball $B_k$.
 We can set $p_k$ as a point in $B_k \cap E$, because $E$ is dense in $X$.
 Pointwise convergence on $E$ lets us chose an $N$ such that $|f_{n_1}(p_k) - f_{n_2}(p_k)| < \varepsilon /3$ for $k = 1, 2, ..., m$ and all $n_1, n_2 > N$.
 Let's conclude by setting $x \in K$.
@@ -710,7 +720,7 @@ The choice of $\delta$ and $N$ then gives us that
 \end{proof}
 
 We will need a few results from the study of Poisson integrals to prove the F. and M. Riesz theorem.
-It will be of great use for us to take, for some $0 < r < 1$, a function defined on $r\mathbb{T}$ and stretch it to be defined on $\mathbb{T}$.
+It will be useful to take, for some $0 < r < 1$, a function defined on $r\mathbb{T}$ and stretch it to be defined on $\mathbb{T}$.
 Concretely, if $f: r\mathbb{T} \rightarrow \mathbb{C}$ then $f_r: \mathbb{T} \rightarrow \mathbb{C}$ is defined by $f_r(z) = f(rz)$.
 We will reserve the subscripted `$r$' for this usage.
 \begin{definition}
@@ -725,7 +735,7 @@ We also rewrite $P_r(\theta - t)$ by setting $z = re^{it}$ as
 \]
 This stems from the fact that
 \[
-	P_r(\theta - t) = \Re \left ( \frac{e^{it} + z}{e^{it} - z}\right ) = \frac{1 - r^2}{1 - 2r\cos(\theta - r) + r^2}.
+	P_r(\theta - t) = \Re \left ( \frac{e^{it} + z}{e^{it} - z}\right ) = \frac{1 - r^2}{1 - 2r\cos(\theta - t) + r^2}.
 \]
 
 For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} as the function defined on $\mathbb{D}$ by
@@ -765,7 +775,7 @@ so
 This naturally leads us to the following lemma:
 \begin{lemma}
 \label{FMRlemma1}
-Let $\mu$ be a complex measure, $r \in ]0, 1[$, and $u = P[d\mu]$.
+Let $\mu$ be a measure, $r \in ]0, 1[$, and $u = P[d\mu]$.
 Then
 \[
 	\|u_r\|_1 \leq \|\mu\|.
@@ -796,7 +806,7 @@ Let $u$ be harmonic in $\mathbb{D}$ and
 \[
 	\sup_{0 < r < 1} \|u_r\|_1 = M < \infty.
 \]
-Then there exists a unique complex Borel measure $\mu$ on $\mathbb{T}$ such that $u = P[d\mu]$.
+Then there exists a unique measure $\mu$ on $\mathbb{T}$ such that $u = P[d\mu]$.
 \end{lemma}
 \begin{lemma}
 %11.30(b) in Rudin
@@ -1025,7 +1035,7 @@ Letting $r$ go to $1$ gives us
 namely, $f$ is the Poisson integral of $F$.
 \end{proof}
 \begin{theorem}[F. and M. Riesz theorem]
-If $\mu$ is a complex Borel measure on $\mathbb{T}$ and
+If $\mu$ is a measure on $\mathbb{T}$ and
 \[
 	\int e^{-int}\ d\mu = 0
 \]
@@ -1083,7 +1093,7 @@ for all $n = -1, -2, ...$ and $\mu \lll m$.
 
 
 
-\section{Rudin-Carleson theorem}
+\section{The Rudin-Carleson theorem}
 \label{section2}
 We will refer to the \emph{closed unit square} in $\mathbb{C}$ by
 \[
@@ -1134,7 +1144,7 @@ This is the context we will later use it in.
 In the discussion before the proof of \ref{mylemma} a logarithm is used.
 This is the base $2$ logarithm, specifically it satisfies $\log 2^x = x$.
 
-\begin{theorem}[Rudin-Carleson theroem]
+\begin{theorem}[Rudin-Carleson]
 \label{rudincarleson}
 Let $E$ be a closed subset of $\mathbb{T}$ of Lebesgue-measure $0$,
 	let $f$ be a continuous function on $E$,
@@ -1147,7 +1157,7 @@ The first few lemmas are dedicated to showing the result holds for continuous si
 \begin{lemma}
 \label{mylemma}
 Let $H$ be a closed set of Lebesgue-measure zero.
-Then there exists a function $h: \mathbb{T} \rightarrow [1, \infty]$ such that 
+Then there exists a function $h: \mathbb{T} \rightarrow ]1, \infty]$ such that 
 \begin{enumerate}
 \item
 % COMMENT(gardar): er sigma Lebesgue málið?
@@ -1179,14 +1189,14 @@ We will define function $f: [0, 1] \rightarrow [0, \infty]$ by
 \[
 	f_H(x) = 2\log \left ( \frac{H_H(x) - V_H(x)}{2} \right ) - \log((x - V_H(x))(H_H(x) - x))
 \]
-and show that this is the desired function.
+and show that this function has the properties of \ref{mylemma}, but with $\mathbb{T}$ replaced by $[0, 1]$ and $]1, \infty]$ replaced by $[0, \infty]$.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{graph8}
 \caption{An example of $f_H$ where $H$ includes nine points. The points of $H$ are represented by circles. }
 \end{figure}
 
-Let's first define a family of functions indexed with $a, b \in \mathbb{R}$ by
+Let's first define a family of functions indexed with $a, b \in \mathbb{R}$, such that $a < b$, by
 \[
 	f_{a, b}: [a, b] \rightarrow [0, \infty],
 	x \mapsto 2\log \left ( \frac{b - a}{2} \right ) - \log((x - a)(b - x))
@@ -1194,7 +1204,7 @@ Let's first define a family of functions indexed with $a, b \in \mathbb{R}$ by
 and show they satisfy the following properties:
 \begin{enumerate}
 \item
-$f_{a, b}(a + (b - a)2^{-n}) \leq n$,
+$f_{a, b}(a + (b - a)2^{-n}) \leq n$, for $n > 0$ and
 \item
 $f_{a, b}(x) = f_{a, b}(b + a - x)$.
 \end{enumerate}
@@ -1254,7 +1264,7 @@ We can now integrate $g$ by
 \end{align*}
 where the second equality is by monotone convergence and the last inequality is by the ratio test.
 This rationale also holds for general $a$ and $b$, since $a$ does not effect the value of the integral and $b$ scales it.
-We can, as a side note, compute the limit of this series by setting, for $x > 1$,
+We can, as a side note, compute the limit of the series by setting, for $x > 1$,
 \[
 	f(x) = \frac{2}{1 - x} = -2\sum_{n \in \mathbb{N}} x^{-k}
 \]
@@ -1287,7 +1297,7 @@ and a sequence of functions
 We have that $(g_n)_{n \in \mathbb{N}}$ is monotone with limit $g$, similar to before, and $f \leq g$.
 Note that, independent of $H$, we have
 \[
-	m(f_H^{-1}(k)) = 2^{-k}
+	m(f_H^{-1}(k)) \leq 2^{-k}
 \]
 so
 \begin{align*}
@@ -1295,7 +1305,7 @@ so
 &\leq \int g_H\ dm\\
 &= \int \lim_{n \rightarrow \infty} g_n\ dm\\
 &= \lim_{n \rightarrow \infty} \int g_n\ dm\\
-&= \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
+&\leq \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
 &= \sum_{k \in \mathbb{N}} k2^{-k}\\
 &< \infty
 \end{align*}
@@ -1319,7 +1329,7 @@ This trivially holds, since $P_{\lambda}$ is open.
 \begin{proof}[Proof of \ref{mylemma}]
 We may assume that $H$ is not empty, since the statement holds vacuously if that were the case.
 We can also assume without loss of generality that $1$ is in $H$.
-We can now use the injection $e^{it} \mapsto t/(2\pi)$, for $t \in [0, 2\pi[$,  to map $H$ to $H'$ a subset of $[0, 1]$ of measure zero.
+We can now use the injection $e^{it} \mapsto t/(2\pi)$, for $t \in [0, 2\pi[$,  to map $H$ to $H'$ a subset of $[0, 1]$ of Lebesgue-measure zero.
 We will add $1$ into $H$ to make sure it is closed.
 The desired function is then $f_{H'}$ as desctibed above composed with the inverse of the prior injection with some constant added to make it strictly larger than $1$.
 \end{proof}
@@ -1350,7 +1360,7 @@ Let's call it $h_H$ and define
 	q = \frac{h_{E_1}}{h_{E_0} + h_{E_1}}.
 \]
 Note that $|\arg h_H(z)| \leq \pi/4$ since if a $w \in \mathbb{C}$ had an argument outside of this range then its square would have and argument outside of the range $[-\pi/2, \pi/2]$ meaning $\Re w^2 < 0$.
-Also, $q(z) = 0$ if and only if $h_{E_0} = \infty$, so $q$ is zero only on $E_0$, and $q(z) = 1$ if and only if $h_{E_1} = \infty$, so $q$ is one only on $E_1$.
+Also, $q(z) = 0$ if and only if $h_{E_0} = \infty$, so $q$ is $0$ only on $E_0$, and $q(z) = 1$ if and only if $h_{E_1} = \infty$, so $q$ is $1$ only on $E_1$.
 We now want to show that $0 \leq \Re q \leq 1$.
 We will let $z, w \in \mathbb{C}$, with $|\arg z|, |\arg w| < \pi/4$ and $\Re z, \Re w > 1$, and show that $0 < \Re z/(w + z) < 1$.
 
@@ -1415,9 +1425,9 @@ Assuming $f_0, f_1, ..., f_{n - 1}$ have been constructed such that
 	\lambda_{n - 1}(E) \subset 2^{1 - n}S
 \]
 with $\lambda_{n - 1} = f - \sum_{k = 0}^{n - 1}f_k$.
-According to \ref{somelemma} we have can write $E$ as the union of disjoint closed sets $E_1, E_2, ..., E_p$ such that the oscillation of $\lambda_{n - 1}$ is less than $2^{-n}$ on each $E_k$.
+According to \ref{somelemma} we can write $E$ as the union of disjoint closed sets $E_1, E_2, ..., E_p$ such that the oscillation of $\lambda_{n - 1}$ is less than $2^{-n}$ on each $E_k$.
 So we can define $Q_k \subset 2^{1 - n}S$ for $k = 1, 2, ..., p$ such that $Q_k = 2^{-n}S + a_k$ for some $a_k \in S$.
-We can choose $c_k \in Q_k \cap 2^{-n}S$ since $Q_k$ has side length $2^{-n}$ and is a subset of $2^{-n + 1}$ and both are closed.
+We can choose $c_k \in Q_k \cap 2^{-n}S$ since $Q_k$ has side length $2^{-n}$ and is a subset of $2^{-n + 1}S$ and both are closed.
 We can now define
 \[
 	f_n(z) = c_k, \tag*{$z \in E_k,\ k = 1, 2, ..., p$.}
@@ -1473,10 +1483,10 @@ It is also a composition of functions in $\mathcal{A}$ so it is also in $\mathca
 \label{section3}
 An obvious next step would be a Rudin-Carleson theorem in several complex variables.
 It is tempting to keep the constraints on $E$ unchanged, namely that it is of Lebesgue-measure zero, but this won't work.
-Take as an example $f: E \rightarrow \mathbb{C}$ with $E = \mathbb{T} \times \{0\}$ and $f(z, w) = \overline{z}$.
+Take as an example $f: E \rightarrow \mathbb{C}$ with $E = \mathbb{T} \times \{1\}$ and $f(z, w) = \overline{z}$.
 Clearly $E$ is of Lebesgue-measure but $f$ cannot be extended.
 If we assume it could be extended to some $g = (g_1, g_2)$ in $\mathcal{A}^2$ then, by definition, $g_1$ would be holomorphic on $\mathbb{D}$ and continuous $\overline{\mathbb{D}}$.
-Its holomorphicity tells us that its integral over the boundary of $r\mathbb{T}$ for $0 < r < 1$ is zero.
+Its holomorphicity tells us that its integral around $r\mathbb{T}$ for $0 < r < 1$ is zero.
 But on $\mathbb{T}$ we have that $g(z) = \overline{z}$ so its integral over $\mathbb{T}$ is not zero.
 That is, we have that
 \[
@@ -1486,24 +1496,24 @@ so $g_1$ is not continuous.
 
 There is however a theorem of Bishop that gives a sufficient condition on $E$ \citep{bishop}.
 % COMMENT(gardar): banger alert
-\begin{theorem}[Bishop's general Rudin-Carleson theorem]
+\begin{theorem}[Bishop's generalization of the Rudin-Carleson theorem]
 \label{bishopstheorem}
 Let $X$ be a compact Hausdorff space,
 	$V = (C(X), \| \cdot \|_{\infty})$,
-	$B$ be a closed subspace of $C(X)$,
-	$B^{\bot}$ be the annihilating measures of $B$,
-	$S$ be a closed subset of $X$ that is $\mu$-null for all $\mu \in B^{\bot}$, % TODO kannski breyta í E
+	$B$ be a closed subspace of $V$,
+	$S$ be a closed subset of $X$ that is $B^{\bot}$-null, % TODO kannski breyta í E
 	$f$ be a continuous function on $S$,
-	and continuous $\Xi: X \rightarrow [0, \infty[$ such that $|f| < \Xi$ on $S$.
-Then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
+	$\Xi: X \rightarrow [0, \infty[$ be continuous,
+	and $|f| < \Xi$ on $S$.
+Then there exists a function $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
 The following lemma makes the proof simple.
 The proof of the lemma is sort of split in two.
-The earlier part is to show that $f$ is in the closure of the image of the restriction mapping and the latter part shows that leads the existence of $F$.
+The earlier part is to show that $f$ is in the closure of the image of the restriction mapping and the latter part shows that it leads the existence of $F$.
 \begin{lemma}
 \label{bishoplemma}
 Assume $|f| < r < 1$ on $S$.
-Then there exists a $F \in B$ such that $F = f$ on $S$ and $\|F\| < 1$.
+Then there exists a function $F \in B$ such that $F = f$ on $S$ and $\|F\| < 1$.
 \end{lemma}
 \begin{proof}
 Let $U_r$ be the subset of $B$ defined by $U_r = \{g;\ \|g\| < r\}$ and $\phi$ be the mapping from $B$ to $C(S)$ that sends a member of $B$ to its restriction on $S$.
@@ -1548,7 +1558,7 @@ But
 		> 1 - r \frac{1}{r} = 0.
 \]
 This contradiction gives that $f \in V_r$.
-We can now take a $F_1$ in $U_r$, and therefore also in $B$ such that $|f - F_1| < \lambda/2$ on $S$, with $\lambda := 1 - r$.
+We can now take a function $F_1$ in $U_r$, and therefore also in $B$, such that $|f - F_1| < \lambda/2$ on $S$, with $\lambda := 1 - r$.
 Remember that $F_1 \in U_r$ implies that $\|F_1\| < r$.
 Now let $f_1 = f - F_1$ and use the same method as above to obtain an $F_2$ such that $\|F_2\| < \lambda/2$ and $|f - F_2| < \lambda/4$ on $S$.
 Iterating this process yields a sequence $(F_n)_{n \in \mathbb{N}}$ from $B$ such that $\|F_n\| < 2^{1 - n}\lambda$ for $n > 1$ and
@@ -1587,24 +1597,22 @@ Then, according to \ref{fmrieszcor}, $S$ is also a $B^{\bot}$-null.
 So all requirements of \ref{bishopstheorem} are met.
 \end{proof}
 
-\appendix
-\renewcommand{\chaptername}{Appendix}
-\chapter{Applications of the general Rudin-Carleson theorem}
-\label{section4}
+\chapter{Consequences of Bishop's generalization of the Rudin-Carleson theorem}
 \section{Classification of compact subsets of $\mathbb{C}$} 
+\label{section4}
 Bishop's theorem can be seen as a classification of sets.
-With this in mind, and looking at the case where $X = \mathbb{T}^n$ and $B = \mathcal{A}^n|_{\mathbb{T}}$, we have the following definition.
+With this in mind, and looking at the case where $X = \mathbb{T}^n$ and $B = \mathcal{A}^n|_{\mathbb{T}^n}$, we have the following definition.
 \begin{definition}
 \label{bigdef}
 Let $K$ be a closed subset of $\mathbb{T}^n = \{z \in \mathbb{C}^n;\ |z| = 1\}$.
 We then say $K$ is a
 \begin{enumerate}
-	\item \emph{zero set} if there exists a function in $f \in \mathcal{A}^n$ such that $K = f^{-1}(0)$.
-	\item \emph{peak set} if there exists a function in $f \in \mathcal{A}^n$ such that $K = f^{-1}(1)$ and $|f(z)| < 1$ for $z \in \overline{\mathbb{D}}^n \setminus K$.
+	\item \emph{zero set} if there exists a function $f \in \mathcal{A}^n$ such that $K = f^{-1}(0)$.
+	\item \emph{peak set} if there exists a function $f \in \mathcal{A}^n$ such that $K = f^{-1}(1)$ and $|f(z)| < 1$ for $z \in \overline{\mathbb{D}}^n \setminus K$.
 	\item \emph{interpolation set} if every continuous function on $K$ extends via $\mathcal{A}^n$. 
 	\item \emph{peak-interpolation set} if every non-zero continuous function $f$ on $K$ extends to $F \in \mathcal{A}^n$ such that $|F(z)| < \|f\|$ for $z \in \overline{\mathbb{D}}^n \setminus K$.
-	\item \emph{null set} if $K$ has measure zero with regards to all annihilating measures of $\mathcal{A}^n$.
-	\item \emph{totally null} if $K$ has measure zero with regards to all measure $\mu$ such that
+	\item \emph{null set} if $K$ is a null set with regards to all annihilating measures of $\mathcal{A}^n$.
+	\item \emph{totally null} if $K$ is a null set with regards to all measure $\mu$ such that
 			\[
 				f(0) = \int_{\mathbb{D}} f\ d\mu
 			\]
@@ -1613,24 +1621,27 @@ We then say $K$ is a
 \end{definition}
 \begin{theorem}
 	\label{bigtheorem}
-	The six classes of sets described in \ref{bigdef} are equivalent.
+	The six classes of sets described in definition \ref{bigdef} are equivalent.
 \end{theorem}
 The first few sections of chapter $10$ in \citep{rudin3} are dedicated to proving this large theorem.
 One implication, namely that all null sets are peak-interpolation sets, follows directly from \ref{bishopstheorem}.
 
 \section{A variation of Bishop's theorem}
+\label{section5}
 Theorem \ref{bigtheorem} implies that the condition on $S$ in Bishop's theorem can't, generally, be relaxed.
 If we fix a continuous $f: S \rightarrow \mathbb{C}$ we might, however, be a able to chose a different classification on $S$.
 It seems at first, when looking at the proof of Bishop's theorem, that $S$ being $B^{\bot}$-null is only used to show that
 \[
 	\int_S f\ d\mu = 0.
 \]
-If this were the case, we restate the theorem for a continuous function $f: S \rightarrow \mathbb{C}$ and set $S$ such that the above equation holds.
+If this were the case, we could restate the theorem for a continuous function $f: S \rightarrow \mathbb{C}$ and set $S$ such that the above equation holds.
 This, however, leads to problems.
 
 Let
-	$S = E \cup F$ where $F$ is a closed subarc of $\mathbb{T}$ of non-zero Lebesgue-measure and $E$ is a singleton in $\mathbb{T} \setminus F$
-	and let $f: S \rightarrow \mathbb{C}$ such that $f = 0$ on $F$ and $f \neq 0$ on $E$.
+	$X$ be $\mathbb{T}$,
+	$B$ be $\mathcal{A}|_{\mathbb{T}}$,
+	$S = E \cup F$ where $F$ is a closed subarc of $\mathbb{T}$ of non-zero Lebesgue-measure and $E$ is a singleton in $\mathbb{T} \setminus F$,
+	and $f: S \rightarrow \mathbb{C}$ be a continuous function such that $f = 0$ on $F$ and $f \neq 0$ on $E$.
 Then we have by \ref{fmrieszcor} that $E$ is $B^{\bot}$-null, so
 \[
 	\int_S f\ d\mu = \int_F f\ d\mu = 0.
@@ -1638,12 +1649,13 @@ Then we have by \ref{fmrieszcor} that $E$ is $B^{\bot}$-null, so
 So let's assume $f$ can be extended to $F$ via $\mathcal{A}$.
 We also know that $F$ is in $H^1$ because it's a continuous function on a compact set and we know that $f = 0$ must hold on $\mathbb{D}$
 \citep[Theorem $13.4.11$]{greenkrantz}.
-So $F$ is $0$ Lebesgue-almost everywhere and continuous, and therefore $0$ everywhere.
+So $F$ vanishes Lebesgue-almost everywhere on $\overline{\mathbb{D}}$ and is continuous.
+We can therefore state it is $0$ everywhere on $\overline{\mathbb{D}}$.
 This is a contradiction, because $F = f$ on $\mathbb{T}$ and $f$ is not zero on $E$.
 
-Looking further at the proof shows that the iteration in the second half doesn't work with $f$, since 
+Looking further at the proof shows that the iteration in the second half doesn't work with this $f$, since 
 \[
-	\int_S (f - F)\ d\mu = -\int_S F\ d\mu = 0
+	\int_S f_1\ d\mu = \int_S (f - F)\ d\mu = -\int_S F\ d\mu = 0
 \]
 doesn't have to hold for every $F$ in $\mathcal{A}|_{\mathbb{T}}$.
 
@@ -1658,11 +1670,9 @@ for all $\mu$ in $B^{\bot}$ and
 for all $F$ in $B$ and $\mu$ in $B^{\bot}$.
 This justifies the following alteration of Bishop's theorem.
 \begin{theorem}[An alteration of the Bishop's general Rudin-Carleson theorem]
-\label{bishopstheorem}
 Let $X$ be a compact Hausdorff space,
 	$V = (C(X), \| \cdot \|_{\infty})$,
-	$B$ be a closed subspace of $C(X)$,
-	$B^{\bot}$ be the annihilating measures of $B$,
+	$B$ be a closed subspace of $V$,
 	$S$ be a closed subset of $X$,
 	$f$ be a continuous function on $S$,
 	and continuous $\Xi: X \rightarrow [0, \infty[$ such that $|f| < \Xi$ on $S$.

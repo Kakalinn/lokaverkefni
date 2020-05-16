@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{12}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -39,6 +39,12 @@ James~Raymond Munkres.
 John~D. Pryce.
 \newblock \emph{Functional Analysis}.
 \newblock Hutchinson and Co, 1973.
+
+\bibitem[Riesz and Riesz(1916)]{fandmriesz}
+Frigyes Riesz and Marcel Riesz.
+\newblock Über die randwerte einer analytischen funktion.
+\newblock \emph{Quatrième Congrès des Mathématiciens Scandinaves}, pages
+  27--44, 1916.
 
 \bibitem[Rudin(1956)]{rudin}
 Walter Rudin.
