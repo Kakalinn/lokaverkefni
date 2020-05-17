@@ -1297,7 +1297,7 @@ and a sequence of functions
 We have that $(g_n)_{n \in \mathbb{N}}$ is monotone with limit $g$, similar to before, and $f \leq g$.
 Note that, independent of $H$, we have
 \[
-	m(f_H^{-1}(k)) \leq 2^{-k}
+	m(f_H^{-1}(k)) = 2^{-k}
 \]
 so
 \begin{align*}
@@ -1305,7 +1305,7 @@ so
 &\leq \int g_H\ dm\\
 &= \int \lim_{n \rightarrow \infty} g_n\ dm\\
 &= \lim_{n \rightarrow \infty} \int g_n\ dm\\
-&\leq \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
+&= \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
 &= \sum_{k \in \mathbb{N}} k2^{-k}\\
 &< \infty
 \end{align*}
