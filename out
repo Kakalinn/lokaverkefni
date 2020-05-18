@@ -155,36 +155,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--197
 ge.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.245 \chapter
+l.264 \chapter
               {Introduction} [1]pdfTeX warning (ext4): destination with the sam
 e identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.245 \chapter
+l.264 \chapter
               {Introduction} [2]
 chapter 1.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.277 \chapter
+l.285 \chapter
               {Preliminaries} [3]pdfTeX warning (ext4): destination with the sa
 me identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.277 \chapter
+l.285 \chapter
               {Preliminaries} [4]
 chapter 2.
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.309 \[
+l.317 \[
          [5]pdfTeX warning (ext4): destination with the same identifier (name{p
 age.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.356 \]
+l.364 \]
          [6] [7] [8] [9] [10] [11] [12]
 chapter 3.
 [13] [14] [15] [16] [17] [18] [19] [20] [21 <./approach-region-7.png>] [22]
@@ -201,11 +201,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1601.
+(hyperref)                removing `math shift' on input line 1617.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1601.
+(hyperref)                removing `math shift' on input line 1617.
 
 [37] [38] (output/verkefni.bbl [39] [40]) [41] (output/verkefni.aux)
 
@@ -234,5 +234,5 @@ share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dis
 t/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/p
 ublic/cm-super/sfsx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/
 sfti1200.pfb>
-Output written on output/verkefni.pdf (55 pages, 925334 bytes).
+Output written on output/verkefni.pdf (55 pages, 924921 bytes).
 Transcript written on output/verkefni.log.

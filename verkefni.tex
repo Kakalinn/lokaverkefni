@@ -211,7 +211,22 @@ Reykjavik, Iceland, \thesismonth~\thesisyear \\
 
 \setcounter{page}{5}
 \section*{\huge Abstract}
-Útdráttur á ensku sem er að hámarki 250 orð.
+% Útdráttur á ensku sem er að hámarki 250 orð.
+The main theme of this thesis is the Rudin-Carleson extension theorem.
+It states a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that a continuous function thereon can be extended to a continuous function on the closed unit disk whose restriction to the open unit disk is holomorphic.
+The theorem is proved in two ways.
+Firstly in section \ref{section2}, where it is done in the same manner as Rudin, and again in section \ref{section3}, where it shown to be a corollary of a theorem of Bishop and the F. and M. Riesz theorem.
+
+Section \ref{section1} is dedicated to prove the F. and M. Riesz theorem, which states a sufficient condition for a measure to be absolutely continuous with regards to the Lebesgue-measure on the unit circle in $\mathbb{C}$.
+
+In section \ref{section3} we state and prove Bishop's generalisation of the Rudin-Carleson.
+We then show the Rudin-Carleson theorem to be a corollary of Bishop's generalisation and the F. and M. Riesz theorem.
+
+We look at the role of Bishop's theorem in the classification of closed subsets of the boundary of the unit disk in $\mathbb{C}^n$ in section \ref{section4}.
+
+In section \ref{section5} we look at a way to relax the condition on the set in Bishop's theorem by fixing the continuous function.
+
+
 \vfill \vspace*{1cm}
 \section*{\huge Útdráttur}
 Hér kemur útdráttur á íslensku sem er að hámarki 250 orð. Reynið að koma útdráttum á eina blaðsíðu en ef tvær blaðsíður eru nauðsynlegar á seinni blaðsíða útdráttar að hefjast á oddatölusíðu (hægri síðu).
@@ -230,14 +245,18 @@ Ekki birtist blaðsíðutal á þessum fyrstu síðum ritgerðarinnar en blaðs�
 
 \chapter*{Acknowledgments}
 \addcontentsline{toc}{chapter}{Acknowledgments}
-Í þessum kafla koma fram þakkir til þeirra sem hafa styrkt rannsóknina með fjárframlögum, aðstöðu eða vinnu. T.d. styrktarsjóðir, fyrirtæki, leiðbeinendur, og aðrir aðilar sem hafa á einhvern hátt aðstoðað við gerð verkefnisins, þ.m.t. vinir og fjölskylda ef við á. Þakkir byrja á oddatölusíðu (hægri síðu).
+%Í þessum kafla koma fram þakkir til þeirra sem hafa styrkt rannsóknina með fjárframlögum, aðstöðu eða vinnu. T.d. styrktarsjóðir, fyrirtæki, leiðbeinendur, og aðrir aðilar sem hafa á einhvern hátt aðstoðað við gerð verkefnisins, þ.m.t. vinir og fjölskylda ef við á. Þakkir byrja á oddatölusíðu (hægri síðu).
+I would like to thank my supervisor Benedikt Steinar Magnússon for his excellent guidance.
+I would also like to thank Ragnar Sigurðsson for his assistance throughout.
+I would like to thank my peers Atli, Eyleifur, Hjörtur, and Þórarinn.
+
 Sandra
-Benni
-Ragnar
-Atli
-Hjörtur
-Eyleifur
-Tóti
+% Benni
+% Ragnar
+% Atli
+% Hjörtur
+% Eyleifur
+% Tóti
 Garðar
 
 \pagenumbering{arabic}
@@ -256,24 +275,13 @@ It is used to this end in the proof of the Rudin-Carleson theorem present in thi
 
 The Rudin-Carleson theorem is proved in section \ref{section2}.
 It is done in the same way Rudin did in his original paper.
-Some effort is put into showing the existence of a continuous integrable function on $\mathbb{T}$ that takes value $\infty$ at exactly a closed set of Lebesgue-measure zero.
+Some effort is put into showing the existence of a continuous integrable function on $\mathbb{T}$ that takes value $+\infty$ at exactly a closed set of Lebesgue-measure zero.
 
 In section \ref{section3} Bishop's generalization of the Rudin-Carleson theorem is stated and proved.
 This is also done in the same way Bishop did in his paper.
 The original Rudin-Carleson theorem is then shown to be a corollary of Bishop's theorem and the F. and M. Riesz theorem.
 
 The final two sections, section \ref{section4} and section \ref{section5}, look at how Bishop's theorem fits into complex analysis in several variables and states an alternative version of Bishop's theorem.
-\section{Notation}
-We denote by $\mathcal{O}(U)$ the family of holomorphic functions on $U$ for open set $U$.
-% We denote by $C(X)$ the family of continuous functions from $X$ to $\mathbb{C}$ for some topological space $X$.
-We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C};\ |z| < 1\}$.
-The closed unit disk will get no special notation, but will be referred to by $\overline{\mathbb{D}}$.
-We will use $\mathbb{T}$ to refer to the open unit circle $\{z \in \mathbb{C};\ |z| = 1\}$.
-We say that \emph{$g$ extends $f$} if
-	$f$ is defined on $A$,
-	$g$ defined on $B$,
-	$A \subset B$,
-	and $f = g|_A$.
 \chapter{Preliminaries}
 \section{Measure theory}
 During introductory courses in measure theory the focus is often solely on positive measures \citep{tao}, which are then simply referred to as `measures'.
@@ -289,12 +297,12 @@ We say that $\mu$ is \emph{countably additive} if
 for all disjoint collections $(E_n)_{n \in \mathbb{N}}$ in $\mathcal{F}$.
 We also say that
 \begin{enumerate}
-\item[(i)] $\mu$ is a \emph{positive measure} if it is countably additive and $Y = [0, \infty]$.
-\item[(ii)] $\mu$ is a \emph{real valued measure} if it is countably additive and $Y = [-\infty, \infty[$ or $Y = ]-\infty, \infty]$.
+\item[(i)] $\mu$ is a \emph{positive measure} if it is countably additive and $Y = [0, +\infty]$.
+\item[(ii)] $\mu$ is a \emph{real valued measure} if it is countably additive and $Y = [-\infty, +\infty[$ or $Y = ]-\infty, +\infty]$.
 \item[(iii)] $\mu$ is a \emph{complex measure} if it is countably additive and $Y = \mathbb{C}$.
 \end{enumerate}
 \end{definition}
-Allowing $Y = \overline{\mathbb{R}}$ in (ii) would lead to trouble, for example if $\mu(\{x\}) = \infty$ and $\mu(\{y\}) = -\infty$ what is $\mu(\{x, y\})$?
+Allowing $Y = \overline{\mathbb{R}}$ in (ii) would lead to trouble, for example if $\mu(\{x\}) = +\infty$ and $\mu(\{y\}) = -\infty$ what is $\mu(\{x, y\})$?
 Measures in this thesis should be assumed to be complex, unless stated otherwise, and Borel.
 We will denote by $m$ the Lebesgue-measure on either $[0, 1]$ or $\mathbb{T}$ (which one will be clear from context) and $\sigma$ will be $m$ scaled to be a probability measure.
 
@@ -373,6 +381,9 @@ for all $f$ in $B$. We denote the family of all annihilating measure of $B$ by $
 We will specifically be interested in sets that are \emph{$B^{\bot}$-null}.
 That is, sets that are $\mu$-null for all $\mu$ in $B^{\bot}$. 
 \section{Complex analysis}
+We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C};\ |z| < 1\}$,
+	the closed unit disk will get no special notation, but will be referred to by $\overline{\mathbb{D}}$,
+	and $\mathbb{T}$ will refer to the open unit circle $\{z \in \mathbb{C};\ |z| = 1\}$.
 \subsection{The disk algebra}
 \begin{definition}
 A continuous function on $\overline{\mathbb{D}}$ is said to be in the \emph{disk algebra} if it is holomorphic on $\mathbb{D}$.
@@ -412,7 +423,12 @@ An example of this is the following theorem:
 Let $\Omega_1$ and $\Omega_2$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $\Phi: \Omega_1 \rightarrow \Omega_2$ be a conformal mapping.
 Then there exists a continuous injection $\hat{\Phi}: \overline{\Omega_1} \rightarrow \overline{\Omega_2}$ that extends $\Phi$.
 \end{theorem}
-A proof of this can be found in section $13.2$ of \citep{greenkrantz}.
+Note that \emph{$g$ extends $f$} if
+	$f$ is defined on $A$,
+	$g$ defined on $B$,
+	$A \subset B$,
+	and $f = g|_A$.
+A proof of Carathéodory's theorem can be found in section $13.2$ of \citep{greenkrantz}.
 
 \begin{theorem}[Riemann mapping theorem \citep{greenkrantz}]
 If $U$ is a subset of $\mathbb{C}$, homeomorphic to $\mathbb{D}$, and $U \neq \mathbb{C}$ then there exists a conformal mapping from $\mathbb{D}$ to $U$.
@@ -511,9 +527,9 @@ Let's recall what the $L^p$ spaces are.
 Let $X$ be a space with $\sigma$-algebra $\mathcal{F}$, and $\mu$ be a measure on that $\sigma$-algebra.
 We say a measurable function is in $\mathcal{L}^1(X, \mu)$ if
 \[
-	\int |f|\ d\mu < \infty
+	\int |f|\ d\mu < +\infty
 \]
-and we say it is $\mathcal{L}^p(X, \mu)$ if $|f|^p$ is in $\mathcal{L}^1(X, \mu)$, for $0 < p < \infty$.
+and we say it is $\mathcal{L}^p(X, \mu)$ if $|f|^p$ is in $\mathcal{L}^1(X, \mu)$, for $0 < p < +\infty$.
 We then define an equivalence relation $\sim$ such that $f \sim g$ if and only if $\mu(\{x \in X;\ f(x) \neq g(x)\}) = 0$.
 We define $L^p(X, \mu)$ to be the quotient space $\mathcal{L}(X, \mu)/\sim$.
 The space $L^p(X, \mu)$ has one major benefit over $\mathcal{L}^p(X, \mu)$,
@@ -537,7 +553,7 @@ Then there exists a continuous linear functional $\alpha$ such that $|\alpha| < 
 \subsection{The Riesz representation theorem}
 Let
 	$X$ be a $\sigma$-finite measurable space with measure $\mu$,
-	choose $p$ and $q$ such that $1 < p, q < \infty$ and $1/p + 1/q = 1$,
+	choose $p$ and $q$ such that $1 < p, q < +\infty$ and $1/p + 1/q = 1$,
 	and $g \in L^q(\mu)$.
 We can then define a linear functional on $L^p(X, \mu)$ by
 \[
@@ -551,7 +567,7 @@ Recall that the Hölder inequality states that if $f$ and $g$ are measurable fun
 So each function in $L^p(X, \mu)$ gives us a bounded linear functional.
 The following theorem states the inverse, that is, each bounded linear functional on $L^p(X, \mu)$ can be represented by a function in $L^q(X, \mu$).
 \begin{theorem}[The Riesz representation theorem for bounded linear functionals on $L(X, \mu)$ with $\sigma$-finite $X$ \citep{rudin2}]
-Let $1 < p < \infty$,
+Let $1 < p < +\infty$,
 	$q$ be such that $1/p + 1/q = 1$,
 	$\mu$ be a positive measure on $\sigma$-finite space $X$,
 	and $\alpha$ be a bounded linear functional on $L^p(\mu)$.
@@ -564,7 +580,7 @@ for all $f \in L^p(\mu)$ and
 	\|\alpha\| = \|g\|_q.
 \]
 \end{theorem}
-Note that the theorem above also hold for $p = 1$ and $q = \infty$, but we will not need that result.
+Note that the theorem above also hold for $p = 1$ and $q = +\infty$, but we will not need that result.
 
 A similar result can be obtained for bounded linear functionals on $C_0(X)$ for locally compact $X$.
 There the functionals can be represented by regular measures.
@@ -603,7 +619,7 @@ We will need the following definition for one of those theorems.
 \begin{definition}
 Let $\mathcal{F}$ be a family of complex functions on a metric space $(X, d)$.
 
-We say that the family is \emph{pointwise bounded} if for all $x \in X$ there exists a constant $M < \infty$ such that
+We say that the family is \emph{pointwise bounded} if for all $x \in X$ there exists a constant $M < +\infty$ such that
 \[
 	|f(x)| < M,\text{ for all } f \in \mathcal{F}.
 \]
@@ -625,7 +641,7 @@ where $s_k$ is the $k$-th smallest element of $S$.
 We similarly define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \mathbb{N}}$ with $s_k$ defined in the same manner as earlier.
 \begin{theorem}[Bolzano-Weierstrass]
 %                                                                                           v This has to be weak because of (M, M, M, M, M, M, ...)
-Let $(a_n)_{n \in \mathbb{N}}$ be a sequence of numbers in $\mathbb{R}^n$, such that $|a_n| < M < \infty$, for all $k \in \mathbb{N}$.
+Let $(a_n)_{n \in \mathbb{N}}$ be a sequence of numbers in $\mathbb{R}^n$, such that $|a_n| < M < +\infty$, for all $k \in \mathbb{N}$.
 There than exists and infinite $S \subset \mathbb{N}$ such that $(a_n)_{n \in S}$ is convergent.
 \end{theorem}
 \begin{proof}
@@ -659,7 +675,7 @@ We conclude our construction by setting
 where $r_n$ is the $n$-th smallest element of $S_n$.
 This gives us the convergent sequence $(a_n)_{n \in S}$ with limit
 \[
-	\sum_{k = 0}^{\infty} \delta_k 2^{-k}
+	\sum_{k = 0}^{+\infty} \delta_k 2^{-k}
 \]
 where
 \[
@@ -804,7 +820,7 @@ The following lemmas show that all this is in fact possible.
 \label{FMRlemma3}
 Let $u$ be harmonic in $\mathbb{D}$ and
 \[
-	\sup_{0 < r < 1} \|u_r\|_1 = M < \infty.
+	\sup_{0 < r < 1} \|u_r\|_1 = M < +\infty.
 \]
 Then there exists a unique measure $\mu$ on $\mathbb{T}$ such that $u = P[d\mu]$.
 \end{lemma}
@@ -813,7 +829,7 @@ Then there exists a unique measure $\mu$ on $\mathbb{T}$ such that $u = P[d\mu]$
 \label{FMRlemma3b}
 Let $u$ be harmonic in $\mathbb{D}$ and
 \[
-	\sup_{0 < r < 1} \|u_r\|_2 = M < \infty.
+	\sup_{0 < r < 1} \|u_r\|_2 = M < +\infty.
 \]
 Then there exists a unique function $f$ in $L^2(\mathbb{T})$ such that $u = P[f]$.
 \end{lemma}
@@ -822,10 +838,10 @@ We will need the following lemma in the proofs of \ref{FMRlemma3} and \ref{FMRle
 \label{FMRlemma31}
 Let $X$ be a separable Banach space,
 	$(\Gamma_n)_{n \in \mathbb{N}}$ be a sequence of linear functionals on $X$,
-	and $\sup_n \|\Gamma_n\| = M < \infty$.
+	and $\sup_n \|\Gamma_n\| = M < +\infty$.
 Then there exists a subsequence $(\Gamma_{n_i})_{i \in \mathbb{N}}$ such that the limit 
 \[
-	\Gamma x = \lim_{k \rightarrow \infty} \Gamma_{n_k}\ x
+	\Gamma x = \lim_{k \rightarrow +\infty} \Gamma_{n_k}\ x
 \]
 exists for every $x \in X$.
 Furthermore, $\Gamma$ is linear and $\|\Gamma\| \leq M$.
@@ -886,7 +902,7 @@ so
 By Lemma \ref{FMRlemma31} and the Riesz representation theorem we get a measure $\mu$ on $\mathbb{T}$ with $\|\mu\| \leq M$, and a sequence $(r_n)_{n \in \mathbb{N}}$ on $[0, 1[$ with limit $1$, such that
 \begin{equation}
 	\label{eq:1}
-	\lim_{n \rightarrow \infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}g\ d\mu
+	\lim_{n \rightarrow +\infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}g\ d\mu
 \end{equation}
 for all $g \in C(\mathbb{T})$.
 Let's now define functions $h_k$ on $\overline{\mathbb{D}}$ by $h_k(z) = u(r_kz)$.
@@ -895,10 +911,10 @@ So each of them can be represented by the Poisson integral of their restriction 
 Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
 \begin{align*}
 	u(z)
-	&= \lim_{n \rightarrow \infty} u(r_nz)\\
-	&= \lim_{n \rightarrow \infty} h_n(z)\\
-	&= \lim_{n \rightarrow \infty} \int_{\mathbb{T}}P(z, e^{it}) h_n(e^{it})\ d\sigma(e^{it})\\
-	&= \lim_{n \rightarrow \infty} \int_{\mathbb{T}}P(z, e^{it}) u_{r_n}(e^{it})\ d\sigma(e^{it})\\
+	&= \lim_{n \rightarrow +\infty} u(r_nz)\\
+	&= \lim_{n \rightarrow +\infty} h_n(z)\\
+	&= \lim_{n \rightarrow +\infty} \int_{\mathbb{T}}P(z, e^{it}) h_n(e^{it})\ d\sigma(e^{it})\\
+	&= \lim_{n \rightarrow +\infty} \int_{\mathbb{T}}P(z, e^{it}) u_{r_n}(e^{it})\ d\sigma(e^{it})\\
 	&= \int_{\mathbb{T}}P(z, e^{it})\ d\mu(e^{it})\\
 	&= P[d\mu](z),
 \end{align*}
@@ -949,17 +965,17 @@ The differences between the existence proofs are in the beginning when we are ch
 Now we define $\Gamma_r$ in the same way, except we define it on $L^2(\mathbb{T})$.
 We again use \ref{FMRlemma31} and the (other) Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
 \[
-	\lim_{n \rightarrow \infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}gf\ d\sigma
+	\lim_{n \rightarrow +\infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}gf\ d\sigma
 \]
 for all $g$ in $L^2(\mathbb{T})$.
 The remaining calculations are unchanged.
 \end{proof}
 We see by this proof that \ref{FMRlemma3b} could be generalized trivially to find a function $f$ in $L^p(\mathbb{T})$ such that $P[f] = u$ for harmonic $u$ with
 \[
-	\sup_{0 < r < 1} \|u_r\|_p = M < \infty
+	\sup_{0 < r < 1} \|u_r\|_p = M < +\infty
 \]
 and $p > 1$.
-We can't use this method for $p = 1$ since we will need to use the Riesz representation theorem for the exponent conjugate of $p$, and the theorem only holds if it is in $[1, \infty[$.
+We can't use this method for $p = 1$ since we will need to use the Riesz representation theorem for the exponent conjugate of $p$, and the theorem only holds if it is in $[1, +\infty[$.
 
 We have not yet shown any condition for a function $f$ that implies there exists a $h \in L^1(\mathbb{T})$ such that $P[h] = f$.
 For that we need the following definitions:
@@ -969,7 +985,7 @@ For a function $f$ holomorphic on $\mathbb{D}$ we define
 	\|f\|_{H^p} = 
 	\sup_{0 < r < 1} \left ( \frac{1}{2\pi}\int_{-\pi}^{\pi} |f(re^{i\theta})|^p\ d\theta \right )^{1/p}
 \]
-and we say that $f$ is in $H^p$ if $\|f\|_{H^p} < \infty$.
+and we say that $f$ is in $H^p$ if $\|f\|_{H^p} < +\infty$.
 These spaces are referred to as the \emph{Hardy spaces}.
 \end{definition}
 A useful result from the theory of Hardy spaces is that if $f \in H^1$ then there exist $g, h \in H^2$ such that $f = g \cdot h$ and $|f| < |g|$ \citep[Theorem $17.10$]{rudin2}.
@@ -993,7 +1009,7 @@ Its \emph{nontangential maximal function} is defined on $\mathbb{T}$ by
 \]
 We say that $u$ has \emph{nontangential limit $\lambda$ at $e^{it}$} if, for all $0 < \alpha < 1$,
 \[
-	\lim_{k \rightarrow \infty} u(z_k) = \lambda
+	\lim_{k \rightarrow +\infty} u(z_k) = \lambda
 \]
 for all sequences $(z_k)_{k \in \mathbb{N}}$ in $e^{it}\Omega_{\alpha}$ that converge to $e^{it}$.
 \end{definition}
@@ -1058,8 +1074,8 @@ We can use the assumption of the theorem to write $f$ as a power series by
 	&= \int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it}) \\
 	&= \int_{\mathbb{T}} \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta}e^{-int}\ d\mu(e^{it}) \\
 	&= \sum_{n \in \mathbb{Z}} r^{|n|}e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
-	&= \sum_{n = 0}^{\infty} r^n e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
-	&= \sum_{n = 0}^{\infty} \hat{\mu}_n z^n,
+	&= \sum_{n = 0}^{+\infty} r^n e^{in\theta} \int_{\mathbb{T}} e^{-int}\ d\mu(e^{it}) \\
+	&= \sum_{n = 0}^{+\infty} \hat{\mu}_n z^n,
 \end{align*}
 where $\hat{\mu}_n$ is the $n$-th Fourier coefficient of $\mu$.
 This along with \ref{FMRlemma1} gives us that $f \in H^1$.
@@ -1157,7 +1173,7 @@ The first few lemmas are dedicated to showing the result holds for continuous si
 \begin{lemma}
 \label{mylemma}
 Let $H$ be a closed set of Lebesgue-measure zero.
-Then there exists a function $h: \mathbb{T} \rightarrow ]1, \infty]$ such that 
+Then there exists a function $h: \mathbb{T} \rightarrow ]1, +\infty]$ such that 
 \begin{enumerate}
 \item
 % COMMENT(gardar): er sigma Lebesgue málið?
@@ -1165,9 +1181,9 @@ $h$ is in $L^1(\mathbb{T}, m)$
 \item
 $h|_{\mathbb{T} \setminus H}$ is in $C^{\infty}$.
 \item
-$h(z) = \infty$ if and only if $z$ is in $H$.
+$h(z) = +\infty$ if and only if $z$ is in $H$.
 \item
-$\lim_{w \rightarrow z} h(w) = \infty$ for all $z$ in $H$.
+$\lim_{w \rightarrow z} h(w) = +\infty$ for all $z$ in $H$.
 \end{enumerate}
 \end{lemma}
 Recall from set theory that if $(X, d)$ is a metric space, $A$ is a subset of $X$ and $x$ is a point of $X$ then the distance between $x$ and $A$ is defined by
@@ -1185,11 +1201,11 @@ We can now define function $V_H: [0, 1] \rightarrow [0, 1]$ and $H_H: [0, 1] \ri
 \]
 Intuitively, $H_H(x)$ is the point in $H$ that's to the right of $x$ and is closest to $x$ and $V_H(x)$ is the point in $H$ that's to the left of $x$ and is closest to $x$.
 So all points $x$ in $[0, 1] \setminus H$ are on the open interval $]V_H(x), H_H(x)[$.
-We will define function $f: [0, 1] \rightarrow [0, \infty]$ by
+We will define function $f: [0, 1] \rightarrow [0, +\infty]$ by
 \[
 	f_H(x) = 2\log \left ( \frac{H_H(x) - V_H(x)}{2} \right ) - \log((x - V_H(x))(H_H(x) - x))
 \]
-and show that this function has the properties of \ref{mylemma}, but with $\mathbb{T}$ replaced by $[0, 1]$ and $]1, \infty]$ replaced by $[0, \infty]$.
+and show that this function has the properties of \ref{mylemma}, but with $\mathbb{T}$ replaced by $[0, 1]$ and $]1, +\infty]$ replaced by $[0, +\infty]$.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{graph8}
@@ -1198,7 +1214,7 @@ and show that this function has the properties of \ref{mylemma}, but with $\math
 
 Let's first define a family of functions indexed with $a, b \in \mathbb{R}$, such that $a < b$, by
 \[
-	f_{a, b}: [a, b] \rightarrow [0, \infty],
+	f_{a, b}: [a, b] \rightarrow [0, +\infty],
 	x \mapsto 2\log \left ( \frac{b - a}{2} \right ) - \log((x - a)(b - x))
 \]
 and show they satisfy the following properties:
@@ -1256,11 +1272,11 @@ Let $g = g_{0, 1}$ and
 We can now integrate $g$ by
 \begin{align*}
 	\int g\ dm
-	&= \int \lim_{n \rightarrow \infty} g_n\ dm\\
-	&= \lim_{n \rightarrow \infty} \int g_n\ dm\\
-	&= \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
+	&= \int \lim_{n \rightarrow +\infty} g_n\ dm\\
+	&= \lim_{n \rightarrow +\infty} \int g_n\ dm\\
+	&= \lim_{n \rightarrow +\infty} \sum_{k = 1}^n k2^{-k}\\
 	&= \sum_{k \in \mathbb{N}} k2^{-k}\\
-	&< \infty
+	&< +\infty
 \end{align*}
 where the second equality is by monotone convergence and the last inequality is by the ratio test.
 This rationale also holds for general $a$ and $b$, since $a$ does not effect the value of the integral and $b$ scales it.
@@ -1303,11 +1319,11 @@ so
 \begin{align*}
 \int f_H\ dm
 &\leq \int g_H\ dm\\
-&= \int \lim_{n \rightarrow \infty} g_n\ dm\\
-&= \lim_{n \rightarrow \infty} \int g_n\ dm\\
-&= \lim_{n \rightarrow \infty} \sum_{k = 1}^n k2^{-k}\\
+&= \int \lim_{n \rightarrow +\infty} g_n\ dm\\
+&= \lim_{n \rightarrow +\infty} \int g_n\ dm\\
+&= \lim_{n \rightarrow +\infty} \sum_{k = 1}^n k2^{-k}\\
 &= \sum_{k \in \mathbb{N}} k2^{-k}\\
-&< \infty
+&< +\infty
 \end{align*}
 \begin{center}
 \end{center}
@@ -1324,7 +1340,7 @@ To show that $g$ is measurable it suffices to show that $(g_n)_{n \in \mathbb{N}
 We, therefore, can show that the preimage under $g_n$ of each point is measurable, since $g_n$ is simple for each $n$.
 But the preimage is a (possibly uncountable) union of half-open intervals so it is the union of a closed set and an open set.
 So $g$ is measurable.
-To show that $f$ is measurable it suffices to show that $P_{\lambda} = \{x \in [0, 1];\ f(x) < \lambda\}$ is measurable for all $\lambda$ in $[0, \infty]$ \citep[lemma $1.3.9$]{tao}.
+To show that $f$ is measurable it suffices to show that $P_{\lambda} = \{x \in [0, 1];\ f(x) < \lambda\}$ is measurable for all $\lambda$ in $[0, +\infty]$ \citep[lemma $1.3.9$]{tao}.
 This trivially holds, since $P_{\lambda}$ is open.
 \begin{proof}[Proof of \ref{mylemma}]
 We may assume that $H$ is not empty, since the statement holds vacuously if that were the case.
@@ -1343,7 +1359,7 @@ Let's assume these values are $0$ and $\alpha \neq 0$, with $\Re \alpha \geq 0$,
 Our assumption that $f$ only takes two values then implies that $E_0 \cup E_1 = E$.
 
 Let $u_H(z)$ be the Poisson integral of the function from \ref{mylemma}.
-This function is continuous on $\mathbb{T} \setminus H$, $u_H|_H = \infty$, and $\lim_{z \rightarrow w} u_H(z) = \infty$ for $w \in H$ \citep[page $234$]{rudin2}.
+This function is continuous on $\mathbb{T} \setminus H$, $u_H|_H = +\infty$, and $\lim_{z \rightarrow w} u_H(z) = +\infty$ for $w \in H$ \citep[page $234$]{rudin2}.
 Let's set $v_H$ as the conjugate harmonic of $u_H$ and define
 \[
 	g_H(z) =
@@ -1451,7 +1467,7 @@ Let $M_n = 2^{-n + 1}$ and note that $|g_n(z)| \leq \sqrt{2}\cdot 2^{-n} < 2^{-n
 	\sum_{n \in \mathbb{N}} M_n
 	=
 	\sqrt{2}\sum_{n \in \mathbb{N}} 2^{-n} =
-	\sqrt{2} < \infty
+	\sqrt{2} < +\infty
 \]
 so the Weierstrass M-test tells us that $F$ converges uniformly.
 We also have that
@@ -1503,7 +1519,7 @@ Let $X$ be a compact Hausdorff space,
 	$B$ be a closed subspace of $V$,
 	$S$ be a closed subset of $X$ that is $B^{\bot}$-null, % TODO kannski breyta í E
 	$f$ be a continuous function on $S$,
-	$\Xi: X \rightarrow [0, \infty[$ be continuous,
+	$\Xi: X \rightarrow [0, +\infty[$ be continuous,
 	and $|f| < \Xi$ on $S$.
 Then there exists a function $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
@@ -1568,11 +1584,11 @@ Iterating this process yields a sequence $(F_n)_{n \in \mathbb{N}}$ from $B$ suc
 on $S$ for $n > 1$.
 We finally let 
 \[
-F = \sum_{k = 1}^{\infty} F_k.
+F = \sum_{k = 1}^{+\infty} F_k.
 \]
 Now $F \in B$,
 \[
-	\|F\| \leq \|F_1\| + \|F - F_1\| \leq r + \sum_{k = 2}^{\infty}2^{1 - n}\lambda = r + \lambda = 1,
+	\|F\| \leq \|F_1\| + \|F - F_1\| \leq r + \sum_{k = 2}^{+\infty}2^{1 - n}\lambda = r + \lambda = 1,
 \]
 and $F = f$ on $S$.
 \end{proof}
@@ -1614,7 +1630,7 @@ We then say $K$ is a
 	\item \emph{null set} if $K$ is a null set with regards to all annihilating measures of $\mathcal{A}^n$.
 	\item \emph{totally null} if $K$ is a null set with regards to all measure $\mu$ such that
 			\[
-				f(0) = \int_{\mathbb{D}} f\ d\mu
+				f(0) = \int_{\mathbb{D}^n} f\ d\mu
 			\]
 			for all $f \in \mathcal{A}^n$.
 \end{enumerate}
@@ -1675,7 +1691,7 @@ Let $X$ be a compact Hausdorff space,
 	$B$ be a closed subspace of $V$,
 	$S$ be a closed subset of $X$,
 	$f$ be a continuous function on $S$,
-	and continuous $\Xi: X \rightarrow [0, \infty[$ such that $|f| < \Xi$ on $S$.
+	and continuous $\Xi: X \rightarrow [0, +\infty[$ such that $|f| < \Xi$ on $S$.
 If
 \[
 	\int_S f\ d\mu = 0

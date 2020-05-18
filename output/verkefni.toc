@@ -2,7 +2,6 @@
 \contentsline {chapter}{List of Figures}{xi}{chapter*.8}% 
 \contentsline {chapter}{Acknowledgments}{1}{chapter*.10}% 
 \contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}Notation}{4}{section.1.1}% 
 \contentsline {chapter}{\numberline {2}Preliminaries}{5}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Measure theory}{5}{section.2.1}% 
 \contentsline {section}{\numberline {2.2}Complex analysis}{7}{section.2.2}% 
