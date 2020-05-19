@@ -287,6 +287,7 @@ During introductory courses in measure theory the focus is often solely on posit
 This restriction is immediately felt when studying functional analysis (see for example \ref{riesz}).
 We, therefore, need the following definitions:
 \begin{definition}
+\label{index1}
 Let $\mathcal{F}$ be a $\sigma$-algebra on $X$ and $\mu: \mathcal{F} \rightarrow Y$, where $Y$ is a subset of either $\mathbb{C}$ or $\overline{\mathbb{R}}$.
 Recall that $\overline{\mathbb{R}} = \mathbb{R} \cup \{-\infty, +\infty\}$.
 We say that $\mu$ is \emph{countably additive} if
@@ -332,10 +333,11 @@ It so happens that defining $\lambda$ by
 	\lambda(E) = \sup \left \{\sum_{n \in \mathbb{N}}|\mu(E_n)|;\ \text{where }(E_n)_{n \in \mathbb{N}}\text{ is any partition of }E \right \}
 \]
 yields a measure.
-This measure is referred to as \emph{the total variation of $\mu$} and denoted by $|\mu|$ (for example, $|\mu|(E)$).
+This measure is referred to as \emph{\label{index2} the total variation of $\mu$} and denoted by $|\mu|$ (for example, $|\mu|(E)$).
 A proof that $|\mu|$ is a measure and more detail on complex measures can be found in chapter $6$ of \citep{rudin2}. 
 A useful property of the total variation of $\mu$ is that $\mu \lll |\mu|$, that is a $|\mu|$-null set is also a $\mu$-null set.
 
+\label{index20}
 Recall that a positive measure $\mu$ is said to be \emph{regular} if
 \[
 	\mu(E) = \inf\{\mu(F);\ E \subset F \text{ and $F$ is open}\}
@@ -354,7 +356,7 @@ We define
 \]
 for any scalar $c$ and measurable $E$.
 Both of these are obviously measures so the measures on a common $\sigma$-algebra form a vector space.
-Said vector space is also normed with the norm $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on, since $|\mu(X)| < \infty$ always holds \citep[Theorem $6.4$]{rudin2}
+Said vector space is also normed with the norm \label{index3} $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on, since $|\mu(X)| < \infty$ always holds \citep[Theorem $6.4$]{rudin2}
 
 We won't get far with complex measures without defining integration.
 A corollary of the Radon-Nikodym theorem is the existence of a function $h$ such that
@@ -381,11 +383,13 @@ for all $f$ in $B$. We denote the family of all annihilating measure of $B$ by $
 We will specifically be interested in sets that are \emph{$B^{\bot}$-null}.
 That is, sets that are $\mu$-null for all $\mu$ in $B^{\bot}$. 
 \section{Complex analysis}
+\label{index5}
 We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C};\ |z| < 1\}$,
 	the closed unit disk will get no special notation, but will be referred to by $\overline{\mathbb{D}}$,
 	and $\mathbb{T}$ will refer to the open unit circle $\{z \in \mathbb{C};\ |z| = 1\}$.
 \subsection{The disk algebra}
 \begin{definition}
+\label{index4}
 A continuous function on $\overline{\mathbb{D}}$ is said to be in the \emph{disk algebra} if it is holomorphic on $\mathbb{D}$.
 We will refer to this family of function $\mathcal{A}$.
 \end{definition}
@@ -400,6 +404,7 @@ To `move results on the open unit disk to more general simply connected domains'
 In complex analysis that is usually holomorphicity.
 The bijections that preserve holomorphicity are therefore of interest, but since the composition of holomorphic functions is holomorphic we only need the following:
 \begin{definition}
+\label{index6}
 A map $f: U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \emph{conformal} if it is holomorphic, bijective, and its inverse is holomorphic.
 \end{definition}
 The fact that the inverse is holomorphic is actually redundant.
@@ -407,6 +412,7 @@ It can be shown that a holomorphic bijection has a holomorphic inverse \citep{gr
 
 It is important to state Carathéodory's theorem before looking at the Riemann mapping theorem.
 \begin{definition}
+\label{index7}
 A continuous function $\gamma: [0, 1] \rightarrow \mathbb{C}$ is said to be a \emph{Jordan curve} if $\gamma(0) = \gamma(1)$ and
 \[
 	\gamma(s) = \gamma(t) \implies s = t \tag*{for all $s, t \in ]0, 1[$.}
@@ -423,7 +429,8 @@ An example of this is the following theorem:
 Let $\Omega_1$ and $\Omega_2$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $\Phi: \Omega_1 \rightarrow \Omega_2$ be a conformal mapping.
 Then there exists a continuous injection $\hat{\Phi}: \overline{\Omega_1} \rightarrow \overline{\Omega_2}$ that extends $\Phi$.
 \end{theorem}
-Note that \emph{$g$ extends $f$} if
+\label{index8}
+Recall that \emph{$g$ extends $f$} if
 	$f$ is defined on $A$,
 	$g$ defined on $B$,
 	$A \subset B$,
@@ -473,23 +480,25 @@ So $f(\partial \mathbb{D}) = \partial f(\mathbb{D}) = \partial K$ and $\partial 
 So $\Phi$ is a conformal map between two domains, each bounded by a Jordan curve.
 This allows us to use Carathéodory's theorem to extend $\Phi$ continuously and injectively to $\overline{\mathbb{D}}$, concluding the proof.
 \end{proof}
-% The Riemann mapping theorem is a strong tool when analyzing holomorphic functions on simply connected domains.
-% We can often solve things for the unit disk (or unit square as in \ref{rudincarleson}) and then map that solution to a general simply connected domain.
 
 \subsection{Complex analysis in several variables}
+\label{index9}
 We will briefly touch on multivariate complex analysis so we will need a definition of a holomorphic function in $\mathbb{C}^n$.
 If $U \subset \mathbb{C}^n$ is open and $f: U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U_n$}.
 That is, the map $z \mapsto f(z_1, ..., z_{k - 1}, z, z_{k + 1}, ..., z_n)$ is holomorphic for $k = 1, 2, ..., n$.
 We will also denote common sets by there counterpart in single variate complex analysis with an added `$n$' in the superscript.
 This does not, however, denote an $n$-fold Cartesian product.
+
 \section{Functional analysis}
 \begin{definition}
+\label{index10}
 Let $X$ be a topological space.
 We say that $X$ is \emph{locally compact} if for each $x \in X$ there exists a open set $U_x$ such that $x \in U_x$ and $\overline{U_x}$ is compact.
 \end{definition}
+\label{index11}
 We will denote by $C(X)$ the continuous functions on $X$.
 \begin{definition}
-\label{locallycompactdef}
+\label{index12}
 Let $X$ be a locally compact space.
 We say a function $f$ in $C(X)$ \emph{vanishes at infinity} if for all $\varepsilon > 0$ there exists a compact set $K$ such that $|f(x)| < \varepsilon$ for all $x \in X \setminus K$.
 The family of all such functions is referred as $C_0(X)$.
@@ -498,6 +507,7 @@ Let $X$ be compact.
 Then if $f \in C(X)$ and $\varepsilon > 0$ we set $K = X$ and see that $|f(x)| < \varepsilon$ vacuously holds for all $x \in X \setminus K = \emptyset$.
 So $C(X)$ and $C_0(X)$ are identical in this case.
 \begin{definition}
+\label{index13}
 Let $\alpha$ be a linear map from a normed vector space $X$ into a normed vector space $Y$.
 We define its \emph{norm} by
 \[
@@ -516,6 +526,7 @@ If $\alpha$ is a linear map from a normed vector space $X$ into a normed vector 
 This theorem allows us to use the terms `bounded' and `continuous' interchangeably when talking about linear maps between normed vector spaces.
 A proof of this theorem can be found on page $96$ in \citep{rudin2}.
 
+\label{index14}
 Let's recall what the $L^p$ spaces are.
 Let $X$ be a space with $\sigma$-algebra $\mathcal{F}$, and $\mu$ be a measure on that $\sigma$-algebra.
 We say a measurable function is in $\mathcal{L}^1(X, \mu)$ if
@@ -527,6 +538,7 @@ We then define an equivalence relation $\sim$ such that $f \sim g$ if and only i
 We define $L^p(X, \mu)$ to be the quotient space $\mathcal{L}(X, \mu)/\sim$.
 The space $L^p(X, \mu)$ has one major benefit over $\mathcal{L}^p(X, \mu)$,
 \[
+\label{index15}
 	\|f\|_p = 
 	\left ( \int |f|^p\ d\mu \right )^{1/p}
 \]
@@ -552,6 +564,7 @@ We can then define a linear functional on $L^p(X, \mu)$ by
 \[
 	\alpha(f) = \int fg\ d\mu.
 \]
+\label{index16}
 The Hölder inequality tells us it is bounded.
 Recall that the Hölder inequality states that if $f$ and $g$ are measurable function with $p$ and $q$ as above then
 \[
@@ -603,6 +616,7 @@ for all $f \in C_0(X)$ and
 \label{section1}
 The main result of this section is that the annihilating measures of 
 \[
+\label{index17}
 	\mathcal{A}|_{\mathbb{T}} = \{f|_{\mathbb{T}};\ f \in \mathcal{A}\}
 \]
 are absolutely continuous with respect to the Lebesgue measure.
@@ -610,6 +624,7 @@ We will show this to be a corollary of the F. and M. Riesz theorem, which we wil
 We will start off with two famous theorems from analysis. 
 We will need the following definition for one of those theorems.
 \begin{definition}
+\label{index18}
 Let $\mathcal{F}$ be a family of complex functions on a metric space $(X, d)$.
 
 We say that the family is \emph{pointwise bounded} if for all $x \in X$ there exists a constant $M < +\infty$ such that
@@ -625,6 +640,7 @@ We say that the family is \emph{equicontinuous} if for all $\varepsilon > 0$ the
 Note here that $\delta$ is globally defined and only dependent on $\varepsilon$.
 \end{definition}
 
+\label{index19}
 The following theorems are focused on the existence of convergent subsequences.
 We will therefore, for some infinite $S \subset \mathbb{N}$, define
 \[
@@ -690,6 +706,7 @@ We are mostly concerned with the case $n = 2$ since our interest is in $\mathbb{
 Let $\mathcal{F}$ be a pointwise bounded equicontinuous collection of complex functions on a metric space $(X, d)$, and $X$ is separable.
 Then every sequence in $\mathcal{F}$ contains a subsequence that converges uniformly on every compact subsets of $X$.
 \end{theorem}
+\label{index23}
 Recall that $X$ is separable if it contains a countable dense subset.
 \begin{proof}
 Let $E$ be a countable dense subset of $X$,
@@ -729,10 +746,12 @@ The choice of $\delta$ and $N$ then gives us that
 \end{proof}
 
 We will need a few results from the study of Poisson integrals to prove the F. and M. Riesz theorem.
+\label{index22}
 It will be useful to take, for some $0 < r < 1$, a function defined on $r\mathbb{T}$ and stretch it to be defined on $\mathbb{T}$.
 Concretely, if $f: r\mathbb{T} \rightarrow \mathbb{C}$ then $f_r: \mathbb{T} \rightarrow \mathbb{C}$ is defined by $f_r(z) = f(rz)$.
 We will reserve the subscripted `$r$' for this usage.
 \begin{definition}
+\label{index21}
 The function
 \[
 	P_r(t) = \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}
@@ -973,6 +992,7 @@ We can't use this method for $p = 1$ since we will need to use the Riesz represe
 We have not yet shown any condition for a function $f$ that implies there exists a $h \in L^1(\mathbb{T})$ such that $P[h] = f$.
 For that we need the following definitions:
 \begin{definition}
+\label{index24}
 For a function $f$ holomorphic on $\mathbb{D}$ we define
 \[
 	\|f\|_{H^p} = 
@@ -983,6 +1003,7 @@ These spaces are referred to as the \emph{Hardy spaces}.
 \end{definition}
 A useful result from the theory of Hardy spaces is that if $f \in H^1$ then there exist $g, h \in H^2$ such that $f = g \cdot h$ and $|f| < |g|$ \citep[Theorem $17.10$]{rudin2}.
 \begin{definition}
+\label{index25}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{approach-region-7-boundary}
@@ -1106,6 +1127,7 @@ for all $n = -1, -2, ...$ and $\mu \lll m$.
 \label{section2}
 We will refer to the \emph{closed unit square} in $\mathbb{C}$ by
 \[
+\label{index26}
 	S = \{z;\ \max(|\Re z|, |\Im z|) \leq 1\}.
 \]
 The square with side-lengths $a$ and bottom-left corner at $w$ is then denoted by $w + aS$.
@@ -1150,6 +1172,7 @@ But $E$ can't contain an open set since $E$ is of Lebesgue-measure zero.
 We can show that \ref{somelemma} still holds if we replace $]0, 1]$ by $\mathbb{T}$ in the same way.
 This is the context we will later use it in.
 
+\label{index27}
 In the discussion before the proof of \ref{mylemma} a logarithm is used.
 This is the base $2$ logarithm, specifically it satisfies $\log 2^x = x$.
 
@@ -1186,6 +1209,7 @@ Recall from set theory that if $(X, d)$ is a metric space, $A$ is a subset of $X
 Furthermore, if $A$ is closed then the infimum is obtained at some point in $A$, namely, there exists a point $y \in A$ such $d(x, y) = d(x, A)$.
 Let $X = [0, 1]$ and $H$ be some closed set of Lebesgue-measure zero.
 We will, for reasons that will be made clear later, assume that $\{0, 1\} \subset H$.
+\label{index28}
 We can now define function $V_H: [0, 1] \rightarrow [0, 1]$ and $H_H: [0, 1] \rightarrow [0, 1]$ such that
 \[
 	d(x, H \cap [0, x]) = d(x, V_H(x))
@@ -1196,6 +1220,7 @@ Intuitively, $H_H(x)$ is the point in $H$ that's to the right of $x$ and is clos
 So all points $x$ in $[0, 1] \setminus H$ are on the open interval $]V_H(x), H_H(x)[$.
 We will define function $f: [0, 1] \rightarrow [0, +\infty]$ by
 \[
+\label{index29}
 	f_H(x) = 2\log \left ( \frac{H_H(x) - V_H(x)}{2} \right ) - \log((x - V_H(x))(H_H(x) - x))
 \]
 and show that this function has the properties of \ref{mylemma}, but with $\mathbb{T}$ replaced by $[0, 1]$ and $]1, +\infty]$ replaced by $[0, +\infty]$.
@@ -1207,6 +1232,7 @@ and show that this function has the properties of \ref{mylemma}, but with $\math
 
 Let's first define a family of functions indexed with $a, b \in \mathbb{R}$, such that $a < b$, by
 \[
+\label{index30}
 	f_{a, b}: [a, b] \rightarrow [0, +\infty],
 	x \mapsto 2\log \left ( \frac{b - a}{2} \right ) - \log((x - a)(b - x))
 \]
@@ -1242,6 +1268,7 @@ f_{-b, b}(-x)
 \end{align*}
 These two points together tell us that we can bound $f_{a, b}$ above by
 \[
+\label{index31}
 	g_{a, b}(x) =
 	\left \{
 	\begin{array}{l l}
@@ -1306,7 +1333,7 @@ and a sequence of functions
 We have that $(g_n)_{n \in \mathbb{N}}$ is monotone with limit $g$, similar to before, and $f \leq g$.
 Note that, independent of $H$, we have
 \[
-	m(f_H^{-1}(k)) = 2^{-k}
+	m(g_H^{-1}(k)) = 2^{-k}
 \]
 so
 \begin{align*}
@@ -1695,6 +1722,77 @@ for all $\mu$ in $B^{\bot}$ and
 \]
 holds for all $F$ in $B$ and $\mu$ in $B^{\bot}$ then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
+
+\newcommand{\indexitem}[2]
+{
+{\bfseries #1} \hfill Page \pageref{#2}\\
+}
+\chapter*{Index}
+\addcontentsline{toc}{chapter}{Index}
+\markboth{Index}{Index}
+\indexitem{$\mathcal{A}$}{index4}
+\indexitem{$\mathcal{A}|_{\mathbb{T}}$}{index17}
+\indexitem{$\mathcal{A}^n|_{\mathbb{T}^n}$}{index9}
+\indexitem{$\mathcal{A}^n$}{index9}
+\indexitem{$(a_k)_{k \in S}$}{index19}
+\indexitem{$\|\alpha\|$}{index13}
+%
+\indexitem{$B^{\bot}$}{annilatingmeasure}
+\indexitem{Bounded linear functionals}{index13}
+%
+\indexitem{$C(X)$}{index11}
+\indexitem{$C_0(X)$}{index12}
+\indexitem{Conformal}{index6}
+%
+\indexitem{$\mathbb{D}$}{index5}
+\indexitem{$\mathbb{D}^n$}{index9}
+%
+\indexitem{Equicontinuous}{index18}
+\indexitem{Extends}{index8}
+%
+\indexitem{$f_H$}{index29}
+\indexitem{$f_{a, b}$}{index30}
+\indexitem{$\|f\|_p$}{index15}
+%
+\indexitem{$g_{a, b}$}{index31}
+%
+\indexitem{$H^p$}{index24}
+\indexitem{$H_H$}{index28}
+\indexitem{Holomorhpic in $\mathbb{C}^n$}{index9}
+\indexitem{Hölder}{index16}
+%
+\indexitem{Jordan curve}{index7}
+%
+\indexitem{Locally compact}{index10}
+\indexitem{$L^p(X, \mu)$}{index14}
+\indexitem{$\log$}{index27}
+%
+\indexitem{$|\mu|(E)$}{index2}
+\indexitem{$\|\mu\|$}{index3}
+\indexitem{Measure}{index1}
+%
+\indexitem{$N_{\alpha}$}{index25}
+\indexitem{Nontangential limit}{index25}
+%
+\indexitem{$\Omega_{\alpha}$}{index25}
+%
+\indexitem{Pointwise bounded}{index18}
+\indexitem{$P[f]$}{index21}
+\indexitem{$P[d\mu]$}{index21}
+\indexitem{$P_r(t)$}{index21}
+\indexitem{$P(z, e^{it})$}{index21}
+%
+\indexitem{Regular}{index20}
+%
+\indexitem{$S$}{index26}
+\indexitem{Separable}{index23}
+%
+\indexitem{$\mathbb{T}$}{index5}
+\indexitem{$\mathbb{T}^n$}{index9}
+%
+\indexitem{$u_r$}{index22}
+%
+\indexitem{$V_H$}{index28}
 
 
 \bibliography{refs}
