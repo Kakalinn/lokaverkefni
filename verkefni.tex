@@ -216,30 +216,29 @@ The main theme of this thesis is the Rudin-Carleson extension theorem.
 It states a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that a continuous function thereon can be extended to a continuous function on the closed unit disk whose restriction to the open unit disk is holomorphic.
 The theorem is proved in two ways.
 Firstly in section \ref{section2}, where it is done in the same manner as Rudin, and again in section \ref{section3}, where it shown to be a corollary of a theorem of Bishop and the F. and M. Riesz theorem.
-
 Section \ref{section1} is dedicated to prove the F. and M. Riesz theorem, which states a sufficient condition for a measure to be absolutely continuous with regards to the Lebesgue-measure on the unit circle in $\mathbb{C}$.
-
 In section \ref{section3} we state and prove Bishop's generalisation of the Rudin-Carleson.
 We then show the Rudin-Carleson theorem to be a corollary of Bishop's generalisation and the F. and M. Riesz theorem.
-
 We look at the role of Bishop's theorem in the classification of closed subsets of the boundary of the unit disk in $\mathbb{C}^n$ in section \ref{section4}.
-
 In section \ref{section5} we look at a way to relax the condition on the set in Bishop's theorem by fixing the continuous function.
 
 
 \vfill \vspace*{1cm}
 \section*{\huge Útdráttur}
-Hér kemur útdráttur á íslensku sem er að hámarki 250 orð. Reynið að koma útdráttum á eina blaðsíðu en ef tvær blaðsíður eru nauðsynlegar á seinni blaðsíða útdráttar að hefjast á oddatölusíðu (hægri síðu).
+% Hér kemur útdráttur á íslensku sem er að hámarki 250 orð. Reynið að koma útdráttum á eina blaðsíðu en ef tvær blaðsíður eru nauðsynlegar á seinni blaðsíða útdráttar að hefjast á oddatölusíðu (hægri síðu).
+Aðalefni ritgerðarinnar er setning Rudin-Carleson.
+Hún gefur okkur nægjanlegt skilyrði á hlutmengi í eininghringnum í $\mathbb{C}$ þannig að framlengja megi sérhvert samfallt fall á menginu í samfellt fall á lokuðu einingahringskífunni sem er fágað á opnu einingahringskífunni.
+Hún er sönnuð á tvo vegu.
+Fyrst í kafli \ref{section2}, þar sem farið er sömu leið og Rudin gerði upprunalega, og aftur í kafla \ref{section3}, þar sem sýnt er að hún er fylgisetning setningar Bishops og setningar F. og M. Riesz.
+Kafli \ref{section1} er tileinkaður sönnun á setningu F. og M. Riesz, sem gefur okkur nægjalregt skilyrði þess að mál sé alsamfellt með tilliti til Lebesgue-málsins á einingahring $\mathbb{C}$.
+Í kalfa \ref{section3} setjum við fram og sönnum alhæfingu Bishops á setningu Rudin-Carleson.
+Síðan sýnum við að Rudin-Carleson setningin sé fylgisetning setningar Bishop's og setningar F. og M. Riesz.
+Við skoðum síðan í kalfa \ref{section4} hvernig setning Bishops getur hjálpað okkur að flokka lokuð hlutmengi jaðars einingahrings $\mathbb{C}^n$.
+Í kafla \ref{section5} er fjallað um hvernig slaka megi á skilyrðunum í setningu Bishops með því að festa samfellda fallið sem verið er að framlengja.
 \vfill
 \newpage
 
-\chapter*{Preface}
-Formála má sleppa og skal þá fjarlægja þessa blaðsíðu. Formáli skal hefjast á oddatölu blaðsíðu og nota skal Section Break (Odd Page).
-
-Ekki birtist blaðsíðutal á þessum fyrstu síðum ritgerðarinnar en blaðsíðurnar teljast með og hafa áhrif á blaðsíðutal sem birtist með rómverskum tölum fyrst á efnisyfirliti.
-
 \tableofcontents
-\listoffigures
 
 
 
@@ -262,7 +261,7 @@ Garðar
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{Introduction}
-Lennart Carleson and Walter Rudin gave, independently in $1957$ and $1956$ respectively, a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that each continuous function thereon could be extended holomorphically (and still continuously) into $\mathbb{D}$ \citep{rudin, carleson}.
+Lennart Carleson and Walter Rudin gave, independently in $1957$ and $1956$ respectively, a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that each continuous function thereon could be extended continuously onto the closed unit disk such that its restriction to the open unit disk is holomorphic \citep{rudin, carleson}.
 This can be seen as a strengthened result of Fatou's interpolation theorem \citep{fatou} (this interplay is discussed briefly and more generally in section \ref{section4}).
 Errett Bishop then generalized the Rudin-Carleson theorem in $1962$ by giving sufficient condition for a set such that a continuous function thereon can always be extended in a similar sense \citep{bishop}.
 Here the condition on the set is given in terms of the annihilating measures (see definition \ref{annilatingmeasure}) of the family of functions we want to extend into.
@@ -288,7 +287,7 @@ During introductory courses in measure theory the focus is often solely on posit
 This restriction is immediately felt when studying functional analysis (see for example \ref{riesz}).
 We, therefore, need the following definitions:
 \begin{definition}
-Let $\mathcal{F}$ be a $\sigma$-algebra and $\mu: \mathcal{F} \rightarrow Y$, where $Y$ is a subset of either $\mathbb{C}$ or $\overline{\mathbb{R}}$.
+Let $\mathcal{F}$ be a $\sigma$-algebra on $X$ and $\mu: \mathcal{F} \rightarrow Y$, where $Y$ is a subset of either $\mathbb{C}$ or $\overline{\mathbb{R}}$.
 Recall that $\overline{\mathbb{R}} = \mathbb{R} \cup \{-\infty, +\infty\}$.
 We say that $\mu$ is \emph{countably additive} if
 \[
@@ -326,7 +325,7 @@ We would also want $\lambda$ to be `small' in some sense.
 We will refer to a collection $(E_n)_{n \in \mathbb{N}}$ in $\mathcal{F}$ as a \emph{partition of E} if they are pairwise disjoint and their union is $E$.
 The measure $\lambda$ mentioned earlier will then satisfy
 \[
-	\lambda(E) = \sum_{n \in \mathbb{N}} \lambda(E) \geq |\mu(E)|.
+	\lambda(E) = \sum_{n \in \mathbb{N}} \lambda(E_n) \geq |\mu(E)|.
 \]
 It so happens that defining $\lambda$ by
 \[
@@ -337,7 +336,7 @@ This measure is referred to as \emph{the total variation of $\mu$} and denoted b
 A proof that $|\mu|$ is a measure and more detail on complex measures can be found in chapter $6$ of \citep{rudin2}. 
 A useful property of the total variation of $\mu$ is that $\mu \lll |\mu|$, that is a $|\mu|$-null set is also a $\mu$-null set.
 
-Recall that a positive measure $\mu$ is said to be regular if
+Recall that a positive measure $\mu$ is said to be \emph{regular} if
 \[
 	\mu(E) = \inf\{\mu(F);\ E \subset F \text{ and $F$ is open}\}
 \]
@@ -355,13 +354,14 @@ We define
 \]
 for any scalar $c$ and measurable $E$.
 Both of these are obviously measures so the measures on a common $\sigma$-algebra form a vector space.
-Said vector space is also normed with the norm $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on.
+Said vector space is also normed with the norm $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on, since $|\mu(X)| < \infty$ always holds \citep[Theorem $6.4$]{rudin2}
 
 We won't get far with complex measures without defining integration.
-A corollary of the Radon-Nikodym theorem is the existence of a function $h$ whose image is wholly on $\mathbb{T}$ such that
+A corollary of the Radon-Nikodym theorem is the existence of a function $h$ such that
 \[
 	d\mu = h\ d|\mu|.
 \]
+and $|h| = 1$ \citep[Theroem $6.12$]{rudin2}.
 This can be seen as a decomposition of $\mu$ into polar form.
 With this in mind we define integration with regards to a complex measure by
 \[
@@ -452,9 +452,9 @@ If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a continuous
 
 Firstly, let
 	$U$ and $V$ be open sets in $\mathbb{C}$,
-	such that $U$ is bounded by a Jordan curve,
-	$V$ is bounded,
-	$\gamma: [0, 1] \rightarrow \partial \mathbb{D}$ be that Jordan curve,
+	such that $V$ is bounded,
+	$U$ is bounded by a Jordan curve,
+	$\gamma: [0, 1] \rightarrow \partial U$ be that Jordan curve,
 	and $f: U \rightarrow V$ be homeomorphism.
 Let $\lambda = f \circ \gamma$ and $s, t \in ]0, 1[$ such that $\lambda(s) = \lambda(t)$.
 It suffices to show that $s = t$, since $\lambda(0) = \lambda(1)$ obviously holds.
@@ -478,17 +478,10 @@ This allows us to use Carathéodory's theorem to extend $\Phi$ continuously and 
 
 \subsection{Complex analysis in several variables}
 We will briefly touch on multivariate complex analysis so we will need a definition of a holomorphic function in $\mathbb{C}^n$.
-If $U \subset \mathbb{C}^n$ is open and $f: U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U$}.
+If $U \subset \mathbb{C}^n$ is open and $f: U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U_n$}.
+That is, the map $z \mapsto f(z_1, ..., z_{k - 1}, z, z_{k + 1}, ..., z_n)$ is holomorphic for $k = 1, 2, ..., n$.
 We will also denote common sets by there counterpart in single variate complex analysis with an added `$n$' in the superscript.
 This does not, however, denote an $n$-fold Cartesian product.
-For example
-\[
-	\mathbb{T}^2 = \{(z, w) \in \mathbb{C}^2;\ |z|^2 + |w|^2 = 1\}
-\]
-is not the same as 
-\[
-	\mathbb{T} \times \mathbb{T} = \{(z, w) \in \mathbb{C}^2;\ |z| < 1 \text{ and } |w| < 1\}.
-\]
 \section{Functional analysis}
 \begin{definition}
 Let $X$ be a topological space.
@@ -506,7 +499,7 @@ Then if $f \in C(X)$ and $\varepsilon > 0$ we set $K = X$ and see that $|f(x)| <
 So $C(X)$ and $C_0(X)$ are identical in this case.
 \begin{definition}
 Let $\alpha$ be a linear map from a normed vector space $X$ into a normed vector space $Y$.
-We define a its \emph{norm} by
+We define its \emph{norm} by
 \[
 	\|\alpha\| = \sup\{\|\alpha(x)\|;\ \|x\| < 1\}
 \]
@@ -564,7 +557,7 @@ Recall that the Hölder inequality states that if $f$ and $g$ are measurable fun
 \[
 	\|fg\|_1 \leq \|f\|_p\|g\|_q.
 \]
-So each function in $L^p(X, \mu)$ gives us a bounded linear functional.
+So each function in $L^q(X, \mu)$ gives us a bounded linear functional.
 The following theorem states the inverse, that is, each bounded linear functional on $L^p(X, \mu)$ can be represented by a function in $L^q(X, \mu$).
 \begin{theorem}[The Riesz representation theorem for bounded linear functionals on $L(X, \mu)$ with $\sigma$-finite $X$ \citep{rudin2}]
 Let $1 < p < +\infty$,
@@ -633,7 +626,7 @@ Note here that $\delta$ is globally defined and only dependent on $\varepsilon$.
 \end{definition}
 
 The following theorems are focused on the existence of convergent subsequences.
-We will therefore, for some $S \subset \mathbb{N}$, define
+We will therefore, for some infinite $S \subset \mathbb{N}$, define
 \[
 	\lim_{n \in S} a_n = \lim_{n \in \mathbb{N}} a_{s_n}
 \]
@@ -642,7 +635,7 @@ We similarly define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \math
 \begin{theorem}[Bolzano-Weierstrass]
 %                                                                                           v This has to be weak because of (M, M, M, M, M, M, ...)
 Let $(a_n)_{n \in \mathbb{N}}$ be a sequence of numbers in $\mathbb{R}^n$, such that $|a_n| < M < +\infty$, for all $k \in \mathbb{N}$.
-There than exists and infinite $S \subset \mathbb{N}$ such that $(a_n)_{n \in S}$ is convergent.
+There then exists an infinite $S \subset \mathbb{N}$ such that $(a_n)_{n \in S}$ is convergent.
 \end{theorem}
 \begin{proof}
 Let's first assume that the sequence is in $\mathbb{R}$,
@@ -666,7 +659,7 @@ Specifically, if we have $S_k$ we set
 	L = m2^{-k},\ 
 	U = (m + 1)2^{-k},
 \]
-$S_k^- = \{n \in S_k;\ a_n < (U + L)/2\}$, and $S_k^+ = \{n \in S_k;\ a_n > (U + L)/2\}$, where $m$ is chose such that $S_k$ is in $]L, U[$.
+$S_k^- = \{n \in S_k;\ a_n < (U + L)/2\}$, and $S_k^+ = \{n \in S_k;\ a_n > (U + L)/2\}$, where $m$ is chosen such that $S_k$ is in $]L, U[$.
 We now set $S_{k + 1} = S_k^-$ if it has infinitely many elements, otherwise we set $S_{k + 1} = S_k^+$.
 We conclude our construction by setting
 \[
@@ -818,7 +811,7 @@ The following lemmas show that all this is in fact possible.
 \begin{lemma}
 %11.30(a) in Rudin
 \label{FMRlemma3}
-Let $u$ be harmonic in $\mathbb{D}$ and
+Let $u$ be harmonic on $\mathbb{D}$ and
 \[
 	\sup_{0 < r < 1} \|u_r\|_1 = M < +\infty.
 \]
@@ -827,7 +820,7 @@ Then there exists a unique measure $\mu$ on $\mathbb{T}$ such that $u = P[d\mu]$
 \begin{lemma}
 %11.30(b) in Rudin
 \label{FMRlemma3b}
-Let $u$ be harmonic in $\mathbb{D}$ and
+Let $u$ be harmonic on $\mathbb{D}$ and
 \[
 	\sup_{0 < r < 1} \|u_r\|_2 = M < +\infty.
 \]
@@ -867,7 +860,7 @@ Let's now define $\Gamma$ by
 \[
 	\Gamma(x) = \lim_{k \in S} \Gamma_k\ x,
 \]
-see the
+and see that
 \begin{align*}
 	\Gamma(x) + \Gamma(y)
 	&= \lim_{k \in S} \Gamma_k\ x + \lim_{k \in S} \Gamma_k\ y\\
@@ -992,8 +985,8 @@ A useful result from the theory of Hardy spaces is that if $f \in H^1$ then ther
 \begin{definition}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{approach-region-7}
-\caption{A visualization of $\Omega_{\alpha}$, for a moderately large $\alpha$. Note that the only boundary point included in $\Omega_{\alpha}$ is $1$. }
+\includegraphics[width=0.5\textwidth]{approach-region-7-boundary}
+\caption{A visualization of the boundary of $\Omega_{\alpha}$, for a moderately large $\alpha$. Note that the only boundary point included in $\Omega_{\alpha}$ is $1$. }
 \end{figure}
 Let $0 < \alpha < 1$.
 We refer to the open convex hull of
@@ -1614,7 +1607,7 @@ So all requirements of \ref{bishopstheorem} are met.
 \end{proof}
 
 \chapter{Consequences of Bishop's generalization of the Rudin-Carleson theorem}
-\section{Classification of compact subsets of $\mathbb{C}$} 
+\section{Classification of compact subsets of $\mathbb{T}^n$}
 \label{section4}
 Bishop's theorem can be seen as a classification of sets.
 With this in mind, and looking at the case where $X = \mathbb{T}^n$ and $B = \mathcal{A}^n|_{\mathbb{T}^n}$, we have the following definition.
