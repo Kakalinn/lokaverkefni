@@ -757,7 +757,7 @@ The function
 	P_r(t) = \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}
 \]
 for $0 \leq r < 1$, $t \in \mathbb{R}$, is referred to as \emph{the Poisson kernel on $\mathbb{D}$}, or simply \emph{the Poisson kernel}.
-We also rewrite $P_r(\theta - t)$ by setting $z = re^{it}$ as
+It can be useful to think of $P_r(t)$ as a function of two variables $r$ and $t$, since it allows us to rewrite $P_r(\theta - t)$, by setting $z = re^{it}$, as
 \[
 	P(z, e^{it}) = \frac{1 - |z|^2}{|e^{it} - z|^2}.
 \]
@@ -765,6 +765,7 @@ This stems from the fact that
 \[
 	P_r(\theta - t) = \Re \left ( \frac{e^{it} + z}{e^{it} - z}\right ) = \frac{1 - r^2}{1 - 2r\cos(\theta - t) + r^2}.
 \]
+A benefit of this rewrite is that $P(\ \cdot\ , e^{it})$ is defined on $\mathbb{D}$.
 
 For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} as the function defined on $\mathbb{D}$ by
 \[
