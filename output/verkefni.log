@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.17)  19 MAY 2020 10:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.17)  19 MAY 2020 11:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1195,4 +1195,215 @@ File: foot.png Graphic file (type png)
 <use foot.png>
 Package pdftex.def Info: foot.png  used on input line 134.
 (pdftex.def)             Requested size: 597.5175pt x 227.20657pt.
- [1{/var/lib/te
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+ <./foot.png> <./ui_1_cmyk.png>] [2] [3]
+LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
+176.
+LaTeX Font Info:    No file OMScmss.fd. on input line 176.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead on input line 176.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--189
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--192
+
+ []
+
+(/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
+
+ []
+
+[4] [5] [6
+
+
+] [5] [6
+
+
+] (output/verkefni.toc)
+\tf@toc=\write4
+\openout4 = `verkefni.toc'.
+
+ [7] [8
+
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.263 \chapter
+              {Introduction} [1]pdfTeX warning (ext4): destination with the sam
+e identifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.263 \chapter
+              {Introduction} [2
+
+
+]
+chapter 1.
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.284 \chapter
+              {Preliminaries} [3]pdfTeX warning (ext4): destination with the sa
+me identifier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.284 \chapter
+              {Preliminaries} [4
+
+
+]
+chapter 2.
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.317 \[
+         [5]pdfTeX warning (ext4): destination with the same identifier (name{p
+age.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.365 \]
+         [6] [7] [8] [9] [10] [11] [12]
+chapter 3.
+[13
+
+
+] [14] [15] [16] [17] [18] [19] [20]
+<approach-region-7-boundary.png, id=309, 690.9012pt x 708.246pt>
+File: approach-region-7-boundary.png Graphic file (type png)
+<use approach-region-7-boundary.png>
+Package pdftex.def Info: approach-region-7-boundary.png  used on input line 101
+0.
+(pdftex.def)             Requested size: 213.39569pt x 218.75427pt.
+ [21 <./approach-region-7-boundary.png>] [22] [23] [24]
+<graph8.png, id=351, 1387.584pt x 736.4313pt>
+File: graph8.png Graphic file (type png)
+<use graph8.png>
+Package pdftex.def Info: graph8.png  used on input line 1230.
+(pdftex.def)             Requested size: 426.7914pt x 226.50465pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25]
+<graph2.png, id=361, 1387.584pt x 736.4313pt>
+File: graph2.png Graphic file (type png)
+<use graph2.png>
+Package pdftex.def Info: graph2.png  used on input line 1249.
+(pdftex.def)             Requested size: 426.7914pt x 226.50465pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26 <./graph8.png>] [27 <./graph2.png>] [28]
+<graph101.png, id=381, 1387.584pt x 736.4313pt>
+File: graph101.png Graphic file (type png)
+<use graph101.png>
+Package pdftex.def Info: graph101.png  used on input line 1355.
+(pdftex.def)             Requested size: 426.7914pt x 226.50465pt.
+ [29 <./graph101.png>] [30]
+[31] [32] [33] [34] [35] [36
+
+
+]
+chapter 4.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1638.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 1638.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1638.
+
+[37] [38] [39] [40
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1734--1797
+
+ []
+
+[41] (output/verkefni.bbl [42])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1801.
+ [43
+
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1801.
+ (output/verkefni.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1801.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1801.
+
+Package rerunfilecheck Info: File `verkefni.out' has not changed.
+(rerunfilecheck)             Checksum: <no file>.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1801.
+ ) 
+Here is how much of TeX's memory you used:
+ 25185 strings out of 492167
+ 439286 string characters out of 6131558
+ 646897 words of memory out of 5000000
+ 29133 multiletter control sequences out of 15000+600000
+ 560502 words of font info for 90 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,13n,106p,10063b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/publ
+ic/mathabx-type1/matha12.pfb></usr/share/texmf-dist/fonts/type1/public/mathabx-
+type1/matha6.pfb></usr/share/texmf-dist/fonts/type1/public/mathabx-type1/matha8
+.pfb></usr/share/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/t
+ype1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
+super/sfsi1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1200.
+pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share
+/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf-dist/fon
+ts/type1/public/cm-super/sfss1728.pfb></usr/share/texmf-dist/fonts/type1/public
+/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1
+440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf-dist
+/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on output/verkefni.pdf (53 pages, 934068 bytes).
+PDF statistics:
+ 710 PDF objects out of 1000 (max. 8388607)
+ 613 compressed objects within 7 object streams
+ 147 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+
