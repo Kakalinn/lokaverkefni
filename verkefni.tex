@@ -71,27 +71,27 @@
 
 %%%%%%%%%%% MODIFY THESE LINES ONLY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\thesisyear{2020}       						% Year thesis submitted
-\def\thesismonth{XXmonth}						% Month thesis submitted
+\def\thesismonth{May}						% Month thesis submitted
 \def\thesisauthor{Bergur Snorrason}					% Thesis authoreiningaraðferðinni
-\def\thesistitle{XXTitle} 						% Title of thesis
-\def\thesisshorttitle{XXShort title (50 characters including spaces)} 	% Title of thesis
-\def\thesiscredits{XX} 							% Credits awarded for the project
-\def\thesissubject{XX}
+\def\thesistitle{Rudin-Carleson theorems} 						% Title of thesis
+\def\thesisshorttitle{} 	% Title of thesis
+\def\thesiscredits{60} 							% Credits awarded for the project
+\def\thesissubject{Mathematics}
 \def\thesiskind{M.Sc.}							% Masters of PhD thesis
 \def\thesiskindformal{Magister Scientiarum}				% Masters of PhD thesis
 \def\thesisnroftutors{1}						% Number of tutors
 \def\thesisschool{School of Engineering and {Natural Sciences}}		% School
-\def\thesisfaculty{XX}							% Faculty
-\def\thesisaddress{XXFaculty street address}				% Office address
-\def\thesispostalcode{XXFaculty postal code, Reykjavik}			% Office address
+\def\thesisfaculty{Physical Sciences}							% Faculty
+\def\thesisaddress{Dunhagi 5}				% Office address
+\def\thesispostalcode{107, Reykjavik}			% Office address
 \def\thesistelephone{525 4000}						% Office telephone
 \def\thesispublisher{XX}						% Publisher
-\def\thesistutors{XXNN1 \\ XXNN2}
-\def\thesisrepresentative{XXNN3}					% Tutors name
-\def\thesiscommittee{XXNN4 \\ XXNN5 }
+\def\thesistutors{Benedikt Steinar Magnússon}
+\def\thesisrepresentative{Tyson Ritter}					% Tutors name
+\def\thesiscommittee{Benedikt Steinar Magnússon \\ Ragnar Sigurðsson}
 \def\thesiskeywords{Keyword1, Keyword2, Keyword3}			% Keywords
 \def\thesisISBN{XX}           						% Thesis ISBN number
-\def\thesisdedication{Dedication}
+\def\thesisdedication{To my parents}
 \def\thesisPrinting{Háskólaprent, Fálkagata 2, 107 Reykjavík}
 
 % Function to add footer to frontpage
@@ -170,7 +170,7 @@ Reykjavik, \thesismonth~\thesisyear
  \mbox{} \vfill
  % \setcounter{page}{0} \renewcommand{\baselinestretch}{1.5}\normalsize
  \sffamily{\thesistitle} \\
- \sffamily{\thesisshorttitle} \\
+ % \sffamily{\thesisshorttitle} \\
  \thesiscredits ~ECTS thesis submitted in partial fulfillment of a \thesiskind~degree in \thesissubject
 \\ \\
 Copyright \textcopyright~\thesisyear~ \thesisauthor \\
@@ -190,7 +190,7 @@ Telephone: \thesistelephone \\ \\
 Bibliographic information: \\
 \thesisauthor, \thesisyear, \thesistitle, \thesiskind~thesis, Faculty of \thesisfaculty, University of Iceland. \\
 
-ISBN~\thesisISBN
+% ISBN~\thesisISBN
 
 Printing: \thesisPrinting \\
 Reykjavik, Iceland, \thesismonth~\thesisyear \\
@@ -213,28 +213,36 @@ Reykjavik, Iceland, \thesismonth~\thesisyear \\
 \section*{\huge Abstract}
 % Útdráttur á ensku sem er að hámarki 250 orð.
 The main theme of this thesis is the Rudin-Carleson extension theorem.
-It states a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that a continuous function thereon can be extended to a continuous function on the closed unit disk whose restriction to the open unit disk is holomorphic.
+It states a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that all continuous function thereon can be extended to a continuous function on the closed unit disk whose restriction to the open unit disk is holomorphic.
 The theorem is proved in two ways.
 Firstly in section \ref{section2}, where it is done in the same manner as Rudin, and again in section \ref{section3}, where it shown to be a corollary of a theorem of Bishop and the F. and M. Riesz theorem.
-Section \ref{section1} is dedicated to prove the F. and M. Riesz theorem, which states a sufficient condition for a measure to be absolutely continuous with regards to the Lebesgue-measure on the unit circle in $\mathbb{C}$.
+
+Section \ref{section1} is dedicated to prove the F. and M. Riesz theorem, which states a sufficient condition for a measure to be absolutely continuous with regards to the Lebesgue-measure on the unit circle.
 In section \ref{section3} we state and prove Bishop's generalisation of the Rudin-Carleson.
 We then show the Rudin-Carleson theorem to be a corollary of Bishop's generalisation and the F. and M. Riesz theorem.
 We look at the role of Bishop's theorem in the classification of closed subsets of the boundary of the unit disk in $\mathbb{C}^n$ in section \ref{section4}.
-In section \ref{section5} we look at a way to relax the condition on the set in Bishop's theorem by fixing the continuous function.
+
+In section \ref{section5} we look at a way to relax the condition on the set in Bishop's theorem.
+The set in Bishop's theorem is conditioned such that all continuous functions thereon can be extended, that is the is independent of the function we want to extend.
+The result of section \ref{section5} is a theorem that gives a sufficient condition on set such that a given continuous function thereon can be extended.
 
 
 \vfill \vspace*{1cm}
 \section*{\huge Útdráttur}
 % Hér kemur útdráttur á íslensku sem er að hámarki 250 orð. Reynið að koma útdráttum á eina blaðsíðu en ef tvær blaðsíður eru nauðsynlegar á seinni blaðsíða útdráttar að hefjast á oddatölusíðu (hægri síðu).
 Aðalefni ritgerðarinnar er setning Rudin-Carleson.
-Hún gefur okkur nægjanlegt skilyrði á hlutmengi í eininghringnum í $\mathbb{C}$ þannig að framlengja megi sérhvert samfallt fall á menginu í samfellt fall á lokuðu einingahringskífunni sem er fágað á opnu einingahringskífunni.
+Hún gefur okkur nægjanlegt skilyrði á hlutmengi í einingarhringnum í $\mathbb{C}$ þannig að framlengja megi sérhvert samfallt fall á menginu í samfellt fall á lokuðu einingarhringskífunni sem er fágað á opnu einingarhringskífunni.
 Hún er sönnuð á tvo vegu.
 Fyrst í kafli \ref{section2}, þar sem farið er sömu leið og Rudin gerði upprunalega, og aftur í kafla \ref{section3}, þar sem sýnt er að hún er fylgisetning setningar Bishops og setningar F. og M. Riesz.
-Kafli \ref{section1} er tileinkaður sönnun á setningu F. og M. Riesz, sem gefur okkur nægjalregt skilyrði þess að mál sé alsamfellt með tilliti til Lebesgue-málsins á einingahring $\mathbb{C}$.
-Í kalfa \ref{section3} setjum við fram og sönnum alhæfingu Bishops á setningu Rudin-Carleson.
+
+Kafli \ref{section1} er tileinkaður sönnun á setningu F. og M. Riesz, sem gefur okkur nægjanlegt skilyrði þess að mál sé alsamfellt með tilliti til Lebesgue-málsins á einingahringnum.
+Í kafla \ref{section3} setjum við fram og sönnum alhæfingu Bishops á setningu Rudin-Carleson.
 Síðan sýnum við að Rudin-Carleson setningin sé fylgisetning setningar Bishop's og setningar F. og M. Riesz.
-Við skoðum síðan í kalfa \ref{section4} hvernig setning Bishops getur hjálpað okkur að flokka lokuð hlutmengi jaðars einingahrings $\mathbb{C}^n$.
-Í kafla \ref{section5} er fjallað um hvernig slaka megi á skilyrðunum í setningu Bishops með því að festa samfellda fallið sem verið er að framlengja.
+Við skoðum síðan í kafla \ref{section4} hvernig setning Bishops getur hjálpað okkur að flokka lokuð hlutmengi jaðars einingahrings $\mathbb{C}^n$.
+
+Í kafla \ref{section5} skoðum hvernig slaka má á skilyrðinnum í setningu Bishops.
+Mengið í setningu Bishops er skilyrt þanni að öll samfelld föll á því megi framlengja, það er að segja skilyrðin eru óháð fallinu sem við viljum framlengja.
+Niðurstaðan í kafla \ref{section5} er setning sem gefur nægjanleg skilyrði á mengi þannig að framlengja megi gefið samfellt fall á menginu.
 \vfill
 \newpage
 
@@ -1721,14 +1729,34 @@ for all $\mu$ in $B^{\bot}$ and
 \[
 	\int_S F\ d\mu = 0
 \]
-holds for all $F$ in $B$ and $\mu$ in $B^{\bot}$ then there exists a $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
+holds for all $F$ in $B$ and $\mu$ in $B^{\bot}$ then there exists a function $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
+If we consider this theorem in the context of complex analysis we get:
+\begin{theorem}
+Let $S$ be a closed subset of $\mathbb{T}^n$ and $f: S \rightarrow \mathbb{C}$.
+If
+\[
+	\int_S f\ d\mu = 0
+\]
+for all $\mu$ in $\mathcal{A}^n|_{\mathbb{T}^n}^{\bot}$ and
+\[
+	\int_S F\ d\mu = 0
+\]
+holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{\bot}$ then there exists a function $F \in \mathcal{A}^n$ such that $F = f$ on $S$.
+\end{theorem}
+It would be interesting to continue the study of those $f$ and $S$ that satisfy these new condition.
+Note as well that the second condition, namely that
+\[
+	\int_S F\ d\mu = 0
+\]
+holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{\bot}$, is independent of $f$, so $S$ could also be studied in isolation.
 
+
+\chapter*{Index}
 \newcommand{\indexitem}[2]
 {
 {\bfseries #1} \hfill Page \pageref{#2}\\
 }
-\chapter*{Index}
 \addcontentsline{toc}{chapter}{Index}
 \markboth{Index}{Index}
 \indexitem{$\mathcal{A}$}{index4}
