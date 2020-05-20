@@ -861,7 +861,7 @@ We will need the following lemma in the proofs of \ref{FMRlemma3} and \ref{FMRle
 Let $X$ be a separable Banach space,
 	$(\Gamma_n)_{n \in \mathbb{N}}$ be a sequence of linear functionals on $X$,
 	and $\sup_n \|\Gamma_n\| = M < +\infty$.
-Then there exists a subsequence $(\Gamma_{n_i})_{i \in \mathbb{N}}$ such that the limit 
+Then there exists a subsequence $(\Gamma_{n_j})_{j \in \mathbb{N}}$ such that the limit 
 \[
 	\Gamma x = \lim_{k \rightarrow +\infty} \Gamma_{n_k}\ x
 \]
@@ -1169,9 +1169,9 @@ and
 \begin{proof}
 It suffices to show that the image of each partition is contained in a circle with radius $\varepsilon$ since each square includes a circle.
 Recall that a point $x$ in a set $A$ is a \emph{limit point of $A$} if it is in the closure of $A \setminus \{x\}$.
-Since K is compact, f is uniformly continuous.
-This means we can set $\delta > 0$ such that $|f(x) - f(y)| < \varepsilon$ if $|x - y| < \delta$.
-Let $a_1, a_2, ..., a_{p + 1}$ be a strictly increasing sequence in $]0, 1]$ such that $a_{k + 1} - a_k < \delta/2$, for $k = 1, 2, ..., p$ and $E_k = E \cap ]a_k, a_{k + 1}]$, for $k = 1, 2, ..., p$.
+Since $K$ is compact, f is uniformly continuous.
+This means we can find $\delta > 0$ such that $|f(x) - f(y)| < \varepsilon$ if $|x - y| < \delta$.
+Let $a_1, a_2, ..., a_{p + 1}$ be a strictly increasing sequence in $]0, 1]$ such that $a_{k + 1} - a_k < \delta/2$, for $k = 1, 2, ..., p$ and let $E_k = E \cap ]a_k, a_{k + 1}]$, for $k = 1, 2, ..., p$.
 The only problem with this decomposition is that the sets may not be closed.
 More concretely, if $a_k$ is a limit point of $E$ then $E_k$ may not be closed, for $k = 1, 2, ..., p$.
 If we could replace $a_k$ by a point in $I = ]a_k, a_{k + 1}[$ that was not a limit point of $E$ then this problem will be solved.
@@ -1181,10 +1181,6 @@ But $E$ can't contain an open set since $E$ is of Lebesgue-measure zero.
 \end{proof}
 We can show that \ref{somelemma} still holds if we replace $]0, 1]$ by $\mathbb{T}$ in the same way.
 This is the context we will later use it in.
-
-\label{index27}
-In the discussion before the proof of \ref{mylemma} a logarithm is used.
-This is the base $2$ logarithm, specifically it satisfies $\log 2^x = x$.
 
 \begin{theorem}[Rudin-Carleson]
 \label{rudincarleson}
@@ -1198,7 +1194,7 @@ We will split up the proof into several lemmas.
 The first few lemmas are dedicated to showing the result holds for continuous simple functions, and the last lemma bridges the gap.
 \begin{lemma}
 \label{mylemma}
-Let $H$ be a closed set of Lebesgue-measure zero.
+Let $H \subset \mathbb{T}$ be a closed set of Lebesgue-measure zero.
 Then there exists a function $h: \mathbb{T} \rightarrow ]1, +\infty]$ such that 
 \begin{enumerate}
 \item
@@ -1228,13 +1224,13 @@ We can now define function $V_H: [0, 1] \rightarrow [0, 1]$ and $H_H: [0, 1] \ri
 \]
 Intuitively, $H_H(x)$ is the point in $H$ that's to the right of $x$ and is closest to $x$ and $V_H(x)$ is the point in $H$ that's to the left of $x$ and is closest to $x$.
 So all points $x$ in $[0, 1] \setminus H$ are on the open interval $]V_H(x), H_H(x)[$.
-We will define function $f: [0, 1] \rightarrow [0, +\infty]$ by
+We will define function $f_H: [0, 1] \rightarrow [0, +\infty]$ by
 \[
 \label{index29}
 	f_H(x) =
 	\left \{ 
 	\begin{array}{l l}
-		2\log \left ( \frac{H_H(x) - V_H(x)}{2} \right ) - \log((x - V_H(x))(H_H(x) - x)) & \text{if $x$ is not in $H$}\\
+		2\log_2 \left ( \frac{H_H(x) - V_H(x)}{2} \right ) - \log_2((x - V_H(x))(H_H(x) - x)) & \text{if $x$ is not in $H$}\\
 		\infty & \text{if $x$ is in $H$}
 	\end{array}
 	\right .
@@ -1243,14 +1239,14 @@ and show that this function has the properties of \ref{mylemma}, but with $\math
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{graph8}
-\caption{An example of $f_H$ where $H$ includes nine points. The points of $H$ are represented by circles. }
+\caption{An example of $f_H$ where $H$ includes nine points. The points of $H$ are marked on the $x$-axis. }
 \end{figure}
 
 Let's first define a family of functions indexed with $a, b \in \mathbb{R}$, such that $a < b$, by
 \[
 \label{index30}
 	f_{a, b}: [a, b] \rightarrow [0, +\infty],
-	x \mapsto 2\log \left ( \frac{b - a}{2} \right ) - \log((x - a)(b - x))
+	x \mapsto 2\log_2 \left ( \frac{b - a}{2} \right ) - \log_2((x - a)(b - x))
 \]
 and show they satisfy the following properties:
 \begin{enumerate}
@@ -1268,18 +1264,18 @@ The first point gives us a handy estimate and the second tells us $f_{a, b}$ is 
 We have that
 \begin{align*}
 	f_{a, b}(a + (b - a)2^{-n})
-	&= 2\log (b - a) - 2\log 2 - \log (((b - a)2^{-n})(b - a - (b - a)2^{-n}))\\
-	&= 2\log (b - a) - 2 - \log ((b - a)^2(1 - 2^{-n})2^{-n})\\
-	&= 2\log (b - a) - 2 - 2\log (b - a) - \log (1 - 2^{-n}) - \log 2^{-n}\\
-	&= n - (2 + \log (1 - 2^{-n}))\\
+	&= 2\log_2 (b - a) - 2\log_2 2 - \log_2 (((b - a)2^{-n})(b - a - (b - a)2^{-n}))\\
+	&= 2\log_2 (b - a) - 2 - \log_2 ((b - a)^2(1 - 2^{-n})2^{-n})\\
+	&= 2\log_2 (b - a) - 2 - 2\log_2 (b - a) - \log_2 (1 - 2^{-n}) - \log_2 2^{-n}\\
+	&= n - (2 + \log_2 (1 - 2^{-n}))\\
 	&\leq n.
 \end{align*}
 To show the second property we consider the case where $a = -b$, that is we translate so that the midpoint between them is $0$.
 Then
 \begin{align*}
 f_{-b, b}(-x)
-&= 2 - \log ((-x + b)(b + x))\\
-&= 2 - \log ((b - x)(x - (-b)))\\
+&= 2 - \log_2 ((-x + b)(b + x))\\
+&= 2 - \log_2 ((b - x)(x - (-b)))\\
 &= f_{-b, b}(x).
 \end{align*}
 These two points together tell us that we can bound $f_{a, b}$ above by
@@ -1288,7 +1284,7 @@ These two points together tell us that we can bound $f_{a, b}$ above by
 	g_{a, b}(x) =
 	\left \{
 	\begin{array}{l l}
-	n, & \text{ if } 2^{-n} \leq \frac{x - a}{b} < 2^{-n + 1}\\
+	m, & \text{ if } 2^{-m} \leq \frac{x - a}{b} < 2^{-m + 1}\\
 	g_{a, b}(a + b - x) , & \text{ if } \frac{x - a}{b} > \frac{1}{2}
 	\end{array},
 	\right .
@@ -1318,21 +1314,21 @@ where the second equality is by monotone convergence and the last inequality is 
 This rationale also holds for general $a$ and $b$, since $a$ does not effect the value of the integral and $b$ scales it.
 We can, as a side note, compute the limit of the series by setting, for $x > 1$,
 \[
-	f(x) = \frac{2}{1 - x} = -2\sum_{n \in \mathbb{N}} x^{-k}
+	T(x) = \frac{2}{1 - x} = -2\sum_{k \in \mathbb{N}} x^{-k}
 \]
 and note that
 \[
-	f'(x) = 2\sum_{n \in \mathbb{N}} kx^{-k - 1},
+	T'(x) = 2\sum_{k \in \mathbb{N}} kx^{-k - 1},
 \]
-so the limit of the series is $f'(2)$.
+so the limit of the series is $T'(2)$.
 We also have that
 \[
-	f'(x) = \frac{d}{dx}\frac{2}{1 - x} = \frac{2}{(1 - x)^2}
+	T'(x) = \frac{d}{dx}\frac{2}{1 - x} = \frac{2}{(1 - x)^2}
 \]
-so $f'(2)$, and therefore the limit of the series, is $2$.
+so $T'(2)$, and therefore the limit of the series, is $2$.
 
 Let's now go back to $f_H$.
-Note that we can locally look at $f$ as a function in $\{f_{a, b}\}_{a, b \in [0, 1]}$, that is, $f(x) = f_{V_H(x), H_H(x)}(x)$.
+Note that we can locally look at $f_H$ as a function in $\{f_{a, b}\}_{a, b \in [0, 1]}$, that is, $f_H(x) = f_{V_H(x), H_H(x)}(x)$.
 We can define a function
 \[
 	g_H(x) = g_{V_H(x), H_H(x)}(x)
@@ -1349,7 +1345,7 @@ and a sequence of functions
 We have that $(g_n)_{n \in \mathbb{N}}$ is monotone with limit $g$, similar to before, and $f \leq g$.
 Note that, independent of $H$, we have
 \[
-	m(g_H^{-1}(k)) = 2^{-k}
+	m(\{x;\ g(x) = k\}) = 2^{-k}
 \]
 so
 \begin{align*}
@@ -1368,7 +1364,7 @@ by the same reasoning as before.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{graph101}
-\caption{An example of $f_H$ where $H$ includes several points. The points of $H$ are represented by circles. }
+\caption{An example of $f_H$ where $H$ includes several points. The points of $H$ are marked on the $x$-axis. }
 \end{figure}
 Note that we left some fundamentals unmentioned.
 Specifically the fact that $f_H$ and $g_H$ are measurable.
@@ -1398,7 +1394,7 @@ Let $u_H(z)$ be the Poisson integral of the function from \ref{mylemma}.
 This function is continuous on $\mathbb{T} \setminus H$, $u_H|_H = +\infty$, and $\lim_{z \rightarrow w} u_H(z) = +\infty$ for $w \in H$ \citep[page $234$]{rudin2}.
 Let's set $v_H$ as the conjugate harmonic of $u_H$ and define
 \[
-	g_H(z) =
+	G_H(z) =
 	\left \{
 		\begin{array}{l l}
 		u_H(z) + iv_H(z), & z \in \mathbb{D} \setminus H\\
@@ -1406,7 +1402,7 @@ Let's set $v_H$ as the conjugate harmonic of $u_H$ and define
 		\end{array}.
 	\right .
 \]
-By our construction of $u_H$ we see the $\Re g_H > 1$, so it has a well defined square root.
+By our construction of $u_H$ we see the $\Re G_H > 1$, so it has a well defined square root.
 Let's call it $h_H$ and define
 \[
 	q = \frac{h_{E_1}}{h_{E_0} + h_{E_1}}.
@@ -1431,8 +1427,8 @@ and
 	|\arg w/z| = |\arg w - \arg z| \leq |\arg w| + |\arg z| < \pi/4 + \pi/4 = \pi/2.
 \]
 So $w/z$ is in the right halfplane and, therefore $w/z + 1$ is as well.
-We have now shown that $0 < \Re z/(w + z)$.
-Note that $0 < \Re z/(w + z) \implies 0 > \Re -w/(w + z)$ due to $z$ and $w$ being constrained in the same manner, and
+We have now shown that $0 < \Re ( z/(w + z) ) $.
+Note that $0 < \Re \left ( z/(w + z) \right ) \implies 0 > \Re ( -w/(w + z) )$ due to $z$ and $w$ being constrained in the same manner, and
 \begin{align*}
 	0
 	&> \Re \frac{-w}{w + z}\\
@@ -1449,6 +1445,7 @@ So we have shown that
 We have now constructed a function $q$ that maps $\overline{\mathbb{D}}$ to the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$.
 We then let $\Phi$ be the conformal mapping from the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$ to $\{z;\ 0 \leq \Re z \leq \Re \alpha\}$.
 We will also choose $\Phi$ such that $\Phi(0) = 0$ and $\Phi(1) = \alpha$.
+Such a $\Phi$ can be constructed by going through the unit disk and choosing an appropriate rotation.
 We can then let $F = \Phi \circ q$ and conclude the proof.
 
 \end{proof}
@@ -1463,10 +1460,10 @@ The desired function in then obtained with $F = \Phi \circ g$.
 \end{proof}
 \begin{lemma}
 \label{rudinlemma3}
-If $f$ is a continuous function on $E$ which maps $E$ into $S$ then there exists a sequence $(f_n)_{n \in \mathbb{N}}$ of simple continuous function on $E$ such that
+If $f$ is a continuous function on $E$ which maps $E$ into the square $S$ then there exists a sequence $(f_n)_{n \in \mathbb{N}}$ of simple continuous function on $E$ such that
 \[
 	f(x) = \sum_{n \in \mathbb{N}} f_n(z)
-	\text{ and }
+	\qquad \text{and} \qquad
 	f_n(E) \subset 2^{-n}S.
 \]
 \end{lemma}
@@ -1508,9 +1505,9 @@ Let $M_n = 2^{-n + 1}$ and note that $|g_n(z)| \leq \sqrt{2}\cdot 2^{-n} < 2^{-n
 so the Weierstrass M-test tells us that $F$ converges uniformly.
 We also have that
 \[
-	\Re F = \sum_{n \in \mathbb{N}} \Re g_n \leq \sum_{n \in \mathbb{N}} 2^{-n} = 1.
+	0 \leq \Re F = \sum_{n \in \mathbb{N}} \Re g_n \leq \sum_{n \in \mathbb{N}} 2^{-n} = 1.
 \]
-It can be shown in the same manner that $\Im F \leq 1$, so $F$ maps into $S$.
+It can be shown in the same manner that $0 \leq \Im F \leq 1$, so $F$ maps into $S$.
 Lastly, for $z \in E$ we have that
 \[
 	F(z) = \sum_{n \in \mathbb{N}} g_n(z) = \sum_{n \in \mathbb{N}} f_n(z) = f(z)
@@ -1526,7 +1523,7 @@ On $E$ we have that
 	F = G \circ \Phi^{-1} = g \circ \Phi^{-1} = f \circ \Phi \circ \Phi^{-1} = f,
 \]
 so $F$ extends $f$.
-It is also a composition of functions in $\mathcal{A}$ so it is also in $\mathcal{A}$.
+It is also a composition of functions that are continuous on $\overline{\mathbb{D}}$ and holomorphic on $\mathbb{D}$ so it is as well.
 \end{proof}
 
 
@@ -1537,9 +1534,9 @@ An obvious next step would be a Rudin-Carleson theorem in several complex variab
 It is tempting to keep the constraints on $E$ unchanged, namely that it is of Lebesgue-measure zero, but this won't work.
 Take as an example $f: E \rightarrow \mathbb{C}$ with $E = \mathbb{T} \times \{1\}$ and $f(z, w) = \overline{z}$.
 Clearly $E$ is of Lebesgue-measure zero but $f$ cannot be extended.
-If we assume it could be extended to some $g = (g_1, g_2)$ in $\mathcal{A}^2$ then, by definition, $g_1$ would be holomorphic on $\mathbb{D}$ and continuous $\overline{\mathbb{D}}$.
+If we assume it could be extended to some $g$ in $\mathcal{A}^2$ then, by definition, $g_1 = g(\ \cdot \ , 1)$ would be holomorphic on $\mathbb{D}$ and continuous $\overline{\mathbb{D}}$.
 Its holomorphicity tells us that its integral around $r\mathbb{T}$ for $0 < r < 1$ is zero.
-But on $\mathbb{T}$ we have that $g(z) = \overline{z}$ so its integral over $\mathbb{T}$ is not zero.
+But on $\mathbb{T}$ we have that $g_1(z) = \overline{z}$ so its integral over $\mathbb{T}$ is not zero.
 That is, we have that
 \[
 	\lim_{r \rightarrow 1} \int_{r\mathbb{T}} g_1(z)\ dz \neq \int_{\mathbb{T}} g_1(z)\ dz
@@ -1610,7 +1607,7 @@ But
 		> 1 - r \frac{1}{r} = 0.
 \]
 This contradiction gives that $f \in V_r$.
-We can now take a function $F_1$ in $U_r$, and therefore also in $B$, such that $|f - F_1| < \lambda/2$ on $S$, with $\lambda := 1 - r$.
+We can now take a function $F_1$ in $U_r$, and therefore also in $B$, such that $|f - F_1| < \lambda/2$ on $S$, with $\lambda = 1 - r$.
 Remember that $F_1 \in U_r$ implies that $\|F_1\| < r$.
 Now let $f_1 = f - F_1$ and use the same method as above to obtain an $F_2$ such that $\|F_2\| < \lambda/2$ and $|f - F_2| < \lambda/4$ on $S$.
 Iterating this process yields a sequence $(F_n)_{n \in \mathbb{N}}$ from $B$ such that $\|F_n\| < 2^{1 - n}\lambda$ for $n > 1$ and
@@ -1640,6 +1637,7 @@ Also note that $|F| < \Xi$ on $X$ and
 \]
 on $S$.
 \end{proof}
+Bishop's theorem let's us draw the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem.
 \begin{proof}[Alternative proof of \ref{rudincarleson}]
 Let
 	$X = \mathbb{T}$,
@@ -1648,6 +1646,8 @@ Let
 Then, according to \ref{fmrieszcor}, $S$ is also a $B^{\bot}$-null.
 So all requirements of \ref{bishopstheorem} are met.
 \end{proof}
+Bishop's theorem also gives us a Rudin-Carleson theorem for complex analysis in several variables.
+We don't, however, have a multivariate version of the F. and M. Riesz theorem, so the condition isn't as neat.
 
 \chapter{Consequences of Bishop's generalization of the Rudin-Carleson theorem}
 \section{Classification of compact subsets of $\mathbb{T}^n$}
@@ -1740,7 +1740,7 @@ holds for all $G$ in $B$ and $\mu$ in $B^{\bot}$ then there exists a function $F
 \end{theorem}
 If we consider this theorem in the context of complex analysis we get:
 \begin{theorem}
-Let $S$ be a closed subset of $\mathbb{T}^n$ and $f: S \rightarrow \mathbb{C}$.
+Let $S$ be a closed subset of $\mathbb{T}^n$ and $f: S \rightarrow \mathbb{C}$ be a continuous function.
 If
 \[
 	\int_S f\ d\mu = 0
@@ -1801,7 +1801,6 @@ holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{
 %
 \indexitem{Locally compact}{index10}
 \indexitem{$L^p(X, \mu)$}{index14}
-\indexitem{$\log$}{index27}
 %
 \indexitem{$|\mu|(E)$}{index2}
 \indexitem{$\|\mu\|$}{index3}

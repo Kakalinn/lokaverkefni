@@ -197,8 +197,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[26 <./graph8.png>] [27 <./graph2.png>] [28] [29 <./graph101.png>] [30]
-[31] [32] [33] [34] [35] [36]
+
+Overfull \hbox (8.95604pt too wide) detected at line 1272
+[]
+[26 <./graph8.png>] [27 <./graph2.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28] [29 <./graph101.png>] [30] [31] [32] [33] [34] [35] [36]
 chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -213,7 +219,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1653.
 
 [37] [38] [39] [40]
-Underfull \hbox (badness 10000) in paragraph at lines 1769--1832
+Underfull \hbox (badness 10000) in paragraph at lines 1769--1831
 
 [41] (output/verkefni.bbl [42]) [43] (output/verkefni.aux)
 
@@ -242,5 +248,5 @@ share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dis
 t/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/p
 ublic/cm-super/sfsx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/
 sfti1200.pfb>
-Output written on output/verkefni.pdf (53 pages, 936349 bytes).
+Output written on output/verkefni.pdf (53 pages, 936929 bytes).
 Transcript written on output/verkefni.log.
