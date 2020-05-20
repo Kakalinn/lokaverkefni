@@ -372,7 +372,7 @@ A corollary of the Radon-Nikodym theorem is the existence of a function $h$ such
 \[
 	d\mu = h\ d|\mu|.
 \]
-and $|h| = 1$ \citep[Theorem $6.12$]{rudin2}.
+and $|h| = 1$ \citep[Theroem $6.12$]{rudin2}.
 This can be seen as a decomposition of $\mu$ into polar form.
 With this in mind we define integration with regards to a complex measure by
 \[
@@ -929,7 +929,7 @@ By Lemma \ref{FMRlemma31} and the Riesz representation theorem we get a measure 
 for all $g \in C(\mathbb{T})$.
 Let's now define functions $h_k$ on $\overline{\mathbb{D}}$ by $h_k(z) = u(r_kz)$.
 We get that, since $u$ is harmonic on $r\mathbb{D}$ for $r \in ]0, 1[$, the functions $h_k$ are harmonic on $\mathbb{D}$ and continuous on $\overline{\mathbb{D}}$.
-So each of them can be represented by the Poisson integral of their restriction to $\mathbb{T}$ \citep[Theorem $11.9$]{rudin2}.
+So each of them can be represented by the Poisson integral of their restriction to $\mathbb{T}$ \citep[Theroem $11.9$]{rudin2}.
 Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
 \begin{align*}
 	u(z)
@@ -961,7 +961,7 @@ This symmetry is due to
 	|e^{i\theta} - re^{it}|,
 \]
 which is geometrically intuitive.
-The first and last qualities hold because the distance between two points doesn't change under rotation and the second equality holds because the distance from $z$ to a real number $a$ is the same distance from $\overline{z}$ to $a$.
+The first and last equalities hold because the distance between two points doesn't change under rotation and the second equality holds because the distance from $z$ to a real number $a$ is the same distance from $\overline{z}$ to $a$.
 We now obtain
 \begin{align*}
 \int_{\mathbb{T}} u_r\ d\mu
@@ -1024,7 +1024,7 @@ We refer to the open convex hull of
 \[
 	\{z \in \mathbb{C};\ |z| < \alpha\} \cup \{1\},
 \]
-that also includes $1$, as \emph{the non tangential approach region of $1$}, denoted by $\Omega_{\alpha}$.
+that also includes $1$, as \emph{the nontangential approach region of $1$}, denoted by $\Omega_{\alpha}$.
 We will also use the rotated version, $e^{i\theta}\Omega_{\alpha}$.
 Let $u: \mathbb{D} \rightarrow \mathbb{C}$.
 Its \emph{nontangential maximal function} is defined on $\mathbb{T}$ by
@@ -1054,7 +1054,7 @@ Let $g$ and $h$ be functions in $H^2$ such that $f = g \cdot h$, as described ab
 We have by Lemma \ref{FMRlemma3b} functions $G$ and $H$ in $L^2(\mathbb{T})$ such that $g = P[G]$ and $h = P[H]$.
 Theorem $11.23$ in \citep{rudin2} (along with discussion on the prior page) states that if $h$ is in $L^1(\mathbb{T})$ then $P[h]$ has nontangential limit $h(e^{it})$ at almost every $e^{it}$.
 We also have by the Hölder inequality that on a finite measure space (such as $\mathbb{T}$ with the Lebesgue measure) $\|h\|_1 \leq \|h\|_2$.
-So $g$ and $h$ have nontangential limits almost everywhere on $\mathbb{T}$.
+So $g$ and $h$ have nontangential limits almost everywere on $\mathbb{T}$.
 This tells us that $f$ also has nontangential limits almost everywhere on $\mathbb{T}$, since $f = g \cdot h$.
 By $|f| \leq |h|^2$ we have that $N_{\alpha}f \leq (N_{\alpha}h)^2$, and therefore $N_{\alpha}f \in L^1(\mathbb{T})$.
 Let $F$ be the tangential limit of $f$.
