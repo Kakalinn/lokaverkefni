@@ -213,37 +213,22 @@ Reykjavik, Iceland, \thesismonth~\thesisyear \\
 \section*{\huge Abstract}
 % Útdráttur á ensku sem er að hámarki 250 orð.
 The main theme of this thesis is the Rudin-Carleson extension theorem.
-It states a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that all continuous function thereon can be extended to a continuous function on the closed unit disk whose restriction to the open unit disk is holomorphic.
+It states a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that every continuous function thereon can be extended to a continuous function on the closed unit disk whose restriction to the open unit disk is holomorphic.
 The theorem is proved in two ways.
-Firstly in section \ref{section2}, where it is done in the same manner as Rudin, and again in section \ref{section3}, where it shown to be a corollary of a theorem of Bishop and the F. and M. Riesz theorem.
-
-Section \ref{section1} is dedicated to proving the F. and M. Riesz theorem, which states a sufficient condition for a measure to be absolutely continuous with regards to the Lebesgue-measure on the unit circle.
-In section \ref{section3} we state and prove Bishop's generalization of the Rudin-Carleson.
-We then show the Rudin-Carleson theorem to be a corollary of Bishop's generalization and the F. and M. Riesz theorem.
-We look at the role of Bishop's theorem in the classification of closed subsets of the boundary of the unit ball in $\mathbb{C}^n$ in section \ref{section4}.
-
-In section \ref{section5} we consider a way to relax the condition on the set in Bishop's theorem.
-The set in Bishop's theorem is conditioned such that all continuous functions thereon can be extended, that is, the condition is independent of the function we want to extend.
-The result of section \ref{section5} is a theorem that gives a sufficient condition on set such that a given continuous function thereon can be extended.
+Firstly in the same manner as Rudin, and secondly, it shown to be a corollary of a theorem of Bishop and the F. and M. Riesz theorem, both of which are proved in the thesis.
+We also look at the role of Bishop's theorem in the classification of closed subsets of the boundary of the unit ball in $\mathbb{C}^n$.
+Finally we consider a way to relax the condition on the set in Bishop's theorem.
 
 
 \vfill \vspace*{1cm}
 \section*{\huge Útdráttur}
 % Hér kemur útdráttur á íslensku sem er að hámarki 250 orð. Reynið að koma útdráttum á eina blaðsíðu en ef tvær blaðsíður eru nauðsynlegar á seinni blaðsíða útdráttar að hefjast á oddatölusíðu (hægri síðu).
-Aðalefni ritgerðarinnar er setning Rudin-Carleson.
-Hún gefur okkur nægjanlegt skilyrði á hlutmengi í einingarhringnum þannig að framlengja megi sérhvert samfallt fall á menginu í samfellt fall á lokuðu einingarhringskífunni sem er fágað á opnu einingarhringskífunni.
+Aðalefni ritgerðarinnar er Rudin-Carleson-setningin.
+Hún gefur okkur nægjanlegt skilyrði á hlutmengi í einingarhringnum þannig að framlengja megi sérhvert samfellt fall á menginu í samfellt fall á lokuðu einingarhringskífunni sem er fágað á opnu einingarhringskífunni.
 Hún er sönnuð á tvo vegu.
-Fyrst í kafli \ref{section2}, þar sem farið er sömu leið og Rudin gerði upprunalega, og aftur í kafla \ref{section3}.
-Þar er sýnt að hún sé fylgisetning setningar Bishops og setningar F. og M. Riesz.
-
-Kafli \ref{section1} er tileinkaður sönnun á setningu F. og M. Riesz, sem gefur okkur nægjanlegt skilyrði þess að mál sé alsamfellt með tilliti til Lebesgue-málsins á einingahringnum.
-Í kafla \ref{section3} setjum við fram og sönnum alhæfingu Bishops á setningu Rudin-Carleson.
-Við sýnum síðan að Rudin-Carleson setningin sé fylgisetning setningar Bishops og setningar F. og M. Riesz.
-Í kafla \ref{section4} er athugað hvernig setning Bishops getur hjálpað okkur að flokka lokuð hlutmengi jaðars einingarkúlu $\mathbb{C}^n$.
-
-Í kafla \ref{section5} skoðum hvernig slaka má á skilyrðum setningar Bishops.
-Mengið í setningu Bishops er skilyrt þannig að öll samfelld föll á því megi framlengja, það er að segja skilyrðin eru óháð fallinu sem við viljum framlengja.
-Niðurstaðan í kafla \ref{section5} er setning sem gefur nægjanleg skilyrði á mengi þannig að framlengja megi gefið samfellt fall á menginu.
+Fyrst er farið sömu leið og Rudin gerði upprunalega, og síðan er sýnt að hún sé fylgisetning setningar Bishops og setningar F. og M. Riesz, sem báðar eru sannaðar í ritgerðinni.
+Einnig er athugað hvernig setning Bishops getur hjálpað okkur að flokka lokuð hlutmengi jaðars einingarkúlu $\mathbb{C}^n$.
+Loks skoðum hvernig slaka má á skilyrðum setningar Bishops.
 \vfill
 \newpage
 
@@ -257,7 +242,7 @@ Niðurstaðan í kafla \ref{section5} er setning sem gefur nægjanleg skilyrði 
 I would like to thank my supervisor Benedikt Steinar Magnússon for his excellent guidance.
 I would also like to thank Ragnar Sigurðsson for his assistance throughout.
 I would like to thank my peers Atli, Eyleifur, Garðar, Hjörtur, and Þórarinn.
-I would like to thank Sandra for her unending assistance.
+I would like to thank Sandra for her unbounded support.
 % Sandra
 % Benni
 % Ragnar
@@ -276,20 +261,21 @@ Errett Bishop then generalized the Rudin-Carleson theorem in $1962$ by giving su
 Here the condition on the set is given in terms of the annihilating measures (see definition \ref{annilatingmeasure}) of the family of functions we want to extend into.
 The result of Bishop doesn't just generalize the Rudin-Carleson theorem (allowing, for example, similar studies in higher dimensions) but also shows the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem \citep{fandmriesz}.
 
-We start of by proving the F. and M. Riesz theorem in section \ref{section1}.
+We start by proving the F. and M. Riesz theorem in section \ref{section1}, which states a sufficient condition on a measure on the unit circle such that it is absolutely continuous with regards to the Lebesgue-measure on the unit circle.
 To achieve this some study of the Poisson kernel is needed.
-The Poisson kernel is classically used to find harmonic function on the unit disk given continuous boundary values.
-It is used to this end in the proof of the Rudin-Carleson theorem present in section \ref{section2}, but its place in the proof of the F. and M. Riesz theorem is less standard.
+The Poisson kernel is classically used to find harmonic functions on the unit disk with given continuous boundary values.
+It is used to this end in the proof of the Rudin-Carleson theorem presented in section \ref{section2}, but its place in the proof of the F. and M. Riesz theorem is less standard.
 
 The Rudin-Carleson theorem is proved in section \ref{section2}.
 It is done in the same way Rudin did in his original paper.
-Some effort is put into showing the existence of a continuous integrable function on $\mathbb{T}$ that takes value $+\infty$ at exactly a closed set of Lebesgue-measure zero.
+Some effort is put into showing the existence of a continuous integrable function on $\mathbb{T}$ that takes value $+\infty$ on a prescribed closed set of Lebesgue-measure zero.
 
 In section \ref{section3} Bishop's generalization of the Rudin-Carleson theorem is stated and proved.
 This is also done in the same way Bishop did in his paper.
 The original Rudin-Carleson theorem is then shown to be a corollary of Bishop's theorem and the F. and M. Riesz theorem.
 
 The final two sections, section \ref{section4} and section \ref{section5}, look at how Bishop's theorem fits into complex analysis in several variables and states an alternative version of Bishop's theorem.
+This alternative version of Bishop's theorem relaxes the condition on the set where the function we want to extend is defined by not requiring that every continuous function thereon can be extended.
 \chapter{Preliminaries}
 \section{Measure theory}
 During introductory courses in measure theory the focus is often solely on positive measures \citep{tao}, which are then simply referred to as `measures'.
@@ -304,16 +290,20 @@ We say that $\mu$ is \emph{countably additive} if
 	\mu\left( \bigcup_{n \in \mathbb{N}} E_n \right ) = \sum_{n \in \mathbb{N}} \mu(E_n)
 \]
 for all disjoint collections $(E_n)_{n \in \mathbb{N}}$ in $\mathcal{F}$.
-We also say that
+Let's assume $\mu$ is countably additive and $\mu(\emptyset) = 0$.
+We say that
 \begin{enumerate}
-\item[(i)] $\mu$ is a \emph{positive measure} if it is countably additive and $Y = [0, +\infty]$.
-\item[(ii)] $\mu$ is a \emph{real valued measure} if it is countably additive and $Y = [-\infty, +\infty[$ or $Y = ]-\infty, +\infty]$.
-\item[(iii)] $\mu$ is a \emph{complex measure} if it is countably additive and $Y = \mathbb{C}$.
+\item[(i)] $\mu$ is a \emph{positive measure} if $Y = [0, +\infty]$.
+\item[(ii)] $\mu$ is a \emph{real measure} if $Y = [-\infty, +\infty[$ or $Y = ]-\infty, +\infty]$.
+\item[(iii)] $\mu$ is a \emph{complex measure} if $Y = \mathbb{C}$.
 \end{enumerate}
 \end{definition}
 Allowing $Y = \overline{\mathbb{R}}$ in (ii) would lead to trouble, for example if $\mu(\{x\}) = +\infty$ and $\mu(\{y\}) = -\infty$ what is $\mu(\{x, y\})$?
-Measures in this thesis should be assumed to be complex, unless stated otherwise, and Borel.
-We will denote by $m$ the Lebesgue-measure on either $[0, 1]$ or $\mathbb{T}$ (which one will be clear from context) and $\sigma$ will be $m$ scaled to be a probability measure.
+We shall always assume that measure are complex Borel measures, that is, $\mathcal{F}$ is the Borel $\sigma$-algebra abd the measure take complex values, unless stated otherwise.
+% We will denote by $m$ the Lebesgue-measure on either $[0, 1]$ or $\mathbb{T}$ (which one will be clear from context) and $\sigma$ will be $m$ scaled to be a probability measure.
+We let $m$ denote that Lebesgue-measure on $\mathbb{R}$.
+Then the arc length measure on the unit circle $\mathbb{T}$ is the push-forward of $m$ by the exponential function $t \mapsto e^{it}$.
+We also denote the arc length measure by $m$ and let $\sigma = m/2\pi$ be the arc length measure scaled to a probability measure on $\mathbb{T}$.
 
 For those not familiar with complex measures, some care must be taken.
 A prime example is the notion of null sets.
@@ -365,7 +355,8 @@ We define
 \]
 for any scalar $c$ and measurable $E$.
 Both of these are obviously measures so the measures on a common $\sigma$-algebra form a vector space.
-Said vector space is also normed with the norm \label{index3} $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on, since $|\mu(X)| < \infty$ always holds \citep[Theorem $6.4$]{rudin2}
+This vector space is also normed with the norm \label{index3} $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on, since $|\mu(X)| < \infty$ always holds \citep[Theorem $6.4$]{rudin2}, and it is Banach if $X$ is locally compact (see definition \ref{index10}) \citep[Exercise $3$, chapter $6$]{rudin2}.
+
 
 We won't get far with complex measures without defining integration.
 A corollary of the Radon-Nikodym theorem is the existence of a function $h$ such that
@@ -382,27 +373,25 @@ With this in mind we define integration with regards to a complex measure by
 We will later use the following definition to characterize sets if a family of functions is given.
 \begin{definition}
 \label{annilatingmeasure}
-Let $\mu$ be a measure and $B$ be a family of measurable function defined on a measurable space $X$.
+Let $\mu$ be a measure and $B$ be a family of measurable functions defined on a measurable space $X$.
 We say that $\mu$ is an \emph{annihilating measure} of $B$ if
 \[
 	\int_X f\ d\mu = 0
 \]
-for all $f$ in $B$. We denote the family of all annihilating measure of $B$ by $B^{\bot}$.
+for all $f$ in $B$. We denote the family of all annihilating measures of $B$ by $B^{\bot}$.
+Sets that are $\mu$-null for all $\mu$ in $B^{\bot}$ are said to be \emph{$B^{\bot}$-null}.
 \end{definition}
-We will specifically be interested in sets that are \emph{$B^{\bot}$-null}.
-That is, sets that are $\mu$-null for all $\mu$ in $B^{\bot}$. 
 \section{Complex analysis}
 \label{index5}
 We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C};\ |z| < 1\}$,
-	the closed unit disk will get no special notation, but will be referred to by $\overline{\mathbb{D}}$,
-	and $\mathbb{T}$ will refer to the open unit circle $\{z \in \mathbb{C};\ |z| = 1\}$.
+	the closed unit disk will get no special notation, but will be denoted by $\overline{\mathbb{D}}$,
+	and $\mathbb{T}$ will be the open unit circle $\{z \in \mathbb{C};\ |z| = 1\}$.
 \subsection{The disk algebra}
 \begin{definition}
 \label{index4}
-A continuous function on $\overline{\mathbb{D}}$ is said to be in the \emph{disk algebra} if it is holomorphic on $\mathbb{D}$.
-We will refer to this family of function $\mathcal{A}$.
+The set of all continuous functions on $\overline{\mathbb{D}}$ which are holomorphic on $\mathbb{D}$ is called the \emph{disk algebra} and we denote it by $\mathcal{A}$.
 \end{definition}
-It can be shown using Morera's theorem that a sequence of holomorphic function that converges uniformly has a holomorphic limit \citep{reynir}.
+It can be shown using Morera's theorem that a sequence of holomorphic functions that converges uniformly has a holomorphic limit \citep{reynir}.
 The same holds for continuous functions.
 So, naturally, we conclude that a sequence of functions in $\mathcal{A}$ that converges uniformly has a limit in $\mathcal{A}$.
 \subsection{The Riemann Mapping Theorem} 
@@ -414,29 +403,24 @@ In complex analysis that is usually holomorphicity.
 The bijections that preserve holomorphicity are therefore of interest, but since the composition of holomorphic functions is holomorphic we only need the following:
 \begin{definition}
 \label{index6}
-A map $f: U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \emph{conformal} if it is holomorphic, bijective, and its inverse is holomorphic.
+% A map $f: U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \emph{conformal} if it is holomorphic, bijective, and its inverse is holomorphic.
+A bijective holomorphic map $f \colon U \rightarrow V$ where $U$ and $V$ are open in $\mathbb{C}$ is said to be \emph{conformal}.
 \end{definition}
-The fact that the inverse is holomorphic is actually redundant.
 It can be shown that a holomorphic bijection has a holomorphic inverse \citep{greenkrantz}.
 
 It is important to state Carathéodory's theorem before looking at the Riemann mapping theorem.
 \begin{definition}
 \label{index7}
-A continuous function $\gamma: [0, 1] \rightarrow \mathbb{C}$ is said to be a \emph{Jordan curve} if $\gamma(0) = \gamma(1)$ and
-\[
-	\gamma(s) = \gamma(t) \implies s = t \tag*{for all $s, t \in ]0, 1[$.}
-\]
+A closed curve $\gamma \colon [a, b] \rightarrow \mathbb{C}$ is said to be a \emph{Jordan curve} or a \emph{simple curve} if it is injective on the half-open interval $[a, b[$.
 \end{definition}
-The definition above can be restated as: A Jordan curve is a closed simple curve.
-The term `simple' here means that the curve is not self-intersecting.
 The name stems from a famous result by Camille Jordan stating that $\mathbb{C} \setminus \gamma([0, 1])$ has two connected components, one of which is simply connected.
 The simply connected component is called \emph{the domain bounded by $\gamma$}.
 The proof of this result is rather technical and outside the scope of this thesis \citep{munkres, greenkrantz}.
 The result is however necessary to make statement such as `let $U$ be the domain bounded by $\gamma$'.
 An example of this is the following theorem:
 \begin{theorem}[Carathéodory]
-Let $\Omega_1$ and $\Omega_2$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $\Phi: \Omega_1 \rightarrow \Omega_2$ be a conformal mapping.
-Then there exists a continuous injection $\hat{\Phi}: \overline{\Omega_1} \rightarrow \overline{\Omega_2}$ that extends $\Phi$.
+Let $U$ and $V$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $f: U \rightarrow V$ be a conformal mapping.
+Then there exists a continuous injection $\hat{f}: \overline{U} \rightarrow \overline{V}$ that extends $f$.
 \end{theorem}
 \label{index8}
 Recall that \emph{$g$ extends $f$} if
@@ -453,33 +437,18 @@ If $U$ is a subset of $\mathbb{C}$, homeomorphic to $\mathbb{D}$, and $U \neq \m
 If $U$ and $V$ are both homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $U$ to $V$.
 \end{corollary}
 \begin{proof}
-The Riemann mapping theorem gives us $\Phi_1$, a conformal mapping from $\mathbb{D}$ to $U$, and $\Phi_2$, a conformal mapping from $\mathbb{D}$ to $V$.
-Since $\Phi_1$ is conformal $\Phi_1^{-1}$ is also bijective, holomorphic with an holomorphic inverse, meaning $\Phi_1^{-1}$ is also conformal.
-The desired conformal mapping from $U$ to $V$ is therefore $\Phi_2 \circ \Phi_1^{-1}$.
+The Riemann mapping theorem gives us $f$, a conformal mapping from $\mathbb{D}$ to $U$, and $f$, a conformal mapping from $\mathbb{D}$ to $V$.
+Since $f$ is conformal $f^{-1}$ is also bijective, holomorphic with an holomorphic inverse, meaning $f^{-1}$ is also conformal.
+The desired conformal mapping from $U$ to $V$ is therefore $g \circ f^{-1}$.
 \end{proof}
 In this thesis the disk algebra $\mathcal{A}$ is of special interest so a version of the Riemann mapping theorem that considers continuity at the boundary is desirable.
 We can combine the Riemann mapping theorem and Carathéodory's theorem to prove the desired result.
-The only thing to prove is that a Jordan curve under a homeomorphism is still a Jordan curve, since boundaries map to boundaries under homeomorphisms..
+Note that a Jordan curve under a homeomorphism is still a Jordan curve (since the composition of injections is an injection) and boundaries map to boundaries under homeomorphisms.
 \begin{corollary}
 \label{contrmt}
 If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a continuous, injective $\Phi: \overline{\mathbb{D}} \rightarrow K$ such that its restriction to $\mathbb{D}$ is a conformal mapping.
 \end{corollary}
 \begin{proof}
-
-Firstly, let
-	$U$ and $V$ be open sets in $\mathbb{C}$,
-	such that $V$ is bounded,
-	$U$ is bounded by a Jordan curve,
-	$\gamma: [0, 1] \rightarrow \partial U$ be that Jordan curve,
-	and $f: U \rightarrow V$ be homeomorphism.
-Let $\lambda = f \circ \gamma$ and $s, t \in ]0, 1[$ such that $\lambda(s) = \lambda(t)$.
-It suffices to show that $s = t$, since $\lambda(0) = \lambda(1)$ obviously holds.
-We have that $f(z) = f(w)$ implies $z = w$, since $f$ is bijective, and therefore injective.
-So $\lambda(s) = (f \circ \gamma)(s) = (f \circ \gamma)(t) = \lambda(t)$ implies that $\gamma(s) = \gamma(t)$.
-But $\gamma$ is a Jordan curve, so $\gamma(s) = \gamma(t)$ implies $s = t$.
-So $\lambda$ is also a Jordan curve. 
-
-We can now prove the corollary.
 Let $f$ be a homeomorphism from $\overline{\mathbb{D}}$ to $K$.
 The Riemann mapping theorem also gives us a conformal map $\Phi: \mathbb{D} \rightarrow f(\mathbb{D})$.
 We know that $\overline{\mathbb{D}}$ is compact, so $K = f(\overline{\mathbb{D}})$ is also compact, since the image of a compact set under a continuous mapping is compact.
@@ -502,12 +471,8 @@ This does not, however, denote an $n$-fold Cartesian product.
 \begin{definition}
 \label{index10}
 Let $X$ be a topological space.
-We say that $X$ is \emph{locally compact} if for each $x \in X$ there exists an open set $U_x$ such that $x \in U_x$ and $\overline{U_x}$ is compact.
-\end{definition}
-\label{index11}
 We will denote by $C(X)$ the continuous functions on $X$.
-\begin{definition}
-\label{index12}
+We say that $X$ is \emph{locally compact} if for each $x \in X$ there exists an open set $U_x$ such that $x \in U_x$ and $\overline{U_x}$ is compact.
 Let $X$ be a locally compact space.
 We say a function $f$ in $C(X)$ \emph{vanishes at infinity} if for all $\varepsilon > 0$ there exists a compact set $K$ such that $|f(x)| < \varepsilon$ for all $x \in X \setminus K$.
 The family of all such functions is referred as $C_0(X)$.
@@ -529,7 +494,8 @@ If $\alpha$ is a linear map from a normed vector space $X$ into a normed vector 
 \begin{enumerate}
 \item[\emph{(i)}] $\alpha$ is bounded.
 \item[\emph{(ii)}] $\alpha$ is continuous.
-\item[\emph{(iii)}] $\alpha$ is continuous at $x \in X$.
+\item[\emph{(iii)}] $\alpha$ is uniformly continuous.
+\item[\emph{(iv)}] $\alpha$ is continuous at $0$.
 \end{enumerate}
 \end{theorem}
 This theorem allows us to use the terms `bounded' and `continuous' interchangeably when talking about linear maps between normed vector spaces.
@@ -537,7 +503,7 @@ A proof of this theorem can be found on page $96$ in \citep{rudin2}.
 
 \label{index14}
 Let's recall what the $L^p$ spaces are.
-Let $X$ be a space with $\sigma$-algebra $\mathcal{F}$, and $\mu$ be a measure on that $\sigma$-algebra.
+Let $(X, \mathcal{F})$ be a measurable space and $\mu$ be a positive measure on $\mathcal{F}$.
 We say a measurable function $f$ is in $\mathcal{L}^1(X, \mu)$ if
 \[
 	\int |f|\ d\mu < +\infty
@@ -553,6 +519,7 @@ The space $L^p(X, \mu)$ has one major benefit over $\mathcal{L}^p(X, \mu)$,
 \]
 is a norm on $L^p(X, \mu)$.
 We sometimes write $L^p(\mu)$ if the space in question is obvious from context and $L^p(X)$ if the measure is obvious from context.
+It can be shown that $L^p(X, \mu)$ is a Banach space \citep[Theorem $3.11$]{rudin2} for $p \geq 1$ and if $p = 2$ it is a Hilbert space.
 \subsection{Hahn-Banach}
 There are many related theorems going by the name `Hahn-Banach Theorem'.
 These are sometimes split in two groups, `separation theorems' and `extension theorems'.
@@ -617,6 +584,72 @@ for all $f \in C_0(X)$ and
 \end{enumerate}
 \end{theorem}
 
+\subsection{The weak topology on $X'$}
+The following discussion is dedicated to the existence of convergent subsequences of a bounded sequence of bounded linear functionals.
+We will therefore, for some infinite $S \subset \mathbb{N}$, define
+\[
+	\lim_{n \in S} a_n = \lim_{n \in \mathbb{N}} a_{s_n}
+\]
+where $s_k$ is the $k$-th smallest element of $S$.
+We similarly define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \mathbb{N}}$ with $(s_n)_{n \in \mathbb{N}}$ defined in the same manner as earlier.
+
+Let $X$ be a Banach space and $X'$ be the space of continuous linear functionals on $X$.
+Note that each $x$ in $X$ gives a linear functional $f_x$ on $X'$ by $f_x(\alpha) = \alpha(x)$.
+We can define a unique coarsest topology such that $f_x$ is continuous for all $x$ in $X$ \citep[Section $3.8$]{rudin4}.
+We will call this topology \emph{the weak topology on $X'$}.
+To start off we have:
+\begin{theorem}[Banach-Alaoglu-Bourbaki]
+Let $X$ be a Banach space.
+Then the closed unit ball
+\[
+	B = \{\alpha \in X' \colon \|\alpha\| \leq 1\}
+\]
+is compact in the weak topology.
+\end{theorem}
+The above theorem does of course not generally provide us with sequential compactness.
+\label{index29}
+Recall that a space is \emph{sequentially compact} if all sequences in it contain a convergent subsequence.
+We do however have equality between sequential compactness and compactness on metric spaces \citep[Theorem $28.2$]{munkres}.
+\begin{lemma}
+\label{weaklemma1}
+Let $X$ be a separable Banach space.
+Then $B$ is metrizable in the weak topology.
+\end{lemma}
+So far we have that all bounded sequences in $X'$ have a convergent subsequence (in the weak topology) if $X$ is a separable Banach space.
+This becomes more workable with:
+\begin{lemma}
+\label{weaklemma2}
+Let $X$ be a Banach space and $(\alpha_n)_{n \in \mathbb{N}}$ be a sequence in $X'$ that converges in the weak topology.
+Then $(\alpha_n(x))_{n \in \mathbb{N}}$ is convergent for all $x$ in $X$.
+\end{lemma}
+We can now put all this together.
+\begin{lemma}
+\label{FMRlemma31}
+Let $X$ be a separable Banach space,
+	$(\Gamma_n)_{n \in \mathbb{N}}$ be a sequence in $X'$,
+	and $\sup_n \|\Gamma_n\| = M < +\infty$.
+Then there exists an infinite $S \subset \mathbb{N}$ such that the limit
+\[
+	\lim_{k \rightarrow +\infty} \Gamma_{s_k}\ x
+\]
+exists for every $x$ in $X$.
+% Furthermore, $\Gamma$ is linear and $\|\Gamma\| \leq M$.
+\end{lemma}
+\begin{proof}
+We may assume that $M = 1$.
+The sequence $(\Gamma_n)_{n \in \mathbb{N}}$ is then contained in $B$.
+We have by the Banach-Alaoglu-Bourbaki theorem along with lemma \ref{weaklemma1} that there exists an infinite $S \subset \mathbb{N}$ such that $(\Gamma_n)_{n \in S}$ converges in the weak topology.
+Lemma \ref{weaklemma2} finally tells us that the limit
+\[
+	\lim_{k \rightarrow +\infty} \Gamma_{s_k}\ x
+\]
+exists for all $x$ in $X$.
+\end{proof}
+Let's now define a function on $X$ by
+\[
+	\Gamma(x) = \lim_{k \rightarrow +\infty} \Gamma_{s_k}(x).
+\]
+One form of the Banach-Steinhaus theorem states that $\Gamma$ is linear and $\|\Gamma\| \leq M$ \citep[Corollary $10.6$]{pryce}.
 
 
 
@@ -626,7 +659,7 @@ for all $f \in C_0(X)$ and
 The main result of this section is that the annihilating measures of 
 \[
 \label{index17}
-	\mathcal{A}|_{\mathbb{T}} = \{f|_{\mathbb{T}};\ f \in \mathcal{A}\}
+	\mathcal{A}|_{\mathbb{T}} = \{f|_{\mathbb{T}} \colon f \in \mathcal{A}\}
 \]
 are absolutely continuous with respect to the Lebesgue measure.
 We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of \citep{rudin2}.
@@ -635,13 +668,11 @@ We will need the following definition for one of those theorems.
 \begin{definition}
 \label{index18}
 Let $\mathcal{F}$ be a family of complex functions on a metric space $(X, d)$.
-
 We say that the family is \emph{pointwise bounded} if for all $x \in X$ there exists a constant $M < +\infty$ such that
 \[
 	|f(x)| < M,\text{ for all } f \in \mathcal{F}.
 \]
 Note that $M$ may depend on $x$.
-
 We say that the family is \emph{equicontinuous} if for all $\varepsilon > 0$ there exists a $\delta > 0$ such that
 \[
 	|f(x) - f(y)| < \varepsilon,\text{ for all } f \in \mathcal{F}\text{ and } x, y \in X\text{ such that } d(x, y) < \delta.
@@ -776,15 +807,18 @@ This stems from the fact that
 \]
 A benefit of this rewrite is that $P(\ \cdot\ , e^{i\theta})$ is defined on $\mathbb{D}$.
 
-For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} as the function on $\mathbb{D}$ by
+For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} as a function on $\mathbb{D}$ by
 \[
-	P[f](z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(e^{it})P(z, e^{it})\ dt.
+	P[f](z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} P(z, e^{it}) f(e^{it})\ dt.
 \]
 
-For a measure $\mu$ on $\mathbb{T}$ we define \emph{the Poisson integral of $\mu$} as the function on $\mathbb{D}$ by
+For a measure $\mu$ on $\mathbb{T}$ we define \emph{the Poisson integral of $\mu$} as a function on $\mathbb{D}$ by
 \[
 	P[d\mu](z) = \int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it}).
 \]
+We write the above integral as if it is over $\mathbb{T}$ out of convention.
+This technically incorrect as the variable $t$ belongs to some interval in $\mathbb{R}$ of length $2\pi$, but not $\mathbb{T}$.
+This notation is also more readable than $\int_{[-\pi, \pi]}$ and writing $\int_{-\pi}^{\pi}$ does not take into consideration the possibility of singletons having a non-zero measure with regards to $\mu$.
 
 Let's take a look at some of the properties of the Poisson kernel and Poisson integral.
 \end{definition}
@@ -797,18 +831,15 @@ It will also come of use to know that for $n \neq 0$
 \[
 	in\int_{-\pi}^{\pi} e^{int}\ dt
 	= (e^{in\pi} - e^{-in\pi})
-	= (e^{in\pi} - e^{-i(2n\pi - n\pi)})
-	= (e^{in\pi} - e^{in\pi})
 	= 0,
 \]
 so
 \begin{align*}
 	\int_{-\pi}^{\pi} P_r(t)\ dt
-	&= \int_{-\pi}^{\pi} \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}\ dt\\
-	&= \sum_{n \in \mathbb{Z}} \int_{-\pi}^{\pi} r^{|n|}e^{int}\ dt\\
-	&= \int_{-\pi}^{\pi} r^{|0|}e^{0}\ dt\\
-	&= \int_{-\pi}^{\pi}\ dt\\
-	&= 2\pi.
+	= \int_{-\pi}^{\pi} \sum_{n \in \mathbb{Z}} r^{|n|}e^{int}\ dt
+	= \sum_{n \in \mathbb{Z}} \int_{-\pi}^{\pi} r^{|n|}e^{int}\ dt
+	= \int_{-\pi}^{\pi} r^{|0|}e^{0}\ dt
+	= 2\pi.
 \end{align*}
 This naturally leads us to the following lemma:
 \begin{lemma}
@@ -820,13 +851,13 @@ Then
 \]
 \end{lemma}
 \begin{proof}
-This can be obtained by simple computations,
+This can be obtained by the Tonelli-Fubini theorem
 \begin{align*}
 	\|u_r\|_1
 	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} |u(re^{i\theta})|\ d\theta\\
 	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} \left | \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d\mu(e^{it}) \right | d\theta\\
-	&\leq \frac{1}{2\pi} \int_{-\pi}^{\pi} \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d|\mu(e^{it})| d\theta\\
-	&= \int_{\mathbb{T}} \frac{1}{2\pi} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it})\ d\theta d|\mu(e^{it})|\\ 
+	&\leq \frac{1}{2\pi} \int_{-\pi}^{\pi} \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d|\mu|(e^{it}) d\theta\\
+	&= \int_{\mathbb{T}} \frac{1}{2\pi} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it})\ d\theta d|\mu|(e^{it})\\ 
 	&= \int_{\mathbb{T}}\ d|\mu(e^{it})|\\
 	&= |\mu|(\mathbb{T})\\
 	&= \|\mu\|.
@@ -856,8 +887,8 @@ Let $u$ be harmonic on $\mathbb{D}$ and
 Then there exists a unique function $f$ in $L^2(\mathbb{T})$ such that $u = P[f]$.
 \end{lemma}
 We will need the following lemma in the proofs of \ref{FMRlemma3} and \ref{FMRlemma3b}:
+% rm below
 \begin{lemma}
-\label{FMRlemma31}
 Let $X$ be a separable Banach space,
 	$(\Gamma_n)_{n \in \mathbb{N}}$ be a sequence of linear functionals on $X$,
 	and $\sup_n \|\Gamma_n\| = M < +\infty$.
@@ -908,16 +939,16 @@ Lastly
 	&= M.
 \end{align*}
 \end{proof}
-\begin{proof}[Proof of \ref{FMRlemma3}]
+\begin{proof}[Proof of lemma \ref{FMRlemma3}]
 Let $\Gamma_r$, for $r \in [0, 1[$, be linear functionals on $C(\mathbb{T})$ defined by
 \[
 	\Gamma_r g = \int_{\mathbb{T}} gu_r\ d\sigma.
 \]
 If $\|g\| \leq 1$ is assumed we get that
 \[
-\Gamma_r\ g = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} u_r\ d\sigma = \|u_r\|_1 \leq M.
+\Gamma_r\ g = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} u_r\ d\sigma = \|u_r\|_1 \leq M
 \]
-so
+so $\Gamma_r$ is bounded with
 \[
 	\|\Gamma_r\| \leq M.
 \]
@@ -976,12 +1007,10 @@ If we let $r \rightarrow 1$ we get
 \]
 This holds for all $f \in C(\mathbb{T})$, so the measure $\mu$ represents zero in the dual of $C(\mathbb{T})$.
 The Riesz representation theorem then tells us that $|\mu|(\mathbb{T}) = 0$, so $\mu = 0$.
-
-Now let $\lambda$ and $\nu$ be measures on $\mathbb{T}$ such that $P[d\lambda] = P[d\nu]$.
-We have that $P[d(\lambda - \nu)] = 0$, so, as shown above $\lambda - \nu = 0$.
-Moreover $\lambda = \nu$, which concludes the proof of uniqueness.
+We have now shown that the only measure that maps to $0$ by the linear map $\mu \mapsto P[d\mu]$ is the zero measure, so the map is injective.
+That is, if $P[d\mu] = P[d\lambda]$ then $\mu = \lambda$.
 \end{proof}
-\begin{proof}[Proof of \ref{FMRlemma3b}]
+\begin{proof}[Proof of lemma \ref{FMRlemma3b}]
 The proof of existence is almost identical to the proof of existence in \ref{FMRlemma3} and the uniqueness is shown in the same manner.
 The differences between the existence proofs are in the beginning when we are choosing what function spaces we use and which theorems to references.
 Now we define $\Gamma_r$ in the same way, except we define it on $L^2(\mathbb{T})$.
@@ -1374,7 +1403,7 @@ But the preimage is a (possibly uncountable) union of half-open intervals so it 
 So $g$ is measurable.
 To show that $f$ is measurable it suffices to show that $P_{\lambda} = \{x \in [0, 1];\ f(x) < \lambda\}$ is measurable for all $\lambda$ in $[0, +\infty]$ \citep[lemma $1.3.9$]{tao}.
 This trivially holds, since $P_{\lambda}$ is open.
-\begin{proof}[Proof of \ref{mylemma}]
+\begin{proof}[Proof of lemma \ref{mylemma}]
 We may assume that $H$ is not empty, since the statement holds vacuously if that were the case.
 We can also assume without loss of generality that $1$ is in $H$.
 We can now use the injection $e^{it} \mapsto t/(2\pi)$, for $t \in [0, 2\pi[$,  to map $H$ to $H'$ a subset of $[0, 1]$ of Lebesgue-measure zero.
@@ -1484,7 +1513,7 @@ We can now define
 If we then look at $\lambda_n = f - \sum_{k = 0}^nf_k = \lambda_{n - 1} - f_n$ we see that $\lambda_n(E) \subset 2^{-n}S$ due to the way we decomposed $E$ into $E_1, E_2, ..., E_p$ using the oscillations of $\lambda_{n - 1}$.
 This means we can continue the process.
 \end{proof}
-\begin{proof}[Proof of \ref{rudincarleson}]
+\begin{proof}[Proof of theorem \ref{rudincarleson}]
 Let's first show the result for $T = S$.
 
 Let $f_n$ be the functions from Lemma \ref{rudinlemma3}.
@@ -1625,7 +1654,7 @@ Now $F \in B$,
 \]
 and $F = f$ on $S$.
 \end{proof}
-\begin{proof}[Proof of \ref{bishopstheorem}]
+\begin{proof}[Proof of theorem \ref{bishopstheorem}]
 Let $B_0$ be the closed subspace of $C(X)$ consisting of function $g$ such that $\Xi \cdot g \in B$.
 We have that $B_0^{\bot} = B^{\bot}$, since $\Xi > 0$.
 So we can use Lemma \ref{bishoplemma} for $B_0$ instead of $B$ and $f/\Xi$ instead of $f$.
@@ -1775,8 +1804,8 @@ holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{
 \indexitem{$B^{\bot}$}{annilatingmeasure}
 \indexitem{Bounded linear functionals}{index13}
 %
-\indexitem{$C(X)$}{index11}
-\indexitem{$C_0(X)$}{index12}
+\indexitem{$C(X)$}{index10}
+\indexitem{$C_0(X)$}{index10}
 \indexitem{Conformal}{index6}
 %
 \indexitem{$\mathbb{D}$}{index5}
@@ -1794,7 +1823,7 @@ holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{
 \indexitem{$H^p$}{index24}
 \indexitem{$H_H$}{index28}
 \indexitem{Holomorphic in $\mathbb{C}^n$}{index9}
-\indexitem{Hölder}{index16}
+\indexitem{Hölder's inequality}{index16}
 %
 \indexitem{Jordan curve}{index7}
 %
@@ -1820,6 +1849,7 @@ holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{
 %
 \indexitem{$S$}{index26}
 \indexitem{Separable}{index23}
+\indexitem{Sequentially compact}{index29}
 %
 \indexitem{$\mathbb{T}$}{index5}
 \indexitem{$\mathbb{T}^n$}{index9}

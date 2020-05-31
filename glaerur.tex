@@ -1,0 +1,140 @@
+\documentclass{beamer}
+\usefonttheme[onlymath]{serif}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, icelandic]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathabx}
+\usepackage{parskip}
+\usepackage{mathtools}
+
+\renewcommand\Im{\operatorname{Im}}
+\renewcommand\Re{\operatorname{Re}}
+
+\title{Rudin-Carleson theorems}
+\author{Bergur Snorrason}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+	\frametitle{Extensions}
+\begin{definition}
+If $f \colon A \rightarrow X$, $g \colon B \rightarrow X$, $A \subset B$ and $f = g$ on $A$, then we say $g$ extends $f$. \\
+We will use the following to denote common sets in $\mathbb{C}$.
+\begin{enumerate}
+\item[$\cdot$] $\mathbb{D} = \{z \in \mathbb{C} \colon |z| < 1\}$
+\item[$\cdot$] $\overline{\mathbb{D}} = \{z \in \mathbb{C} \colon |z| \leq 1\}$
+\item[$\cdot$] $\mathbb{T} = \{z \in \mathbb{C} \colon |z| = 1\}$
+\end{enumerate}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Tietze}
+\begin{theorem}[Tietze]
+Let $X$ be a normal space and $A$ be a subset of $X$.
+For any continuous function $f \colon A \rightarrow \mathbb{R}$ there exists a $g \colon X \rightarrow \mathbb{R}$ that extends it.
+\end{theorem}
+\begin{theorem}[Tietze]
+Let $X$ be a normal space and $A$ be a subset of $X$.
+For any continuous function $f \colon A \rightarrow [a, b]$ there exists a $g \colon X \rightarrow [a, b]$ that extends it.
+\end{theorem}
+An example of a normal space is any metric space.
+\end{frame}
+
+%\begin{frame}
+	%\frametitle{Carathéodory}
+%\begin{theorem}[Carathéodory]
+%If $\Omega_1$ and $\Omega_2$ are open subsets of $\mathbb{C}$ each bounded by a simple, closed curve and $f \colon \Omega_1 \rightarrow \Omega_2$ is a holomorphic bijection then there exists a continuous injection $g \colon \overline{\Omega_1} \rightarrow \overline{\Omega_2}$ that extends $f$.
+%\end{theorem}
+%\end{frame}
+
+\begin{frame}
+	\frametitle{The Dirichlet problem (on the unit disk in $\mathbb{R}^2$)}
+Given a continuous function $f \colon \{x \in \mathbb{R}^2;\ \|x\| = 1\} \rightarrow \mathbb{R}$ can you find a continuous function $u$ on the closed unit disk that's harmonic on the open unit disk and extends $f$?
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rudin-Carelson}
+\begin{theorem}[Rudin-Carelson]
+Let
+	$E \subset \mathbb{T}$ be a closed set such that $m(E) = 0$, where $m$ is the Lebesgue-measure on $\mathbb{T}$, 
+	$f \colon E \rightarrow \mathbb{C}$ be continuous,
+	and $T$ be a subset of $\mathbb{C}$ homeomorphic to $\overline{\mathbb{D}}$ such that $f(E) \subset T$.
+There exists a continuous function $g \colon \overline{\mathbb{D}} \rightarrow \mathbb{C}$ that extends $f$, is holomorphic on $\mathbb{D}$ and $g(\overline{\mathbb{D}}) \subset T$.
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bishop}
+\begin{theorem}[Bishop]
+Let
+\begin{enumerate}
+\item $X$ be a compact Hausdorff space,
+\item $B$ be a closed subspace of $(C(X), \| \cdot \|_{\infty})$,
+\item $S$ be a closed subset of $X$ that is $B^{\bot}$-null,
+\item $f$ be a continuous function on $S$,
+\item $\Xi: X \rightarrow [0, +\infty[$ be a continuous function such that $|f| < \Xi$ on $S$.
+\end{enumerate}
+Then there exists a function $F \in B$ that extends $f$ and $|F| < \Xi$ on $X$. \\
+Note that for $S$ to be $B^{\bot}$-null it has to be a null set with regards to all complex measures $\mu$ such that
+\[
+	\int f\ d\mu = 0 \tag*{for all $f$ in $B$.}
+\]
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Rudin-Carleson as a corollary of Bishop's theorem}
+\begin{theorem}[F. and M. Riesz]
+Let $\mu$ be a complex measure on $\mathbb{T}$ such that
+\[
+	\int_{\mathbb{T}} e^{-int}\ d\mu = 0
+\]
+holds for $n = -1, -2, ...$.
+Then $\mu \lll m$.
+That is, if $E \subset \mathbb{T}$ is $m$-null then $E$ is also $\mu$-null.
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Regarding the proof of Bishop's theorem}
+When proving Bishop's theorem we use that
+\[
+	\int_S f\ d\mu = 0
+\]
+holds generally for $\mu$ in $B^{\bot}$ and
+\[
+	\int_S (f - F)\ d\mu = 0
+\]
+holds generally for $\mu$ in $B^{\bot}$ and $F$ in $B$.
+% Choosing these condition instead of the $B^{\bot}$-null condition gives us
+\end{frame}
+
+\begin{frame}
+	\frametitle{Alternative version of Bishop}
+\small
+\begin{theorem}
+Let $X$ and $B$ be as in Bishop's theorem, $S$ be a closed subset of $X$ and $f$ be a continuous function on $S$.
+If
+\[
+	\int_S f\ d\mu = 0
+\]
+holds for all $\mu$ in $B^{\bot}$ and
+\[
+	\int_S G\ d\mu = 0
+\]
+holds for all $\mu$ in $B^{\bot}$ and all $G$ in $B$ then there exists a function $F$ in $B$ that extends $f$.
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Blank slide}
+\end{frame}
+
+\end{document}
