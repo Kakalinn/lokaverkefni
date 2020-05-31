@@ -256,30 +256,30 @@ I would like to thank Sandra for her unbounded support.
 \setcounter{page}{1}
 \chapter{Introduction}
 Lennart Carleson and Walter Rudin gave, independently in $1957$ and $1956$ respectively, a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that each continuous function thereon could be extended continuously onto the closed unit disk such that its restriction to the open unit disk is holomorphic \citep{rudin, carleson}.
-This can be seen as a strengthened result of Fatou's interpolation theorem \citep{fatou} (this interplay is discussed briefly and more generally in section \ref{section4}).
+This can be seen as a strengthened result of Fatou's interpolation theorem \citep{fatou} (this interplay is discussed briefly and more generally in Section \ref{section4}).
 Errett Bishop then generalized the Rudin-Carleson theorem in $1962$ by giving sufficient condition for a set such that a continuous function thereon can always be extended in a similar sense \citep{bishop}.
-Here the condition on the set is given in terms of the annihilating measures (see definition \ref{annilatingmeasure}) of the family of functions we want to extend into.
+Here the condition on the set is given in terms of the annihilating measures (see Definition \ref{annilatingmeasure}) of the family of functions we want to extend into.
 The result of Bishop doesn't just generalize the Rudin-Carleson theorem (allowing, for example, similar studies in higher dimensions) but also shows the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem \citep{fandmriesz}.
 
-We start by proving the F. and M. Riesz theorem in section \ref{section1}, which states a sufficient condition on a measure on the unit circle such that it is absolutely continuous with regards to the Lebesgue-measure on the unit circle.
+We start by proving the F. and M. Riesz theorem in Section \ref{section1}, which states a sufficient condition on a measure on the unit circle such that it is absolutely continuous with regards to the Lebesgue-measure on the unit circle.
 To achieve this some study of the Poisson kernel is needed.
 The Poisson kernel is classically used to find harmonic functions on the unit disk with given continuous boundary values.
-It is used to this end in the proof of the Rudin-Carleson theorem presented in section \ref{section2}, but its place in the proof of the F. and M. Riesz theorem is less standard.
+It is used to this end in the proof of the Rudin-Carleson theorem presented in Section \ref{section2}, but its place in the proof of the F. and M. Riesz theorem is less standard.
 
-The Rudin-Carleson theorem is proved in section \ref{section2}.
+The Rudin-Carleson theorem is proved in Section \ref{section2}.
 It is done in the same way Rudin did in his original paper.
 Some effort is put into showing the existence of a continuous integrable function on $\mathbb{T}$ that takes value $+\infty$ on a prescribed closed set of Lebesgue-measure zero.
 
-In section \ref{section3} Bishop's generalization of the Rudin-Carleson theorem is stated and proved.
+In Section \ref{section3} Bishop's generalization of the Rudin-Carleson theorem is stated and proved.
 This is also done in the same way Bishop did in his paper.
 The original Rudin-Carleson theorem is then shown to be a corollary of Bishop's theorem and the F. and M. Riesz theorem.
 
-The final two sections, section \ref{section4} and section \ref{section5}, look at how Bishop's theorem fits into complex analysis in several variables and states an alternative version of Bishop's theorem.
+The final two sections, Section \ref{section4} and Section \ref{section5}, look at how Bishop's theorem fits into complex analysis in several variables and states an alternative version of Bishop's theorem.
 This alternative version of Bishop's theorem relaxes the condition on the set where the function we want to extend is defined by not requiring that every continuous function thereon can be extended.
 \chapter{Preliminaries}
 \section{Measure theory}
 During introductory courses in measure theory the focus is often solely on positive measures \citep{tao}, which are then simply referred to as `measures'.
-This restriction is immediately felt when studying functional analysis (see for example \ref{riesz}).
+This restriction is immediately felt when studying functional analysis (see for example Theorem \ref{riesz}).
 We, therefore, need the following definitions:
 \begin{definition}
 \label{index1}
@@ -355,7 +355,7 @@ We define
 \]
 for any scalar $c$ and measurable $E$.
 Both of these are obviously measures so the measures on a common $\sigma$-algebra form a vector space.
-This vector space is also normed with the norm \label{index3} $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on, since $|\mu(X)| < \infty$ always holds \citep[Theorem $6.4$]{rudin2}, and it is Banach if $X$ is locally compact (see definition \ref{index10}) \citep[Exercise $3$, chapter $6$]{rudin2}.
+This vector space is also normed with the norm \label{index3} $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on, since $|\mu(X)| < \infty$ always holds \citep[Theorem $6.4$]{rudin2}, and it is Banach if $X$ is locally compact (see Definition \ref{index10}) \citep[Exercise $3$, chapter $6$]{rudin2}.
 
 
 We won't get far with complex measures without defining integration.
@@ -391,6 +391,7 @@ We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C};\ |z
 \label{index4}
 The set of all continuous functions on $\overline{\mathbb{D}}$ which are holomorphic on $\mathbb{D}$ is called the \emph{disk algebra} and we denote it by $\mathcal{A}$.
 \end{definition}
+The set $\mathcal{A}$ is a closed subalgebra of the Banach algebra of continuous function on $\overline{\mathbb{D}}$ with the supremum norm.
 It can be shown using Morera's theorem that a sequence of holomorphic functions that converges uniformly has a holomorphic limit \citep{reynir}.
 The same holds for continuous functions.
 So, naturally, we conclude that a sequence of functions in $\mathcal{A}$ that converges uniformly has a limit in $\mathcal{A}$.
@@ -523,7 +524,7 @@ It can be shown that $L^p(X, \mu)$ is a Banach space \citep[Theorem $3.11$]{rudi
 \subsection{Hahn-Banach}
 There are many related theorems going by the name `Hahn-Banach Theorem'.
 These are sometimes split in two groups, `separation theorems' and `extension theorems'.
-When proving \ref{bishopstheorem} we need the following Hahn-Banach separation theorem:
+When proving Theorem \ref{bishopstheorem} we need the following Hahn-Banach separation theorem:
 \begin{theorem}[\citep{pryce}]
 Let
 	$X$ be a compact space,
@@ -584,14 +585,9 @@ for all $f \in C_0(X)$ and
 \end{enumerate}
 \end{theorem}
 
-\subsection{The weak topology on $X'$}
+\subsection{The weak topology on the dual space $X'$}
 The following discussion is dedicated to the existence of convergent subsequences of a bounded sequence of bounded linear functionals.
-We will therefore, for some infinite $S \subset \mathbb{N}$, define
-\[
-	\lim_{n \in S} a_n = \lim_{n \in \mathbb{N}} a_{s_n}
-\]
-where $s_k$ is the $k$-th smallest element of $S$.
-We similarly define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \mathbb{N}}$ with $(s_n)_{n \in \mathbb{N}}$ defined in the same manner as earlier.
+We will therefore, for some infinite $S \subset \mathbb{N}$, define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \mathbb{N}}$, where $s_k$ is the $k$-th smallest element of $S$.
 
 Let $X$ be a Banach space and $X'$ be the space of continuous linear functionals on $X$.
 Note that each $x$ in $X$ gives a linear functional $f_x$ on $X'$ by $f_x(\alpha) = \alpha(x)$.
@@ -628,28 +624,28 @@ We can now put all this together.
 Let $X$ be a separable Banach space,
 	$(\Gamma_n)_{n \in \mathbb{N}}$ be a sequence in $X'$,
 	and $\sup_n \|\Gamma_n\| = M < +\infty$.
-Then there exists an infinite $S \subset \mathbb{N}$ such that the limit
+Then there exists an infinite $S \subset \mathbb{N}$ such that the function defined by
 \[
-	\lim_{k \rightarrow +\infty} \Gamma_{s_k}\ x
+	\Gamma(x) = \lim_{k \rightarrow +\infty} \Gamma_{s_k}(x)
 \]
-exists for every $x$ in $X$.
-% Furthermore, $\Gamma$ is linear and $\|\Gamma\| \leq M$.
+is well defined  every $x$ in $X$.
+Furthermore, $\Gamma$ is linear and $\|\Gamma\| \leq M$.
 \end{lemma}
 \begin{proof}
 We may assume that $M = 1$.
 The sequence $(\Gamma_n)_{n \in \mathbb{N}}$ is then contained in $B$.
-We have by the Banach-Alaoglu-Bourbaki theorem along with lemma \ref{weaklemma1} that there exists an infinite $S \subset \mathbb{N}$ such that $(\Gamma_n)_{n \in S}$ converges in the weak topology.
+We have by the Banach-Alaoglu-Bourbaki theorem along with Lemma \ref{weaklemma1} that there exists an infinite $S \subset \mathbb{N}$ such that $(\Gamma_n)_{n \in S}$ converges in the weak topology.
 Lemma \ref{weaklemma2} finally tells us that the limit
 \[
-	\lim_{k \rightarrow +\infty} \Gamma_{s_k}\ x
+	\lim_{k \rightarrow +\infty} \Gamma_{s_k}(x)
 \]
 exists for all $x$ in $X$.
-\end{proof}
 Let's now define a function on $X$ by
 \[
 	\Gamma(x) = \lim_{k \rightarrow +\infty} \Gamma_{s_k}(x).
 \]
 One form of the Banach-Steinhaus theorem states that $\Gamma$ is linear and $\|\Gamma\| \leq M$ \citep[Corollary $10.6$]{pryce}.
+\end{proof}
 
 
 
@@ -663,129 +659,7 @@ The main result of this section is that the annihilating measures of
 \]
 are absolutely continuous with respect to the Lebesgue measure.
 We will show this to be a corollary of the F. and M. Riesz theorem, which we will prove in the manner of \citep{rudin2}.
-We will start off with two famous theorems from analysis. 
-We will need the following definition for one of those theorems.
-\begin{definition}
-\label{index18}
-Let $\mathcal{F}$ be a family of complex functions on a metric space $(X, d)$.
-We say that the family is \emph{pointwise bounded} if for all $x \in X$ there exists a constant $M < +\infty$ such that
-\[
-	|f(x)| < M,\text{ for all } f \in \mathcal{F}.
-\]
-Note that $M$ may depend on $x$.
-We say that the family is \emph{equicontinuous} if for all $\varepsilon > 0$ there exists a $\delta > 0$ such that
-\[
-	|f(x) - f(y)| < \varepsilon,\text{ for all } f \in \mathcal{F}\text{ and } x, y \in X\text{ such that } d(x, y) < \delta.
-\]
-Note here that $\delta$ is globally defined and only dependent on $\varepsilon$.
-\end{definition}
-
-\label{index19}
-The following theorems are focused on the existence of convergent subsequences.
-We will therefore, for some infinite $S \subset \mathbb{N}$, define
-\[
-	\lim_{n \in S} a_n = \lim_{n \in \mathbb{N}} a_{s_n}
-\]
-where $s_k$ is the $k$-th smallest element of $S$.
-We similarly define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \mathbb{N}}$ with $(s_n)_{n \in \mathbb{N}}$ defined in the same manner as earlier.
-\begin{theorem}[Bolzano-Weierstrass]
-%                                                                                           v This has to be weak because of (M, M, M, M, M, M, ...)
-Let $(a_n)_{n \in \mathbb{N}}$ be a sequence of numbers in $\mathbb{R}^n$, such that $|a_n| < M < +\infty$, for all $k \in \mathbb{N}$.
-There then exists an infinite $S \subset \mathbb{N}$ such that $(a_n)_{n \in S}$ is convergent.
-\end{theorem}
-\begin{proof}
-Let's first assume that the sequence is in $\mathbb{R}$,
-	that no element in it is repeated infinitely often (there is nothing to prove in that case),
-	and that $a_n \in ]0, 1[$ for all $n \in \mathbb{N}$.
-The last assumption can be done without loss of generality by studying the sequence $((a_n + M)/(2M))_{n \in \mathbb{N}}$ instead.
-We will obtain the subsequence by a diagonal process.
-Let $S_0 = \mathbb{N}$, $S_0^- = \{n \in S_0;\ a_n < 1/2\}$, and $S_0^+ = \{n \in S_0;\ a_n > 1/2\}$.
-We then set $S_1 = S_0^-$ if it is infinite, but $S_1 = S_0^+$ otherwise.
-This gives us a subsequence $(a_n)_{n \in S_1}$ such that
-\[
-	\sup_{n \in S_1} a_n - \inf_{n \in S_1} a_n < 1/2.
-\]
-We can then repeat this to get a sequence of sets $(S_n)_{n \in \mathbb{N}}$ such that $S_0 \supset S_1 \supset S_2 \supset...$ and 
-\[
-	\sup_{n \in S_k} a_n - \inf_{n \in S_k} a_n < 2^{-k},
-\]
-for all $k \in \mathbb{N}$.
-Specifically, if we have $S_k$ we set
-\[
-	L = m2^{-k},\ 
-	U = (m + 1)2^{-k},
-\]
-$S_k^- = \{n \in S_k;\ a_n < (U + L)/2\}$, and $S_k^+ = \{n \in S_k;\ a_n > (U + L)/2\}$, where $m$ is chosen such that $S_k$ is in $]L, U[$.
-We now set $S_{k + 1} = S_k^-$ if it has infinitely many elements, otherwise we set $S_{k + 1} = S_k^+$.
-We conclude our construction by setting
-\[
-	S = \bigcup_{n \in \mathbb{N}} s_n,
-\]
-where $s_n$ is the $n$-th smallest element of $S_n$.
-This gives us the convergent sequence $(a_n)_{n \in S}$ with limit
-\[
-	\sum_{k = 0}^{+\infty} \delta_k 2^{-k}
-\]
-where
-\[
-	\delta_k = \left \{
-	\begin{array}{c c}
-		0,\ & \text{if we chose } S_k^- \\
-		1,\ & \text{if we chose } S_k^+
-	\end{array}.
-	\right .
-\]
-
-To show the result for $\mathbb{R}^n$ we can start by finding a subsequence such that the first coordinate is convergent.
-We can then choose a subsequence thereof such that the second coordinate is also convergent.
-Now the first two coordinates are convergent.
-If we do this $n - 2$ more times we get a desired subsequence.
-\end{proof}
-We are mostly concerned with the case $n = 2$ since our interest is in $\mathbb{C}$.
-\begin{theorem}[Ascoli-Arzela]
-Let $\mathcal{F}$ be a pointwise bounded equicontinuous collection of complex functions on a separable metric space $(X, d)$.
-Then every sequence in $\mathcal{F}$ contains a subsequence that converges uniformly on every compact subsets of $X$.
-\end{theorem}
-\label{index23}
-Recall that $X$ is separable if it contains a countable dense subset.
-\begin{proof}
-Let $E$ be a countable dense subset of $X$,
-	$(f_n)_{n \in \mathbb{N}}$ be a series in $\mathcal{F}$,
-	and $x_1, x_2, ...$ be an enumeration of $E$.
-We will prove the theorem in two steps.
-The first step is finding a subsequence of $(f_n)_{n \in \mathbb{N}}$ that's pointwise convergent on $E$ using the pointwise boundedness along with Bolzano-Weierstrass.
-The second step is using the equicontinuity to show that this gives us uniform continuity on compact subsets.
-
-Let's first set $S_0 = \mathbb{N}$.
-Pointwise boundedness gives us that the sequence $(f_n(x_1))_{n \in S_0}$ has a convergent subsequence.
-Let $S_1$ index that subsequence.
-We can use this process to generate sets $S_0 \supset S_1 \supset ...$ such that $(f_n(x_k))_{n \in S_k}$ is convergent.
-We then set
-\[
-	S = \bigcup_{k \in \mathbb{N}} s_k
-\]
-where $s_k$ is the $k$-th smallest element of $S_k$.
-We now have concluded the first step of the proof.
-
-We will now assume that $(f_n)_{n \in \mathbb{N}}$ is pointwise convergent on $E$,
-	let $K$ be a compact subset of $X$, and
-	$\varepsilon > 0$.
-Equicontinuity gives us a $\delta > 0$ such that $d(x, y) < \delta$ implies that $|f_n(x) - f_n(y)| < \varepsilon /3$, for all $n$.
-Let's now cover $K$ with $m$ open balls of radius $\delta /2$ and call the $k$-th ball $B_k$.
-We can set $p_k$ as a point in $B_k \cap E$, because $E$ is dense in $X$.
-Pointwise convergence on $E$ lets us chose an $N$ such that $|f_{n_1}(p_k) - f_{n_2}(p_k)| < \varepsilon /3$ for $k = 1, 2, ..., m$ and all $n_1, n_2 > N$.
-Let's conclude by setting $x \in K$.
-Then there is a $k$ such that $x \in B_k$ and thus $d(x, p_k) < \delta$.
-The choice of $\delta$ and $N$ then gives us that
-\begin{align*}
-	|f_{n_1}(x) - f_{n_2}(x)|
-	& \leq |f_{n_1}(x) - f_{n_1}(p_k)| + |f_{n_1}(p_k) - f_{n_2}(p_k)| + |f_{n_2}(p_k) - f_{n_2}(x)|\\
-	& < \varepsilon /3 + \varepsilon /3 + \varepsilon /3 \\
-	& = \varepsilon.
-\end{align*}
-\end{proof}
-
-We will need a few results from the study of Poisson integrals to prove the F. and M. Riesz theorem.
+First, we need a few results from the study of Poisson integrals to prove the F. and M. Riesz theorem.
 \label{index22}
 It will be useful to take, for some $0 < r < 1$, a function defined on $r\mathbb{T}$ and stretch it to be defined on $\mathbb{T}$.
 Concretely, if $f: r\mathbb{T} \rightarrow \mathbb{C}$ then $f_r: \mathbb{T} \rightarrow \mathbb{C}$ is defined by $f_r(z) = f(rz)$.
@@ -866,7 +740,7 @@ This can be obtained by the Tonelli-Fubini theorem
 The main reason we are developing these tools, as stated before, is to prove the F. and M. Riesz theorem.
 The theorem gives us a sufficient condition for when a measure $\mu$ (on $\mathbb{T}$) is absolutely continuous with regards to the Lebesgue-measure (on $\mathbb{T}$).
 The proof is conceptually simple, we let $f$ be the Poisson integral of $\mu$ and $h$ be a function such that its Poisson integral is $f$.
-We then show that $d\mu = h\ dm$. % TODO hvað á eiginlega Lebesgue-málið að heita?!
+We then show that $d\mu = h\ dm$.
 The following lemmas show that all this is in fact possible.
 \begin{lemma}
 %11.30(a) in Rudin
@@ -886,67 +760,15 @@ Let $u$ be harmonic on $\mathbb{D}$ and
 \]
 Then there exists a unique function $f$ in $L^2(\mathbb{T})$ such that $u = P[f]$.
 \end{lemma}
-We will need the following lemma in the proofs of \ref{FMRlemma3} and \ref{FMRlemma3b}:
-% rm below
-\begin{lemma}
-Let $X$ be a separable Banach space,
-	$(\Gamma_n)_{n \in \mathbb{N}}$ be a sequence of linear functionals on $X$,
-	and $\sup_n \|\Gamma_n\| = M < +\infty$.
-Then there exists a subsequence $(\Gamma_{n_j})_{j \in \mathbb{N}}$ such that the limit 
-\[
-	\Gamma x = \lim_{k \rightarrow +\infty} \Gamma_{n_k}\ x
-\]
-exists for every $x \in X$.
-Furthermore, $\Gamma$ is linear and $\|\Gamma\| \leq M$.
-\end{lemma}
 % COMMENT(gardar): Mér þætti betra ef uppsetningin væri lemma->sönnun->lemma->sönnun osfrv í staðinn fyrir lemma lemma lemma sönnun sönnun sönnun.
-\begin{proof}
-We have that
-\begin{align*}
-	|\Gamma_n\ x|
-	&= \|x\| |\Gamma_n (x/\|x\|)|\\
-	&\leq \|x\| \|\Gamma_n \|\\
-	&\leq \|x\| M
-\end{align*}
-and
-\begin{align*}
-	|\Gamma_n\ x - \Gamma_n\ y|
-	&= |\Gamma_n (x - y)|\\
-	&\leq M\|x - y\|.
-\end{align*}
-The first inequality gives us pointwise boundedness and the second gives us equicontinuity.
-Now, since singletons are compact, Ascoli-Arzela gives us a subsequence, indexed by some $S$, such that $(\Gamma_n x)_{n \in S}$ is convergent for all $x \in X$.
-Let's now define $\Gamma$ by
-\[
-	\Gamma(x) = \lim_{k \in S} \Gamma_k\ x,
-\]
-and see that
-\begin{align*}
-	\Gamma(x) + \Gamma(y)
-	&= \lim_{k \in S} \Gamma_k\ x + \lim_{k \in S} \Gamma_k\ y\\
-	&= \lim_{k \in S} \left ( \Gamma_k\ x + \Gamma_k\ y \right )\\
-	&= \lim_{k \in S} \Gamma_k(x + y)\\
-	&= \Gamma(x + y),
-\end{align*}
-where the second equality holds because addition is continuous, and $a\Gamma(x) = \Gamma(ax)$ obviously holds.
-So $\Gamma$ is linear.
-Lastly
-\begin{align*}
-	\|\Gamma\|
-	&= \sup \{|\Gamma x|;\ \|x\| \leq 1\}\\
-	&= \sup \left \{ \left |\lim_{n \in S} \Gamma_n x \right|;\ \|x\| \leq 1 \right \}\\
-	&\leq \sup \{ M;\ \|x\| \leq 1 \}\\
-	&= M.
-\end{align*}
-\end{proof}
-\begin{proof}[Proof of lemma \ref{FMRlemma3}]
+\begin{proof}[Proof of Lemma \ref{FMRlemma3}]
 Let $\Gamma_r$, for $r \in [0, 1[$, be linear functionals on $C(\mathbb{T})$ defined by
 \[
-	\Gamma_r g = \int_{\mathbb{T}} gu_r\ d\sigma.
+	\Gamma_r(g) = \int_{\mathbb{T}} gu_r\ d\sigma.
 \]
 If $\|g\| \leq 1$ is assumed we get that
 \[
-\Gamma_r\ g = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} u_r\ d\sigma = \|u_r\|_1 \leq M
+\Gamma_r(g) = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} u_r\ d\sigma = \|u_r\|_1 \leq M
 \]
 so $\Gamma_r$ is bounded with
 \[
@@ -971,7 +793,7 @@ Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
 	&= \int_{\mathbb{T}}P(z, e^{it})\ d\mu(e^{it})\\
 	&= P[d\mu](z),
 \end{align*}
-where the fifth equality is achieved by putting $g = P(z, e^{it})$ into equation (\ref{eq:1}).
+where the fifth equality is achieved by putting $g = P(z, e^{it})$ into Equation (\ref{eq:1}).
 This concludes the proof of existence.
 
 Let's assume that $P[d\mu] = 0$, and let $f \in C(\mathbb{T})$, $u = P[f]$ and $v = P[d\mu]$.
@@ -1010,18 +832,18 @@ The Riesz representation theorem then tells us that $|\mu|(\mathbb{T}) = 0$, so 
 We have now shown that the only measure that maps to $0$ by the linear map $\mu \mapsto P[d\mu]$ is the zero measure, so the map is injective.
 That is, if $P[d\mu] = P[d\lambda]$ then $\mu = \lambda$.
 \end{proof}
-\begin{proof}[Proof of lemma \ref{FMRlemma3b}]
-The proof of existence is almost identical to the proof of existence in \ref{FMRlemma3} and the uniqueness is shown in the same manner.
+\begin{proof}[Proof of Lemma \ref{FMRlemma3b}]
+The proof of existence is almost identical to the proof of existence in Lemma \ref{FMRlemma3} and the uniqueness is shown in the same manner.
 The differences between the existence proofs are in the beginning when we are choosing what function spaces we use and which theorems to references.
 Now we define $\Gamma_r$ in the same way, except we define it on $L^2(\mathbb{T})$.
-We again use \ref{FMRlemma31} and the (other) Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
+We again use Lemma \ref{FMRlemma31} and the (other) Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
 \[
 	\lim_{n \rightarrow +\infty} \int_{\mathbb{T}} gu_{r_n}\ d\sigma = \int_{\mathbb{T}}gf\ d\sigma
 \]
 for all $g$ in $L^2(\mathbb{T})$.
 The remaining calculations are unchanged.
 \end{proof}
-We see by this proof that \ref{FMRlemma3b} could be generalized trivially to find a function $f$ in $L^p(\mathbb{T})$ such that $P[f] = u$ for harmonic $u$ with
+We see by this proof that Lemma \ref{FMRlemma3b} could be generalized trivially to find a function $f$ in $L^p(\mathbb{T})$ such that $P[f] = u$ for harmonic $u$ with
 \[
 	\sup_{0 < r < 1} \|u_r\|_p = M < +\infty
 \]
@@ -1131,15 +953,15 @@ We can use the assumption of the theorem to write $f$ as a power series by
 	&= \sum_{n = 0}^{+\infty} \hat{\mu}_n z^n,
 \end{align*}
 where $\hat{\mu}_n$ is the $n$-th Fourier coefficient of $\mu$.
-This along with \ref{FMRlemma1} gives us that $f \in H^1$.
-We can now define a $F \in L^1(\mathbb{T})$, by \ref{FMRlemma2} such that $f = P[F]$.
+This along with Lemma \ref{FMRlemma1} gives us that $f \in H^1$.
+We can now define a $F \in L^1(\mathbb{T})$, by Lemma \ref{FMRlemma2} such that $f = P[F]$.
 We have that
 \[
 	\int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it})
 	=
 	\int_{-\pi}^{\pi} P(z, e^{it}) F(e^{it})\ d\sigma
 \]
-so it follows from \ref{FMRlemma3} that $d\mu = F\ d\sigma$, namely $\mu \lll \sigma$.
+so it follows from Lemma \ref{FMRlemma3} that $d\mu = F\ d\sigma$, namely $\mu \lll \sigma$.
 \end{proof}
 \begin{corollary}
 \label{fmrieszcor}
@@ -1177,7 +999,7 @@ We can show by contradiction that $K$ is totally disconnected.
 Recall that a set is totally disconnected if each connected component is a singleton.
 If $K$ was not totally disconnected it would have an open subset meaning its measure could not be zero.
 Another important thing to note is that $K$ could include an uncountable number of elements.
-Results like \ref{mylemma} would be trivial if this were not the case.
+Results like Lemma \ref{mylemma} would be trivial if this were not the case.
 A famous example of an uncountable, closed set of Lebesgue-measure zero is the Cantor set.
 We will also make use of the following lemma:
 \begin{lemma}
@@ -1208,7 +1030,7 @@ Let's assume no such point exists and show it leads to a contradiction.
 This implies that $E \cap I$ is dense in $I$, but this would imply that $E$ contains $I$, since $E$ is closed and therefore $E \cap I$ closed in $I$.
 But $E$ can't contain an open set since $E$ is of Lebesgue-measure zero.
 \end{proof}
-We can show that \ref{somelemma} still holds if we replace $]0, 1]$ by $\mathbb{T}$ in the same way.
+We can show that Lemma \ref{somelemma} still holds if we replace $]0, 1]$ by $\mathbb{T}$ in the same way.
 This is the context we will later use it in.
 
 \begin{theorem}[Rudin-Carleson]
@@ -1264,7 +1086,7 @@ We will define function $f_H: [0, 1] \rightarrow [0, +\infty]$ by
 	\end{array}
 	\right .
 \]
-and show that this function has the properties of \ref{mylemma}, but with $\mathbb{T}$ replaced by $[0, 1]$ and $]1, +\infty]$ replaced by $[0, +\infty]$.
+and show that this function has the properties of Lemma \ref{mylemma}, but with $\mathbb{T}$ replaced by $[0, 1]$ and $]1, +\infty]$ replaced by $[0, +\infty]$.
 \begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{graph8}
@@ -1403,7 +1225,7 @@ But the preimage is a (possibly uncountable) union of half-open intervals so it 
 So $g$ is measurable.
 To show that $f$ is measurable it suffices to show that $P_{\lambda} = \{x \in [0, 1];\ f(x) < \lambda\}$ is measurable for all $\lambda$ in $[0, +\infty]$ \citep[lemma $1.3.9$]{tao}.
 This trivially holds, since $P_{\lambda}$ is open.
-\begin{proof}[Proof of lemma \ref{mylemma}]
+\begin{proof}[Proof of Lemma \ref{mylemma}]
 We may assume that $H$ is not empty, since the statement holds vacuously if that were the case.
 We can also assume without loss of generality that $1$ is in $H$.
 We can now use the injection $e^{it} \mapsto t/(2\pi)$, for $t \in [0, 2\pi[$,  to map $H$ to $H'$ a subset of $[0, 1]$ of Lebesgue-measure zero.
@@ -1419,7 +1241,7 @@ It suffices to show that this holds if $f$ takes only two values on $E$, since s
 Let's assume these values are $0$ and $\alpha \neq 0$, with $\Re \alpha \geq 0$, $E_0 = f^{-1}(0)$, and $E_1 = f^{-1}(\alpha)$.
 Our assumption that $f$ only takes two values then implies that $E_0 \cup E_1 = E$.
 
-Let $u_H(z)$ be the Poisson integral of the function from \ref{mylemma}.
+Let $u_H(z)$ be the Poisson integral of the function from Lemma \ref{mylemma}.
 This function is continuous on $\mathbb{T} \setminus H$, $u_H|_H = +\infty$, and $\lim_{z \rightarrow w} u_H(z) = +\infty$ for $w \in H$ \citep[page $234$]{rudin2}.
 Let's set $v_H$ as the conjugate harmonic of $u_H$ and define
 \[
@@ -1503,7 +1325,7 @@ Assuming $f_0, f_1, ..., f_{n - 1}$ have been constructed such that
 	\lambda_{n - 1}(E) \subset 2^{1 - n}S
 \]
 with $\lambda_{n - 1} = f - \sum_{k = 0}^{n - 1}f_k$.
-According to \ref{somelemma} we can write $E$ as the union of disjoint closed sets $E_1, E_2, ..., E_p$ such that the oscillation of $\lambda_{n - 1}$ is less than $2^{-n}$ on each $E_k$.
+According to Lemma \ref{somelemma} we can write $E$ as the union of disjoint closed sets $E_1, E_2, ..., E_p$ such that the oscillation of $\lambda_{n - 1}$ is less than $2^{-n}$ on each $E_k$.
 So we can define $Q_k \subset 2^{1 - n}S$ for $k = 1, 2, ..., p$ such that $Q_k = 2^{-n}S + a_k$ for some $a_k \in S$ and $\lambda_{n - 1}(E_k) \subset Q_k$.
 We can choose $c_k \in Q_k \cap 2^{-n}S$ since $Q_k$ has side length $2^{-n}$ and is a subset of $2^{-n + 1}S$ and both are closed.
 We can now define
@@ -1513,7 +1335,7 @@ We can now define
 If we then look at $\lambda_n = f - \sum_{k = 0}^nf_k = \lambda_{n - 1} - f_n$ we see that $\lambda_n(E) \subset 2^{-n}S$ due to the way we decomposed $E$ into $E_1, E_2, ..., E_p$ using the oscillations of $\lambda_{n - 1}$.
 This means we can continue the process.
 \end{proof}
-\begin{proof}[Proof of theorem \ref{rudincarleson}]
+\begin{proof}[Proof of Theorem \ref{rudincarleson}]
 Let's first show the result for $T = S$.
 
 Let $f_n$ be the functions from Lemma \ref{rudinlemma3}.
@@ -1543,7 +1365,7 @@ Lastly, for $z \in E$ we have that
 \]
 so $F$ is an extension of $f$.
 
-To prove the result for a general $T$ we first let $\Phi: T \rightarrow S$ be the map provided to us by \ref{contrmt}.
+To prove the result for a general $T$ we first let $\Phi: T \rightarrow S$ be the map provided to us by Corollary \ref{contrmt}.
 We will also let $g = f \circ \Phi$.
 Note that it maps $E$ into $S$, so we can use what we showed above to find $G \in \mathcal{A}$ that extends $g$ and maps into $S$.
 We finally set $F = G \circ \Phi^{-1}$.
@@ -1654,7 +1476,7 @@ Now $F \in B$,
 \]
 and $F = f$ on $S$.
 \end{proof}
-\begin{proof}[Proof of theorem \ref{bishopstheorem}]
+\begin{proof}[Proof of Theorem \ref{bishopstheorem}]
 Let $B_0$ be the closed subspace of $C(X)$ consisting of function $g$ such that $\Xi \cdot g \in B$.
 We have that $B_0^{\bot} = B^{\bot}$, since $\Xi > 0$.
 So we can use Lemma \ref{bishoplemma} for $B_0$ instead of $B$ and $f/\Xi$ instead of $f$.
@@ -1667,13 +1489,13 @@ Also note that $|F| < \Xi$ on $X$ and
 on $S$.
 \end{proof}
 Bishop's theorem let's us draw the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem.
-\begin{proof}[Alternative proof of \ref{rudincarleson}]
+\begin{proof}[Alternative proof of Theorem \ref{rudincarleson}]
 Let
 	$X = \mathbb{T}$,
 	$B = \mathcal{A}|_{\mathbb{T}}$,
 	and $S$ be a closed set of Lebesgue-measure zero. 
-Then, according to \ref{fmrieszcor}, $S$ is also a $B^{\bot}$-null.
-So all requirements of \ref{bishopstheorem} are met.
+Then, according to Corollary \ref{fmrieszcor}, $S$ is also a $B^{\bot}$-null.
+So all requirements of Theorem \ref{bishopstheorem} are met.
 \end{proof}
 Bishop's theorem also gives us a Rudin-Carleson theorem for complex analysis in several variables.
 We don't, however, have a multivariate version of the F. and M. Riesz theorem, so the condition isn't as neat.
@@ -1702,10 +1524,10 @@ We then say $K$ is a
 \end{definition}
 \begin{theorem}
 	\label{bigtheorem}
-	The six classes of sets described in definition \ref{bigdef} are equivalent.
+	The six classes of sets described in Definition \ref{bigdef} are equivalent.
 \end{theorem}
 The first few sections of chapter $10$ in \citep{rudin3} are dedicated to proving this large theorem.
-One implication, namely that all null sets are peak-interpolation sets, follows from \ref{bishopstheorem}.
+One implication, namely that all null sets are peak-interpolation sets, follows from Theorem \ref{bishopstheorem}.
 
 \section{A variation of Bishop's theorem}
 \label{section5}
@@ -1723,7 +1545,7 @@ Let
 	$B$ be $\mathcal{A}|_{\mathbb{T}}$,
 	$S = E \cup F$ where $F$ is a closed subarc of $\mathbb{T}$ of non-zero Lebesgue-measure and $E$ is a singleton in $\mathbb{T} \setminus F$,
 	and $f: S \rightarrow \mathbb{C}$ be a continuous function such that $f = 0$ on $F$ and $f \neq 0$ on $E$.
-Then we have by \ref{fmrieszcor} that $E$ is $B^{\bot}$-null, so
+Then we have by Corollary \ref{fmrieszcor} that $E$ is $B^{\bot}$-null, so
 \[
 	\int_S f\ d\mu = \int_F f\ d\mu = 0.
 \]
