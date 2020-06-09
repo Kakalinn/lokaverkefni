@@ -189,19 +189,15 @@ l.316 \[
 age.6}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.363 \[
-         [6] [7] [8] [9] [10] [11]
+l.359 
+       [6] [7] [8] [9] [10] [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 588.
+(hyperref)                removing `math shift' on input line 600.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 588.
-
-
-Package natbib Warning: Citation `rudin4' on page 12 undefined on input line 59
-4.
+(hyperref)                removing `math shift' on input line 600.
 
 [12] [13] [14]
 chapter 3.
@@ -209,60 +205,31 @@ chapter 3.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] [20 <./approach-region-7-boundary.png>] [21] [22] [23]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (8.95604pt too wide) detected at line 1123
+[19] [20 <./new-approach-region-7-boundary.png>] [21] [22] [23] [24 <./new-grap
+h8.png>]
+Overfull \hbox (8.95604pt too wide) detected at line 1130
 []
-[24] [25 <./graph8.png>] [26 <./graph2.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[27] [28 <./graph101.png>] [29] [30] [31] [32] [33] [34]
+[25 <./graph2.png>] [26] [27 <./graph101.png>] [28] [29] [30] [31] [32]
+[33] [34]
 chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1504.
+(hyperref)                removing `math shift' on input line 1511.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 1504.
+(hyperref)                removing `subscript' on input line 1511.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1504.
+(hyperref)                removing `math shift' on input line 1511.
 
 [35] [36] [37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 1626--1688
 
-LaTeX Warning: Reference `index19' on page 39 undefined on input line 1623.
-
-
-LaTeX Warning: Reference `index18' on page 39 undefined on input line 1636.
-
-
-LaTeX Warning: Reference `index18' on page 39 undefined on input line 1664.
-
-
-LaTeX Warning: Reference `index23' on page 39 undefined on input line 1673.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1619--1682
-
-[39] (output/verkefni.bbl [40])
-
-Package natbib Warning: There were undefined citations.
-
-[41] (output/verkefni.aux)
+[39] (output/verkefni.bbl [40]) [41] (output/verkefni.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -291,5 +258,5 @@ usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf
 e1/public/cm-super/sfsx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
 per/sfsx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pf
 b>
-Output written on output/verkefni.pdf (51 pages, 930872 bytes).
+Output written on output/verkefni.pdf (51 pages, 933540 bytes).
 Transcript written on output/verkefni.log.

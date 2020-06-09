@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.17)  31 MAY 2020 11:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2020.2.17)  4 JUN 2020 12:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1292,19 +1292,15 @@ l.316 \[
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.363 \[
-         [6] [7] [8] [9] [10] [11]
+l.359 
+       [6] [7] [8] [9] [10] [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 588.
+(hyperref)                removing `math shift' on input line 600.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 588.
-
-
-Package natbib Warning: Citation `rudin4' on page 12 undefined on input line 59
-4.
+(hyperref)                removing `math shift' on input line 600.
 
 [12] [13] [14]
 chapter 3.
@@ -1312,100 +1308,75 @@ chapter 3.
 
 
 ] [16] [17] [18]
-<approach-region-7-boundary.png, id=301, 690.9012pt x 708.246pt>
-File: approach-region-7-boundary.png Graphic file (type png)
-<use approach-region-7-boundary.png>
-Package pdftex.def Info: approach-region-7-boundary.png  used on input line 870
-.
+<new-approach-region-7-boundary.png, id=312, 690.9012pt x 708.246pt>
+File: new-approach-region-7-boundary.png Graphic file (type png)
+<use new-approach-region-7-boundary.png>
+Package pdftex.def Info: new-approach-region-7-boundary.png  used on input line
+ 882.
 (pdftex.def)             Requested size: 213.39569pt x 218.75427pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] [20 <./approach-region-7-boundary.png>] [21] [22] [23]
-<graph8.png, id=350, 1387.584pt x 736.4313pt>
-File: graph8.png Graphic file (type png)
-<use graph8.png>
-Package pdftex.def Info: graph8.png  used on input line 1092.
+[19] [20 <./new-approach-region-7-boundary.png>] [21] [22] [23]
+<new-graph8.png, id=359, 1387.584pt x 736.4313pt>
+File: new-graph8.png Graphic file (type png)
+<use new-graph8.png>
+Package pdftex.def Info: new-graph8.png  used on input line 1099.
 (pdftex.def)             Requested size: 426.7914pt x 226.50465pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<graph2.png, id=351, 1387.584pt x 736.4313pt>
+ [24 <./new-graph8.png>]
+<graph2.png, id=366, 1387.584pt x 736.4313pt>
 File: graph2.png Graphic file (type png)
 <use graph2.png>
-Package pdftex.def Info: graph2.png  used on input line 1111.
+Package pdftex.def Info: graph2.png  used on input line 1118.
 (pdftex.def)             Requested size: 426.7914pt x 226.50465pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (8.95604pt too wide) detected at line 1123
+Overfull \hbox (8.95604pt too wide) detected at line 1130
 []
  []
 
-[24] [25 <./graph8.png>] [26 <./graph2.png>]
-<graph101.png, id=371, 1387.584pt x 736.4313pt>
+[25 <./graph2.png>] [26]
+<graph101.png, id=379, 1387.584pt x 736.4313pt>
 File: graph101.png Graphic file (type png)
 <use graph101.png>
-Package pdftex.def Info: graph101.png  used on input line 1217.
+Package pdftex.def Info: graph101.png  used on input line 1224.
 (pdftex.def)             Requested size: 426.7914pt x 226.50465pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[27] [28 <./graph101.png>] [29] [30] [31] [32] [33] [34
+ [27 <./graph101.png>] [28] [29] [30] [31] [32]
+[33] [34
 
 
 ]
 chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1504.
+(hyperref)                removing `math shift' on input line 1511.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 1504.
+(hyperref)                removing `subscript' on input line 1511.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1504.
+(hyperref)                removing `math shift' on input line 1511.
 
 [35] [36] [37] [38
 
 
 ]
-
-LaTeX Warning: Reference `index19' on page 39 undefined on input line 1623.
-
-
-LaTeX Warning: Reference `index18' on page 39 undefined on input line 1636.
-
-
-LaTeX Warning: Reference `index18' on page 39 undefined on input line 1664.
-
-
-LaTeX Warning: Reference `index23' on page 39 undefined on input line 1673.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1619--1682
+Underfull \hbox (badness 10000) in paragraph at lines 1626--1688
 
  []
 
 [39] (output/verkefni.bbl [40])
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1686.
-[41
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1692.
+ [41
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1686.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1692.
  (output/verkefni.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1686.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1686.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1692.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1692.
 
 Package rerunfilecheck Info: File `verkefni.out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
@@ -1414,18 +1385,15 @@ Package rerunfilecheck Info: File `verkefni.out' has not changed.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1686.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1692.
  ) 
 Here is how much of TeX's memory you used:
- 25201 strings out of 492167
- 439518 string characters out of 6131558
- 647912 words of memory out of 5000000
- 29148 multiletter control sequences out of 15000+600000
+ 25205 strings out of 492167
+ 439665 string characters out of 6131558
+ 645912 words of memory out of 5000000
+ 29153 multiletter control sequences out of 15000+600000
  564787 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,13n,106p,10063b,611s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1451,10 +1419,10 @@ fsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></u
 sr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf-
 dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf-dist/fonts/type
 1/public/cm-super/sfti1200.pfb>
-Output written on output/verkefni.pdf (51 pages, 930872 bytes).
+Output written on output/verkefni.pdf (51 pages, 933540 bytes).
 PDF statistics:
- 705 PDF objects out of 1000 (max. 8388607)
- 609 compressed objects within 7 object streams
- 146 named destinations out of 1000 (max. 500000)
+ 716 PDF objects out of 1000 (max. 8388607)
+ 620 compressed objects within 7 object streams
+ 145 named destinations out of 1000 (max. 500000)
  199 words of extra memory for PDF output out of 10000 (max. 10000000)
 

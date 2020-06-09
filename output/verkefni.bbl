@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,6 +14,12 @@ Reynir Axelsson.
 Errett Bishop.
 \newblock A general {R}udin-{C}arleson theorem.
 \newblock \emph{Proc. Amer. Math. Soc.}, 13:\penalty0 140--143, 1962.
+
+\bibitem[Brezis(2011)]{brezis}
+Haim Brezis.
+\newblock \emph{Functional Analysis, Sobolev Spaces and Partial Differential
+  Equations}.
+\newblock Springer-Verlag, 2011.
 
 \bibitem[Carleson(1957)]{carleson}
 Lennart Carleson.
@@ -60,6 +66,11 @@ Walter Rudin.
 Walter Rudin.
 \newblock \emph{Real and Complex Analysis}.
 \newblock McGraw-Hill Book Company, 3rd edition, 1987.
+
+\bibitem[Rudin(1991)]{rudin4}
+Walter Rudin.
+\newblock \emph{Functional Analysis}.
+\newblock McGraw-Hill Book Company, 2nd edition, 1991.
 
 \bibitem[Tao(2014)]{tao}
 Terence Tao.

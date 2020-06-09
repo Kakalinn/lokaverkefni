@@ -213,10 +213,10 @@ Reykjavik, Iceland, \thesismonth~\thesisyear \\
 \section*{\huge Abstract}
 % Útdráttur á ensku sem er að hámarki 250 orð.
 The main theme of this thesis is the Rudin-Carleson extension theorem.
-It states a sufficient condition on a subset of the unit circle in $\mathbb{C}$ such that every continuous function thereon can be extended to a continuous function on the closed unit disk whose restriction to the open unit disk is holomorphic.
+It states a sufficient condition on a subset of the unit circle in the complex plane such that every continuous function thereon can be extended to a continuous function on the closed unit disk whose restriction to the open unit disk is holomorphic.
 The theorem is proved in two ways.
 Firstly in the same manner as Rudin, and secondly, it shown to be a corollary of a theorem of Bishop and the F. and M. Riesz theorem, both of which are proved in the thesis.
-We also look at the role of Bishop's theorem in the classification of closed subsets of the boundary of the unit ball in $\mathbb{C}^n$.
+We also look at the role of Bishop's theorem in the classification of closed subsets of the boundary of the unit ball in several complex variables.
 Finally we consider a way to relax the condition on the set in Bishop's theorem.
 
 
@@ -227,8 +227,8 @@ Aðalefni ritgerðarinnar er Rudin-Carleson-setningin.
 Hún gefur okkur nægjanlegt skilyrði á hlutmengi í einingarhringnum þannig að framlengja megi sérhvert samfellt fall á menginu í samfellt fall á lokuðu einingarhringskífunni sem er fágað á opnu einingarhringskífunni.
 Hún er sönnuð á tvo vegu.
 Fyrst er farið sömu leið og Rudin gerði upprunalega, og síðan er sýnt að hún sé fylgisetning setningar Bishops og setningar F. og M. Riesz, sem báðar eru sannaðar í ritgerðinni.
-Einnig er athugað hvernig setning Bishops getur hjálpað okkur að flokka lokuð hlutmengi jaðars einingarkúlu $\mathbb{C}^n$.
-Loks skoðum hvernig slaka má á skilyrðum setningar Bishops.
+Einnig er athugað hvernig setning Bishops getur hjálpað okkur að flokka lokuð hlutmengi jaðars einingarkúlunnar í mörgum breytistærðum.
+Loks skoðum við hvernig slaka má á skilyrðum setningar Bishops.
 \vfill
 \newpage
 
@@ -261,7 +261,7 @@ Errett Bishop then generalized the Rudin-Carleson theorem in $1962$ by giving su
 Here the condition on the set is given in terms of the annihilating measures (see Definition \ref{annilatingmeasure}) of the family of functions we want to extend into.
 The result of Bishop doesn't just generalize the Rudin-Carleson theorem (allowing, for example, similar studies in higher dimensions) but also shows the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem \citep{fandmriesz}.
 
-We start by proving the F. and M. Riesz theorem in Section \ref{section1}, which states a sufficient condition on a measure on the unit circle such that it is absolutely continuous with regards to the Lebesgue-measure on the unit circle.
+We start by proving the F. and M. Riesz theorem in Section \ref{section1}, which states a sufficient condition on a measure on the unit circle such that it is absolutely continuous with respect to the Lebesgue-measure on the unit circle.
 To achieve this some study of the Poisson kernel is needed.
 The Poisson kernel is classically used to find harmonic functions on the unit disk with given continuous boundary values.
 It is used to this end in the proof of the Rudin-Carleson theorem presented in Section \ref{section2}, but its place in the proof of the F. and M. Riesz theorem is less standard.
@@ -283,7 +283,7 @@ This restriction is immediately felt when studying functional analysis (see for 
 We, therefore, need the following definitions:
 \begin{definition}
 \label{index1}
-Let $\mathcal{F}$ be a $\sigma$-algebra on $X$ and $\mu: \mathcal{F} \rightarrow Y$, where $Y$ is a subset of either $\mathbb{C}$ or $\overline{\mathbb{R}}$.
+Let $\mathcal{F}$ be a $\sigma$-algebra on $X$ and $\mu \colon \mathcal{F} \rightarrow Y$, where $Y$ is a subset of either $\mathbb{C}$ or $\overline{\mathbb{R}}$.
 Recall that $\overline{\mathbb{R}} = \mathbb{R} \cup \{-\infty, +\infty\}$.
 We say that $\mu$ is \emph{countably additive} if
 \[
@@ -298,8 +298,8 @@ We say that
 \item[(iii)] $\mu$ is a \emph{complex measure} if $Y = \mathbb{C}$.
 \end{enumerate}
 \end{definition}
-Allowing $Y = \overline{\mathbb{R}}$ in (ii) would lead to trouble, for example if $\mu(\{x\}) = +\infty$ and $\mu(\{y\}) = -\infty$ what is $\mu(\{x, y\})$?
-We shall always assume that measure are complex Borel measures, that is, $\mathcal{F}$ is the Borel $\sigma$-algebra abd the measure take complex values, unless stated otherwise.
+Allowing $Y = \overline{\mathbb{R}}$ in (ii) could lead to trouble, for example if $\mu(\{x\}) = +\infty$ and $\mu(\{y\}) = -\infty$ what is $\mu(\{x, y\})$?
+We shall always assume that measure are complex Borel measures, that is, $\mathcal{F}$ is the Borel $\sigma$-algebra and the measure take complex values, unless stated otherwise.
 % We will denote by $m$ the Lebesgue-measure on either $[0, 1]$ or $\mathbb{T}$ (which one will be clear from context) and $\sigma$ will be $m$ scaled to be a probability measure.
 We let $m$ denote that Lebesgue-measure on $\mathbb{R}$.
 Then the arc length measure on the unit circle $\mathbb{T}$ is the push-forward of $m$ by the exponential function $t \mapsto e^{it}$.
@@ -307,7 +307,7 @@ We also denote the arc length measure by $m$ and let $\sigma = m/2\pi$ be the ar
 
 For those not familiar with complex measures, some care must be taken.
 A prime example is the notion of null sets.
-They still play a significant role, but their definition is different.
+They still play a significant role, but their definition is not the same as when working with positive measures.
 We can motivate this difference by letting $X = \{x, y\}$, $\mathcal{F}$ be the power set of $X$, and define $\mu$ by $\mu(\{x\}) = -1$ and $\mu(\{y\}) = 1$.
 For $\mu$ to be a measure we need $\mu(X) = 0$ to hold.
 The usual definition of null sets would label $X$ as a $\mu$-null set.
@@ -320,7 +320,7 @@ would not hold generally (once we define integration by complex measure, of cour
 To avoid this specific pitfall we define a measurable set $E$ to be \emph{$\mu$-null} if $\mu(F) = 0$ holds for all measurable $F$ such that $F \subset E$.
 The above example also shows us another pitfall, $E \subset F \implies \mu(E) \leq \mu(F)$ doesn't generally hold.
 
-If we have a complex measure $\mu: \mathcal{F} \rightarrow \mathbb{C}$ we may want a positive measure $\lambda$ that dominates it, in the sense that $|\mu(E)| \leq \lambda(E)$.
+If we have a complex measure $\mu \colon \mathcal{F} \rightarrow \mathbb{C}$ we may want a positive measure $\lambda$ that dominates it, in the sense that $|\mu(E)| \leq \lambda(E)$ for $E$ in $\mathcal{F}$.
 We would also want $\lambda$ to be `small' in some sense.
 We will refer to a collection $(E_n)_{n \in \mathbb{N}}$ in $\mathcal{F}$ as a \emph{partition of E} if they are pairwise disjoint and their union is $E$.
 The measure $\lambda$ mentioned earlier will then satisfy
@@ -329,21 +329,21 @@ The measure $\lambda$ mentioned earlier will then satisfy
 \]
 It so happens that defining $\lambda$ by
 \[
-	\lambda(E) = \sup \left \{\sum_{n \in \mathbb{N}}|\mu(E_n)|;\ \text{where }(E_n)_{n \in \mathbb{N}}\text{ is any partition of }E \right \}
+	\lambda(E) = \sup \left \{\sum_{n \in \mathbb{N}}|\mu(E_n)| \,;\, \text{where }(E_n)_{n \in \mathbb{N}}\text{ is any partition of }E \right \}
 \]
 yields a measure.
 This measure is referred to as \emph{\label{index2} the total variation of $\mu$} and denoted by $|\mu|$ (for example, $|\mu|(E)$).
-A proof that $|\mu|$ is a measure and more detail on complex measures can be found in chapter $6$ of \citep{rudin2}. 
+A proof that $|\mu|$ is a measure and more detail on complex measures can be found in Chapter $6$ of \citep{rudin2}. 
 A useful property of the total variation of $\mu$ is that $\mu \lll |\mu|$, that is a $|\mu|$-null set is also $\mu$-null.
 
 \label{index20}
-Recall that a positive measure $\mu$ is said to be \emph{regular} if
+Recall that if $X$ is a locally compact topological space and $\mathcal{F}$ contains the Borel $\sigma$-algebra, then a positive measure $\mu$ is said to be \emph{regular} if
 \[
-	\mu(E) = \inf\{\mu(F);\ E \subset F \text{ and $F$ is open}\}
+	\mu(E) = \inf\{\mu(F) \,;\, E \subset F \text{ and $F$ is open}\}
 \]
 holds for all measurable $E$ and
 \[
-	\mu(E) = \sup\{\mu(K);\ K \subset E \text{ and $K$ is compact}\}
+	\mu(E) = \sup\{\mu(K) \,;\,  K \subset E \text{ and $K$ is compact}\}
 \]
 holds for all open $E$ and measurable $E$ of finite measure.
 We similarly refer to a complex measure $\mu$ as \emph{regular} if $|\mu|$ is regular.
@@ -353,9 +353,9 @@ We define
 \[
 	(\mu + \lambda)(E) = \mu(E) + \lambda(E) \text{ and } (c\mu)(E) = c\mu(E)
 \]
-for any scalar $c$ and measurable $E$.
+for any $c$ in $\mathbb{C}$ and measurable $E$.
 Both of these are obviously measures so the measures on a common $\sigma$-algebra form a vector space.
-This vector space is also normed with the norm \label{index3} $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on, since $|\mu(X)| < \infty$ always holds \citep[Theorem $6.4$]{rudin2}, and it is Banach if $X$ is locally compact (see Definition \ref{index10}) \citep[Exercise $3$, chapter $6$]{rudin2}.
+This vector space is also normed with the norm \label{index3} $\|\mu\| = |\mu|(X)$, where $X$ is the measure space $\mu$ is defined on, since $|\mu(X)| < \infty$ always holds \citep[Theorem $6.4$]{rudin2}, and it is Banach if $X$ is locally compact (see Definition \ref{index10}) \citep[Exercise $3$, Chapter $6$]{rudin2}.
 
 
 We won't get far with complex measures without defining integration.
@@ -365,7 +365,7 @@ A corollary of the Radon-Nikodym theorem is the existence of a function $h$ such
 \]
 and $|h| = 1$ \citep[Theorem $6.12$]{rudin2}.
 This can be seen as a decomposition of $\mu$ into polar form.
-With this in mind we define integration with regards to a complex measure by
+With this in mind we define integration with respect to a complex measure by
 \[
 	\int_E f\ d\mu = \int_E fh\ d|\mu|.
 \]
@@ -383,13 +383,14 @@ Sets that are $\mu$-null for all $\mu$ in $B^{\bot}$ are said to be \emph{$B^{\b
 \end{definition}
 \section{Complex analysis}
 \label{index5}
-We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C};\ |z| < 1\}$,
+We will use $\mathbb{D}$ to refer to the open unit disk $\{z \in \mathbb{C} \,;\, |z| < 1\}$,
 	the closed unit disk will get no special notation, but will be denoted by $\overline{\mathbb{D}}$,
-	and $\mathbb{T}$ will be the open unit circle $\{z \in \mathbb{C};\ |z| = 1\}$.
+	and $\mathbb{T}$ will be the open unit circle $\{z \in \mathbb{C} \,;\,  |z| = 1\}$.
 \subsection{The disk algebra}
 \begin{definition}
 \label{index4}
 The set of all continuous functions on $\overline{\mathbb{D}}$ which are holomorphic on $\mathbb{D}$ is called the \emph{disk algebra} and we denote it by $\mathcal{A}$.
+The set of all continuous functions on $\overline{\mathbb{B}_n}$ which are holomorphic on $\mathbb{B}_n$ is called the \emph{ball algebra} and we denote it by $\mathcal{A}_n$.
 \end{definition}
 The set $\mathcal{A}$ is a closed subalgebra of the Banach algebra of continuous function on $\overline{\mathbb{D}}$ with the supremum norm.
 It can be shown using Morera's theorem that a sequence of holomorphic functions that converges uniformly has a holomorphic limit \citep{reynir}.
@@ -404,7 +405,7 @@ In complex analysis that is usually holomorphicity.
 The bijections that preserve holomorphicity are therefore of interest, but since the composition of holomorphic functions is holomorphic we only need the following:
 \begin{definition}
 \label{index6}
-% A map $f: U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \emph{conformal} if it is holomorphic, bijective, and its inverse is holomorphic.
+% A map $f \colon U \rightarrow V$, with open $U, V \subset \mathbb{C}$ is said to be \emph{conformal} if it is holomorphic, bijective, and its inverse is holomorphic.
 A bijective holomorphic map $f \colon U \rightarrow V$ where $U$ and $V$ are open in $\mathbb{C}$ is said to be \emph{conformal}.
 \end{definition}
 It can be shown that a holomorphic bijection has a holomorphic inverse \citep{greenkrantz}.
@@ -412,7 +413,7 @@ It can be shown that a holomorphic bijection has a holomorphic inverse \citep{gr
 It is important to state Carathéodory's theorem before looking at the Riemann mapping theorem.
 \begin{definition}
 \label{index7}
-A closed curve $\gamma \colon [a, b] \rightarrow \mathbb{C}$ is said to be a \emph{Jordan curve} or a \emph{simple curve} if it is injective on the half-open interval $[a, b[$.
+A closed continuous curve $\gamma \colon [a, b] \rightarrow \mathbb{C}$ is said to be a \emph{Jordan curve} or a \emph{simple curve} if it is injective on the half-open interval $[a, b[$.
 \end{definition}
 The name stems from a famous result by Camille Jordan stating that $\mathbb{C} \setminus \gamma([0, 1])$ has two connected components, one of which is simply connected.
 The simply connected component is called \emph{the domain bounded by $\gamma$}.
@@ -420,8 +421,8 @@ The proof of this result is rather technical and outside the scope of this thesi
 The result is however necessary to make statement such as `let $U$ be the domain bounded by $\gamma$'.
 An example of this is the following theorem:
 \begin{theorem}[Carathéodory]
-Let $U$ and $V$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $f: U \rightarrow V$ be a conformal mapping.
-Then there exists a continuous injection $\hat{f}: \overline{U} \rightarrow \overline{V}$ that extends $f$.
+Let $U$ and $V$ be domains in $\mathbb{C}$ each bounded by a Jordan curve and $f \colon U \rightarrow V$ be a conformal mapping.
+Then there exists a continuous injection $\hat{f} \colon \overline{U} \rightarrow \overline{V}$ that extends $f$.
 \end{theorem}
 \label{index8}
 Recall that \emph{$g$ extends $f$} if
@@ -429,13 +430,13 @@ Recall that \emph{$g$ extends $f$} if
 	$g$ defined on $B$,
 	$A \subset B$,
 	and $f = g|_A$.
-A proof of Carathéodory's theorem can be found in section $13.2$ of \citep{greenkrantz}.
+A proof of Carathéodory's theorem can be found in Section $13.2$ of \citep{greenkrantz}.
 
 \begin{theorem}[Riemann mapping theorem \citep{greenkrantz}]
 If $U$ is a subset of $\mathbb{C}$, homeomorphic to $\mathbb{D}$, and $U \neq \mathbb{C}$ then there exists a conformal mapping from $\mathbb{D}$ to $U$.
 \end{theorem}
 \begin{corollary}
-If $U$ and $V$ are both homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $U$ to $V$.
+If $U$ and $V$ are subsets of $\mathbb{C}$ such that $U \neq \mathbb{C}$, $V \neq \mathbb{C}$, and both are homeomorphic to $\mathbb{D}$ then there exists a conformal mapping from $U$ to $V$.
 \end{corollary}
 \begin{proof}
 The Riemann mapping theorem gives us $f$, a conformal mapping from $\mathbb{D}$ to $U$, and $f$, a conformal mapping from $\mathbb{D}$ to $V$.
@@ -447,11 +448,11 @@ We can combine the Riemann mapping theorem and Carathéodory's theorem to prove 
 Note that a Jordan curve under a homeomorphism is still a Jordan curve (since the composition of injections is an injection) and boundaries map to boundaries under homeomorphisms.
 \begin{corollary}
 \label{contrmt}
-If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a continuous, injective $\Phi: \overline{\mathbb{D}} \rightarrow K$ such that its restriction to $\mathbb{D}$ is a conformal mapping.
+If $K$ is homeomorphic to $\overline{\mathbb{D}}$ then there exists a continuous, injective $\Phi \colon \overline{\mathbb{D}} \rightarrow K$ such that its restriction to $\mathbb{D}$ is a conformal mapping.
 \end{corollary}
 \begin{proof}
 Let $f$ be a homeomorphism from $\overline{\mathbb{D}}$ to $K$.
-The Riemann mapping theorem also gives us a conformal map $\Phi: \mathbb{D} \rightarrow f(\mathbb{D})$.
+The Riemann mapping theorem also gives us a conformal map $\Phi \colon \mathbb{D} \rightarrow f(\mathbb{D})$.
 We know that $\overline{\mathbb{D}}$ is compact, so $K = f(\overline{\mathbb{D}})$ is also compact, since the image of a compact set under a continuous mapping is compact.
 Moreover, $K$ is bounded.
 % COMMENT(gardar): nit: since $\partial \mathbb{D}$ is the Jordan curve $\alpha(t) = e^{2\pi i t}, t \in [0,1]$
@@ -463,10 +464,31 @@ This allows us to use Carathéodory's theorem to extend $\Phi$ continuously and 
 \subsection{Complex analysis in several variables}
 \label{index9}
 We will briefly touch on multivariate complex analysis so we will need a definition of a holomorphic function in $\mathbb{C}^n$.
-If $U \subset \mathbb{C}^n$ is open and $f: U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U$}.
-That is, the map $z \mapsto f(z_1, ..., z_{k - 1}, z, z_{k + 1}, ..., z_n)$ is holomorphic for $k = 1, 2, ..., n$.
-We will also denote common sets by there counterpart in single variate complex analysis with an added `$n$' in the superscript.
-This does not, however, denote an $n$-fold Cartesian product.
+If $U \subset \mathbb{C}^n$ is open and $f \colon U \rightarrow \mathbb{C}$ such that $f$ is holomorphic in each variable separately we say that $f$ is \emph{holomorphic on $U$}.
+% That is, the map $z \mapsto f(z_1, ..., z_{k - 1}, z, z_{k + 1}, ..., z_n)$ is holomorphic for $k = 1, 2, ..., n$.
+That is, for all $w$ in $U$ and $k = 1, 2, ..., n$ we require the map
+\[
+	z \mapsto f(w + ze_k)
+\]
+to be holomorphic in some neighbourhood of $0$ in $\mathbb{C}$, where $e_k$ is the standard basis.
+We can define an inner product on $\mathbb{C}^n$ by
+\[
+	\langle (z_1, ..., z_n), (w_1, ..., w_n) \rangle = \sum_{k = 1}^n z_j \overline{w_j}
+\]
+and norm by
+\[
+	|z| = \langle z, z \rangle^{1/2}.
+\]
+We will then define he unit ball in $\mathbb{C}^n$ by
+\[
+	\label{index34}
+	\mathbb{B}_n = \{z \in \mathbb{C}^n \,;\, |z| < 1\}
+\]
+and the unit sphere by
+\[
+	\label{index33}
+	\mathbb{S}_n = \{z \in \mathbb{C}^n \,;\, |z| = 1\}.
+\]
 
 \section{Functional analysis}
 \begin{definition}
@@ -474,8 +496,7 @@ This does not, however, denote an $n$-fold Cartesian product.
 Let $X$ be a topological space.
 We will denote by $C(X)$ the continuous functions on $X$.
 We say that $X$ is \emph{locally compact} if for each $x \in X$ there exists an open set $U_x$ such that $x \in U_x$ and $\overline{U_x}$ is compact.
-Let $X$ be a locally compact space.
-We say a function $f$ in $C(X)$ \emph{vanishes at infinity} if for all $\varepsilon > 0$ there exists a compact set $K$ such that $|f(x)| < \varepsilon$ for all $x \in X \setminus K$.
+If $X$ is a locally compact space, then we say a function $f$ in $C(X)$ \emph{vanishes at infinity} if for all $\varepsilon > 0$ there exists a compact set $K$ such that $|f(x)| < \varepsilon$ for all $x \in X \setminus K$.
 The family of all such functions is referred as $C_0(X)$.
 \end{definition}
 Let $X$ be compact.
@@ -486,7 +507,7 @@ So $C(X)$ and $C_0(X)$ are identical in this case.
 Let $\alpha$ be a linear map from a normed vector space $X$ into a normed vector space $Y$.
 We define its \emph{norm} by
 \[
-	\|\alpha\| = \sup\{\|\alpha(x)\|;\ \|x\| < 1\}
+	\|\alpha\| = \sup\{\|\alpha(x)\| \,;\,  \|x\| < 1\}
 \]
 and say $\alpha$ is \emph{bounded} if its norm is finite.
 \end{definition}
@@ -510,9 +531,9 @@ We say a measurable function $f$ is in $\mathcal{L}^1(X, \mu)$ if
 	\int |f|\ d\mu < +\infty
 \]
 and we say it is $\mathcal{L}^p(X, \mu)$ if $|f|^p$ is in $\mathcal{L}^1(X, \mu)$, for $0 < p < +\infty$.
-We then define an equivalence relation $\sim$ such that $f \sim g$ if and only if $\mu(\{x \in X;\ f(x) \neq g(x)\}) = 0$.
+We then define an equivalence relation $\sim$ such that $f \sim g$ if and only if $\mu(\{x \in X \,;\,  f(x) \neq g(x)\}) = 0$.
 We define $L^p(X, \mu)$ to be the quotient space $\mathcal{L}^p(X, \mu)/\sim$.
-The space $L^p(X, \mu)$ has one major benefit over $\mathcal{L}^p(X, \mu)$,
+The space $L^p(X, \mu)$ has one major benefit over $\mathcal{L}^p(X, \mu)$, namely that
 \[
 \label{index15}
 	\|f\|_p = 
@@ -521,7 +542,7 @@ The space $L^p(X, \mu)$ has one major benefit over $\mathcal{L}^p(X, \mu)$,
 is a norm on $L^p(X, \mu)$.
 We sometimes write $L^p(\mu)$ if the space in question is obvious from context and $L^p(X)$ if the measure is obvious from context.
 It can be shown that $L^p(X, \mu)$ is a Banach space \citep[Theorem $3.11$]{rudin2} for $p \geq 1$ and if $p = 2$ it is a Hilbert space.
-\subsection{Hahn-Banach}
+\subsection{The Hahn-Banach theorem}
 There are many related theorems going by the name `Hahn-Banach Theorem'.
 These are sometimes split in two groups, `separation theorems' and `extension theorems'.
 When proving Theorem \ref{bishopstheorem} we need the following Hahn-Banach separation theorem:
@@ -530,7 +551,7 @@ Let
 	$X$ be a compact space,
 	$B$ be a closed convex subset of $C(X)$,
 	and $f$ be a function in $C(X)$ but not in $B$.
-Then there exists a continuous linear functional $\alpha$ such that $|\alpha| < 1$ on $B$ and $\alpha(f) > 1$.
+Then there exists a continuous linear functional $\alpha$ on $C(X)$ such that $|\alpha| < 1$ on $B$ and $\alpha(f) > 1$.
 \end{theorem}
 \subsection{The Riesz representation theorem}
 Let
@@ -541,29 +562,27 @@ We can then define a linear functional on $L^p(X, \mu)$ by
 \[
 	\alpha(f) = \int fg\ d\mu.
 \]
-The Hölder inequality tells us it is bounded.
+The Hölder inequality tells us that it is bounded.
 \label{index16}
-Recall that the Hölder inequality states that if $f$ and $g$ are measurable function with $p$ and $q$ as above then
+Recall that the Hölder inequality states that if $f$ and $g$ are measurable functions with $p$ and $q$ as above then
 \[
 	\|fg\|_1 \leq \|f\|_p\|g\|_q.
 \]
 So each function in $L^q(X, \mu)$ gives us a bounded linear functional on $L^p(X, \mu)$.
 The following theorem states the inverse, that is, each bounded linear functional on $L^p(X, \mu)$ can be represented by a function in $L^q(X, \mu$).
-\begin{theorem}[The Riesz representation theorem for bounded linear functionals on $L(X, \mu)$ with $\sigma$-finite $X$ \citep{rudin2}]
+\begin{theorem}[The Riesz representation theorem for bounded linear functionals on $L^p(X, \mu)$ \citep{pryce}]
 Let $1 < p < +\infty$,
 	$q$ be such that $1/p + 1/q = 1$,
-	$\mu$ be a positive measure on a $\sigma$-finite space $X$,
+	$\mu$ be a positive measure on a measurable space $X$,
 	and $\alpha$ be a bounded linear functional on $L^p(\mu)$.
 There then exists a unique $g \in L^q(\mu)$ such that
-\[
-	\alpha(f) = \int fg\ d\mu
-\]
-for all $f \in L^p(\mu)$ and
-\[
-	\|\alpha\| = \|g\|_q.
-\]
+\begin{enumerate}
+\item[\emph{(i)}] $\alpha(f) = \int fg\ d\mu$ for all $f \in L^p(\mu)$ and
+\item[\emph{(ii)}] $\|\alpha\| = \|g\|_q.$
+\end{enumerate}
 \end{theorem}
-Note that the theorem above also hold for $p = 1$ and $q = +\infty$, but we will not need that result.
+The above theorem also holds for $p = 1$ and $q = +\infty$ if $X$ is $\sigma$-finite.
+We refer to $p$ and $q$ as each other's exponent conjugates when they are defined as in the above theorem. \label{index32}
 
 A similar result can be obtained for bounded linear functionals on $C_0(X)$ for locally compact $X$.
 There the functionals can be represented by regular measures.
@@ -573,21 +592,14 @@ Let $X$ be a locally compact Hausdorff space and $\alpha$ be a bounded linear fu
 % COMMENT(gardar): Í 2.1.1 er positive, real valued og complex measure skilgreind. Ætti eitt af þeim að vera notað hér í staðinn fyrir 'measure'?
 There then exists a regular measure $\mu$ such that
 \begin{enumerate}
-\item[\emph{(i)}]
-\[
-	\alpha(f) = \int_X f\ d\mu
-\]
-for all $f \in C_0(X)$ and
-\item[\emph{(ii)}]
-\[
-	\|\alpha\| = \|\mu\|.
-\]
+\item[\emph{(i)}] $\alpha(f) = \int f\ d\mu$ for all $f \in C_0(X)$ and
+\item[\emph{(ii)}] $\|\alpha\| = \|\mu\|$.
 \end{enumerate}
 \end{theorem}
 
 \subsection{The weak topology on the dual space $X'$}
-The following discussion is dedicated to the existence of convergent subsequences of a bounded sequence of bounded linear functionals.
-We will therefore, for some infinite $S \subset \mathbb{N}$, define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \mathbb{N}}$, where $s_k$ is the $k$-th smallest element of $S$.
+The following discussion is dedicated to the existence of a convergent subsequence of a bounded sequence of bounded linear functionals.
+We will therefore, for some infinite $S \subset \mathbb{N}$, define the sequence $(a_n)_{n \in S}$ to be $(a_{s_n})_{n \in \mathbb{N}}$, where $s_k$ is the $k$-th smallest element of $S$. \label{index19}
 
 Let $X$ be a Banach space and $X'$ be the space of continuous linear functionals on $X$.
 Note that each $x$ in $X$ gives a linear functional $f_x$ on $X'$ by $f_x(\alpha) = \alpha(x)$.
@@ -611,6 +623,7 @@ We do however have equality between sequential compactness and compactness on me
 Let $X$ be a separable Banach space.
 Then $B$ is metrizable in the weak topology.
 \end{lemma}
+Recall that a space is separable if it contains a countable dense subset. \label{index23}
 So far we have that all bounded sequences in $X'$ have a convergent subsequence (in the weak topology) if $X$ is a separable Banach space.
 This becomes more workable with:
 \begin{lemma}
@@ -647,6 +660,8 @@ Let's now define a function on $X$ by
 One form of the Banach-Steinhaus theorem states that $\Gamma$ is linear and $\|\Gamma\| \leq M$ \citep[Corollary $10.6$]{pryce}.
 \end{proof}
 
+Proofs of the Banach-Alaoglu-Bourbaki theorem and Lemma \ref{weaklemma1} can be found in \citep{rudin4} and a proof of Lemma \ref{weaklemma2} can be found in \citep{brezis}.
+
 
 
 \chapter{The Rudin-Carleson theorem}
@@ -662,7 +677,7 @@ We will show this to be a corollary of the F. and M. Riesz theorem, which we wil
 First, we need a few results from the study of Poisson integrals to prove the F. and M. Riesz theorem.
 \label{index22}
 It will be useful to take, for some $0 < r < 1$, a function defined on $r\mathbb{T}$ and stretch it to be defined on $\mathbb{T}$.
-Concretely, if $f: r\mathbb{T} \rightarrow \mathbb{C}$ then $f_r: \mathbb{T} \rightarrow \mathbb{C}$ is defined by $f_r(z) = f(rz)$.
+Concretely, if $f \colon r\mathbb{T} \rightarrow \mathbb{C}$ then $f_r \colon \mathbb{T} \rightarrow \mathbb{C}$ is defined by $f_r(z) = f(rz)$.
 We will reserve the subscripted `$r$' for this usage.
 \begin{definition}
 \label{index21}
@@ -681,18 +696,18 @@ This stems from the fact that
 \]
 A benefit of this rewrite is that $P(\ \cdot\ , e^{i\theta})$ is defined on $\mathbb{D}$.
 
-For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} as a function on $\mathbb{D}$ by
+For $f \in L^1(\mathbb{T})$ we define \emph{the Poisson integral of $f$} as a function on $\mathbb{D}$ given by
 \[
 	P[f](z) = \frac{1}{2\pi} \int_{-\pi}^{\pi} P(z, e^{it}) f(e^{it})\ dt.
 \]
 
-For a measure $\mu$ on $\mathbb{T}$ we define \emph{the Poisson integral of $\mu$} as a function on $\mathbb{D}$ by
+For a measure $\mu$ on $\mathbb{T}$ we define \emph{the Poisson integral of $\mu$} as a function on $\mathbb{D}$ given by
 \[
 	P[d\mu](z) = \int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it}).
 \]
 We write the above integral as if it is over $\mathbb{T}$ out of convention.
 This technically incorrect as the variable $t$ belongs to some interval in $\mathbb{R}$ of length $2\pi$, but not $\mathbb{T}$.
-This notation is also more readable than $\int_{[-\pi, \pi]}$ and writing $\int_{-\pi}^{\pi}$ does not take into consideration the possibility of singletons having a non-zero measure with regards to $\mu$.
+This notation is also more readable than $\int_{[-\pi, \pi]}$ and writing $\int_{-\pi}^{\pi}$ does not take into consideration the possibility of singletons having a non-zero measure with respect to $\mu$.
 
 Let's take a look at some of the properties of the Poisson kernel and Poisson integral.
 \end{definition}
@@ -732,13 +747,13 @@ This can be obtained by the Tonelli-Fubini theorem
 	&= \frac{1}{2\pi} \int_{-\pi}^{\pi} \left | \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d\mu(e^{it}) \right | d\theta\\
 	&\leq \frac{1}{2\pi} \int_{-\pi}^{\pi} \int_{\mathbb{T}} P(re^{i\theta}, e^{it})\ d|\mu|(e^{it}) d\theta\\
 	&= \int_{\mathbb{T}} \frac{1}{2\pi} \int_{-\pi}^{\pi} P(re^{i\theta}, e^{it})\ d\theta d|\mu|(e^{it})\\ 
-	&= \int_{\mathbb{T}}\ d|\mu(e^{it})|\\
+	&= \int_{\mathbb{T}}\ d|\mu|(e^{it})\\
 	&= |\mu|(\mathbb{T})\\
 	&= \|\mu\|.
 \end{align*}
 \end{proof}
 The main reason we are developing these tools, as stated before, is to prove the F. and M. Riesz theorem.
-The theorem gives us a sufficient condition for when a measure $\mu$ (on $\mathbb{T}$) is absolutely continuous with regards to the Lebesgue-measure (on $\mathbb{T}$).
+The theorem gives us a sufficient condition for a measure $\mu$ (on $\mathbb{T}$) to be absolutely continuous with respect to the Lebesgue-measure (on $\mathbb{T}$).
 The proof is conceptually simple, we let $f$ be the Poisson integral of $\mu$ and $h$ be a function such that its Poisson integral is $f$.
 We then show that $d\mu = h\ dm$.
 The following lemmas show that all this is in fact possible.
@@ -768,7 +783,7 @@ Let $\Gamma_r$, for $r \in [0, 1[$, be linear functionals on $C(\mathbb{T})$ def
 \]
 If $\|g\| \leq 1$ is assumed we get that
 \[
-\Gamma_r(g) = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} u_r\ d\sigma = \|u_r\|_1 \leq M
+\Gamma_r(g) = \int_{\mathbb{T}} gu_r\ d\sigma \leq \int_{\mathbb{T}} |u_r|\ d\sigma = \|u_r\|_1 \leq M
 \]
 so $\Gamma_r$ is bounded with
 \[
@@ -781,7 +796,7 @@ By Lemma \ref{FMRlemma31} and the Riesz representation theorem we get a measure 
 \end{equation}
 for all $g \in C(\mathbb{T})$.
 Let's now define functions $h_k$ on $\overline{\mathbb{D}}$ by $h_k(z) = u(r_kz)$.
-We get that, since $u$ is harmonic on $r\mathbb{D}$ for $r \in ]0, 1[$, the functions $h_k$ are harmonic on $\mathbb{D}$ and continuous on $\overline{\mathbb{D}}$.
+Since $u$ is harmonic on $r\mathbb{D}$ for $r \in ]0, 1[$, the functions $h_k$ are harmonic on $\mathbb{D}$ and continuous on $\overline{\mathbb{D}}$.
 So each of them can be represented by the Poisson integral of their restriction to $\mathbb{T}$ \citep[Theorem $11.9$]{rudin2}.
 Note that $h_k(e^{it}) = u_{r_k}(e^{it})$, so
 \begin{align*}
@@ -811,10 +826,8 @@ This symmetry is due to
 	=
 	|1 - re^{i(t - \theta)}|
 	=
-	|e^{i\theta} - re^{it}|,
+	|e^{i\theta} - re^{it}|.
 \]
-which is geometrically intuitive.
-The first and last qualities hold because the distance between two points doesn't change under rotation and the second equality holds because the distance from $z$ to a real number $a$ is the same distance from $\overline{z}$ to $a$.
 We now obtain
 \begin{align*}
 \int_{\mathbb{T}} u_r\ d\mu
@@ -830,11 +843,10 @@ If we let $r \rightarrow 1$ we get
 This holds for all $f \in C(\mathbb{T})$, so the measure $\mu$ represents zero in the dual of $C(\mathbb{T})$.
 The Riesz representation theorem then tells us that $|\mu|(\mathbb{T}) = 0$, so $\mu = 0$.
 We have now shown that the only measure that maps to $0$ by the linear map $\mu \mapsto P[d\mu]$ is the zero measure, so the map is injective.
-That is, if $P[d\mu] = P[d\lambda]$ then $\mu = \lambda$.
 \end{proof}
 \begin{proof}[Proof of Lemma \ref{FMRlemma3b}]
 The proof of existence is almost identical to the proof of existence in Lemma \ref{FMRlemma3} and the uniqueness is shown in the same manner.
-The differences between the existence proofs are in the beginning when we are choosing what function spaces we use and which theorems to references.
+The differences between the existence proofs are in the beginning when we are choosing which function spaces we use and which theorems to refer to.
 Now we define $\Gamma_r$ in the same way, except we define it on $L^2(\mathbb{T})$.
 We again use Lemma \ref{FMRlemma31} and the (other) Riesz representation theorem to show that there exists a function $f$ in $L^2(\mathbb{T})$ with $\|f\|_2 \leq M$ and
 \[
@@ -850,11 +862,11 @@ We see by this proof that Lemma \ref{FMRlemma3b} could be generalized trivially 
 and $p > 1$.
 We can't use this method for $p = 1$ since we will need to use the Riesz representation theorem for the exponent conjugate of $p$, and the theorem only holds if it is in $[1, +\infty[$.
 
-We have not yet shown any condition for a function $f$ that implies there exists a $h \in L^1(\mathbb{T})$ such that $P[h] = f$.
+We have not yet stated any condition for a function $f$ that implies there exists a $h \in L^1(\mathbb{T})$ such that $P[h] = f$.
 For that we need the following definitions:
 \begin{definition}
 \label{index24}
-For a function $f$ holomorphic on $\mathbb{D}$ we define
+For a function $f$ holomorphic on $\mathbb{D}$ and $0 < p < +\infty$ we define
 \[
 	\|f\|_{H^p} = 
 	\sup_{0 < r < 1} \left ( \frac{1}{2\pi}\int_{-\pi}^{\pi} |f(re^{i\theta})|^p\ d\theta \right )^{1/p}
@@ -867,20 +879,20 @@ A useful result from the theory of Hardy spaces is that if $f \in H^1$ then ther
 \label{index25}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{approach-region-7-boundary}
+\includegraphics[width=0.5\textwidth]{new-approach-region-7-boundary}
 \caption{A visualization of the boundary of $\Omega_{\alpha}$, for a moderately large $\alpha$. Note that the only boundary point included in $\Omega_{\alpha}$ is $1$. }
 \end{figure}
 Let $0 < \alpha < 1$.
 We refer to the open convex hull of
 \[
-	\{z \in \mathbb{C};\ |z| < \alpha\} \cup \{1\},
+	\{z \in \mathbb{C} \,;\, |z| < \alpha\} \cup \{1\},
 \]
 that also includes $1$, as \emph{the non tangential approach region of $1$}, denoted by $\Omega_{\alpha}$.
 We will also use the rotated version, $e^{i\theta}\Omega_{\alpha}$.
-Let $u: \mathbb{D} \rightarrow \mathbb{C}$.
+Let $u \colon \mathbb{D} \rightarrow \mathbb{C}$.
 Its \emph{nontangential maximal function} is defined on $\mathbb{T}$ by
 \[
-	(N_{\alpha}u)(e^{it}) = \sup \{|u(z)|;\ z \in e^{it}\Omega_{\alpha}\}.
+	(N_{\alpha}u)(e^{it}) = \sup \{|u(z)| \,;\, z \in e^{it}\Omega_{\alpha}\}.
 \]
 We say that $u$ has \emph{nontangential limit $\lambda$ at $e^{it}$} if, for all $0 < \alpha < 1$,
 \[
@@ -890,15 +902,9 @@ for all sequences $(z_k)_{k \in \mathbb{N}}$ in $e^{it}\Omega_{\alpha}$ that con
 \end{definition}
 \begin{lemma}
 \label{FMRlemma2}
-If $f$ is in $H^1$ then
-\begin{enumerate}
-\item \label{p1}
-its nontangential limits, $F$, exist almost everywhere on $\mathbb{T}$,
-\item \label{p2}
-$F$ is in $L^1(\mathbb{T})$, and
-\item \label{p3}
-$f = P[F]$.
-\end{enumerate}
+Every function $f$ in $H^1$ has non-tangential limit $F(e^{it})$ at almost every point $e^{it}$ in $\mathbb{T}$,
+	they define a function $F$ in $L^1(\mathbb{T})$,
+	and $f = P[F]$.
 \end{lemma}
 \begin{proof}
 Let $g$ and $h$ be functions in $H^2$ such that $f = g \cdot h$, as described above.
@@ -959,13 +965,13 @@ We have that
 \[
 	\int_{\mathbb{T}} P(z, e^{it})\ d\mu(e^{it})
 	=
-	\int_{-\pi}^{\pi} P(z, e^{it}) F(e^{it})\ d\sigma
+	\int_{-\pi}^{\pi} P(z, e^{it}) F(e^{it})\ d\sigma(e^{it})
 \]
 so it follows from Lemma \ref{FMRlemma3} that $d\mu = F\ d\sigma$, namely $\mu \lll \sigma$.
 \end{proof}
 \begin{corollary}
 \label{fmrieszcor}
-Every annihilating measures of $\mathcal{A}|_{\mathbb{T}}$ is absolutely continuous with regards to the Lebesgue-measure on $\mathbb{T}$.
+Every annihilating measure of $\mathcal{A}|_{\mathbb{T}}$ is absolutely continuous with respect to the Lebesgue-measure on $\mathbb{T}$.
 \end{corollary}
 \begin{proof}
 Let $\mu$ be an annihilating measure of $\mathcal{A}|_{\mathbb{T}}$.
@@ -974,10 +980,11 @@ By definition we have that
 	\int f\ d\mu = 0
 \]
 for all $f \in \mathcal{A}|_{\mathbb{T}}$.
-Now since $t \mapsto e^{-int}$ is entire for $n = -1, -2, ...$ we have that their restriction to $\mathbb{T}$ are in $\mathcal{A}|_{\mathbb{T}}$.
-Thus,
+% Now since $t \mapsto e^{-int}$ is entire for $n = -1, -2, ...$ we have that their restriction to $\mathbb{T}$ are in $\mathcal{A}|_{\mathbb{T}}$.
+The functions $f_n(z) = z^{-n}$, for $n = -1, -2, ...$ are entire.
+Their restrictions to $\mathbb{T}$ are in $\mathcal{A}|_{\mathbb{T}}$, so
 \[
-	\int e^{-int}\ d\mu = 0
+	\int f_n\ d\mu = 0
 \]
 for all $n = -1, -2, ...$ and $\mu \lll m$.
 \end{proof}
@@ -989,7 +996,7 @@ for all $n = -1, -2, ...$ and $\mu \lll m$.
 We will refer to the \emph{closed unit square} in $\mathbb{C}$ by
 \[
 \label{index26}
-	S = \{z;\ \max(|\Re z|, |\Im z|) \leq 1\}.
+	S = \{z \in \mathbb{C} \,;\, 0 \leq \Re z \leq 1 \text{ and } 0 \leq \Im z \leq 1\}.
 \]
 The square with side-lengths $a$ and bottom-left corner at $w$ is then denoted by $w + aS$.
 
@@ -1007,7 +1014,7 @@ We will also make use of the following lemma:
 Let
 	$\varepsilon > 0$,
 	$K$ be a closed subset of $]0, 1]$ of Lebesgue-measure zero,
-	and $f: K \rightarrow \mathbb{C}$.
+	and $f \colon K \rightarrow \mathbb{C}$ be a continuous function.
 Then there exist pairwise disjoint closed $E_1, E_2, ..., E_n$ and $w_1, w_2, ..., w_n$ such that 
 \[
 	E_1 \cup E_2 \cup ... \cup E_n = K
@@ -1020,14 +1027,14 @@ and
 \begin{proof}
 It suffices to show that the image of each partition is contained in a circle with radius $\varepsilon$ since each square includes a circle.
 Recall that a point $x$ in a set $A$ is a \emph{limit point of $A$} if it is in the closure of $A \setminus \{x\}$.
-Since $K$ is compact, f is uniformly continuous.
+Since $K$ is compact, $f$ is uniformly continuous.
 This means we can find $\delta > 0$ such that $|f(x) - f(y)| < \varepsilon$ if $|x - y| < \delta$.
 Let $a_1, a_2, ..., a_{p + 1}$ be a strictly increasing sequence in $]0, 1]$ such that $a_{k + 1} - a_k < \delta/2$, for $k = 1, 2, ..., p$ and let $E_k = E \cap ]a_k, a_{k + 1}]$, for $k = 1, 2, ..., p$.
 The only problem with this decomposition is that the sets may not be closed.
 More concretely, if $a_k$ is a limit point of $E$ then $E_k$ may not be closed, for $k = 1, 2, ..., p$.
 If we could replace $a_k$ by a point in $I = ]a_k, a_{k + 1}[$ that was not a limit point of $E$ then this problem will be solved.
-Let's assume no such point exists and show it leads to a contradiction.
-This implies that $E \cap I$ is dense in $I$, but this would imply that $E$ contains $I$, since $E$ is closed and therefore $E \cap I$ closed in $I$.
+Let's assume that no such point exists and show that it leads to a contradiction.
+This implies that $E \cap I$ is dense in $I$, but this would imply that $E$ contains $I$, since $E$ is closed and $E \cap I$ closed in $I$.
 But $E$ can't contain an open set since $E$ is of Lebesgue-measure zero.
 \end{proof}
 We can show that Lemma \ref{somelemma} still holds if we replace $]0, 1]$ by $\mathbb{T}$ in the same way.
@@ -1046,15 +1053,15 @@ The first few lemmas are dedicated to showing the result holds for continuous si
 \begin{lemma}
 \label{mylemma}
 Let $H \subset \mathbb{T}$ be a closed set of Lebesgue-measure zero.
-Then there exists a function $h: \mathbb{T} \rightarrow ]1, +\infty]$ such that 
+Then there exists a function $h \colon \mathbb{T} \rightarrow ]1, +\infty]$ such that 
 \begin{enumerate}
 \item
 % COMMENT(gardar): er sigma Lebesgue málið?
-$h$ is in $L^1(\mathbb{T}, m)$
+$h$ is in $L^1(\mathbb{T}, m)$,
 \item
-$h|_{\mathbb{T} \setminus H}$ is in $C^{\infty}$.
+$h|_{\mathbb{T} \setminus H}$ is in $C^{\infty}$,
 \item
-$h(z) = +\infty$ if and only if $z$ is in $H$.
+$h(z) = +\infty$ if and only if $z$ is in $H$, and
 \item
 $\lim_{w \rightarrow z} h(w) = +\infty$ for all $z$ in $H$.
 \end{enumerate}
@@ -1067,21 +1074,21 @@ Furthermore, if $A$ is closed then the infimum is obtained at some point in $A$,
 Let $X = [0, 1]$ and $H$ be some closed set of Lebesgue-measure zero.
 We will, for reasons that will become clear later, assume that $\{0, 1\} \subset H$.
 \label{index28}
-We can now define function $V_H: [0, 1] \rightarrow [0, 1]$ and $H_H: [0, 1] \rightarrow [0, 1]$ such that
+We can now define function $L_H \colon [0, 1] \rightarrow [0, 1]$ and $R_H \colon [0, 1] \rightarrow [0, 1]$ such that $L_H(x)$ is in $[0, x]$, $R_H(x)$ is in $[x, 1]$, and
 \[
-	d(x, H \cap [0, x]) = d(x, V_H(x))
+	d(x, H \cap [0, x]) = d(x, L_H(x))
 	\quad \text{and} \quad
-	d(x, H \cap [x, 1]) = d(x, H_H(x)).
+	d(x, H \cap [x, 1]) = d(x, R_H(x)).
 \]
-Intuitively, $H_H(x)$ is the point in $H$ that's to the right of $x$ and is closest to $x$ and $V_H(x)$ is the point in $H$ that's to the left of $x$ and is closest to $x$.
-So all points $x$ in $[0, 1] \setminus H$ are on the open interval $]V_H(x), H_H(x)[$.
-We will define function $f_H: [0, 1] \rightarrow [0, +\infty]$ by
+Intuitively, $R_H(x)$ is the point in $H$ that's to the right of $x$ and is closest to $x$ and $L_H(x)$ is the point in $H$ that's to the left of $x$ and is closest to $x$.
+So all points $x$ in $[0, 1] \setminus H$ are on the open interval $]L_H(x), R_H(x)[$.
+We will define function $f_H \colon [0, 1] \rightarrow [0, +\infty]$ by
 \[
 \label{index29}
 	f_H(x) =
 	\left \{ 
 	\begin{array}{l l}
-		2\log_2 \left ( \frac{H_H(x) - V_H(x)}{2} \right ) - \log_2((x - V_H(x))(H_H(x) - x)) & \text{if $x$ is not in $H$}\\
+		2\log_2 \left ( \frac{R_H(x) - L_H(x)}{2} \right ) - \log_2((x - L_H(x))(R_H(x) - x)) & \text{if $x$ is not in $H$}\\
 		\infty & \text{if $x$ is in $H$}
 	\end{array}
 	\right .
@@ -1089,14 +1096,14 @@ We will define function $f_H: [0, 1] \rightarrow [0, +\infty]$ by
 and show that this function has the properties of Lemma \ref{mylemma}, but with $\mathbb{T}$ replaced by $[0, 1]$ and $]1, +\infty]$ replaced by $[0, +\infty]$.
 \begin{figure}[h]
 \centering
-\includegraphics[width=1\textwidth]{graph8}
+\includegraphics[width=1\textwidth]{new-graph8}
 \caption{An example of $f_H$ where $H$ includes nine points. The points of $H$ are marked on the $x$-axis. }
 \end{figure}
 
 Let's first define a family of functions indexed with $a, b \in \mathbb{R}$, such that $a < b$, by
 \[
 \label{index30}
-	f_{a, b}: [a, b] \rightarrow [0, +\infty],
+	f_{a, b} \colon [a, b] \rightarrow [0, +\infty],
 	x \mapsto 2\log_2 \left ( \frac{b - a}{2} \right ) - \log_2((x - a)(b - x))
 \]
 and show they satisfy the following properties:
@@ -1121,7 +1128,7 @@ We have that
 	&= n - (2 + \log_2 (1 - 2^{-n}))\\
 	&\leq n.
 \end{align*}
-To show the second property we consider the case where $a = -b$, that is we translate so that the midpoint between them is $0$.
+In order to prove the second property we consider the case where $a = -b$, that is we translate so that the midpoint between them is $0$.
 Then
 \begin{align*}
 f_{-b, b}(-x)
@@ -1136,8 +1143,8 @@ These two points together tell us that we can bound $f_{a, b}$ above by
 	\left \{
 	\begin{array}{l l}
 	m, & \text{ if } 2^{-m} \leq \frac{x - a}{b} < 2^{-m + 1}\\
-	g_{a, b}(a + b - x) , & \text{ if } \frac{x - a}{b} > \frac{1}{2}
-	\end{array},
+	g_{a, b}(a + b - x) , & \text{ if } \frac{x - a}{b} > \frac{1}{2},
+	\end{array}
 	\right .
 \]
 namely a function taking integer values.
@@ -1179,10 +1186,10 @@ We also have that
 so $T'(2)$, and therefore the limit of the series, is $2$.
 
 Let's now go back to $f_H$.
-Note that we can locally look at $f_H$ as a function in $\{f_{a, b}\}_{a, b \in [0, 1]}$, that is, $f_H(x) = f_{V_H(x), H_H(x)}(x)$.
+Note that we can locally look at $f_H$ as a function in $\{f_{a, b}\}_{a, b \in [0, 1]}$, that is, $f_H(x) = f_{L_H(x), R_H(x)}(x)$.
 We can define a function
 \[
-	g_H(x) = g_{V_H(x), H_H(x)}(x)
+	g_H(x) = g_{L_H(x), R_H(x)}(x)
 \]
 and a sequence of functions
 \[
@@ -1196,7 +1203,7 @@ and a sequence of functions
 We have that $(g_n)_{n \in \mathbb{N}}$ is monotone with limit $g$, similar to before, and $f \leq g$.
 Note that, independent of $H$, we have
 \[
-	m(\{x;\ g(x) = k\}) = 2^{-k}
+	m(\{x \,;\,  g(x) = k\}) = 2^{-k}
 \]
 so
 \begin{align*}
@@ -1223,7 +1230,7 @@ To show that $g$ is measurable it suffices to show that $(g_n)_{n \in \mathbb{N}
 We, therefore, can show that the preimage under $g_n$ of each point is measurable, since $g_n$ is simple for each $n$.
 But the preimage is a (possibly uncountable) union of half-open intervals so it is the union of a closed set and an open set.
 So $g$ is measurable.
-To show that $f$ is measurable it suffices to show that $P_{\lambda} = \{x \in [0, 1];\ f(x) < \lambda\}$ is measurable for all $\lambda$ in $[0, +\infty]$ \citep[lemma $1.3.9$]{tao}.
+To show that $f$ is measurable it suffices to show that $P_{\lambda} = \{x \in [0, 1] \,;\,  f(x) < \lambda\}$ is measurable for all $\lambda$ in $[0, +\infty]$ \citep[lemma $1.3.9$]{tao}.
 This trivially holds, since $P_{\lambda}$ is open.
 \begin{proof}[Proof of Lemma \ref{mylemma}]
 We may assume that $H$ is not empty, since the statement holds vacuously if that were the case.
@@ -1249,8 +1256,8 @@ Let's set $v_H$ as the conjugate harmonic of $u_H$ and define
 	\left \{
 		\begin{array}{l l}
 		u_H(z) + iv_H(z), & z \in \mathbb{D} \setminus H\\
-		\infty, & \text{otherwise}
-		\end{array}.
+		\infty, & \text{otherwise.}
+		\end{array}
 	\right .
 \]
 By our construction of $u_H$ we see the $\Re G_H > 1$, so it has a well defined square root.
@@ -1293,8 +1300,8 @@ So we have shown that
 	0 < \Re \frac{z}{z + w} < 1.
 \]
 
-We have now constructed a function $q$ that maps $\overline{\mathbb{D}}$ to the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$.
-We then let $\Phi$ be the conformal mapping from the ribbon $\{z;\ 0 \leq \Re z \leq 1\}$ to $\{z;\ 0 \leq \Re z \leq \Re \alpha\}$.
+We have now constructed a function $q$ that maps $\overline{\mathbb{D}}$ to the strip $\{z \,;\,  0 \leq \Re z \leq 1\}$.
+We then let $\Phi$ be the conformal mapping from the ribbon $\{z \,;\,  0 \leq \Re z \leq 1\}$ to $\{z \,;\,  0 \leq \Re z \leq \Re \alpha\}$.
 We will also choose $\Phi$ such that $\Phi(0) = 0$ and $\Phi(1) = \alpha$.
 Such a $\Phi$ can be constructed by going through the unit disk and choosing an appropriate rotation.
 We can then let $F = \Phi \circ q$ and conclude the proof.
@@ -1307,7 +1314,7 @@ If $f$ is a simple continuous function on $E$ that maps $E$ into $T \subset \mat
 \begin{proof}
 Let $z_0 \in T \setminus f(E)$ and $\Phi$ be a conformal mapping from the right halfplane to the interior of $T$ such that $\Phi(\infty) = z_0$.
 There exists a $g \in \mathcal{A}$ that extends $\Phi^{-1} \circ f$, according to Lemma \ref{rudinlemma1}.
-The desired function in then obtained with $F = \Phi \circ g$.
+The desired function is then obtained with $F = \Phi \circ g$.
 \end{proof}
 \begin{lemma}
 \label{rudinlemma3}
@@ -1336,7 +1343,7 @@ If we then look at $\lambda_n = f - \sum_{k = 0}^nf_k = \lambda_{n - 1} - f_n$ w
 This means we can continue the process.
 \end{proof}
 \begin{proof}[Proof of Theorem \ref{rudincarleson}]
-Let's first show the result for $T = S$.
+Let's first prove the result for $T = S$.
 
 Let $f_n$ be the functions from Lemma \ref{rudinlemma3}.
 According to Lemma \ref{rudinlemma2} we have functions $g_n \in \mathcal{A}$ which extend $f_n$ and map $\overline{\mathbb{D}}$ into $2^{-n}S$.
@@ -1365,13 +1372,13 @@ Lastly, for $z \in E$ we have that
 \]
 so $F$ is an extension of $f$.
 
-To prove the result for a general $T$ we first let $\Phi: T \rightarrow S$ be the map provided to us by Corollary \ref{contrmt}.
-We will also let $g = f \circ \Phi$.
+To prove the result for a general $T$ we first let $\Phi \colon T \rightarrow S$ be the map provided to us by Corollary \ref{contrmt}.
+We will also let $g = \Phi \circ f$.
 Note that it maps $E$ into $S$, so we can use what we showed above to find $G \in \mathcal{A}$ that extends $g$ and maps into $S$.
-We finally set $F = G \circ \Phi^{-1}$.
+We finally set $F = \Phi^{-1} \circ G$.
 On $E$ we have that
 \[
-	F = G \circ \Phi^{-1} = g \circ \Phi^{-1} = f \circ \Phi \circ \Phi^{-1} = f,
+	F = \Phi^{-1} \circ G = \Phi^{-1} \circ g = \Phi^{-1} \circ \Phi \circ f = f,
 \]
 so $F$ extends $f$.
 It is also a composition of functions that are continuous on $\overline{\mathbb{D}}$ and holomorphic on $\mathbb{D}$ so it is as well.
@@ -1382,10 +1389,10 @@ It is also a composition of functions that are continuous on $\overline{\mathbb{
 \section{A generalization of the Rudin-Carleson theorem}
 \label{section3}
 An obvious next step would be a Rudin-Carleson theorem in several complex variables.
-It is tempting to keep the constraints on $E$ unchanged, namely that it is of Lebesgue-measure zero, but this won't work.
-Take as an example $f: E \rightarrow \mathbb{C}$ with $E = \mathbb{T} \times \{1\}$ and $f(z, w) = \overline{z}$.
+It is tempting to keep the constraints on $E$ unchanged, namely that it is a closed subset of $\mathbb{S}_n$ of Lebesgue-measure zero, but this won't work.
+Take as an example $f \colon E \rightarrow \mathbb{C}$ with $E = \mathbb{T} \times \{1\}$ and $f(z, w) = \overline{z}$.
 Clearly $E$ is of Lebesgue-measure zero but $f$ cannot be extended.
-If we assume it could be extended to some $g$ in $\mathcal{A}^2$ then, by definition, $g_1 = g(\ \cdot \ , 1)$ would be holomorphic on $\mathbb{D}$ and continuous $\overline{\mathbb{D}}$.
+If we assume it could be extended to some $g$ in $\mathcal{A}_2$ then, by definition, $g_1 = g(\ \cdot \ , 0)$ would be holomorphic on $\mathbb{D}$ and continuous $\overline{\mathbb{D}}$.
 Its holomorphicity tells us that its integral around $r\mathbb{T}$ for $0 < r < 1$ is zero.
 But on $\mathbb{T}$ we have that $g_1(z) = \overline{z}$ so its integral over $\mathbb{T}$ is not zero.
 That is, we have that
@@ -1403,20 +1410,20 @@ Let $X$ be a compact Hausdorff space,
 	$B$ be a closed subspace of $V$,
 	$S$ be a closed subset of $X$ that is $B^{\bot}$-null, % TODO kannski breyta í E
 	$f$ be a continuous function on $S$,
-	$\Xi: X \rightarrow [0, +\infty[$ be continuous,
+	$\Xi \colon X \rightarrow [0, +\infty[$ be continuous,
 	and $|f| < \Xi$ on $S$.
 Then there exists a function $F \in B$ such that $F = f$ on $S$ and $|F| < \Xi$ on $X$.
 \end{theorem}
 The following lemma makes the proof simple.
 The proof of the lemma is sort of split in two.
-The earlier part is to show that $f$ is in the closure of the image of the restriction mapping and the latter part shows that it leads the existence of $F$.
+The first part is to show that $f$ is in the closure of the image of the restriction mapping and the second part shows that it leads the existence of $F$.
 \begin{lemma}
 \label{bishoplemma}
 Assume $|f| < r < 1$ on $S$.
 Then there exists a function $F \in B$ such that $F = f$ on $S$ and $\|F\| < 1$.
 \end{lemma}
 \begin{proof}
-Let $U_r$ be the subset of $B$ defined by $U_r = \{g;\ \|g\| < r\}$ and $\phi$ be the mapping from $B$ to $C(S)$ that sends a member of $B$ to its restriction on $S$.
+Let $U_r$ be the subset of $B$ defined by $U_r = \{g \,;\,  \|g\| < r\}$ and $\phi$ be the mapping from $B$ to $C(S)$ that sends a member of $B$ to its restriction on $S$.
 It suffices to show that $f \in \phi(U_r)$.
 Let's first show that $f$ is in $V_r = \overline{\phi(U_r)}$, by assuming otherwise, and showing it leads to a contradiction.
 Note that if $f, g \in U_r$ and $t \in [0, 1]$ then
@@ -1442,8 +1449,8 @@ for all $g \in U_r$,
 From this we get
 \begin{align*}
 	\| \beta \|
-	&= \sup \{ |\beta(g)|;\ \|g\| < 1 \}\\
-	&= \sup \{ (1/r)|\beta(g)|;\ \|g\| < r \}\\
+	&= \sup \{ |\beta(g)| \,;\,  \|g\| < 1 \}\\
+	&= \sup \{ (1/r)|\beta(g)| \,;\,  \|g\| < r \}\\
 	&\leq 1/r.
 \end{align*}
 Let's
@@ -1488,7 +1495,7 @@ Also note that $|F| < \Xi$ on $X$ and
 \]
 on $S$.
 \end{proof}
-Bishop's theorem let's us draw the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem.
+Bishop's theorem lets us draw the connection between the Rudin-Carleson theorem and the F. and M. Riesz theorem.
 \begin{proof}[Alternative proof of Theorem \ref{rudincarleson}]
 Let
 	$X = \mathbb{T}$,
@@ -1501,59 +1508,59 @@ Bishop's theorem also gives us a Rudin-Carleson theorem for complex analysis in 
 We don't, however, have a multivariate version of the F. and M. Riesz theorem, so the condition isn't as neat.
 
 \chapter{Consequences of Bishop's generalization of the Rudin-Carleson theorem}
-\section{Classification of compact subsets of $\mathbb{T}^n$}
+\section{Classification of compact subsets of $\mathbb{S}_n$}
 \label{section4}
-Bishop's theorem can be seen as a classification of sets.
-With this in mind, and looking at the case where $X = \mathbb{T}^n$ and $B = \mathcal{A}^n|_{\mathbb{T}^n}$, we have the following definition.
+Bishop's theorem can be seen statement on when sets are small enough (with respect to a function space) to allow all continuous function thereon to be extended.
+With this in mind, and looking at the case where $X = \mathbb{S}_n$ and $B = \mathcal{A}_n|_{\mathbb{S}_n}$, we have the following definition.
 \begin{definition}
 \label{bigdef}
-Let $K$ be a closed subset of $\mathbb{T}^n = \{z \in \mathbb{C}^n;\ |z| = 1\}$.
+Let $K$ be a closed subset of $\mathbb{S}_n$.
 We then say $K$ is a
 \begin{enumerate}
-	\item \emph{zero set} if there exists a function $f \in \mathcal{A}^n$ such that $K = f^{-1}(0)$.
-	\item \emph{peak set} if there exists a function $f \in \mathcal{A}^n$ such that $K = f^{-1}(1)$ and $|f(z)| < 1$ for $z \in \overline{\mathbb{D}}^n \setminus K$.
-	\item \emph{interpolation set} if every continuous function on $K$ extends via $\mathcal{A}^n$. 
-	\item \emph{peak-interpolation set} if every non-zero continuous function $f$ on $K$ extends to $F \in \mathcal{A}^n$ such that $|F(z)| < \|f\|$ for $z \in \overline{\mathbb{D}}^n \setminus K$.
-	\item \emph{null set} if $K$ is a null set with regards to all annihilating measures of $\mathcal{A}^n$.
-	\item \emph{totally null} if $K$ is a null set with regards to all measure $\mu$ such that
+	\item \emph{zero set} if there exists a function $f \in \mathcal{A}_n$ such that $K = f^{-1}(0)$.
+	\item \emph{peak set} if there exists a function $f \in \mathcal{A}_n$ such that $K = f^{-1}(1)$ and $|f(z)| < 1$ for $z \in \overline{\mathbb{B}_n} \setminus K$.
+	\item \emph{interpolation set} if every continuous function on $K$ extends via $\mathcal{A}_n$. 
+	\item \emph{peak-interpolation set} if every non-zero continuous function $f$ on $K$ extends to $F \in \mathcal{A}_n$ such that $|F(z)| < \|f\|$ for $z \in \overline{\mathbb{B}_n} \setminus K$.
+	\item \emph{null set} if $K$ is a null set with respect to all annihilating measures of $\mathcal{A}_n$.
+	\item \emph{totally null} if $K$ is a null set with respect to all measure $\mu$ such that
 			\[
-				f(0) = \int_{\mathbb{D}^n} f\ d\mu
+				f(0) = \int_{\mathbb{B}_n} f\ d\mu
 			\]
-			for all $f \in \mathcal{A}^n$.
+			for all $f \in \mathcal{A}_n$.
 \end{enumerate}
 \end{definition}
 \begin{theorem}
 	\label{bigtheorem}
 	The six classes of sets described in Definition \ref{bigdef} are equivalent.
 \end{theorem}
-The first few sections of chapter $10$ in \citep{rudin3} are dedicated to proving this large theorem.
+The first few sections of Chapter $10$ in \citep{rudin3} are dedicated to proving this large theorem.
 One implication, namely that all null sets are peak-interpolation sets, follows from Theorem \ref{bishopstheorem}.
 
 \section{A variation of Bishop's theorem}
 \label{section5}
 Theorem \ref{bigtheorem} implies that the condition on $S$ in Bishop's theorem can't, generally, be relaxed.
-If we fix a continuous $f: S \rightarrow \mathbb{C}$ we might, however, be a able to chose a different classification on $S$.
+If we fix a continuous $f \colon S \rightarrow \mathbb{C}$ we might, however, be a able to choose a different classification on $S$.
 It seems at first, when looking at the proof of Bishop's theorem, that $S$ being $B^{\bot}$-null is only used to show that
 \[
 	\int_S f\ d\mu = 0.
 \]
-If this were the case, we could restate the theorem for a continuous function $f: S \rightarrow \mathbb{C}$ and set $S$ such that the above equation holds.
+If this were the case, we could restate the theorem for a continuous function $f \colon S \rightarrow \mathbb{C}$ and set $S$ such that the above equation holds.
 This, however, leads to problems.
 
 Let
 	$X$ be $\mathbb{T}$,
 	$B$ be $\mathcal{A}|_{\mathbb{T}}$,
 	$S = E \cup F$ where $F$ is a closed subarc of $\mathbb{T}$ of non-zero Lebesgue-measure and $E$ is a singleton in $\mathbb{T} \setminus F$,
-	and $f: S \rightarrow \mathbb{C}$ be a continuous function such that $f = 0$ on $F$ and $f \neq 0$ on $E$.
+	and $f \colon S \rightarrow \mathbb{C}$ be a continuous function such that $f = 0$ on $F$ and $f \neq 0$ on $E$.
 Then we have by Corollary \ref{fmrieszcor} that $E$ is $B^{\bot}$-null, so
 \[
 	\int_S f\ d\mu = \int_F f\ d\mu = 0.
 \]
-So let's assume $f$ can be extended to $F$ via $\mathcal{A}$.
+So let's assume $f$ can be extended to $F$ in $\mathcal{A}$.
 We also know that $F$ is in $H^1$ because it's a continuous function on a compact set and we know that $F = 0$ must hold on $\mathbb{D}$
 \citep[Theorem $13.4.11$]{greenkrantz}.
 So $F$ vanishes Lebesgue-almost everywhere on $\overline{\mathbb{D}}$ and is continuous.
-We can therefore state it is $0$ everywhere on $\overline{\mathbb{D}}$.
+We can therefore state that it is $0$ everywhere on $\overline{\mathbb{D}}$.
 This is a contradiction, because $F = f$ on $\mathbb{T}$ and $f$ is not zero on $E$.
 
 Looking further at the proof shows that the iteration in the second half doesn't work with this $f$, since 
@@ -1590,23 +1597,23 @@ holds for all $G$ in $B$ and $\mu$ in $B^{\bot}$ then there exists a function $F
 \end{theorem}
 If we consider this theorem in the context of complex analysis we get:
 \begin{theorem}
-Let $S$ be a closed subset of $\mathbb{T}^n$ and $f: S \rightarrow \mathbb{C}$ be a continuous function.
+Let $S$ be a closed subset of $\mathbb{S}_n$ and $f \colon S \rightarrow \mathbb{C}$ be a continuous function.
 If
 \[
 	\int_S f\ d\mu = 0
 \]
-for all $\mu$ in $\mathcal{A}^n|_{\mathbb{T}^n}^{\bot}$ and
+for all $\mu$ in $\mathcal{A}_n|_{\mathbb{S}_n}^{\bot}$ and
 \[
 	\int_S G\ d\mu = 0
 \]
-holds for all $G$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{\bot}$ then there exists a function $F \in \mathcal{A}^n$ such that $F = f$ on $S$.
+holds for all $G$ in $\mathcal{A}_n$ and $\mu$ in $\mathcal{A}_n|_{\mathbb{S}_n}^{\bot}$ then there exists a function $F \in \mathcal{A}_n$ such that $F = f$ on $S$.
 \end{theorem}
 It would be interesting to continue the study of those $f$ and $S$ that satisfy these new condition.
 Note as well that the second condition, namely that
 \[
 	\int_S F\ d\mu = 0
 \]
-holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{\bot}$, is independent of $f$, so $S$ could also be studied in isolation.
+holds for all $F$ in $\mathcal{A}_n$ and $\mu$ in $\mathcal{A}_n|_{\mathbb{S}_n}^{\bot}$, is independent of $f$, so $S$ could also be studied in isolation.
 
 
 \chapter*{Index}
@@ -1618,11 +1625,12 @@ holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{
 \markboth{Index}{Index}
 \indexitem{$\mathcal{A}$}{index4}
 \indexitem{$\mathcal{A}|_{\mathbb{T}}$}{index17}
-\indexitem{$\mathcal{A}^n|_{\mathbb{T}^n}$}{index9}
-\indexitem{$\mathcal{A}^n$}{index9}
+\indexitem{$\mathcal{A}_n|_{\mathbb{S}_n}$}{index9}
+\indexitem{$\mathcal{A}_n$}{index9}
 \indexitem{$(a_k)_{k \in S}$}{index19}
 \indexitem{$\|\alpha\|$}{index13}
 %
+\indexitem{$\mathbb{B}_n$}{index33}
 \indexitem{$B^{\bot}$}{annilatingmeasure}
 \indexitem{Bounded linear functionals}{index13}
 %
@@ -1631,9 +1639,8 @@ holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{
 \indexitem{Conformal}{index6}
 %
 \indexitem{$\mathbb{D}$}{index5}
-\indexitem{$\mathbb{D}^n$}{index9}
 %
-\indexitem{Equicontinuous}{index18}
+\indexitem{Exponent conjugate}{index32}
 \indexitem{Extends}{index8}
 %
 \indexitem{$f_H$}{index29}
@@ -1643,9 +1650,9 @@ holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{
 \indexitem{$g_{a, b}$}{index31}
 %
 \indexitem{$H^p$}{index24}
-\indexitem{$H_H$}{index28}
+\indexitem{$R_H$}{index28}
 \indexitem{Holomorphic in $\mathbb{C}^n$}{index9}
-\indexitem{Hölder's inequality}{index16}
+\indexitem{The Hölder inequality}{index16}
 %
 \indexitem{Jordan curve}{index7}
 %
@@ -1661,7 +1668,6 @@ holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{
 %
 \indexitem{$\Omega_{\alpha}$}{index25}
 %
-\indexitem{Pointwise bounded}{index18}
 \indexitem{$P[f]$}{index21}
 \indexitem{$P[d\mu]$}{index21}
 \indexitem{$P_r(t)$}{index21}
@@ -1670,15 +1676,15 @@ holds for all $F$ in $\mathcal{A}^n$ and $\mu$ in $\mathcal{A}^n|_{\mathbb{T}}^{
 \indexitem{Regular}{index20}
 %
 \indexitem{$S$}{index26}
+\indexitem{$\mathbb{S}_n$}{index34}
 \indexitem{Separable}{index23}
 \indexitem{Sequentially compact}{index29}
 %
 \indexitem{$\mathbb{T}$}{index5}
-\indexitem{$\mathbb{T}^n$}{index9}
 %
 \indexitem{$u_r$}{index22}
 %
-\indexitem{$V_H$}{index28}
+\indexitem{$L_H$}{index28}
 
 
 \bibliography{refs}
